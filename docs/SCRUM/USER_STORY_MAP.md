@@ -24,51 +24,55 @@ Yo como Científico de Datos necesito limpiar el texto (eliminar emojis irreleva
 
 ---
 
-## 🟧 ACTIVIDAD 2: Modelado Analítico (IA, ML y Econometría)
+## 🟧 ACTIVIDAD 2: Modelado Analítico, Econometría y Optimización
 
-### 🟦 2.1 Análisis de Sentimiento (NLP)
-**Historia 2.1.1: Clasificador NLP**
+### 🟦 2.1 Inteligencia Artificial (NLP)
+**Historia 2.1.1: Clasificador NLP de Sentimiento**
 **Pts: 13** | **Asignado a: David**
-Yo como Analista necesito aplicar un modelo de procesamiento de lenguaje natural (HuggingFace/Transformers) a los textos de forma que pueda etiquetar cada reseña como Positiva, Negativa o Neutra.
+Yo como Data Scientist necesito un modelo NLP que procese el texto limpio de forma que clasifique el sentimiento (Positivo/Negativo) y extraiga las entidades clave (Login, Token, Transferencia).
 *Criterios de Aceptación:*
-[ ] Modelo integrado y corriendo sobre los datos "Silver".
-[ ] Tracking de los experimentos y precisión usando MLflow.
-[ ] Identificación y extracción de "Fallas Técnicas" vs "Quejas de Servicio".
+[ ] Pipeline de MLflow configurado.
+[ ] Precisión del modelo superior al 85%.
 
-### 🟦 2.2 Modelado Econométrico
-**Historia 2.2.1: Modelo Probit/Logit**
+### 🟦 2.2 Econometría y Procesos Estocásticos
+**Historia 2.2.1: Modelo Probit/Logit (Riesgo de Fuga)**
 **Pts: 13** | **Asignado a: Boris**
-Yo como Economista necesito correr un modelo de elección discreta (Logit/Probit) de forma que se estime la probabilidad de insatisfacción crítica basándose en variables como [frecuencia de caída de app, lentitud, error de token].
+Yo como Analista necesito un modelo Logit usando los datos de reseñas de forma que pueda calcular la probabilidad de que un usuario abandone la app (Churn).
 *Criterios de Aceptación:*
-[ ] Estimación del modelo en Quarto (R/Python).
-[ ] Validación de supuestos estadísticos (ej. Heterocedasticidad).
-[ ] Resultados exportados a la capa "Gold" para visualización.
+[ ] Uso de R o statsmodels en Python.
+[ ] Pruebas de Heterocedasticidad superadas.
+
+**Historia 2.2.2: Cadenas de Markov (Transición de Estado)**
+**Pts: 8** | **Asignado a: Boris**
+Yo como Analista necesito aplicar Cadenas de Markov de forma que pueda predecir cómo un usuario transita de un estado "Satisfecho" a "Frustrado".
+*Criterios de Aceptación:*
+[ ] Matriz de transición calculada.
 
 ---
 
-## 🟧 ACTIVIDAD 3: Optimización y Dashboard (BI & Scrum)
+## 🟧 ACTIVIDAD 3: Optimización, B2B SaaS y Dashboard
 
 ### 🟦 3.1 Orquestación y CLI Interactiva
 **Historia 3.1.1: Menú Interactivo (Capa 4)**
 **Pts: 8** | **Asignado a: David**
-Yo como Desarrollador necesito un menú CLI interactivo (usando la librería `rich`) de forma que pueda orquestar las ejecuciones (scraping, ML, dashboard) sin ejecutar comandos largos, manteniendo idempotencia.
+Yo como Desarrollador necesito un menú CLI interactivo (usando la librería `rich`) de forma que pueda orquestar las ejecuciones.
 *Criterios de Aceptación:*
-[ ] Interfaz de consola hermosa y profesional.
-[ ] Menú con opciones enumeradas (Ej: 1. Extraer Datos, 2. Entrenar Modelo, 3. Dashboard).
-[ ] Manejo robusto de errores (try/except) sin crashear.
+[ ] Interfaz de consola hermosa.
+[ ] Manejo robusto de errores.
 
-**Historia 3.1.2: Bot RAG de Consultas**
-**Pts: 8** | **Asignado a: David**
-Yo como Gerente del Banco necesito un asistente conversacional (LangChain RAG) integrado al proyecto de forma que pueda hacer preguntas en lenguaje natural sobre las reseñas de los clientes.
+### 🟦 3.2 Endpoint Enterprise (B2B SaaS)
+**Historia 3.2.1: API REST B2B**
+**Pts: 13** | **Asignado a: David**
+Yo como CEO del Proyecto necesito que los modelos vivan detrás de una API FastAPI de forma que podamos vender el acceso a bancos externos (Banking as a Service).
 *Criterios de Aceptación:*
-[ ] Base de datos vectorial configurada localmente.
-[ ] Agente LangChain capaz de responder preguntas citando reseñas reales.
+[ ] Endpoint documentado en Swagger.
+[ ] Tiempos de respuesta < 200ms.
 
-### 🟦 3.2 Visualización Final
-**Historia 3.2.1: Dashboard Streamlit**
+### 🟦 3.3 Visualización Final y RAG
+**Historia 3.3.1: Dashboard Streamlit**
 **Pts: 8** | **Asignado a: Boris**
-Yo como Tomador de Decisiones necesito un Dashboard interactivo de forma que pueda visualizar la evolución del indicador sintético de calidad (2023-2026).
+Yo como Gerente del Banco necesito un dashboard interactivo de forma que pueda ver el Indicador Sintético, el Market Share y consultar a la IA vía RAG.
 *Criterios de Aceptación:*
-[ ] App en Streamlit funcional.
-[ ] Gráficos en Plotly mostrando la evolución de sentimiento y las cadenas de Markov.
+[ ] Gráficas Plotly (Aesthetics BI).
+[ ] Asistente RAG LangChain integrado. de sentimiento y las cadenas de Markov.
 [ ] Interfaz limpia, intuitiva y rápida.
