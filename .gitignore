@@ -23,6 +23,17 @@ metastore_db/
 derby.log
 *.parquet
 *.csv
+*.db
+*.duckdb
+
+# Archivos de R
+.RData
+.Rhistory
+.Rproj.user/
+
+# Logs y Observabilidad
+logs/
+*.log
 
 # SO y varios
 .DS_Store

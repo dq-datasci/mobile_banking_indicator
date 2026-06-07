@@ -52,7 +52,7 @@ mobile_banking_indicator/
 │   │   └── SPECS_KIT.md
 │   ├── ENGINEERING_STANDARDS/    # Reglas de Código y Patrones
 │   │   ├── DESIGN_PATTERNS.md
-│   │   ├── DEVOPS_MLOPS_SECURITY.md
+│   │   ├── DEVOPS_MLOPS_SECURITY.md # Políticas ISO 27001, CI/CD, Observabilidad y MLOps
 │   │   ├── GLOSSARY.md
 │   │   └── SOLID_PRINCIPLES.md
 │   ├── GUIDES/                   # Guías Operativas
