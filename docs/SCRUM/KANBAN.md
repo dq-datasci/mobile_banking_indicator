@@ -28,10 +28,11 @@ Este tablero mapea las historias de usuario definidas en `USER_STORY_MAP.md` hac
 
 ---
 
-## Release 3: RAG, Orquestación y Dashboard (Días 4-5)
+## Release 3: Orquestación CLI, RAG y Dashboard (Días 4-5)
 
-### 🟦 3.1 Orquestación y RAG
-- [ ] **Historia 3.1.1: Bot RAG de Consultas** (Pts: 8) [Asignado: David]
+### 🟦 3.1 Orquestación y CLI Interactiva
+- [ ] **Historia 3.1.1: Menú Interactivo (Capa 4)** (Pts: 8) [Asignado: David]
+- [ ] **Historia 3.1.2: Bot RAG de Consultas** (Pts: 8) [Asignado: David]
 
 ### 🟦 3.2 Visualización Final
 - [ ] **Historia 3.2.1: Dashboard Streamlit** (Pts: 8) [Asignado: Boris]

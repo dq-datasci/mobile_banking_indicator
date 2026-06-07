@@ -48,8 +48,16 @@ Yo como Economista necesito correr un modelo de elección discreta (Logit/Probit
 
 ## 🟧 ACTIVIDAD 3: Optimización y Dashboard (BI & Scrum)
 
-### 🟦 3.1 Orquestación y RAG
-**Historia 3.1.1: Bot RAG de Consultas**
+### 🟦 3.1 Orquestación y CLI Interactiva
+**Historia 3.1.1: Menú Interactivo (Capa 4)**
+**Pts: 8** | **Asignado a: David**
+Yo como Desarrollador necesito un menú CLI interactivo (usando la librería `rich`) de forma que pueda orquestar las ejecuciones (scraping, ML, dashboard) sin ejecutar comandos largos, manteniendo idempotencia.
+*Criterios de Aceptación:*
+[ ] Interfaz de consola hermosa y profesional.
+[ ] Menú con opciones enumeradas (Ej: 1. Extraer Datos, 2. Entrenar Modelo, 3. Dashboard).
+[ ] Manejo robusto de errores (try/except) sin crashear.
+
+**Historia 3.1.2: Bot RAG de Consultas**
 **Pts: 8** | **Asignado a: David**
 Yo como Gerente del Banco necesito un asistente conversacional (LangChain RAG) integrado al proyecto de forma que pueda hacer preguntas en lenguaje natural sobre las reseñas de los clientes.
 *Criterios de Aceptación:*

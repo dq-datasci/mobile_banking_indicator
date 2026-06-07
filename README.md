@@ -36,9 +36,24 @@ Para que los agentes tengan contexto instantáneo, SIEMPRE comunícate con ellos
 **Al FINALIZAR tu sesión, copia y pégale esto a Antigravity:**
 > *"Hemos terminado por hoy. Por favor, escribe una nueva entrada detallada en `docs/AGENT_LOGS.md` indicando la fecha, quiénes somos, qué historia de usuario completamos, qué archivos modificamos y cuáles son los siguientes pasos sugeridos. Después de guardarlo, haz el commit y el push correspondiente a nuestra rama."*
 
-## 3. Estructura del Proyecto
-*   `docs/`: El cerebro del proyecto. Aquí viven los apuntes de la universidad, el marco de trabajo Ágil (User Story Maps, Kanban) y los registros de los agentes.
-*   `src/`: El código fuente, estructurado en una arquitectura profesional por capas.
-*   `notebooks/`: Entornos de exploración y pruebas con datos (EDA, Databricks).
+## 3. Estructura de Directorios (Arquitectura del Proyecto)
 
-*Para detalles técnicos de la arquitectura, revisa el archivo `docs/HOW_WE_WORK.md`.*
+Nuestro código está ordenado siguiendo los principios de Arquitectura por Capas y Clean Code. Esta es la radiografía del proyecto:
+
+```text
+mobile_banking_indicator/
+├── .gitignore             # Ignora entornos virtuales, datos pesados y caché
+├── docs/                  # El Cerebro de Antigravity y Gestión Scrum
+│   ├── AGENT_LOGS.md      # Diario de lo que hace cada agente
+│   ├── HOW_WE_WORK.md     # Reglas técnicas permanentes (SOLID, etc.)
+│   ├── CONTEXT/           # Apuntes de las clases y bases teóricas
+│   └── SCRUM/             # Tableros Kanban y User Story Maps
+├── notebooks/             # Entornos de exploración y pruebas (Databricks / EDA)
+├── tests/                 # Pruebas unitarias de las diferentes capas
+└── src/                   # Código Fuente Principal
+    ├── infrastructure/    # Conexiones: Scraping (Play Store), Base de Datos, APIs.
+    ├── core/              # El Corazón: Entidades de negocio, Enums y Modelos de datos.
+    ├── use_cases/         # Lógica pura: Algoritmos NLP, ETL con Spark, Econometría.
+    ├── presentation/      # Interfaces: Código del Dashboard interactivo en Streamlit.
+    └── orchestration/     # Capa 4: Menú interactivo CLI (construido con `rich`) que coordina todo.
+```
