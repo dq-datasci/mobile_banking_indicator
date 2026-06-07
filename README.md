@@ -38,25 +38,34 @@ Para que los agentes tengan contexto instantáneo, SIEMPRE comunícate con ellos
 
 ## 3. Estructura de Directorios (Arquitectura del Proyecto)
 
-Nuestro código está ordenado siguiendo los principios de Arquitectura por Capas y Clean Code. Esta es la radiografía del proyecto:
+Nuestro código está ordenado siguiendo los principios de Arquitectura por Capas, Patrones GoF y Clean Code.
 
 ```text
 mobile_banking_indicator/
 ├── .gitignore             # Ignora entornos virtuales, datos pesados y caché
-├── docs/                  # El Cerebro de Antigravity y Gestión Scrum
-│   ├── BUSINESS_MODEL.md         # Modelo de negocio, BaaS y Omnicanalidad
-│   ├── DEVOPS_MLOPS_SECURITY.md  # Políticas ISO 27001, CI/CD, Terraform y MLflow
-│   ├── ARCHITECTURE_DECISIONS.md # ADRs (Lakehouse, LangChain, OLAP, UI F-Pattern)
-│   ├── DEFERRED_FEATURES.md      # Registro de features no incluidas en el MVP (Microservicios, Kafka)
-│   ├── SPECS_KIT.md              # Estándar de desarrollo (GitHub Specs-Kit)
-│   ├── AGENT_LOGS.md             # Bitácora de colaboración con Antigravity
-│   ├── GIT_CHEATSHEET.md         # Guía de Git para Boris
-│   ├── HOW_WE_WORK.md            # Reglas del equipo, SRP, Idempotencia, CLI
-│   ├── MICROMAMBA_GUIDE.md       # Guía de entorno híbrido (R y Python)
-│   ├── CONTEXT/
-│   │   ├── ai_collaboration_context.md # Directrices de colaboración IA
-│   │   └── subjects_summary.md         # Resumen de metodologías universitarias
-│   └── SCRUM/             # Tableros Kanban y User Story Maps
+├── docs/                  # El Cerebro Corporativo y Gestión Scrum
+│   ├── ADRs/                     # Ciclo de vida de Decisiones Arquitectónicas
+│   │   └── ARCHITECTURE_DECISIONS.md
+│   ├── BUSINESS_PRODUCT/         # Modelo de Negocio y Producto
+│   │   ├── BUSINESS_MODEL.md
+│   │   ├── DEFERRED_FEATURES.md
+│   │   └── SPECS_KIT.md
+│   ├── ENGINEERING_STANDARDS/    # Reglas de Código y Patrones
+│   │   ├── DESIGN_PATTERNS.md
+│   │   ├── DEVOPS_MLOPS_SECURITY.md
+│   │   ├── GLOSSARY.md
+│   │   └── SOLID_PRINCIPLES.md
+│   ├── GUIDES/                   # Guías Operativas
+│   │   ├── GIT_CHEATSHEET.md
+│   │   ├── HOW_WE_WORK.md
+│   │   └── MICROMAMBA_GUIDE.md
+│   ├── CONTEXT/                  # Material Teórico Universitario
+│   │   ├── ai_collaboration_context.md
+│   │   └── subjects_summary.md
+│   └── SCRUM/                    # Tableros Kanban y User Story Maps
+│       ├── KANBAN.md
+│       └── USER_STORY_MAP.md
+├── notebooks/             # Entornos de exploración y pruebas (Databricks / EDA)             # Tableros Kanban y User Story Maps
 ├── notebooks/             # Entornos de exploración y pruebas (Databricks / EDA)
 ├── tests/                 # Pruebas unitarias de las diferentes capas
 └── src/                   # Código Fuente Principal

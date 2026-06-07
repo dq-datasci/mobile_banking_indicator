@@ -1,6 +1,7 @@
-# Product Specifications (Basado en GitHub Specs-Kit)
+# Product Specifications (Specs-Kit y OpenSpec)
 
-Para mantener la calidad de grado corporativo, toda nueva característica que desarrollemos debe seguir esta plantilla de especificación de producto, asegurando que todos los roles (Data Engineer, MLOps, Científico de Datos) estén alineados antes de escribir código.
+Para mantener la calidad de grado corporativo, toda nueva característica debe seguir esta plantilla de especificación.
+Además, nos regimos por el estándar **OpenSpec**: las especificaciones deben ser legibles por humanos y por máquinas (Markdown estricto), garantizando la interoperabilidad con nuestros clientes B2B.
 
 ## Plantilla Base de Implementación (Spec)
 
