@@ -32,7 +32,8 @@ El proyecto DEBE estar finalizado, funcional y empaquetado para su presentación
 *   **Dashboard:** Streamlit (Integración con Plotly).
 *   **Exploración:** DuckDB y ydata_profiling.
 *   **Big Data / NLP:** PySpark sobre Databricks.
-*   **Tracking:** MLflow.
+*   **GenAI / LLMs:** LangChain y LangGraph para flujos conversacionales (RAG).
+*   **Tracking de Modelos:** MLflow.
 
 ## 7. IA y Pensamiento Crítico
 *   Revisar siempre que las sugerencias de la IA tengan sentido lógico y de negocio. Antigravity no debe ejecutar código ciegamente sin evaluar su impacto en la arquitectura.
