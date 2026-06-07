@@ -34,10 +34,10 @@ Los agentes de IA no tienen "telepatía" para saber qué hicimos en la computado
 Para que los agentes tengan contexto instantáneo, SIEMPRE comunícate con ellos usando estas instrucciones al inicio y al final de tu día:
 
 **Al INICIAR tu sesión, copia y pégale esto a Antigravity:**
-> *"Hola Antigravity, este es un proyecto colaborativo. Antes de hacer nada, asegúrate de hacer un `git pull origin develop` para traer los últimos cambios. Luego, lee el archivo `README.md`, los tableros en `docs/SCRUM/` y revisa la última entrada en `docs/AGENT_LOGS.md`. Explícame en qué estado se encuentra el proyecto y qué historia de usuario me toca abordar hoy según el Kanban."*
+> *"Hola Antigravity, inicia sesión. Haz un `git pull origin develop`. Luego, lee estrictamente TODO el contenido de `docs/ENGINEERING_STANDARDS/`, `docs/ADRs/`, `docs/GUIDES/` y `docs/BUSINESS_PRODUCT/` para entender las reglas del proyecto. Después, lee `docs/SCRUM/` y `docs/AGENT_LOGS.md`. Haz un paneo rápido por `src/`, `tests/` y `notebooks/` para ver el código actual. Finalmente, dime qué historia de usuario nos toca hoy según el Kanban."*
 
 **Al FINALIZAR tu sesión, copia y pégale esto a Antigravity:**
-> *"Hemos terminado por hoy. Por favor, escribe una nueva entrada detallada en `docs/AGENT_LOGS.md` indicando la fecha, quiénes somos, qué historia de usuario completamos, qué archivos modificamos y cuáles son los siguientes pasos sugeridos. Después de guardarlo, haz el commit y el push correspondiente a nuestra rama."*
+> *"Hemos terminado por hoy. Escribe una nueva entrada en `docs/AGENT_LOGS.md` indicando la fecha, quiénes somos (Agente de Boris/David), qué Vertical Slice avanzamos, qué archivos modificamos y qué sigue. Después, haz commit y push a nuestra rama."*
 
 ## 3. Estructura de Directorios (Arquitectura del Proyecto)
 
