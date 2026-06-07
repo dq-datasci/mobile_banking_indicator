@@ -8,7 +8,7 @@ Actualmente, los gerentes leen reseñas aleatorias de la Play Store o ven un "pr
 3. ¿Cuál es el impacto financiero de no arreglar el problema X?
 
 ## 2. Nuestra Solución (El Producto)
-**Voice of Customer AI (VoC-AI)** es un producto B2B SaaS que consolida la voz del usuario a través del internet entero, aplica Inteligencia Artificial y devuelve *insights* accionables.
+**OmniVoC SaaS (Omnichannel Voice of Customer)** es un producto B2B que consolida la voz del usuario a través del internet entero, aplica Inteligencia Artificial y devuelve *insights* accionables.
 No es un simple dashboard de "sentimiento". Es un **motor econométrico**. Te dice: *"El 40% de las quejas en TikTok y Play Store son sobre biometría facial. Arreglar esto reducirá el riesgo de fuga en un 18%"*.
 
 ## 3. Omnicanalidad (Ingesta de Datos Universales)

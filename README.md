@@ -1,6 +1,9 @@
-# Proyecto: Indicador Sintético de Calidad de la Banca Móvil (Bolivia)
+# 🌐 OmniVoC SaaS (Omnichannel Voice of Customer)
 
-¡Hola Boris y David! Bienvenidos al repositorio central de nuestro proyecto final integrador. Este documento es el manual principal para gestionar nuestro flujo de trabajo colaborativo usando Git y Antigravity. Dado que ambos estarán trabajando en paralelo, aquí definimos las bases para que nuestros entornos y agentes de IA estén perfectamente sincronizados.
+> *Nota: Inicialmente concebido como un "Indicador Sintético de Calidad de Banca Móvil", el alcance de este proyecto ha evolucionado a **OmniVoC SaaS**, una plataforma corporativa B2B de Inteligencia Artificial agnóstica a la industria.*
+> **Significado:** **Omni**canal (extrae datos de todas las redes sociales y tiendas) + **V**oice **o**f **C**ustomer (Voz del Cliente).
+
+¡Hola Boris y David! Bienvenidos al repositorio central de **OmniVoC**. Este documento es el manual principal para gestionar nuestro flujo de trabajo colaborativo usando Git y Antigravity. Dado que ambos estarán trabajando en paralelo, aquí definimos las bases para que nuestros entornos y agentes de IA estén perfectamente sincronizados.
 
 ## 1. El Flujo de Trabajo con Git (Gitflow)
 
