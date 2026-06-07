@@ -22,12 +22,17 @@ El proyecto DEBE estar finalizado, funcional y empaquetado para su presentación
 *   **Tell, Don't Ask:** No preguntar por el estado para tomar decisiones externas.
 *   **Null Safety:** Evitar que los nulos rompan la aplicación ("el null es un mentirosillo").
 *   **No "Boolean Traps":** Usar Enums en vez de booleanos mágicos.
+*   **Idempotencia y Persistencia:** El procesamiento de datos (PySpark/Spark) debe ser idempotente. Si se cae a la mitad y se vuelve a correr, debe retomar sin duplicar datos. Usaremos bases locales (`.json`, `DuckDB`) para mantener el estado.
 
-## 5. Algoritmos y Consistencia (ACID)
+## 5. UI/UX y Orquestación Interactiva (CLI)
+*   **CLI Hermosa y Amigable:** Implementaremos un menú interactivo en la terminal usando la librería `rich`. Esta será nuestra "Capa 4 de Orquestación". Desde este menú se dispararán las extracciones, entrenamientos ML y el despliegue del Dashboard.
+*   **Estética Premium (BI):** El Dashboard en Streamlit debe usar paletas curadas (Premium), sin espacios muertos, y con gráficas 100% legibles (labels, porcentajes y cero errores de layout). Nada de colores básicos.
+
+## 6. Algoritmos y Consistencia (ACID)
 *   Medir la eficiencia (Big-O) de las estructuras de datos usadas.
 *   Cualquier interacción con Base de Datos debe respetar las transacciones ACID.
 
-## 6. Stack Tecnológico
+## 7. Stack Tecnológico
 *   **Entorno:** Micromamba (híbrido R/Python) y Quarto para reportes.
 *   **Dashboard:** Streamlit (Integración con Plotly).
 *   **Exploración:** DuckDB y ydata_profiling.
@@ -35,5 +40,5 @@ El proyecto DEBE estar finalizado, funcional y empaquetado para su presentación
 *   **GenAI / LLMs:** LangChain y LangGraph para flujos conversacionales (RAG).
 *   **Tracking de Modelos:** MLflow.
 
-## 7. IA y Pensamiento Crítico
+## 8. IA y Pensamiento Crítico
 *   Revisar siempre que las sugerencias de la IA tengan sentido lógico y de negocio. Antigravity no debe ejecutar código ciegamente sin evaluar su impacto en la arquitectura.
