@@ -35,6 +35,18 @@ Git es un sistema que guarda el historial de nuestro código. Piensa en Git como
 *   `git push origin feature/nombre-de-tarea`
     **¿Qué hace?** Envía la "foto" que tomaste (commit) a los servidores de GitHub. A partir de este momento, tu compañero puede ver tu código en internet.
 
+## 6. Conventional Commits y Commits Atómicos (Obligatorio)
+
+Para mantener un historial profesional, **es obligatorio** usar la convención de *Conventional Commits*. Además, cada commit debe ser **Atómico** (un commit = un solo cambio lógico o funcionalidad pequeña, no mezclar cambios gigantes en un solo commit).
+
+**Prefijos Obligatorios:**
+*   `feat:` Una nueva característica (Ej. `feat: crear Factory para los scrapers`).
+*   `fix:` Una corrección de un bug (Ej. `fix: corregir error de paginación en Trustpilot`).
+*   `docs:` Cambios exclusivos de documentación (Ej. `docs: actualizar AGENT_LOGS.md`).
+*   `refactor:` Refactorización de código sin agregar/quitar funcionalidades (Ej. `refactor: aplicar patrón Strategy al módulo NLP`).
+*   `test:` Añadir o corregir pruebas unitarias.
+*   `chore:` Tareas rutinarias, cambios de configuración, entorno o dependencias.
+
 ## 💡 Resumen del Flujo Diario
 1. `git checkout develop` -> `git pull origin develop` (Actualizas tu compu).
 2. `git checkout -b feature/mi-tarea` (Creas tu rama).

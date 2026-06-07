@@ -34,13 +34,13 @@ Los agentes de IA no tienen "telepatía" para saber qué hicimos en la computado
 Para que los agentes tengan contexto instantáneo, SIEMPRE comunícate con ellos usando estas instrucciones al inicio y al final de tu día:
 
 **Al INICIAR tu sesión (Para dar contexto al agente), copia y pega:**
-> *"Hola Antigravity, inicia sesión. Haz un `git pull origin develop`. Luego, lee estrictamente TODO el contenido de `docs/ENGINEERING_STANDARDS/`, `docs/ADRs/`, `docs/GUIDES/` y `docs/BUSINESS_PRODUCT/` para entender las reglas del proyecto. Después, lee `docs/SCRUM/` y `docs/AGENT_LOGS.md`. Haz un paneo rápido por `src/`, `tests/` y `notebooks/` para ver el código actual. Finalmente, dime qué historia de usuario nos toca hoy según el Kanban."*
+> *"Hola Antigravity, inicia sesión. Haz un `git pull origin develop`. Luego, lee estrictamente TODO el contenido de `docs/ENGINEERING_STANDARDS/`, `docs/ADRs/`, `docs/GUIDES/` y `docs/BUSINESS_PRODUCT/` para entender las reglas del proyecto. Después, lee `docs/SCRUM/` y `docs/AGENT_LOGS.md`. Haz un paneo rápido por `src/`, `tests/` y `notebooks/`. Finalmente, dime qué historia de usuario nos toca hoy."*
 
-**Al EJECUTAR una nueva tarea (Para forzar la calidad del código), copia y pega:**
-> *"Vamos a trabajar en la Historia de Usuario [AQUÍ EL NÚMERO]. Antes de programar nada, redacta un Implementation Plan. En tu plan, debes justificar explícitamente cómo tu código cumplirá con `SOLID_PRINCIPLES.md` y qué patrón(es) de `DESIGN_PATTERNS.md` vas a implementar. No escribas ni modifiques código fuente hasta que yo revise y apruebe tu plan."*
+**Al EJECUTAR una nueva tarea (Para forzar la calidad del código y crear la rama), copia y pega:**
+> *"Vamos a trabajar en la Historia de Usuario [NÚMERO]. Primero, asegúrate de crear y cambiarte a una rama `feature/[nombre-tarea]` a partir de `develop`. Antes de programar nada, redacta un Implementation Plan. En tu plan, justifica cómo cumplirás con `SOLID_PRINCIPLES.md` y `DESIGN_PATTERNS.md`. No escribas código fuente hasta que yo revise y apruebe tu plan."*
 
 **Al FINALIZAR tu sesión (Para documentar y guardar), copia y pega:**
-> *"Hemos terminado por hoy. Escribe una nueva entrada en `docs/AGENT_LOGS.md` indicando la fecha, quiénes somos (Agente de Boris/David), qué Vertical Slice avanzamos, qué archivos modificamos y qué sigue. Después, haz commit y push a nuestra rama."*
+> *"Hemos terminado por hoy. Escribe una nueva entrada en `docs/AGENT_LOGS.md` indicando la fecha, autor, Vertical Slice, archivos modificados y siguientes pasos. Luego, ejecuta **Commits Atómicos** siguiendo la convención de `GIT_CHEATSHEET.md` (feat, fix, docs, refactor). Finalmente haz un `git push origin feature/[tu-rama]`."*
 
 ## 3. Estructura de Directorios (Arquitectura del Proyecto)
 
