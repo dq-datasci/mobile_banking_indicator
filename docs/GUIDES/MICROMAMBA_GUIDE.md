@@ -8,16 +8,16 @@ Nosotros usamos **Micromamba** (una versión ultrarrápida de Conda) porque perm
 
 Abre la terminal en la carpeta del proyecto y ejecuta:
 ```bash
-micromamba create -n banco_env python=3.10 r-base
+micromamba create -n omnivoc_env python=3.10 r-base
 ```
-**¿Qué hace?** Crea un entorno virtual llamado `banco_env` con Python versión 3.10 y el lenguaje R preinstalados. Micromamba te preguntará si estás de acuerdo, presiona `Y` (Yes) y luego Enter.
+**¿Qué hace?** Crea un entorno virtual llamado `omnivoc_env` con Python versión 3.10 y el lenguaje R preinstalados. Micromamba te preguntará si estás de acuerdo, presiona `Y` (Yes) y luego Enter.
 
 ## 2. Entrar a la Burbuja (Cada vez que vayas a trabajar)
 
 ```bash
-micromamba activate banco_env
+micromamba activate omnivoc_env
 ```
-**¿Qué hace?** Te "mete" dentro de la burbuja. Notarás que el texto de tu terminal cambia para mostrar `(banco_env)` al principio. **Siempre debes hacer esto antes de ejecutar cualquier código.**
+**¿Qué hace?** Te "mete" dentro de la burbuja. Notarás que el texto de tu terminal cambia para mostrar `(omnivoc_env)` al principio. **Siempre debes hacer esto antes de ejecutar cualquier código.**
 
 *(Nota: Para salir de la burbuja y volver a la normalidad de tu computadora, usa `micromamba deactivate`).*
 
@@ -47,10 +47,10 @@ micromamba env export > environment.yml
 
 **Paso 2 (Boris):** Después de hacer `git pull` y ver que hay un `environment.yml` nuevo, Boris actualiza su burbuja así:
 ```bash
-micromamba update -n banco_env -f environment.yml
+micromamba update -n omnivoc_env -f environment.yml
 ```
 
 ## 💡 Flujo de Trabajo con Micromamba
 1. Abres la terminal en la carpeta del proyecto.
-2. Escribes `micromamba activate banco_env`.
+2. Escribes `micromamba activate omnivoc_env`.
 3. ¡Empiezas a programar y correr scripts!
