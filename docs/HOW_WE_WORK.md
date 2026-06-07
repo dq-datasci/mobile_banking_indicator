@@ -12,6 +12,7 @@ El proyecto DEBE estar finalizado, funcional y empaquetado para su presentación
 ## 3. Patrones de Diseño Obligatorios
 *   **Facade:** Para simplificar las llamadas complejas.
 *   **Adapter:** Para adaptar las APIs externas (Play Store/App Store).
+*   **Strategy:** Excelente para algoritmos intercambiables (Ej: tener un `PlayStoreScraper` y un `AppStoreScraper` que compartan la misma interfaz, o cambiar entre distintos modelos de ML).
 *   **Mediator:** Para desacoplar componentes.
 *   **Proxy:** Para caché y protección.
 *   **Coordinator:** En la Capa 4.
@@ -23,6 +24,7 @@ El proyecto DEBE estar finalizado, funcional y empaquetado para su presentación
 *   **Null Safety:** Evitar que los nulos rompan la aplicación ("el null es un mentirosillo").
 *   **No "Boolean Traps":** Usar Enums en vez de booleanos mágicos.
 *   **Idempotencia y Persistencia:** El procesamiento de datos (PySpark/Spark) debe ser idempotente. Si se cae a la mitad y se vuelve a correr, debe retomar sin duplicar datos. Usaremos bases locales (`.json`, `DuckDB`) para mantener el estado.
+*   **Data Contracts:** Obligatorio para el Pipeline de Datos. Definiremos contratos de datos explícitos (schemas, reglas de calidad y tipos) entre las capas de extracción (Bronze) y limpieza (Silver). Si los datos de Play Store no cumplen el contrato, el pipeline rechaza el lote antes de corromper la BD.
 
 ## 5. UI/UX y Orquestación Interactiva (CLI)
 *   **CLI Hermosa y Amigable:** Implementaremos un menú interactivo en la terminal usando la librería `rich`. Esta será nuestra "Capa 4 de Orquestación". Desde este menú se dispararán las extracciones, entrenamientos ML y el despliegue del Dashboard.
