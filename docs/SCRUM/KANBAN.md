@@ -1,25 +1,21 @@
 # Tablero Kanban Enterprise
 
-*Nota:* `[ ]` = Por hacer, `[/]` = En progreso, `[x]` = Completado.
+> **Leyenda (Pts a Horas):** `3 Pts` (~4h), `5 Pts` (~8h), `8 Pts` (~16h), `13 Pts` (~24+h)
 
-## Sprint 1: Data Engineering & Lakehouse (Días 1-2)
-- [ ] **Historia 1.1.1: Ingesta PlayStore/AppStore** (Pts: 8) [Asignado a: David (Data Engineer)]
-- [ ] **Historia 1.2.1: Lakehouse y Data Contracts** (Pts: 8) [Asignado a: Boris (Cloud Architect)]
-- [ ] **Historia 1.2.2: Anonimización ISO 27001** (Pts: 5) [Asignado a: Boris (Data Engineer)]
-- [ ] **Historia 1.3.1: CI/CD GitHub Actions** (Pts: 5) [Asignado a: David (DevOps)]
+## 🚀 RELEASE 1: MVP (Sprint 1 y Sprint 2)
+- [ ] **Historia 1.1.1: Ingesta PlayStore/AppStore** (Pts: 8) [David - Data Engineer]
+- [ ] **Historia 1.3.2: Menú CLI Orchestrator** (Pts: 8) [David - Desarrollador]
+- [ ] **Historia 1.2.3: NLP Sentiment Base** (Pts: 13) [David - Data Scientist]
+- [ ] **Historia 1.2.1: Modelo Probit/Logit (Churn y NPS)** (Pts: 13) [Boris - Econometrista]
+- [ ] **Historia 1.2.2: Cadenas de Markov** (Pts: 8) [Boris - Econometrista]
+- [ ] **Historia 1.3.1: Streamlit Dashboard (NPS y Patrón F)** (Pts: 8) [Boris - UI/UX Engineer]
 
-## Sprint 2: Expansión Omnicanal y MLOps (Días 3-4)
-- [ ] **Historia 1.1.2: Ingesta Redes (TikTok, IG, FB, X, Reddit, Trustpilot)** (Pts: 13) [Asignado a: David (Data Engineer)]
-- [ ] **Historia 2.1.1: EDA con ydata-profiling** (Pts: 5) [Asignado a: Boris (Data Analyst)]
-- [ ] **Historia 2.1.2: PyCaret Baseline Models** (Pts: 8) [Asignado a: David (MLOps)]
+## 🚀 RELEASE 2: B2B SaaS & Omnicanalidad (Sprint 3 y Sprint 4)
+- [ ] **Historia 2.1.1: Ingesta Redes (TikTok, IG, FB, X, Reddit)** (Pts: 13) [David - Data Engineer]
+- [ ] **Historia 2.1.2: Anonimización ISO 27001** (Pts: 5) [Boris - Data Engineer]
+- [ ] **Historia 2.2.1: FastAPI B2B Endpoint** (Pts: 13) [David - Backend]
+- [ ] **Historia 2.2.2: Agente RAG LangGraph** (Pts: 13) [David - AI Engineer]
 
-## Sprint 3: Econometría e Inteligencia Artificial (Días 5-6)
-- [ ] **Historia 2.2.1: Modelo Probit/Logit (Churn y NPS)** (Pts: 13) [Asignado a: Boris (Econometrista)]
-- [ ] **Historia 2.2.2: Cadenas de Markov** (Pts: 8) [Asignado a: Boris (Econometrista)]
-- [ ] **Historia 2.3.1: NLP Sentiment Omnicanal** (Pts: 13) [Asignado a: David (Data Scientist)]
-
-## Sprint 4: B2B Plataform, CLI y UI/UX (Días 7-8)
-- [ ] **Historia 3.1.1: Menú Interactivo (Capa 4 - Orchestrator)** (Pts: 8) [Asignado a: David (Desarrollador)]
-- [ ] **Historia 3.2.1: Agente RAG LangGraph** (Pts: 13) [Asignado a: David (AI Engineer)]
-- [ ] **Historia 3.3.1: FastAPI B2B Endpoint** (Pts: 13) [Asignado a: David (Backend Engineer)]
-- [ ] **Historia 3.4.1: Streamlit Dashboard (NPS y Patrón F)** (Pts: 8) [Asignado a: Boris (UI/UX Engineer)]
+## 🚀 RELEASE 3: Enterprise Scale (Sprint 5+)
+- [ ] **Historia 3.1.1: Migración a Kubernetes** (Pts: 13) [Boris - Cloud Architect]
+- [ ] **Historia 3.1.2: Streaming con Kafka** (Pts: 13) [David - Data Engineer]
