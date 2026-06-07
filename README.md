@@ -44,9 +44,18 @@ Nuestro código está ordenado siguiendo los principios de Arquitectura por Capa
 mobile_banking_indicator/
 ├── .gitignore             # Ignora entornos virtuales, datos pesados y caché
 ├── docs/                  # El Cerebro de Antigravity y Gestión Scrum
-│   ├── AGENT_LOGS.md      # Diario de lo que hace cada agente
-│   ├── HOW_WE_WORK.md     # Reglas técnicas permanentes (SOLID, etc.)
-│   ├── CONTEXT/           # Apuntes de las clases y bases teóricas
+│   ├── BUSINESS_MODEL.md         # Modelo de negocio, BaaS y Omnicanalidad
+│   ├── DEVOPS_MLOPS_SECURITY.md  # Políticas ISO 27001, CI/CD, Terraform y MLflow
+│   ├── ARCHITECTURE_DECISIONS.md # ADRs (Lakehouse, LangChain, OLAP, UI F-Pattern)
+│   ├── DEFERRED_FEATURES.md      # Registro de features no incluidas en el MVP (Microservicios, Kafka)
+│   ├── SPECS_KIT.md              # Estándar de desarrollo (GitHub Specs-Kit)
+│   ├── AGENT_LOGS.md             # Bitácora de colaboración con Antigravity
+│   ├── GIT_CHEATSHEET.md         # Guía de Git para Boris
+│   ├── HOW_WE_WORK.md            # Reglas del equipo, SRP, Idempotencia, CLI
+│   ├── MICROMAMBA_GUIDE.md       # Guía de entorno híbrido (R y Python)
+│   ├── CONTEXT/
+│   │   ├── ai_collaboration_context.md # Directrices de colaboración IA
+│   │   └── subjects_summary.md         # Resumen de metodologías universitarias
 │   └── SCRUM/             # Tableros Kanban y User Story Maps
 ├── notebooks/             # Entornos de exploración y pruebas (Databricks / EDA)
 ├── tests/                 # Pruebas unitarias de las diferentes capas
