@@ -1,0 +1,29 @@
+# Ambientes virtuales
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Archivos de caché y compilación
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Notebooks y Spark
+.ipynb_checkpoints
+spark-warehouse/
+metastore_db/
+derby.log
+*.parquet
+*.csv
+
+# SO y varios
+.DS_Store
+Thumbs.db
