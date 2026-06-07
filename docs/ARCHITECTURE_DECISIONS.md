@@ -36,3 +36,12 @@ Este documento registra todas las decisiones tecnológicas y de diseño importan
 *   **Alternativas Rechazadas:** App para celular, App de Escritorio nativa.
 *   **Justificación:** El objetivo final es un Dashboard Analítico (Indicador Sintético). Visualizar gráficos econométricos complejos y tablas PySpark en la pantalla de un celular brinda una pésima experiencia de usuario. Empaquetarlo como app de escritorio es limitante. Usaremos **Docker** para encapsular nuestro entorno y desplegaremos la aplicación web en la nube (ej. Streamlit Cloud o AWS) para que cualquier profesor o jurado pueda interactuar con el proyecto simplemente usando un link en su navegador.
 
+## ADR 008: Arquitectura de Agentes IA (LangChain y LangGraph)
+*   **Decisión:** Mantendremos LangChain y LangGraph como el cerebro lógico para el procesamiento avanzado y agentes RAG.
+*   **Justificación:** El RAG nos permitirá "chatear con las quejas de los usuarios". LangGraph nos permite construir agentes con estado persistente. Para este proyecto, el módulo LangChain servirá de soporte para el análisis NLP complejo y la interrogación de los contratos de datos.
+
+## ADR 009: Principios UX/UI del Dashboard (Patrón F y Storytelling)
+*   **Decisión:** El Dashboard se diseñará usando el **Patrón F**, Jerarquía Visual estricta, un *Grid System* y la técnica de *Storytelling*.
+*   **Alternativas Rechazadas:** Dashboard de "tablero caótico" sin flujo de lectura (ej. Z-Pattern).
+*   **Justificación:** Los ejecutivos no leen, escanean. El **Patrón F** dicta que lo más crítico va arriba a la izquierda y el contenido fluye hacia abajo. Usaremos **Storytelling** para responder en secuencia: ¿Qué pasó? (Métricas generales), ¿Por qué pasó? (Modelos NLP causales), ¿Qué debemos hacer? (Árboles de Decisión y Optimización).
+

@@ -1,38 +1,24 @@
-# Tablero Kanban del Proyecto
-
-Este tablero mapea las historias de usuario definidas en `USER_STORY_MAP.md` hacia su ejecución diaria.
+# Tablero Kanban Enterprise
 
 *Nota:* `[ ]` = Por hacer, `[/]` = En progreso, `[x]` = Completado.
 
-## Release 1: Pipeline de Datos e Infraestructura Base (Días 1-2)
+## Sprint 1: Data Engineering & Lakehouse (Días 1-2)
+- [ ] **Historia 1.1.1: Ingesta PlayStore/AppStore** [Asignado: Data Engineer - David]
+- [ ] **Historia 1.2.1: Lakehouse y Data Contracts** [Asignado: Cloud Architect - David]
+- [ ] **Historia 1.2.2: Anonimización ISO 27001** [Asignado: Data Engineer - Boris]
+- [ ] **Historia 1.3.1: CI/CD GitHub Actions** [Asignado: DevOps - Boris]
 
-### Tareas Generales de Configuración
-- [ ] Subir el código inicial a GitHub e invitar a Boris como colaborador. (Asignado a: David)
-- [ ] Configuración inicial del entorno Micromamba con Python y R. (Asignado a: David)
+## Sprint 2: Expansión Omnicanal y MLOps (Días 3-4)
+- [ ] **Historia 1.1.2: Ingesta Redes (TikTok, IG, FB, X, Reddit)** [Asignado: Data Engineer - David]
+- [ ] **Historia 2.1.1: EDA con ydata-profiling** [Asignado: Data Analyst - Boris]
+- [ ] **Historia 2.1.2: PyCaret Baseline Models** [Asignado: MLOps - David]
 
-### 🟦 1.1 Extracción de Reseñas
-- [ ] **Historia 1.1.1: Scraping Básico** (Pts: 5) [Asignado: David]
+## Sprint 3: Econometría e Inteligencia Artificial (Días 5-6)
+- [ ] **Historia 2.2.1: Modelo Probit/Logit** [Asignado: Econometrista - Boris]
+- [ ] **Historia 2.2.2: Cadenas de Markov** [Asignado: Econometrista - Boris]
+- [ ] **Historia 2.3.1: NLP Sentiment con LangChain** [Asignado: Data Scientist - David]
 
-### 🟦 1.2 Limpieza y EDA
-- [ ] **Historia 1.2.1: Limpieza de Texto** (Pts: 8) [Asignado: Boris]
-
----
-
-## Release 2: Modelado Analítico y Econometría (Días 3-4)
-
-### 🟦 2.1 Análisis de Sentimiento (NLP)
-- [ ] **Historia 2.1.1: Clasificador NLP** (Pts: 13) [Asignado: David]
-
-### 🟦 2.2 Modelado Econométrico
-- [ ] **Historia 2.2.1: Modelo Probit/Logit** (Pts: 13) [Asignado: Boris]
-
----
-
-## Release 3: Orquestación CLI, RAG y Dashboard (Días 4-5)
-
-### 🟦 3.1 Orquestación y CLI Interactiva
-- [ ] **Historia 3.1.1: Menú Interactivo (Capa 4)** (Pts: 8) [Asignado: David]
-- [ ] **Historia 3.1.2: Bot RAG de Consultas** (Pts: 8) [Asignado: David]
-
-### 🟦 3.2 Visualización Final
-- [ ] **Historia 3.2.1: Dashboard Streamlit** (Pts: 8) [Asignado: Boris]
+## Sprint 4: B2B Plataform & UI/UX (Días 7-8)
+- [ ] **Historia 3.1.1: Agente RAG LangGraph** [Asignado: AI Engineer - David]
+- [ ] **Historia 3.2.1: FastAPI B2B Endpoint** [Asignado: Backend Engineer - David]
+- [ ] **Historia 3.3.1: Streamlit Dashboard (Patrón F)** [Asignado: UI/UX Engineer - Boris]
