@@ -25,3 +25,14 @@ Este documento registra todas las decisiones tecnológicas y de diseño importan
 ## ADR 005: Patrón Strategy y Data Contracts
 *   **Decisión:** Implementar Data Contracts entre capas y el patrón Strategy para los extractores.
 *   **Justificación:** Cumplimiento de Principios SOLID. Si mañana se quiere agregar una nueva fuente (ej. reseñas de Facebook), solo se añade una nueva *Strategy* sin tocar la orquestación. Los *Data Contracts* aseguran que ninguna basura de la red ensucie la base de datos de análisis.
+
+## ADR 006: Monolito Modular vs Microservicios
+*   **Decisión:** El proyecto se construirá como un **Monolito Modular** (todo el código en un solo repositorio estructurado por carpetas).
+*   **Alternativa Rechazada:** Microservicios, Kubernetes.
+*   **Justificación:** Para un proyecto de Ciencia de Datos / BI, usar Microservicios y Kubernetes es una sobreingeniería masiva (overkill) que solo añadiría latencia de red y costos de servidor. Al usar un Monolito "Modular" (gracias a nuestras capas `src/core`, `src/use_cases`), mantenemos la simplicidad de un solo código base, pero con la limpieza y desacoplamiento como si fueran microservicios. 
+
+## ADR 007: Docker y Estrategia de Despliegue (Web vs Desktop/Mobile)
+*   **Decisión:** El producto final se "dockerizará" (Docker) para ser desplegado en la **Web** (Nube).
+*   **Alternativas Rechazadas:** App para celular, App de Escritorio nativa.
+*   **Justificación:** El objetivo final es un Dashboard Analítico (Indicador Sintético). Visualizar gráficos econométricos complejos y tablas PySpark en la pantalla de un celular brinda una pésima experiencia de usuario. Empaquetarlo como app de escritorio es limitante. Usaremos **Docker** para encapsular nuestro entorno y desplegaremos la aplicación web en la nube (ej. Streamlit Cloud o AWS) para que cualquier profesor o jurado pueda interactuar con el proyecto simplemente usando un link en su navegador.
+
