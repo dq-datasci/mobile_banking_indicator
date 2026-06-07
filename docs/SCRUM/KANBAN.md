@@ -1,34 +1,37 @@
-# Roadmap & Kanban Ágil (Meta: 11 de Junio de 2026)
+# Tablero Kanban del Proyecto
 
-Tenemos **5 días** para completar este proyecto integrador. Este es el roadmap comprimido por día. 
-Antigravity debe mover las tareas a `[/]` cuando estén en progreso y a `[x]` cuando estén completadas.
+Este tablero mapea las historias de usuario definidas en `USER_STORY_MAP.md` hacia su ejecución diaria.
 
-## Sprint Acelerado (Jun 6 - Jun 11)
+*Nota:* `[ ]` = Por hacer, `[/]` = En progreso, `[x]` = Completado.
 
-### [x] Día 1 (Junio 6): Estructuración y Reglas
-- [x] Configurar repositorio y arquitectura (`docs/`).
-- [x] Elaborar el mapeo de materias y reglas SOLID/Scrum.
+## Release 1: Pipeline de Datos e Infraestructura Base (Días 1-2)
 
-### [ ] Día 2 (Junio 7): Datos (Ingeniería de Datos + Opt. Empresarial)
-- [ ] Configurar el entorno Micromamba (R + Python).
-- [ ] Desarrollar script PySpark para extraer reseñas de Apps bancarias (Play Store).
-- [ ] Limpieza de datos en DuckDB y EDA (`ydata_profiling`).
+### Tareas Generales de Configuración
+- [ ] Subir el código inicial a GitHub e invitar a Boris como colaborador. (Asignado a: David)
+- [ ] Configuración inicial del entorno Micromamba con Python y R. (Asignado a: David)
 
-### [ ] Día 3 (Junio 8): NLP (IA y ML I)
-- [ ] Configurar MLflow.
-- [ ] Desarrollar modelo NLP para clasificar sentimiento (positivo/negativo) y extraer fallas (bugs/caídas).
-- [ ] Orquestar el flujo (Capa 4) de Extracción -> Limpieza -> Clasificación NLP.
+### 🟦 1.1 Extracción de Reseñas
+- [ ] **Historia 1.1.1: Scraping Básico** (Pts: 5) [Asignado: David]
 
-### [ ] Día 4 (Junio 9): Econometría II y Optimización
-- [ ] Construir Modelo Logit/Probit para predecir insatisfacción en base a fallas técnicas.
-- [ ] Construir Cadenas de Markov estimando transición de usuarios Satisfechos -> Insatisfechos.
-- [ ] Guardar resultados en BD (ACID).
+### 🟦 1.2 Limpieza y EDA
+- [ ] **Historia 1.2.1: Limpieza de Texto** (Pts: 8) [Asignado: Boris]
 
-### [ ] Día 5 (Junio 10): Dashboard (BI)
-- [ ] Construir la interfaz en Streamlit.
-- [ ] Integrar gráficas interactivas con Plotly.
+---
 
-### [ ] Día 6 (Junio 11): Cierre y Empaquetado
-- [ ] Revisión de arquitectura (Principios SOLID).
-- [ ] Validación de la norma ISO 9001 (Sistemas Integrados de Gestión).
-- [ ] Congelar repositorio para presentación.
+## Release 2: Modelado Analítico y Econometría (Días 3-4)
+
+### 🟦 2.1 Análisis de Sentimiento (NLP)
+- [ ] **Historia 2.1.1: Clasificador NLP** (Pts: 13) [Asignado: David]
+
+### 🟦 2.2 Modelado Econométrico
+- [ ] **Historia 2.2.1: Modelo Probit/Logit** (Pts: 13) [Asignado: Boris]
+
+---
+
+## Release 3: RAG, Orquestación y Dashboard (Días 4-5)
+
+### 🟦 3.1 Orquestación y RAG
+- [ ] **Historia 3.1.1: Bot RAG de Consultas** (Pts: 8) [Asignado: David]
+
+### 🟦 3.2 Visualización Final
+- [ ] **Historia 3.2.1: Dashboard Streamlit** (Pts: 8) [Asignado: Boris]
