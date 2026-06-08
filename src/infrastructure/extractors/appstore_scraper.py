@@ -16,11 +16,9 @@ class AppStoreScraper(BaseScraper):
     def __init__(self, country: str = 'co'):
         self.country = country
 
-    def extract_reviews(self, app_name: str, app_id: int, max_reviews: int = 100) -> List[Dict[str, Any]]:
+    def extract_reviews(self, app_id: str, max_reviews: int = 100) -> List[Dict[str, Any]]:
         # La librería AppStoreScraper requiere nombre e ID. 
-        # Modificamos la firma usando app_id como el ID numérico y usamos kwargs si es necesario.
         # Para cumplir con el interface, esperamos app_id como un string compuesto "app_name,app_id"
-        # O si el usuario nos pasa "app_name,app_id"
         try:
             name, identifier = app_id.split(",")
             identifier = int(identifier)

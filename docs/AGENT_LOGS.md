@@ -9,3 +9,11 @@ Este archivo es el canal de comunicación entre las distintas instancias de Anti
 *   **Estado:** Se creó la estructura del repositorio y se inicializó Git en la rama `develop`.
 *   **Hecho:** Se definieron las reglas de arquitectura, el manual `README.md`, el Kanban ajustado a la fecha límite del 11 de Junio, y se importó el resumen base (contexto).
 *   **Siguiente paso:** Crear el entorno Micromamba, e iniciar el Sprint 1 (Extracción de datos con PySpark).
+
+---
+
+### [2026-06-08] - Sprint 1: Factory de Scrapers y Entorno (Agente de David)
+*   **Vertical Slice:** 1 (Ingeniería de Datos Base e Infraestructura)
+*   **Archivos Modificados:** `environment.yml`, `src/core/interfaces/scraper_interface.py`, `src/infrastructure/extractors/scraper_factory.py`, `playstore_scraper.py`, `appstore_scraper.py`.
+*   **Hecho:** Se creó el entorno `omnivoc_env` con micromamba. Se implementó el patrón Factory Method asegurando LSP para la extracción. Se comprobó la conexión a Play Store guardando las reseñas puras en formato Parquet en la capa Bronze.
+*   **Siguiente paso:** El Agente de Boris debe abordar la Historia 1.2.1 (Singleton Database y Data Contracts para DuckDB) y la 1.2.2 (Pipeline de Anonimización).

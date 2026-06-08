@@ -38,3 +38,6 @@ logs/
 # SO y varios
 .DS_Store
 Thumbs.db
+
+# Large files
+*.pdf
