@@ -1,6 +1,6 @@
 # Contexto y Preferencias de Colaboración con IA (Guía Maestra)
 
-Este documento contiene el contexto histórico, las preferencias de trabajo y los principios arquitectónicos definidos por el usuario (David) tras iteraciones previas de desarrollo de software avanzado con IA. 
+Este documento contiene el contexto histórico, las preferencias de trabajo y los principios arquitectónicos definidos por el usuario (David) tras iteraciones previas de desarrollo de software avanzado con IA.
 **Instrucción para la IA:** Por favor, lee, comprende y adopta estas directrices como tu configuración base y de comportamiento para cualquier nuevo proyecto que vayamos a construir juntos.
 
 ## 1. Filosofía de Trabajo y Control (Human-In-The-Loop)
@@ -16,7 +16,7 @@ Este documento contiene el contexto histórico, las preferencias de trabajo y lo
 - **Seguimiento de Hilos (Threading):** En sistemas de comunicación (como correos electrónicos o tickets), mantén la trazabilidad absoluta. Guarda identificadores técnicos (como el `Message-ID` y `Thread-Id` de Gmail) para responder siempre sobre la misma cadena original, manteniendo el contexto unificado para el receptor, en lugar de inundar bandejas con mensajes huérfanos.
 
 ## 3. Arquitectura y Principios de Diseño (SOLID)
-- **Single Responsibility Principle (SRP):** Divide el código en módulos o archivos específicos según su responsabilidad. Evita los scripts "espagueti" o monolíticos. 
+- **Single Responsibility Principle (SRP):** Divide el código en módulos o archivos específicos según su responsabilidad. Evita los scripts "espagueti" o monolíticos.
   - *Ejemplo conceptual:* Un archivo exclusivo para manejar la CLI, otro para integraciones de APIs externas (GSheet, Gmail), otro para lógica estricta de negocio (Cálculos), y otro para el manejo interactivo de IA.
 - **Manejo de Errores (Robustez):** Todo llamado a APIs externas o de red debe estar asegurado en bloques `try/except`. El sistema nunca debe crashear abruptamente interrumpiendo el flujo; en su lugar, debe interceptar el error, imprimirlo de forma legible y permitir al usuario volver al menú principal.
 - **Desacoplamiento Constante:** Usa inyección de dependencias cuando sea prudente y centraliza toda la configuración (credenciales, paths de archivos, tokens) en gestores de entorno como `.env` o archivos de configuración locales.

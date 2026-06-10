@@ -1,74 +1,189 @@
-# Mapa de Historias de Usuario (User Story Map)
+# Mapa de Historias de Usuario (Product Roadmap)
 
-Este mapa organiza el proyecto de forma visual jerárquica (Épicas -> Features -> Historias de Usuario), preparado para dividirse en "Releases" o Sprints.
+Este mapa define la visión del producto B2B SaaS a nivel Enterprise. La ejecución de las historias sigue la filosofía de **Vertical Slices**: no construimos capas aisladas, sino funcionalidades de extremo a extremo que aporten valor inmediato.
 
-## 🟧 ACTIVIDAD 1: Pipeline de Datos e Ingeniería (PySpark)
-
-### 🟦 1.1 Extracción de Reseñas
-**Historia 1.1.1: Scraping Básico**
-**Pts: 5** | **Asignado a: David**
-Yo como Ingeniero de Datos necesito extraer las reseñas públicas de la Play Store de los principales bancos de Bolivia de forma que tengamos un conjunto de datos crudos para analizar.
-*Criterios de Aceptación:*
-[ ] Código en PySpark capaz de extraer al menos 5,000 reseñas.
-[ ] Se guardan los datos en formato Parquet o CSV en la capa "Bronze" de la base de datos (DuckDB local).
-[ ] Control de errores para evitar bloqueos por rate-limit.
-
-### 🟦 1.2 Limpieza y EDA
-**Historia 1.2.1: Limpieza de Texto**
-**Pts: 8** | **Asignado a: Boris**
-Yo como Científico de Datos necesito limpiar el texto (eliminar emojis irrelevantes, normalizar modismos bolivianos, corregir ortografía) de forma que el modelo de NLP reciba texto de alta calidad.
-*Criterios de Aceptación:*
-[ ] Script en PySpark que elimina stop-words y caracteres especiales.
-[ ] Creación de un diccionario básico de modismos financieros locales.
-[ ] Se guardan los datos limpios en la capa "Silver".
+> **Leyenda de Puntos de Historia (Pts):**
+> *   `3 Pts`: ~ 4 horas (Medio día)
+> *   `5 Pts`: ~ 8 horas (1 día completo)
+> *   `8 Pts`: ~ 12-16 horas (1.5 a 2 días)
 
 ---
 
-## 🟧 ACTIVIDAD 2: Modelado Analítico (IA, ML y Econometría)
+# 🚀 RELEASE 1: MVP (Mínimo Producto Viable - Presentación Universitaria)
 
-### 🟦 2.1 Análisis de Sentimiento (NLP)
-**Historia 2.1.1: Clasificador NLP**
-**Pts: 13** | **Asignado a: David**
-Yo como Analista necesito aplicar un modelo de procesamiento de lenguaje natural (HuggingFace/Transformers) a los textos de forma que pueda etiquetar cada reseña como Positiva, Negativa o Neutra.
-*Criterios de Aceptación:*
-[ ] Modelo integrado y corriendo sobre los datos "Silver".
-[ ] Tracking de los experimentos y precisión usando MLflow.
-[ ] Identificación y extracción de "Fallas Técnicas" vs "Quejas de Servicio".
+## 🟧 ACTIVIDAD 1: Data Engineering y DevOps (Cimientos y Lakehouse)
 
-### 🟦 2.2 Modelado Econométrico
-**Historia 2.2.1: Modelo Probit/Logit**
-**Pts: 13** | **Asignado a: Boris**
-Yo como Economista necesito correr un modelo de elección discreta (Logit/Probit) de forma que se estime la probabilidad de insatisfacción crítica basándose en variables como [frecuencia de caída de app, lentitud, error de token].
+### 🟦 1.1 Scraping Básico (Vertical Slice 1)
+**Historia 1.1.1: Factory de Scrapers y Extracción AppStore**
+**Pts: 8** | **Asignado a: David (Data Engineer)**
+Yo como Data Engineer necesito crear un patrón `Factory Method` para instanciar scrapers y extraer reseñas de las tiendas de apps de forma que podamos popular la capa Bronze.
 *Criterios de Aceptación:*
-[ ] Estimación del modelo en Quarto (R/Python).
-[ ] Validación de supuestos estadísticos (ej. Heterocedasticidad).
-[ ] Resultados exportados a la capa "Gold" para visualización.
+[x] Clase `ScraperFactory` implementada.
+[x] Código PySpark usando `google_play_scraper`.
+[x] Idempotencia (no duplicar reseñas si se corre dos veces).
+[x] Manejo de errores y paginación en las peticiones.
+
+### 🟦 1.2 Seguridad, Gobernanza y Lakehouse (Rol: Cloud Architect)
+**Historia 1.2.1: Singleton Database y Data Contracts**
+**Pts: 8** | **Asignado a: Boris (Cloud Architect)**
+Yo como Cloud Architect necesito configurar DuckDB/Databricks aplicando el patrón `Singleton` y contratos de datos estrictos (DIP) de forma que la basura de internet no contamine el análisis.
+*Criterios de Aceptación:*
+[x] Esquemas estrictos de tablas definidos con Pydantic.
+[x] Conexión a DB implementada como Singleton para ahorrar memoria.
+[x] Almacenamiento particionado en formato Parquet.
+
+**Historia 1.2.2: Pipeline de Anonimización (ISO 27001)**
+**Pts: 5** | **Asignado a: Boris (Data Engineer)**
+Yo como Data Engineer necesito aplicar hashing SHA-256 a los nombres de usuarios e IPs de forma que cumplamos con las políticas de privacidad.
+*Criterios de Aceptación:*
+[x] Nombres de usuario totalmente irreconocibles en la capa Silver.
+
+### 🟦 1.3 CI/CD y Automatización (Rol: DevOps Engineer)
+**Historia 1.3.1: GitHub Actions y Pre-commits**
+**Pts: 5** | **Asignado a: David (DevOps)**
+Yo como DevOps Engineer necesito pipelines de CI/CD de forma que el código se pruebe automáticamente antes de un merge.
+*Criterios de Aceptación:*
+[ ] Herramientas Flake8 y Black configuradas.
+[ ] GitHub Actions bloqueando pull requests que rompan el código.
+
+## 🟧 ACTIVIDAD 2: Data Science, Econometría y MLOps
+
+### 🟦 2.1 EDA y Auto-ML (Rol: Data Analyst)
+**Historia 2.1.1: Análisis Exploratorio con ydata-profiling**
+**Pts: 5** | **Asignado a: Boris (Data Analyst)**
+Yo como Analista de Datos necesito generar reportes automáticos de calidad de forma que entienda la distribución estadística de la capa Silver.
+*Criterios de Aceptación:*
+[ ] Reporte HTML generado automáticamente en cada corrida.
+
+**Historia 2.1.2: Selección de Algoritmos Base (PyCaret)**
+**Pts: 8** | **Asignado a: David (MLOps)**
+Yo como MLOps Engineer necesito usar PyCaret de forma que pueda entrenar y comparar rápidamente decenas de algoritmos antes del tuning fino.
+*Criterios de Aceptación:*
+[ ] Pipeline de PyCaret corriendo en MLflow.
+
+### 🟦 2.2 Modelos Econométricos Core (Rol: Econometrista)
+**Historia 2.2.1: Modelo Probit/Logit de Riesgo de Fuga (Churn)**
+**Pts: 8** | **Asignado a: Boris (Econometrista)**
+Yo como Econometrista necesito modelar la probabilidad de *Churn* usando `statsmodels` de forma que podamos alertar al banco sobre fallos críticos.
+*Criterios de Aceptación:*
+[ ] Variable Proxy de Churn creada y documentada.
+[ ] Logit modelando la causalidad estadística.
+[ ] Pruebas de heterocedasticidad superadas.
+
+**Historia 2.2.2: Cálculo Econométrico del NPS**
+**Pts: 5** | **Asignado a: Boris (Econometrista)**
+Yo como Econometrista necesito calcular el Net Promoter Score en base a las estrellas.
+*Criterios de Aceptación:*
+[ ] Evolución temporal del NPS calculada (Promotores vs Detractores).
+
+**Historia 2.2.3: Cadenas de Markov de Satisfacción**
+**Pts: 8** | **Asignado a: Boris (Econometrista)**
+Yo como Econometrista necesito modelar la matriz de transición de los usuarios (Satisfecho -> Frustrado -> Fuga) usando secuencias temporales.
+*Criterios de Aceptación:*
+[ ] Matriz de probabilidad de transición matemática validada.
+
+### 🟦 2.3 Procesamiento de Lenguaje Natural (Rol: Data Scientist)
+**Historia 2.3.1: Facade NLP y Clasificación de Sentimiento**
+**Pts: 8** | **Asignado a: David (Data Scientist)**
+Yo como Científico de Datos necesito aplicar el patrón `Facade` para ocultar la complejidad de HuggingFace y clasificar sentimientos.
+*Criterios de Aceptación:*
+[ ] Clase `NLPFacade` exponiendo un método simple `analyze()`.
+[ ] Precisión > 85% en clasificación.
+
+**Historia 2.3.2: Extracción Temática y Tracking (MLflow)**
+**Pts: 5** | **Asignado a: David (MLOps)**
+Yo como MLOps necesito trackear el modelo en MLflow.
+*Criterios de Aceptación:*
+[ ] Experimentos registrados sistemáticamente en MLflow local.
+
+## 🟧 ACTIVIDAD 3: UI/UX y Orquestación
+
+### 🟦 3.1 Orquestación y Patrón Command (Rol: Backend Developer)
+**Historia 3.1.1: Menú Interactivo CLI (Capa 4)**
+**Pts: 8** | **Asignado a: David (Desarrollador)**
+Yo como Desarrollador necesito un menú CLI (`rich`) aplicando el patrón `Command` de forma que pueda orquestar todas las ejecuciones limpiamente.
+*Criterios de Aceptación:*
+[ ] Interfaz de consola con estilo visual.
+[ ] Patrón Command encapsulando las órdenes del usuario.
+
+### 🟦 3.2 Visualización Final y Observer (Rol: UI/UX Engineer)
+**Historia 3.2.1: Streamlit Dashboard (Patrón F)**
+**Pts: 8** | **Asignado a: Boris (UI/UX Engineer)**
+Yo como UI/UX Engineer necesito diseñar la interfaz siguiendo la jerarquía visual del Patrón F, apoyándome en el patrón `Observer` para las métricas reactivas.
+*Criterios de Aceptación:*
+[ ] Gráficas Plotly avanzadas (sin espacios muertos).
+[ ] KPIs claros en la parte superior (NPS, Churn Promedio).
+[ ] Storytelling aplicado en la disposición visual.
 
 ---
 
-## 🟧 ACTIVIDAD 3: Optimización y Dashboard (BI & Scrum)
+# 🚀 RELEASE 2: B2B SaaS & Omnicanalidad (Comercialización)
 
-### 🟦 3.1 Orquestación y CLI Interactiva
-**Historia 3.1.1: Menú Interactivo (Capa 4)**
-**Pts: 8** | **Asignado a: David**
-Yo como Desarrollador necesito un menú CLI interactivo (usando la librería `rich`) de forma que pueda orquestar las ejecuciones (scraping, ML, dashboard) sin ejecutar comandos largos, manteniendo idempotencia.
+### 🟦 4.1 Ingesta Omnicanal y Strategy (Rol: Data Engineer)
+**Historia 4.1.1: Scraping Redes Multimedia usando Strategy (TikTok, IG)**
+**Pts: 8** | **Asignado a: David (Data Engineer)**
+Yo como Data Engineer necesito aplicar el patrón `Strategy` para alternar algoritmos de extracción entre APIs oficiales y scrapers web para redes multimedia.
 *Criterios de Aceptación:*
-[ ] Interfaz de consola hermosa y profesional.
-[ ] Menú con opciones enumeradas (Ej: 1. Extraer Datos, 2. Entrenar Modelo, 3. Dashboard).
-[ ] Manejo robusto de errores (try/except) sin crashear.
+[ ] Patrón Strategy funcional.
+[ ] Integración a la capa Bronze.
 
-**Historia 3.1.2: Bot RAG de Consultas**
-**Pts: 8** | **Asignado a: David**
-Yo como Gerente del Banco necesito un asistente conversacional (LangChain RAG) integrado al proyecto de forma que pueda hacer preguntas en lenguaje natural sobre las reseñas de los clientes.
+**Historia 4.1.2: Scraping de Texto Corto (X, FB, Reddit, Trustpilot)**
+**Pts: 8** | **Asignado a: David (Data Engineer)**
+Yo como Data Engineer necesito un scraper para extraer texto puro de foros y Twitter.
 *Criterios de Aceptación:*
-[ ] Base de datos vectorial configurada localmente.
-[ ] Agente LangChain capaz de responder preguntas citando reseñas reales.
+[ ] Extracción con límites de Rate-Limit manejados.
 
-### 🟦 3.2 Visualización Final
-**Historia 3.2.1: Dashboard Streamlit**
-**Pts: 8** | **Asignado a: Boris**
-Yo como Tomador de Decisiones necesito un Dashboard interactivo de forma que pueda visualizar la evolución del indicador sintético de calidad (2023-2026).
+### 🟦 4.2 Banking as a Service y Adapter (Rol: Backend Engineer)
+**Historia 4.2.1: Arquitectura Base FastAPI usando Adapter**
+**Pts: 8** | **Asignado a: David (Backend Engineer)**
+Yo como Backend Engineer necesito levantar la API REST usando adaptadores (`Adapter Pattern`) para transformar el output de nuestros modelos al JSON esperado por los bancos.
 *Criterios de Aceptación:*
-[ ] App en Streamlit funcional.
-[ ] Gráficos en Plotly mostrando la evolución de sentimiento y las cadenas de Markov.
-[ ] Interfaz limpia, intuitiva y rápida.
+[ ] Swagger interactivo.
+[ ] Patrón Adapter implementado.
+
+**Historia 4.2.2: Seguridad y Load Balancing API**
+**Pts: 5** | **Asignado a: David (DevOps)**
+Yo como DevOps necesito asegurar que la API no colapse bajo concurrencia.
+*Criterios de Aceptación:*
+[ ] Rate limiting implementado. Latencia < 200ms.
+
+### 🟦 4.3 Agentes B2B Conversacionales (Rol: AI Engineer)
+**Historia 4.3.1: Setup Vector Database local (Chroma/FAISS)**
+**Pts: 5** | **Asignado a: David (AI Engineer)**
+Yo como AI Engineer necesito guardar las reseñas en embeddings.
+*Criterios de Aceptación:*
+[ ] Indexación correcta de documentos.
+
+**Historia 4.3.2: Agente LangChain/LangGraph (Memoria)**
+**Pts: 8** | **Asignado a: David (AI Engineer)**
+Yo como AI Engineer necesito dotar de razonamiento iterativo (ReAct) al chatbot.
+*Criterios de Aceptación:*
+[ ] Memoria de sesión funcional mediante LangGraph.
+
+---
+
+# 🚀 RELEASE 3: Enterprise Scale (Visión a Largo Plazo)
+
+### 🟦 5.1 Infraestructura Distribuida (Rol: Cloud Architect)
+**Historia 5.1.1: Dockerización de Servicios**
+**Pts: 5** | **Asignado a: Boris (DevOps)**
+Yo como DevOps necesito meter todo el monolito en contenedores Docker.
+*Criterios de Aceptación:*
+[ ] Docker Compose funcionales sin errores de entorno.
+
+**Historia 5.1.2: Migración a Kubernetes (K8s)**
+**Pts: 8** | **Asignado a: Boris (Cloud Architect)**
+Yo como Cloud Architect necesito levantar un cluster EKS para orquestar los contenedores.
+*Criterios de Aceptación:*
+[ ] Auto-scaling (HPA) configurado.
+
+### 🟦 5.2 Streaming en Tiempo Real (Rol: Data Engineer)
+**Historia 5.2.1: Setup Apache Kafka Cluster**
+**Pts: 5** | **Asignado a: David (Data Engineer)**
+Yo como Data Engineer necesito un broker Kafka para los flujos.
+*Criterios de Aceptación:*
+[ ] Kafka levantado.
+
+**Historia 5.2.2: Producers y Consumers**
+**Pts: 8** | **Asignado a: David (Data Engineer)**
+Yo como Data Engineer necesito ingestar reseñas en Tiempo Real sub-segundo.

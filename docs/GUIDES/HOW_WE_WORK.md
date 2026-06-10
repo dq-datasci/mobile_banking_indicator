@@ -12,17 +12,19 @@ El proyecto DEBE estar finalizado, funcional y empaquetado para su presentación
 ## 3. Patrones de Diseño Obligatorios
 *   **Facade:** Para simplificar las llamadas complejas.
 *   **Adapter:** Para adaptar las APIs externas (Play Store/App Store).
+*   **Strategy:** Excelente para algoritmos intercambiables (Ej: tener un `PlayStoreScraper` y un `AppStoreScraper` que compartan la misma interfaz, o cambiar entre distintos modelos de ML).
 *   **Mediator:** Para desacoplar componentes.
 *   **Proxy:** Para caché y protección.
 *   **Coordinator:** En la Capa 4.
 
-## 4. Principios SOLID y Clean Code
-*   **Single Responsibility (SRP)**
-*   **Dependency Inversion (DIP):** Depender de abstracciones.
-*   **Tell, Don't Ask:** No preguntar por el estado para tomar decisiones externas.
+## 4. Principios SOLID, Clean Code y Vertical Slices
+*   **Vertical Slices:** No construimos software en capas aisladas. Cada historia de usuario debe entregar valor de principio a fin (Ej. Scraping -> BD -> Dashboard para un solo caso de uso).
+*   **Single Responsibility (SRP)** y **Dependency Inversion (DIP)**. (Ver detalles completos en `SOLID_PRINCIPLES.md`).
 *   **Null Safety:** Evitar que los nulos rompan la aplicación ("el null es un mentirosillo").
 *   **No "Boolean Traps":** Usar Enums en vez de booleanos mágicos.
-*   **Idempotencia y Persistencia:** El procesamiento de datos (PySpark/Spark) debe ser idempotente. Si se cae a la mitad y se vuelve a correr, debe retomar sin duplicar datos. Usaremos bases locales (`.json`, `DuckDB`) para mantener el estado.
+*   **Idempotencia y Persistencia:** El procesamiento de datos debe ser idempotente.
+*   **Data Contracts:** Obligatorio para el Pipeline de Datos. Definiremos contratos de datos explícitos.
+*   **Observabilidad y Resiliencia:** Obligatorio implementar `try/except` robustos y el sistema `logging`. Nada falla silenciosamente.
 
 ## 5. UI/UX y Orquestación Interactiva (CLI)
 *   **CLI Hermosa y Amigable:** Implementaremos un menú interactivo en la terminal usando la librería `rich`. Esta será nuestra "Capa 4 de Orquestación". Desde este menú se dispararán las extracciones, entrenamientos ML y el despliegue del Dashboard.
