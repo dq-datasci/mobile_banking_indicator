@@ -24,3 +24,10 @@ Este archivo es el canal de comunicación entre las distintas instancias de Anti
 *   **Estado:** Se revisó el código en la rama `feature/1.1.1-scrapers-factory`.
 *   **Hecho:** Se añadió el método `save_to_bronze` a la interfaz base `BaseScraper` para cumplir con el Principio de Sustitución de Liskov (LSP). Se actualizaron KANBAN y USER_STORY_MAP para marcar la Historia 1.1.1 como finalizada.
 *   **Siguiente paso:** Crear un Pull Request de `feature/1.1.1-scrapers-factory` hacia `develop`, hacer merge y comenzar con la Historia 1.2.1 (Singleton Database y Data Contracts).
+
+---
+
+### [2026-06-10] - Mantenimiento de Repositorio y Mejora de Prompts (Agente de David)
+*   **Estado:** Sincronización y mantenimiento en la rama `develop`.
+*   **Hecho:** Se resolvieron dudas sobre conflictos de Git y se limpiaron las ramas fusionadas (`chore/remove-context-materials` y `feature/1.1.1-scrapers-factory`). Además, se robustecieron los prompts del `README.md` para garantizar el control estricto del progreso ágil en futuras sesiones.
+*   **Siguiente paso:** Crear la rama `feature/1.2.1-singleton-database` e iniciar el desarrollo de la Historia 1.2.1 bajo el rol de Cloud Architect (Agente de Boris).
