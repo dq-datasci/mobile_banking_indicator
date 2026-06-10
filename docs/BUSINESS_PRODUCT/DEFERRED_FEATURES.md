@@ -1,6 +1,6 @@
 # Registro de Decisiones Diferidas y Funcionalidades Pausadas (Deferred Features)
 
-En un proyecto de grado corporativo B2B SaaS, muchas veces surgen excelentes ideas arquitectónicas que, por limitaciones de tiempo para un MVP (Minimum Viable Product), deben pausarse o diferirse para versiones futuras. 
+En un proyecto de grado corporativo B2B SaaS, muchas veces surgen excelentes ideas arquitectónicas que, por limitaciones de tiempo para un MVP (Minimum Viable Product), deben pausarse o diferirse para versiones futuras.
 
 Este documento rastrea todas las decisiones tecnológicas o features que **hemos decidido conscientemente NO implementar en el Sprint actual**, junto con su justificación. Nada se pierde, todo se documenta.
 

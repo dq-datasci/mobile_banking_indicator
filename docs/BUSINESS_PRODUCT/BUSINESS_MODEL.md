@@ -1,7 +1,7 @@
 # Modelo de Negocio y Propuesta de Valor (Voice of Customer AI)
 
 ## 1. El Problema que Resolvemos
-Las corporaciones (Bancos, Fintechs, E-Commerce, Retail) invierten millones de dólares en marketing para adquirir usuarios, pero sufren una pérdida silenciosa y constante: el **Churn (Fuga de Clientes)**. 
+Las corporaciones (Bancos, Fintechs, E-Commerce, Retail) invierten millones de dólares en marketing para adquirir usuarios, pero sufren una pérdida silenciosa y constante: el **Churn (Fuga de Clientes)**.
 Actualmente, los gerentes leen reseñas aleatorias de la Play Store o ven un "promedio de 3 estrellas", pero no tienen forma de saber:
 1. ¿Qué porcentaje exacto de esas quejas se debe a un error técnico vs mala atención al cliente?
 2. ¿Qué error técnico está causando la mayor probabilidad de fuga inmediata?

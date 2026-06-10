@@ -69,7 +69,7 @@ Hola Antigravity, inicia sesión. Haz un `git pull origin develop`. Luego, lee e
 
 ### Planner Response
 
-¡Hola! Sesión iniciada y contexto asimilado. 
+¡Hola! Sesión iniciada y contexto asimilado.
 
 Aquí tienes el resumen de mi inicialización:
 
@@ -111,7 +111,7 @@ Vamos a trabajar en la Historia de Usuario [1.2.2]. Primero, asegúrate de crear
 
 He creado la rama `feature/1.2.2-anonimizacion-pipeline` de manera exitosa y me he cambiado a ella.
 
-También he generado el plan de implementación en el documento interactivo (ver `implementation_plan.md`) para cumplir estrictamente con los principios solicitados. 
+También he generado el plan de implementación en el documento interactivo (ver `implementation_plan.md`) para cumplir estrictamente con los principios solicitados.
 
 He dejado una **pregunta abierta** fundamental en el plan: Mi propuesta es aplicar el hashing SHA-256 en la misma validación de ingestión (con Pydantic `field_validator`) para asegurar *Privacidad por Diseño* pura, evitando que incluso nuestra base de datos local guarde temporalmente los datos sensibles antes del pipeline.
 
@@ -192,7 +192,7 @@ Hemos terminado por hoy. Primero, revisa `docs/SCRUM/USER_STORY_MAP.md` y `docs/
 4. **Repositorio Remoto:** Realicé el commit de documentación final usando el prefijo `docs:` y acabo de lanzar el *push* hacia GitHub (`origin feature/1.2.2-anonimizacion-pipeline`).
 
 ### ¿Debemos abrir el Pull Request a `develop`?
-**Sí, absolutamente.** La Historia 1.2.2 está 100% completada, contiene pruebas unitarias exhaustivas (5/5 en verde), y su alcance fue atómico y cerrado. 
+**Sí, absolutamente.** La Historia 1.2.2 está 100% completada, contiene pruebas unitarias exhaustivas (5/5 en verde), y su alcance fue atómico y cerrado.
 
 Puedes dirigirte a GitHub ahora mismo, crear el Pull Request desde `feature/1.2.2-anonimizacion-pipeline` hacia `develop`, hacer el merge, y luego tú (David) puedes retomar mañana iniciando la **Historia 1.3.1 (CI/CD GitHub Actions y Pre-commits)**.
 
@@ -200,7 +200,7 @@ Puedes dirigirte a GitHub ahora mismo, crear el Pull Request desde `feature/1.2.
 
 ### Planner Response
 
-Como confirmación adicional, el sistema me acaba de notificar que el *push* terminó exitosamente en segundo plano. 
+Como confirmación adicional, el sistema me acaba de notificar que el *push* terminó exitosamente en segundo plano.
 
 Aquí tienes el enlace directo que generó GitHub para que puedas crear el Pull Request con un solo clic:
 [Crear Pull Request para feature/1.2.2-anonimizacion-pipeline](https://github.com/dq-datasci/mobile_banking_indicator/pull/new/feature/1.2.2-anonimizacion-pipeline)
@@ -215,7 +215,7 @@ listo, ya hice el pull request, hice merge con develop e elimine la rama de gith
 
 ### Planner Response
 
-¡Excelente! Acabo de hacer el trabajo de limpieza en nuestro entorno local. 
+¡Excelente! Acabo de hacer el trabajo de limpieza en nuestro entorno local.
 
 Me he cambiado a la rama `develop`, descargué los últimos cambios del merge que acabas de hacer (`git pull origin develop`) y he eliminado nuestra rama local `feature/1.2.2-anonimizacion-pipeline` para mantener el repositorio completamente limpio.
 
