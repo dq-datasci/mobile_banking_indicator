@@ -36,7 +36,7 @@ Yo como Cloud Architect necesito configurar DuckDB/Databricks aplicando el patr�
 **Pts: 5** | **Asignado a: Boris (Data Engineer)**
 Yo como Data Engineer necesito aplicar hashing SHA-256 a los nombres de usuarios e IPs de forma que cumplamos con las políticas de privacidad.
 *Criterios de Aceptación:*
-[ ] Nombres de usuario totalmente irreconocibles en la capa Silver.
+[x] Nombres de usuario totalmente irreconocibles en la capa Silver.
 
 ### 🟦 1.3 CI/CD y Automatización (Rol: DevOps Engineer)
 **Historia 1.3.1: GitHub Actions y Pre-commits**

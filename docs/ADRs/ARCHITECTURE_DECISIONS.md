@@ -48,3 +48,8 @@ Este documento registra todas las decisiones tecnológicas y de diseño importan
 ## ADR 010: Patrón Singleton para Base de Datos y Pydantic Data Contracts
 *   **Decisión:** Se utilizará el patrón Singleton para mantener una única conexión global a DuckDB y `pydantic` para validar estrictamente los datos antes de insertarlos.
 *   **Justificación:** Instanciar múltiples veces DuckDB genera bloqueos y sobrecarga de memoria. El Singleton asegura eficiencia (SRP). Pydantic garantiza que la "basura" o cambios inesperados en las APIs de scraping no rompan ni corrompan el Data Lakehouse (Bronze Layer).
+
+## ADR 011: Anonimización de PII en la Capa de Ingesta (Privacy by Design)
+*   **Decisión:** Se utilizarán validadores integrados (`@field_validator` de Pydantic) en los *Data Contracts* (ej. `PlayStoreReviewContract`) para aplicar hashing SHA-256 de forma inmediata a los datos personales (PII) durante la instanciación.
+*   **Alternativas Rechazadas:** Extraer en texto plano hacia la capa Bronze y luego anonimizar usando PySpark/DuckDB antes de pasar a la capa Silver.
+*   **Justificación:** Aplicar *Privacy by Design* garantiza que la base de datos local (capa Bronze) nunca almacene texto plano. Esto mitiga radicalmente el riesgo de fuga de datos en entornos de desarrollo local y cumple de manera más estricta con ISO 27001 y PoLP.
