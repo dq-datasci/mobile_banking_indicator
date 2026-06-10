@@ -45,3 +45,6 @@ Este documento registra todas las decisiones tecnológicas y de diseño importan
 *   **Alternativas Rechazadas:** Dashboard de "tablero caótico" sin flujo de lectura (ej. Z-Pattern).
 *   **Justificación:** Los ejecutivos no leen, escanean. El **Patrón F** dicta que lo más crítico va arriba a la izquierda y el contenido fluye hacia abajo. Usaremos **Storytelling** para responder en secuencia: ¿Qué pasó? (Métricas generales), ¿Por qué pasó? (Modelos NLP causales), ¿Qué debemos hacer? (Árboles de Decisión y Optimización).
 
+## ADR 010: Patrón Singleton para Base de Datos y Pydantic Data Contracts
+*   **Decisión:** Se utilizará el patrón Singleton para mantener una única conexión global a DuckDB y `pydantic` para validar estrictamente los datos antes de insertarlos.
+*   **Justificación:** Instanciar múltiples veces DuckDB genera bloqueos y sobrecarga de memoria. El Singleton asegura eficiencia (SRP). Pydantic garantiza que la "basura" o cambios inesperados en las APIs de scraping no rompan ni corrompan el Data Lakehouse (Bronze Layer).
