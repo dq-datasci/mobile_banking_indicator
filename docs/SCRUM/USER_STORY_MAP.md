@@ -28,9 +28,9 @@ Yo como Data Engineer necesito crear un patrón `Factory Method` para instanciar
 **Pts: 8** | **Asignado a: Boris (Cloud Architect)**
 Yo como Cloud Architect necesito configurar DuckDB/Databricks aplicando el patrón `Singleton` y contratos de datos estrictos (DIP) de forma que la basura de internet no contamine el análisis.
 *Criterios de Aceptación:*
-[ ] Esquemas estrictos de tablas definidos con Pydantic.
-[ ] Conexión a DB implementada como Singleton para ahorrar memoria.
-[ ] Almacenamiento particionado en formato Parquet.
+[x] Esquemas estrictos de tablas definidos con Pydantic.
+[x] Conexión a DB implementada como Singleton para ahorrar memoria.
+[x] Almacenamiento particionado en formato Parquet.
 
 **Historia 1.2.2: Pipeline de Anonimización (ISO 27001)**
 **Pts: 5** | **Asignado a: Boris (Data Engineer)**

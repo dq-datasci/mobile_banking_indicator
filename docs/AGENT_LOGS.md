@@ -31,3 +31,12 @@ Este archivo es el canal de comunicación entre las distintas instancias de Anti
 *   **Estado:** Sincronización y mantenimiento en la rama `develop`.
 *   **Hecho:** Se resolvieron dudas sobre conflictos de Git y se limpiaron las ramas fusionadas (`chore/remove-context-materials` y `feature/1.1.1-scrapers-factory`). Además, se robustecieron los prompts del `README.md` para garantizar el control estricto del progreso ágil en futuras sesiones.
 *   **Siguiente paso:** Crear la rama `feature/1.2.1-singleton-database` e iniciar el desarrollo de la Historia 1.2.1 bajo el rol de Cloud Architect (Agente de Boris).
+
+---
+
+### [2026-06-10] - Historia 1.2.1: Singleton Database y Data Contracts (Agente de Boris)
+*   **Estado:** Completado en la rama `feature/1.2.1-singleton-database`.
+*   **Vertical Slice:** 1 (Ingeniería de Datos Base e Infraestructura)
+*   **Archivos Modificados:** `src/core/contracts/review_contract.py`, `src/core/interfaces/database_interface.py`, `src/infrastructure/database/duckdb_singleton.py`, `environment.yml`.
+*   **Hecho:** Se implementaron Pydantic Data Contracts para validar el esquema de datos. Se creó la interfaz `IDatabase` cumpliendo el principio DIP. Se implementó `DuckDBConnection` usando el patrón Singleton para prevenir sobrecarga de RAM. Se actualizaron las dependencias y se verificó todo exitosamente. También se agregó el ADR 010.
+*   **Siguiente paso:** Hacer Pull Request a `develop` de la rama actual y, posteriormente, iniciar la Historia 1.2.2 (Pipeline de Anonimización ISO 27001) asignada al rol de Data Engineer.
