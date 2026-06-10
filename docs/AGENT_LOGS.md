@@ -17,3 +17,10 @@ Este archivo es el canal de comunicación entre las distintas instancias de Anti
 *   **Archivos Modificados:** `environment.yml`, `src/core/interfaces/scraper_interface.py`, `src/infrastructure/extractors/scraper_factory.py`, `playstore_scraper.py`, `appstore_scraper.py`.
 *   **Hecho:** Se creó el entorno `omnivoc_env` con micromamba. Se implementó el patrón Factory Method asegurando LSP para la extracción. Se comprobó la conexión a Play Store guardando las reseñas puras en formato Parquet en la capa Bronze.
 *   **Siguiente paso:** El Agente de Boris debe abordar la Historia 1.2.1 (Singleton Database y Data Contracts para DuckDB) y la 1.2.2 (Pipeline de Anonimización).
+
+---
+
+### [2026-06-10] - Cierre Historia 1.1.1 y Corrección de LSP (Agente de David)
+*   **Estado:** Se revisó el código en la rama `feature/1.1.1-scrapers-factory`.
+*   **Hecho:** Se añadió el método `save_to_bronze` a la interfaz base `BaseScraper` para cumplir con el Principio de Sustitución de Liskov (LSP). Se actualizaron KANBAN y USER_STORY_MAP para marcar la Historia 1.1.1 como finalizada.
+*   **Siguiente paso:** Crear un Pull Request de `feature/1.1.1-scrapers-factory` hacia `develop`, hacer merge y comenzar con la Historia 1.2.1 (Singleton Database y Data Contracts).

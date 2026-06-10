@@ -18,10 +18,10 @@ Este mapa define la visión del producto B2B SaaS a nivel Enterprise. La ejecuci
 **Pts: 8** | **Asignado a: David (Data Engineer)**
 Yo como Data Engineer necesito crear un patrón `Factory Method` para instanciar scrapers y extraer reseñas de las tiendas de apps de forma que podamos popular la capa Bronze.
 *Criterios de Aceptación:*
-[ ] Clase `ScraperFactory` implementada.
-[ ] Código PySpark usando `google_play_scraper`.
-[ ] Idempotencia (no duplicar reseñas si se corre dos veces).
-[ ] Manejo de errores y paginación en las peticiones.
+[x] Clase `ScraperFactory` implementada.
+[x] Código PySpark usando `google_play_scraper`.
+[x] Idempotencia (no duplicar reseñas si se corre dos veces).
+[x] Manejo de errores y paginación en las peticiones.
 
 ### 🟦 1.2 Seguridad, Gobernanza y Lakehouse (Rol: Cloud Architect)
 **Historia 1.2.1: Singleton Database y Data Contracts**

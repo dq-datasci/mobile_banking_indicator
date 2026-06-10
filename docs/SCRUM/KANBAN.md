@@ -7,7 +7,7 @@
 ## 🚀 RELEASE 1: MVP (Presentación Universitaria)
 
 ### Sprint 1: Ingeniería de Datos Base e Infraestructura (Vertical Slice 1)
-- [ ] **Historia 1.1.1: Factory de Scrapers y Extracción AppStore** (Pts: 8) [David - Data Engineer]
+- [x] **Historia 1.1.1: Factory de Scrapers y Extracción AppStore** (Pts: 8) [David - Data Engineer]
 - [ ] **Historia 1.2.1: Singleton Database y Data Contracts** (Pts: 8) [Boris - Cloud Architect]
 - [ ] **Historia 1.2.2: Anonimización ISO 27001** (Pts: 5) [Boris - Data Engineer]
 - [ ] **Historia 1.3.1: CI/CD GitHub Actions y Pre-commits** (Pts: 5) [David - DevOps]
