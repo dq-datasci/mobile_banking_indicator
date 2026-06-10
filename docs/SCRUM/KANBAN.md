@@ -10,7 +10,7 @@
 - [x] **Historia 1.1.1: Factory de Scrapers y Extracción AppStore** (Pts: 8) [David - Data Engineer]
 - [x] **Historia 1.2.1: Singleton Database y Data Contracts** (Pts: 8) [Boris - Cloud Architect]
 - [x] **Historia 1.2.2: Anonimización ISO 27001** (Pts: 5) [Boris - Data Engineer]
-- [ ] **Historia 1.3.1: CI/CD GitHub Actions y Pre-commits** (Pts: 5) [David - DevOps]
+- [x] **Historia 1.3.1: CI/CD GitHub Actions y Pre-commits** (Pts: 5) [David - DevOps]
 - [ ] **Historia 2.1.1: Análisis Exploratorio ydata-profiling** (Pts: 5) [Boris - Data Analyst]
 
 ### Sprint 2: Econometría Básica y Orquestación (Vertical Slice 2)

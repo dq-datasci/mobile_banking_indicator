@@ -43,8 +43,8 @@ Yo como Data Engineer necesito aplicar hashing SHA-256 a los nombres de usuarios
 **Pts: 5** | **Asignado a: David (DevOps)**
 Yo como DevOps Engineer necesito pipelines de CI/CD de forma que el código se pruebe automáticamente antes de un merge.
 *Criterios de Aceptación:*
-[ ] Herramientas Flake8 y Black configuradas.
-[ ] GitHub Actions bloqueando pull requests que rompan el código.
+[x] Herramientas Ruff (Linter/Formatter) configuradas (ADR 012).
+[x] GitHub Actions bloqueando pull requests que rompan el código.
 
 ## 🟧 ACTIVIDAD 2: Data Science, Econometría y MLOps
 
