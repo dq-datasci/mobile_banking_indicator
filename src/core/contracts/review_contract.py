@@ -1,6 +1,8 @@
 from datetime import datetime
 from typing import Optional
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator
+
+from src.core.security.anonymizer import PIIAnonymizer
 
 class PlayStoreReviewContract(BaseModel):
     """
@@ -22,3 +24,8 @@ class PlayStoreReviewContract(BaseModel):
 
     class Config:
         frozen = True # Ensures instances are immutable
+        
+    @field_validator('userName', 'userImage', mode='before')
+    @classmethod
+    def anonymize_pii(cls, v: Optional[str]) -> Optional[str]:
+        return PIIAnonymizer.hash_sha256(v)
