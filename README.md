@@ -81,3 +81,19 @@ mobile_banking_indicator/
     ├── presentation/      # Interfaces: Código del Dashboard interactivo en Streamlit.
     └── orchestration/     # Capa 4: Menú interactivo CLI (construido con `rich`) que coordina todo.
 ```
+
+## 4. Gestión del Conocimiento con NotebookLM (La Memoria del Proyecto)
+
+Para asegurar que todo el contexto, las decisiones arquitectónicas complejas y las sesiones de código no se pierdan, mantenemos un flujo de exportación de conocimiento hacia **Google NotebookLM**.
+
+Hemos creado la carpeta `docs/NOTEBOOKLM_LOGS/` que contiene los archivos maestros de consolidación:
+*   `Antigravity_Logs_David.md`
+*   `Antigravity_Logs_Boris.md`
+
+**Al EXPORTAR una conversación (Para alimentar a NotebookLM), copia y pega este prompt:**
+> *"He exportado el registro de nuestra última conversación en el archivo `[nombre_del_archivo_exportado.md]`. Por favor, toma TODO el contenido de ese archivo y añádelo al final de `docs/NOTEBOOKLM_LOGS/Antigravity_Logs_[David/Boris].md` utilizando un separador visual claro (ej. `---`) y un título con la fecha y tema de la sesión. Una vez lo hayas añadido de forma segura, elimina el archivo temporal exportado original para mantener limpio el directorio de trabajo."*
+
+1. **Exportar Conversaciones:** Usa el prompt de arriba siempre que descargues o agregues una sesión importante.
+2. **Compilación Automática:** Antigravity se encargará de leer, formatear y concatenar el historial en el documento maestro correspondiente a tu usuario.
+3. **Carga en NotebookLM:** Subiremos estos dos documentos consolidados a nuestro proyecto en NotebookLM de forma periódica.
+4. **El Beneficio:** Esto convierte a NotebookLM en un "Oráculo" del proyecto que ha vivido todo el desarrollo paso a paso. Podremos usarlo para redactar la documentación final para la universidad, prepararnos para las defensas del proyecto, o simplemente preguntarle el porqué de una decisión técnica antigua, usando el historial real de trabajo como su fuente de verdad inmutable.
