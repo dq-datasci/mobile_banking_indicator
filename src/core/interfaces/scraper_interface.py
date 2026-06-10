@@ -20,3 +20,14 @@ class BaseScraper(abc.ABC):
             List[Dict[str, Any]]: Lista de reseñas extraídas.
         """
         pass
+
+    @abc.abstractmethod
+    def save_to_bronze(self, app_id: str, data: List[Dict[str, Any]]) -> None:
+        """
+        Guarda los datos extraídos en la capa Bronze (Lakehouse).
+        
+        Args:
+            app_id (str): Identificador único de la app.
+            data (List[Dict[str, Any]]): Los datos crudos a guardar.
+        """
+        pass
