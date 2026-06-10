@@ -29,7 +29,7 @@ Este documento registra todas las decisiones tecnológicas y de diseño importan
 ## ADR 006: Monolito Modular vs Microservicios
 *   **Decisión:** El proyecto se construirá como un **Monolito Modular** (todo el código en un solo repositorio estructurado por carpetas).
 *   **Alternativa Rechazada:** Microservicios, Kubernetes.
-*   **Justificación:** Para un proyecto de Ciencia de Datos / BI, usar Microservicios y Kubernetes es una sobreingeniería masiva (overkill) que solo añadiría latencia de red y costos de servidor. Al usar un Monolito "Modular" (gracias a nuestras capas `src/core`, `src/use_cases`), mantenemos la simplicidad de un solo código base, pero con la limpieza y desacoplamiento como si fueran microservicios. 
+*   **Justificación:** Para un proyecto de Ciencia de Datos / BI, usar Microservicios y Kubernetes es una sobreingeniería masiva (overkill) que solo añadiría latencia de red y costos de servidor. Al usar un Monolito "Modular" (gracias a nuestras capas `src/core`, `src/use_cases`), mantenemos la simplicidad de un solo código base, pero con la limpieza y desacoplamiento como si fueran microservicios.
 
 ## ADR 007: Docker y Estrategia de Despliegue (Web vs Desktop/Mobile)
 *   **Decisión:** El producto final se "dockerizará" (Docker) para ser desplegado en la **Web** (Nube).
@@ -53,3 +53,8 @@ Este documento registra todas las decisiones tecnológicas y de diseño importan
 *   **Decisión:** Se utilizarán validadores integrados (`@field_validator` de Pydantic) en los *Data Contracts* (ej. `PlayStoreReviewContract`) para aplicar hashing SHA-256 de forma inmediata a los datos personales (PII) durante la instanciación.
 *   **Alternativas Rechazadas:** Extraer en texto plano hacia la capa Bronze y luego anonimizar usando PySpark/DuckDB antes de pasar a la capa Silver.
 *   **Justificación:** Aplicar *Privacy by Design* garantiza que la base de datos local (capa Bronze) nunca almacene texto plano. Esto mitiga radicalmente el riesgo de fuga de datos en entornos de desarrollo local y cumple de manera más estricta con ISO 27001 y PoLP.
+
+## ADR 012: Sustitución de Flake8 y Black por Ruff como Linter/Formatter Principal
+*   **Decisión:** Se ha adoptado **Ruff** en el pipeline de CI/CD para reemplazar a Flake8 y Black en las tareas de linting y formateo de código, gestionado a través de hooks de `pre-commit`.
+*   **Alternativas Rechazadas:** Mantener Flake8 y Black como herramientas separadas.
+*   **Justificación:** Ruff está escrito en Rust y unifica tanto el linting (Flake8) como el formateo (Black) en una única herramienta que es órdenes de magnitud más rápida. Esto reduce la sobrecarga de dependencias, disminuye los tiempos de ejecución de las GitHub Actions y promueve una mejor experiencia de desarrollo (DX) al aplicar reglas de calidad de manera casi instantánea y estricta, lo que facilita el cumplimiento de SRP (identificando dead code e importaciones no usadas).

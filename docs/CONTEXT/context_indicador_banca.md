@@ -3,7 +3,7 @@
 Este documento resume los puntos clave extraídos de la investigación original y sirve como contexto base para el desarrollo del proyecto integrador (7 materias).
 
 ## 1. Problema a Resolver
-Aunque la banca móvil ha crecido en Bolivia, los bancos carecen de herramientas para procesar las reseñas (comentarios, quejas) en tiempo real para evaluar cuantitativamente la Calidad Percibida (UX). 
+Aunque la banca móvil ha crecido en Bolivia, los bancos carecen de herramientas para procesar las reseñas (comentarios, quejas) en tiempo real para evaluar cuantitativamente la Calidad Percibida (UX).
 
 ## 2. Objetivos del Proyecto
 Construir un **Indicador Sintético** que evalúe la calidad de la banca móvil en Bolivia empleando NLP y ML.

@@ -2,7 +2,7 @@
 
 Este mapa define la visión del producto B2B SaaS a nivel Enterprise. La ejecución de las historias sigue la filosofía de **Vertical Slices**: no construimos capas aisladas, sino funcionalidades de extremo a extremo que aporten valor inmediato.
 
-> **Leyenda de Puntos de Historia (Pts):** 
+> **Leyenda de Puntos de Historia (Pts):**
 > *   `3 Pts`: ~ 4 horas (Medio día)
 > *   `5 Pts`: ~ 8 horas (1 día completo)
 > *   `8 Pts`: ~ 12-16 horas (1.5 a 2 días)
@@ -43,8 +43,8 @@ Yo como Data Engineer necesito aplicar hashing SHA-256 a los nombres de usuarios
 **Pts: 5** | **Asignado a: David (DevOps)**
 Yo como DevOps Engineer necesito pipelines de CI/CD de forma que el código se pruebe automáticamente antes de un merge.
 *Criterios de Aceptación:*
-[ ] Herramientas Flake8 y Black configuradas.
-[ ] GitHub Actions bloqueando pull requests que rompan el código.
+[x] Herramientas Ruff (Linter/Formatter) configuradas (ADR 012).
+[x] GitHub Actions bloqueando pull requests que rompan el código.
 
 ## 🟧 ACTIVIDAD 2: Data Science, Econometría y MLOps
 

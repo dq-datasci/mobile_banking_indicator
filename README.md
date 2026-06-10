@@ -15,7 +15,7 @@ Para evitar sobrescribir el código del otro accidentalmente o causar conflictos
 *   **`feature/*`**: Son las ramas de "Trabajo Diario". Cada vez que vayas a programar algo nuevo, crearás una rama que nazca de `develop`. Por ejemplo: `feature/modelo-nlp` o `feature/extraccion-datos`.
 
 ### Tu Ciclo Diario de Trabajo (Paso a Paso)
-1.  **Sincronización:** Al iniciar tu sesión, asegúrate de estar en tu computadora en la rama `develop` y descargar los últimos cambios que haya subido tu compañero: 
+1.  **Sincronización:** Al iniciar tu sesión, asegúrate de estar en tu computadora en la rama `develop` y descargar los últimos cambios que haya subido tu compañero:
     *   `git checkout develop`
     *   `git pull origin develop`
 2.  **Nueva Tarea:** Crea tu rama de trabajo personal para la historia de usuario que elegiste:
@@ -29,7 +29,7 @@ Para evitar sobrescribir el código del otro accidentalmente o causar conflictos
 
 ## 2. Cómo Sincronizar a los Agentes (Antigravity)
 
-Los agentes de IA no tienen "telepatía" para saber qué hicimos en la computadora del otro. Nuestro repositorio es nuestro **"Segundo Cerebro"** (especialmente la carpeta `docs/`). 
+Los agentes de IA no tienen "telepatía" para saber qué hicimos en la computadora del otro. Nuestro repositorio es nuestro **"Segundo Cerebro"** (especialmente la carpeta `docs/`).
 
 Para que los agentes tengan contexto instantáneo, SIEMPRE comunícate con ellos usando estas instrucciones al inicio y al final de tu día:
 
@@ -40,7 +40,7 @@ Para que los agentes tengan contexto instantáneo, SIEMPRE comunícate con ellos
 > *"Vamos a trabajar en la Historia de Usuario [NÚMERO]. Primero, asegúrate de crear y cambiarte a una rama `feature/[nombre-tarea]` a partir de `develop`. Antes de programar nada, redacta un Implementation Plan justificando cómo cumplirás con `SOLID_PRINCIPLES.md`, `DEVOPS_MLOPS_SECURITY.md` y `DESIGN_PATTERNS.md`. Tras mi aprobación, a medida que escribas el código, asegúrate de ir realizando **Commits Atómicos** progresivos siguiendo `GIT_CHEATSHEET.md`."*
 
 **Al FINALIZAR tu sesión (Para documentar, actualizar el progreso y guardar), copia y pega:**
-> *"Hemos terminado por hoy. Primero, revisa `docs/SCRUM/USER_STORY_MAP.md` y `docs/SCRUM/KANBAN.md` para marcar con `[x]` las tareas y criterios de aceptación que completamos en esta sesión. Segundo, escribe una nueva entrada en `docs/AGENT_LOGS.md` indicando la fecha, autor, Vertical Slice, archivos modificados y cuál es la siguiente historia a trabajar. Tercero, verifica rápidamente que no hayamos roto ningún principio en `SOLID_PRINCIPLES.md`, `DEVOPS_MLOPS_SECURITY.md` y `DESIGN_PATTERNS.md`. Cuarto, verifica rápidamente si hay que actualizar, `DEFERRED_FEATURES.md`, `ARCHITECTURE_DECISIONS.md`, `GLOSSARY.md`, `SPECS_KIT.md`, `HOW_WE_WORK.md` y `MICROMAMBA_GUIDE.md`. Quinto, si se realizaron cambios en el paso anterior, escribe una nueva entrada en `docs/AGENT_LOGS.md`. Sexto, ejecuta **Commits Atómicos** siguiendo la convención de `GIT_CHEATSHEET.md` (feat, fix, docs, refactor). Finalmente, haz un `git push origin feature/[tu-rama]` y guíame sobre si ya debemos abrir un Pull Request hacia `develop`."*
+> *"Hemos terminado por hoy. Primero, revisa `docs/SCRUM/USER_STORY_MAP.md` y `docs/SCRUM/KANBAN.md` para marcar con `[x]` las tareas y criterios de aceptación que completamos en esta sesión. Segundo, escribe una nueva entrada en `docs/AGENT_LOGS.md` indicando la fecha, autor, Vertical Slice, archivos modificados y cuál es la siguiente historia a trabajar. Tercero, verifica rápidamente que no hayamos roto ningún principio en `SOLID_PRINCIPLES.md`, `DEVOPS_MLOPS_SECURITY.md` y `DESIGN_PATTERNS.md`. Cuarto, verifica rápidamente si hay que actualizar, `DEFERRED_FEATURES.md`, `ARCHITECTURE_DECISIONS.md`, `GLOSSARY.md`, `SPECS_KIT.md`, `HOW_WE_WORK.md` y `MICROMAMBA_GUIDE.md`. Quinto, si se realizaron cambios en el paso anterior, escribe una nueva entrada en `docs/AGENT_LOGS.md`. Sexto, ejecuta **Commits Atómicos** siguiendo la convención de `GIT_CHEATSHEET.md` (feat, fix, docs, refactor). Séptimo, haz un `git push origin feature/[tu-rama]`, crea el Pull Request hacia `develop` con `gh pr create --base develop --fill`, y prográmalo para auto-merge con `gh pr merge --squash --auto`. Finalmente, muévete a la rama `develop`, haz `git pull origin develop` y elimina la rama local con `git branch -D feature/[tu-rama]`."*
 
 ## 3. Estructura de Directorios (Arquitectura del Proyecto)
 
@@ -92,12 +92,12 @@ Hemos creado la carpeta `docs/NOTEBOOKLM_LOGS/` que contiene los archivos maestr
 
 **Al EXPORTAR una conversación (Para alimentar a NotebookLM), copia y pega este prompt:**
 > *"He exportado el registro de nuestra última conversación en el archivo `[nombre_del_archivo_exportado.md]`. Por favor, toma TODO el contenido de ese archivo y añádelo al final de `docs/NOTEBOOKLM_LOGS/Antigravity_Logs_[David/Boris].md`. Utiliza ESTE formato exacto como separador antes de pegar el contenido, llenando los datos correspondientes:
-> 
+>
 > # ====================================================================================================
 > # FECHA: [YYYY-MM-DD] | AUTOR: [Tu Nombre]
 > # SESIÓN: [Número] | TEMA: [Tema principal de la conversación]
 > # ====================================================================================================
-> 
+>
 > Una vez lo hayas añadido de forma segura, elimina el archivo temporal exportado original para mantener limpio el directorio de trabajo."*
 
 1. **Exportar Conversaciones:** Usa el prompt de arriba siempre que descargues o agregues una sesión importante.

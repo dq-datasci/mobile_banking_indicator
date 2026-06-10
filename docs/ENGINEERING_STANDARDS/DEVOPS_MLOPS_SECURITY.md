@@ -3,9 +3,9 @@
 Dado nuestro enfoque Enterprise y B2B, este documento rige las operaciones de infraestructura, despliegue de machine learning y cumplimiento normativo.
 
 ## 1. Seguridad Informática y Cumplimiento (ISO 27001)
-*   **Principle of Least Privilege (PoLP):** Ningún rol, sistema o base de datos tendrá más permisos de los estrictamente necesarios. 
+*   **Principle of Least Privilege (PoLP):** Ningún rol, sistema o base de datos tendrá más permisos de los estrictamente necesarios.
 *   **Private Subnets:** La base de datos (DuckDB/Lakehouse) vivirá en una red aislada sin acceso a internet público. Solo la capa de backend (FastAPI/Streamlit) podrá conectarse a ella mediante puertos encriptados.
-*   **Anonimización de Datos (PII):** Es estrictamente **ilegal** dentro de este proyecto almacenar nombres de usuario de las redes sociales en texto plano en la capa Silver/Gold. Todo dato personal (PII) en la capa Bronze debe ser hasheado (ej. usando SHA-256) antes del análisis. 
+*   **Anonimización de Datos (PII):** Es estrictamente **ilegal** dentro de este proyecto almacenar nombres de usuario de las redes sociales en texto plano en la capa Silver/Gold. Todo dato personal (PII) en la capa Bronze debe ser hasheado (ej. usando SHA-256) antes del análisis.
 
 ## 2. Infraestructura como Código (IaC) y DevOps
 *   **Terraform:** Toda la infraestructura en la nube (ej. instancias en Ubicloud, buckets en AWS) se definirá mediante código usando Terraform, eliminando la creación manual de recursos.

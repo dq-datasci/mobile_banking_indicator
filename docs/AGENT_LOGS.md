@@ -56,3 +56,12 @@ Este archivo es el canal de comunicación entre las distintas instancias de Anti
 *   **Estado:** Modificación de Documentación en la rama `feature/1.2.2-anonimizacion-pipeline`.
 *   **Hecho:** Se agregó el **ADR 011** a `ARCHITECTURE_DECISIONS.md` para asentar formalmente la decisión de aplicar "Privacy by Design" y realizar la anonimización de PII al nivel del *Data Contract* en lugar de hacerlo en pipelines asíncronos ELT.
 *   **Siguiente paso:** Terminar sesión y enviar Pull Request.
+
+---
+
+### [2026-06-10] - Historia 1.3.1: CI/CD GitHub Actions y Pre-commits (Agente de David)
+*   **Estado:** Completado en la rama `feature/1.3.1-ci-cd-precommits`.
+*   **Vertical Slice:** 1 (Ingeniería de Datos Base e Infraestructura)
+*   **Archivos Modificados:** `environment.yml`, `.pre-commit-config.yaml`, `.github/workflows/ci.yml`, `docs/ADRs/ARCHITECTURE_DECISIONS.md`, `README.md`.
+*   **Hecho:** Se implementaron los pipelines de CI/CD mediante GitHub Actions. Se instaló `ruff` y `pre-commit` para aplicar formateo y linting estricto automático, reemplazando a Flake8 y Black (aprobado mediante ADR 012). Adicionalmente, se configuró el repositorio remoto para utilizar `develop` como rama por defecto, y se automatizó la creación y eliminación de Pull Requests desde la terminal en el `README.md`.
+*   **Siguiente paso:** Cambiar al rol de Data Analyst (Boris) e iniciar la Historia 2.1.1 (Análisis Exploratorio ydata-profiling).

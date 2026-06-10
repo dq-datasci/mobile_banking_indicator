@@ -1,0 +1,28 @@
+name: CI/CD Pipeline
+
+on:
+  pull_request:
+    branches:
+      - develop
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+
+      - name: Setup Micromamba
+        uses: mamba-org/setup-micromamba@v1
+        with:
+          environment-file: environment.yml
+          environment-name: omnivoc_env
+          cache-environment: true
+
+      - name: Run pre-commit
+        shell: bash -el {0}
+        run: pre-commit run --all-files
+
+      - name: Run pytest
+        shell: bash -el {0}
+        run: pytest
