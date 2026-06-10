@@ -40,3 +40,19 @@ Este archivo es el canal de comunicación entre las distintas instancias de Anti
 *   **Archivos Modificados:** `src/core/contracts/review_contract.py`, `src/core/interfaces/database_interface.py`, `src/infrastructure/database/duckdb_singleton.py`, `environment.yml`.
 *   **Hecho:** Se implementaron Pydantic Data Contracts para validar el esquema de datos. Se creó la interfaz `IDatabase` cumpliendo el principio DIP. Se implementó `DuckDBConnection` usando el patrón Singleton para prevenir sobrecarga de RAM. Se actualizaron las dependencias y se verificó todo exitosamente. También se agregó el ADR 010.
 *   **Siguiente paso:** Hacer Pull Request a `develop` de la rama actual y, posteriormente, iniciar la Historia 1.2.2 (Pipeline de Anonimización ISO 27001) asignada al rol de Data Engineer.
+
+---
+
+### [2026-06-10] - Historia 1.2.2: Pipeline de Anonimización ISO 27001 (Agente de Boris)
+*   **Estado:** Completado en la rama `feature/1.2.2-anonimizacion-pipeline`.
+*   **Vertical Slice:** 1 (Ingeniería de Datos Base e Infraestructura)
+*   **Archivos Modificados:** `src/core/security/anonymizer.py`, `src/core/contracts/review_contract.py`, `tests/test_anonymizer.py`, `environment.yml`.
+*   **Hecho:** Se implementó `PIIAnonymizer` con hashing SHA-256 y se inyectó en el `PlayStoreReviewContract` como un validador de Pydantic. Ahora la PII se enmascara antes de tocar la BD Bronze (Privacy by Design). Las pruebas unitarias fueron exitosas (5/5).
+*   **Siguiente paso:** Hacer Pull Request a `develop` e iniciar la Historia 1.3.1 (CI/CD GitHub Actions y Pre-commits) asignada al rol de DevOps (David).
+
+---
+
+### [2026-06-10] - Actualización de Arquitectura ADR 011 (Agente de Boris)
+*   **Estado:** Modificación de Documentación en la rama `feature/1.2.2-anonimizacion-pipeline`.
+*   **Hecho:** Se agregó el **ADR 011** a `ARCHITECTURE_DECISIONS.md` para asentar formalmente la decisión de aplicar "Privacy by Design" y realizar la anonimización de PII al nivel del *Data Contract* en lugar de hacerlo en pipelines asíncronos ELT.
+*   **Siguiente paso:** Terminar sesión y enviar Pull Request.
