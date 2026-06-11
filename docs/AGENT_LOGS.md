@@ -65,3 +65,12 @@ Este archivo es el canal de comunicación entre las distintas instancias de Anti
 *   **Archivos Modificados:** `environment.yml`, `.pre-commit-config.yaml`, `.github/workflows/ci.yml`, `docs/ADRs/ARCHITECTURE_DECISIONS.md`, `README.md`.
 *   **Hecho:** Se implementaron los pipelines de CI/CD mediante GitHub Actions. Se instaló `ruff` y `pre-commit` para aplicar formateo y linting estricto automático, reemplazando a Flake8 y Black (aprobado mediante ADR 012). Adicionalmente, se configuró el repositorio remoto para utilizar `develop` como rama por defecto, y se automatizó la creación y eliminación de Pull Requests desde la terminal en el `README.md`.
 *   **Siguiente paso:** Cambiar al rol de Data Analyst (Boris) e iniciar la Historia 2.1.1 (Análisis Exploratorio ydata-profiling).
+
+---
+
+### [2026-06-11] - Documentación de Arquitectura de Datos y Schemas (Agente de Boris)
+*   **Estado:** Completado en la rama `feature/1.4-data-architecture-schemas`.
+*   **Vertical Slice:** 1 (Ingeniería de Datos Base e Infraestructura)
+*   **Archivos Modificados:** `docs/ENGINEERING_STANDARDS/DATA_ARCHITECTURE.md`, `docs/SCRUM/KANBAN.md`, `docs/SCRUM/USER_STORY_MAP.md`, `docs/ENGINEERING_STANDARDS/GLOSSARY.md`.
+*   **Hecho:** Se formalizó la arquitectura de datos ELT (Medallón) con diagramas Mermaid conceptuales y lógicos. Se definió el Star Schema para la capa Gold incorporando Dimensiones Lentamente Cambiantes (SCD Tipo 2). Se incluyeron las Historias 1.4.1 (Pipeline Silver) y 1.4.2 (Pipeline Gold) explícitamente en el Kanban y Story Map. Se actualizó el Glosario.
+*   **Siguiente paso:** Crear el Pull Request, fusionar a `develop` e iniciar la Historia 2.1.1 (Análisis Exploratorio ydata-profiling).
