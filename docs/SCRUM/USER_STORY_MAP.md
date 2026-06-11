@@ -47,6 +47,13 @@ Yo como DevOps Engineer necesito pipelines de CI/CD de forma que el código se p
 [x] GitHub Actions bloqueando pull requests que rompan el código.
 
 ### 🟦 1.4 Data Architecture y Transformación ELT (Rol: Data Engineer)
+**Historia 1.4.0: Documentación de Arquitectura de Datos y Schemas**
+**Pts: 3** | **Asignado a: Boris (Cloud Architect)**
+Yo como Cloud Architect necesito documentar visualmente el viaje del dato (Medallón) y el diseño de la base de datos (Star Schema) de forma que los desarrolladores tengan un plano claro para construir la solución.
+*Criterios de Aceptación:*
+[x] Diagramas Mermaid Conceptual, Lógico y Físico creados.
+[x] SCD Tipo 2 e integración del esquema de estrella justificados.
+
 **Historia 1.4.1: Pipeline de Transformación Silver y Calidad de Datos**
 **Pts: 8** | **Asignado a: David (Data Engineer)**
 Yo como Data Engineer necesito limpiar las reseñas y aplicar reglas de calidad (Data Observability) de forma que la capa Silver contenga datos confiables y tabulares listos para ML.
