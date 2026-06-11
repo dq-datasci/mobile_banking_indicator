@@ -50,3 +50,15 @@
 ### Sprint 7: Streaming
 - [ ] **Historia 5.2.1: Setup Apache Kafka Cluster** (Pts: 5) [David - Data Engineer]
 - [ ] **Historia 5.2.2: Producers y Consumers Scraping Real-time** (Pts: 8) [David - Data Engineer]
+
+---
+
+## 🚀 RELEASE 4: Enterprise Deep Listening & Multimodal AI
+
+### Sprint 8: Deep Web OSINT
+- [ ] **Historia 6.1.1: Web Crawler de Menciones de Marca** (Pts: 8) [David - Data Engineer]
+- [ ] **Historia 6.1.2: Integración APIs de Búsqueda Profunda (SERP)** (Pts: 5) [David - Data Engineer]
+
+### Sprint 9: Multimodal Data Ingestion
+- [ ] **Historia 6.2.1: Pipeline de Transcripción Video/Audio (Whisper)** (Pts: 8) [David - AI Engineer]
+- [ ] **Historia 6.2.2: OCR y Análisis de Imágenes (Vision Models)** (Pts: 8) [David - AI Engineer]
