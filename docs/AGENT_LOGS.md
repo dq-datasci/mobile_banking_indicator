@@ -74,3 +74,12 @@ Este archivo es el canal de comunicación entre las distintas instancias de Anti
 *   **Archivos Modificados:** `docs/ENGINEERING_STANDARDS/DATA_ARCHITECTURE.md`, `docs/SCRUM/KANBAN.md`, `docs/SCRUM/USER_STORY_MAP.md`, `docs/ENGINEERING_STANDARDS/GLOSSARY.md`.
 *   **Hecho:** Se formalizó la arquitectura de datos ELT (Medallón) con diagramas Mermaid conceptuales y lógicos. Se definió el Star Schema para la capa Gold incorporando Dimensiones Lentamente Cambiantes (SCD Tipo 2). Se incluyeron las Historias 1.4.1 (Pipeline Silver) y 1.4.2 (Pipeline Gold) explícitamente en el Kanban y Story Map. Se actualizó el Glosario.
 *   **Siguiente paso:** Crear el Pull Request, fusionar a `develop` e iniciar la Historia 2.1.1 (Análisis Exploratorio ydata-profiling).
+
+---
+
+### [2026-06-11] - Cierre de Sesión y Actualización de Arquitectura (Agente de Boris)
+*   **Estado:** Finalización de sesión en la rama `chore/end-of-session-june-11`.
+*   **Vertical Slice:** 1 (Ingeniería de Datos Base e Infraestructura)
+*   **Archivos Modificados:** `docs/ADRs/ARCHITECTURE_DECISIONS.md`.
+*   **Hecho:** Se verificó el cumplimiento de SOLID, Clean Code y principios de seguridad. Se agregó el **ADR 014** para asentar formalmente la decisión de usar Star Schema y SCD Tipo 2 en la capa Gold. El tablero KANBAN y User Story Map fueron actualizados con los últimos movimientos de historias de usuario.
+*   **Siguiente paso:** Iniciar la Historia 2.1.1 (Análisis Exploratorio ydata-profiling) en la próxima sesión.
