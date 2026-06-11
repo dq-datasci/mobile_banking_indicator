@@ -62,3 +62,8 @@ Este documento registra todas las decisiones tecnológicas y de diseño importan
 ## ADR 013: Desarrollo Orientado a Datos de Muestra (Sample Data Driven Development)
 *   **Decisión:** Durante las fases de construcción del MVP, se utilizarán identificadores de aplicaciones "ligeras" o aleatorias de las tiendas de apps para poblar la capa Bronze y probar los modelos, aplazando la ingesta de los datos masivos del banco real hasta la fase de integración final.
 *   **Justificación:** Procesar y aplicar NLP sobre millones de reseñas en cada iteración de desarrollo generaría enormes cuellos de botella por los límites de las APIs (Rate-Limits), latencia y consumo de RAM. Construir las tuberías con una muestra ligera permite alta velocidad de desarrollo, iteraciones rápidas y ahorro computacional. Debido a nuestra arquitectura desacoplada (Strategy/Factory), cambiar a la data masiva real al final será tan simple como reemplazar el parámetro `app_id` en el orquestador.
+
+## ADR 014: Star Schema y SCD Tipo 2 en Capa Gold
+*   **Decisión:** Se modelará la capa Gold de datos utilizando un Esquema de Estrella (Fact y Dimensiones) implementando Slowly Changing Dimensions (SCD Tipo 2) para dimensiones históricas críticas.
+*   **Alternativas Rechazadas:** Tablones anchos (One-Big-Table) o esquemas puramente normalizados (3NF) para analítica.
+*   **Justificación:** Optimiza dramáticamente el rendimiento de consultas agregadas para herramientas de BI (Streamlit) al evitar JOINs en cascada. El uso de SCD Tipo 2 (con claves subrogadas, `valid_from`, `valid_to`, `is_current`) garantiza que las alteraciones en las dimensiones (ej. una app cambiando de categoría) no corrompan ni reescriban la historia analítica del comportamiento de Churn/NPS.
