@@ -13,6 +13,8 @@ Este documento define la terminología estándar utilizada a lo largo del proyec
 *   **ADR (Architecture Decision Record):** Documento oficial que rastrea qué tecnología decidimos usar y por qué (ej. *Por qué se eligió FastAPI sobre Flask*).
 *   **Vertical Slices:** Metodología ágil donde no se construye el software por capas horizontales separadas (primero toda la DB, luego toda la API), sino que se construye una "tajada" funcional de inicio a fin (ej. Scraping + Base de Datos + Dashboard solo para el Login).
 *   **Idempotencia:** Propiedad de un script de datos que garantiza que, sin importar si lo ejecutas 1 vez o 1000 veces, el resultado en la base de datos será exactamente el mismo (sin duplicados).
+*   **Star Schema (Esquema de Estrella):** Modelo de datos analítico (usado en la capa Gold) donde una tabla central de "Hechos" (métricas) se rodea de tablas de "Dimensiones" (atributos descriptivos) para consultas ultrarrápidas.
+*   **SCD Type 2 (Slowly Changing Dimensions):** Técnica de modelado donde, si un atributo cambia (ej. una app cambia de categoría), en lugar de sobrescribir el registro antiguo, se crea una nueva fila con fechas de validez (`valid_from`, `valid_to`), preservando la historia completa.
 
 ## C. Términos de Inteligencia Artificial (IA) y MLOps
 *   **RAG (Retrieval-Augmented Generation):** Técnica donde se "alimenta" a un LLM (como ChatGPT/LangChain) con datos privados (nuestras reseñas scrapeadas) antes de que responda una pregunta.
