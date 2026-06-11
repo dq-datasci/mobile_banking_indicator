@@ -217,3 +217,33 @@ Yo como AI Engineer necesito descargar audios de reseñas en video (YouTube/TikT
 Yo como AI Engineer necesito usar un modelo de visión computacional para extraer texto de capturas de pantalla compartidas por clientes enojados.
 *Criterios de Aceptación:*
 [ ] Extracción OCR exitosa en imágenes compartidas.
+
+---
+
+# 🚀 RELEASE 4: Enterprise Deep Listening & Multimodal AI (Visión Comercial)
+
+### 🟦 6.1 Open Source Intelligence (OSINT) & Deep Web Crawling (Rol: Data Engineer)
+**Historia 6.1.1: Web Crawler de Menciones de Marca (News & Blogs)**
+**Pts: 8** | **Asignado a: David (Data Engineer)**
+Yo como Data Engineer necesito implementar un scraper asíncrono para navegar la web abierta y foros buscando menciones directas.
+*Criterios de Aceptación:*
+[ ] Búsquedas heurísticas fuera de redes estructuradas implementadas.
+
+**Historia 6.1.2: Integración de APIs de Búsqueda Profunda (SERP)**
+**Pts: 5** | **Asignado a: David (Data Engineer)**
+Yo como Data Engineer necesito integrarme a APIs de motores de búsqueda para extraer quejas en páginas de terceros (ej. foros de quejas).
+*Criterios de Aceptación:*
+[ ] API de SERP implementada y conectada al orquestador.
+
+### 🟦 6.2 Inteligencia Artificial Multimodal (Rol: AI Engineer)
+**Historia 6.2.1: Pipeline de Transcripción de Video/Audio (OpenAI Whisper)**
+**Pts: 8** | **Asignado a: David (AI Engineer)**
+Yo como AI Engineer necesito descargar audios de reseñas en video (YouTube/TikTok) y usar un modelo como Whisper para transcribir la voz a texto.
+*Criterios de Aceptación:*
+[ ] Pipeline de audio a texto funcional e integrado a la capa de NLP existente.
+
+**Historia 6.2.2: OCR y Análisis de Imágenes (Vision Models)**
+**Pts: 8** | **Asignado a: David (AI Engineer)**
+Yo como AI Engineer necesito usar un modelo de visión computacional para extraer texto de capturas de pantalla compartidas por clientes enojados.
+*Criterios de Aceptación:*
+[ ] Extracción OCR exitosa en imágenes compartidas.
