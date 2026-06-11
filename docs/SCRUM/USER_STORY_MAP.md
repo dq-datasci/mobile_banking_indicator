@@ -46,6 +46,23 @@ Yo como DevOps Engineer necesito pipelines de CI/CD de forma que el código se p
 [x] Herramientas Ruff (Linter/Formatter) configuradas (ADR 012).
 [x] GitHub Actions bloqueando pull requests que rompan el código.
 
+### 🟦 1.4 Data Architecture y Transformación ELT (Rol: Data Engineer)
+**Historia 1.4.1: Pipeline de Transformación Silver y Calidad de Datos**
+**Pts: 8** | **Asignado a: David (Data Engineer)**
+Yo como Data Engineer necesito limpiar las reseñas y aplicar reglas de calidad (Data Observability) de forma que la capa Silver contenga datos confiables y tabulares listos para ML.
+*Criterios de Aceptación:*
+[ ] Limpieza de nulos y duplicados implementada.
+[ ] Data Quality Checks (aserciones/expectativas) definidos.
+[ ] Archivos guardados particionados por año/mes.
+
+**Historia 1.4.2: Construcción de Capa Gold (Star Schema y SCD Type 2)**
+**Pts: 8** | **Asignado a: David (Data Engineer)**
+Yo como Data Engineer necesito construir un Esquema de Estrella en la capa Gold implementando Dimensiones Lentamente Cambiantes (SCD Tipo 2) de forma que el Dashboard consulte rápido sin perder historial.
+*Criterios de Aceptación:*
+[ ] Tabla Fact_Reviews creada con claves subrogadas.
+[ ] Dim_App creada con `valid_from`, `valid_to`, `is_current`.
+[ ] Modelo optimizado y persistido en DuckDB/Parquet.
+
 ## 🟧 ACTIVIDAD 2: Data Science, Econometría y MLOps
 
 ### 🟦 2.1 EDA y Auto-ML (Rol: Data Analyst)
