@@ -159,3 +159,13 @@ Este archivo es el registro de actividades de Antigravity.
 *   **Archivos Modificados:** `docs/ENGINEERING_STANDARDS/ISO_25010_COMPLIANCE.md`, `docs/GUIDES/KNOWN_ERRORS.md`, `docs/SCRUM/KANBAN.md`, `docs/SCRUM/USER_STORY_MAP.md`, `docs/ENGINEERING_STANDARDS/GLOSSARY.md`.
 *   **Hecho:** Se analizó el estándar ISO 25010 y se documentó su cumplimiento en la arquitectura de datos y microservicios. Se crearon historias asociadas a DevOps y despliegue (Canary, Blue-Green, Rolling Updates). Se implementó el archivo `KNOWN_ERRORS.md` oficializando el flujo de Habilitación del Cambio según ITIL 4.
 *   **Siguiente paso:** Iniciar la Historia 1.5.5 (Secure Development Life Cycle y Pruebas de Seguridad).
+
+---
+
+### [2026-06-12] - Historia 1.5.5 e Integración OWASP Top 10 2025 (Antigravity)
+*   **Estado:** Completado en la rama `feature/1.5.5-secure-development-lifecycle`.
+*   **Vertical Slice:** 1 (Ingeniería de Datos Base e Infraestructura)
+*   **Archivos Modificados:** `docs/ENGINEERING_STANDARDS/OWASP_TOP_10_2025_COMPLIANCE.md` (creado), `docs/CONTEXT/202512 - OWASP Top 10 2025 by Miglen Evlogiev.pdf` (eliminado), `docs/SCRUM/KANBAN.md`, `docs/SCRUM/USER_STORY_MAP.md`, `.github/workflows/ci.yml`.
+*   **Hecho:** Se destiló el PDF con OWASP Top 10 2025 en un nuevo estándar markdown para prevenir vulnerabilidades A01-A10. Se borró el PDF original. Se añadieron nuevas historias al Scrum para abordar Fallas en la Cadena de Suministro y controles de Acceso/Logging en futuros Sprints. Se completó la Historia 1.5.5 implementando linter de seguridad `bandit` y escáner de secretos `gitleaks` en el pipeline de CI/CD mediante GitHub Actions.
+*   **Siguiente paso:** Iniciar la Historia 1.5.10 (Control de Software Supply Chain Failures).
+

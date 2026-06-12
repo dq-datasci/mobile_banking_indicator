@@ -114,8 +114,8 @@ Yo como DevOps Engineer necesito aplicar la Habilitación del Cambio (diferencia
 **Pts: 3** | **Asignado a: David (DevOps)**
 Yo como DevOps Engineer necesito integrar controles de seguridad y escaneo en el ciclo de desarrollo de forma que las vulnerabilidades se detecten antes del paso a producción (ISO 27001 Controles 8.25, 8.28, 8.29).
 *Criterios de Aceptación:*
-[ ] Integración de herramientas de escaneo de seguridad en GitHub Actions.
-[ ] Auditoría de secretos y credenciales en el código fuente.
+[x] Integración de herramientas de escaneo de seguridad en GitHub Actions.
+[x] Auditoría de secretos y credenciales en el código fuente.
 
 **Historia 1.5.6: SGCN y Business Impact Analysis Básico (ISO 22301)**
 **Pts: 5** | **Asignado a: David (Cloud Architect)**

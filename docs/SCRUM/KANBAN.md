@@ -19,7 +19,7 @@
 - [x] **Historia 1.5.2: Auditoría ISMS y Prevención de Fugas de Datos (ISO 27001)** (Pts: 5) [David - Cloud Architect]
 - [x] **Historia 1.5.3: Procesos de Mesa de Servicios y Gestión de Incidentes** (Pts: 5) [David - DevOps]
 - [x] **Historia 1.5.4: Gestión de Problemas y Habilitación del Cambio en CI/CD** (Pts: 5) [David - DevOps]
-- [ ] **Historia 1.5.5: Secure Development Life Cycle y Pruebas de Seguridad** (Pts: 3) [David - DevOps]
+- [x] **Historia 1.5.5: Secure Development Life Cycle y Pruebas de Seguridad** (Pts: 3) [David - DevOps]
 - [x] **Historia 1.5.6: SGCN y Business Impact Analysis Básico (ISO 22301)** (Pts: 5) [David - Cloud Architect]
 - [x] **Historia 1.5.7: Adecuación PIMS (ISO 27701) y Consentimiento de PII** (Pts: 3) [David - Cloud Architect]
 - [x] **Historia 1.5.8: Documentación del Modelo de Calidad ISO 25010 y DevSecOps** (Pts: 3) [David - Cloud Architect]
