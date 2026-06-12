@@ -139,6 +139,19 @@ Yo como Cloud Architect necesito destilar el estándar ISO 25010 y sus 9 caracte
 [x] Archivo `ISO_25010_COMPLIANCE.md` creado.
 [x] Puntos de calidad incorporados al Kanban y Roadmap.
 
+**Historia 1.5.9: Integración Normativa OWASP Top 10 2025**
+**Pts: 3** | **Asignado a: David (Cloud Architect)**
+Yo como Cloud Architect necesito destilar el estándar OWASP Top 10 2025 para prevenir vulnerabilidades de software (A01-A10) en nuestra arquitectura.
+*Criterios de Aceptación:*
+[x] Archivo `OWASP_TOP_10_2025_COMPLIANCE.md` creado y validado.
+[x] PDF original de OWASP procesado y eliminado para no saturar el repo.
+
+**Historia 1.5.10: Control de Software Supply Chain Failures**
+**Pts: 3** | **Asignado a: David (DevOps)**
+Yo como DevOps Engineer necesito garantizar que nuestras dependencias y librerías no introduzcan vulnerabilidades o "Supply Chain Failures" (OWASP A03) mediante análisis de dependencias.
+*Criterios de Aceptación:*
+[ ] Escáneres de dependencias añadidos en la validación local / CI.
+
 ## 🟧 ACTIVIDAD 2: Data Science, Econometría y MLOps
 
 ### 🟦 2.1 EDA y Auto-ML (Rol: Data Analyst)
@@ -253,6 +266,19 @@ Yo como DevOps necesito validar el comportamiento de tiempo y utilización de re
 *Criterios de Aceptación:*
 [ ] Pruebas de carga usando Locust/K6 implementadas.
 [ ] Auto-scaling (conceptos teóricos para Release 3) validado en staging.
+
+**Historia 4.2.4: Prevención de Broken Access Control y SSRF**
+**Pts: 5** | **Asignado a: David (Backend Engineer)**
+Yo como Backend Engineer necesito implementar middlewares o decoradores en la API para asegurar que ningún endpoint de FastAPI sufra de Broken Access Control (OWASP A01) ni Server-Side Request Forgery (OWASP A10).
+*Criterios de Aceptación:*
+[ ] Endpoints bloqueados por defecto (Deny by default).
+[ ] Control estricto de ownership en la lectura de datos de la API.
+
+**Historia 4.2.5: Logging Activo y Alerting de Seguridad**
+**Pts: 5** | **Asignado a: David (DevOps)**
+Yo como DevOps necesito conectar el `AuditLogger` con notificaciones en tiempo real para anomalías de forma que podamos detectar y alertar ataques en tiempo real (OWASP A09).
+*Criterios de Aceptación:*
+[ ] Notificación proactiva si ocurre un error repetitivo de acceso no autorizado.
 
 ### 🟦 4.3 Agentes B2B Conversacionales y Model Delivery (Rol: AI / DevOps)
 **Historia 4.3.1: Setup Vector Database local (Chroma/FAISS)**
