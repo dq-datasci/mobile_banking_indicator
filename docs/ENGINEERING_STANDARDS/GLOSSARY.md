@@ -25,3 +25,11 @@ Este documento define la terminología estándar utilizada a lo largo del proyec
 *   **Variable Proxy:** Variable construida artificalmente para aproximar algo que no se puede medir directamente. (Ej. Usar "Sentimiento extremadamente negativo + 1 estrella" como Proxy de que el cliente se fugó).
 *   **Modelo Logit (Regresión Logística):** Técnica econométrica de elección discreta que calcula probabilidades entre 0 y 1. Lo usaremos para el Churn.
 *   **Cadenas de Markov:** Proceso estocástico (matemático) que calcula la probabilidad de que un cliente transite de un estado (ej. Satisfecho) a otro (ej. Frustrado).
+
+## E. Términos de Gestión de Servicios (ITIL 4)
+*   **SVS (Sistema de Valor del Servicio):** Modelo que describe cómo los componentes y actividades de una organización se combinan para crear valor.
+*   **Incidente:** Interrupción no planificada o reducción de la calidad de un servicio.
+*   **Problema:** Causa o causa potencial de uno o más incidentes.
+*   **Error Conocido (Known Error):** Un problema que se ha analizado pero aún no se ha resuelto.
+*   **Solución Temporal (Workaround):** Acción que reduce o elimina el impacto de un incidente o problema mientras no está disponible una resolución definitiva.
+*   **Mesa de Servicios (Service Desk):** Punto único de contacto entre el proveedor de servicios y todos sus usuarios.

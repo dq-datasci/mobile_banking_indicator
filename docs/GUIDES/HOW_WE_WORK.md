@@ -26,15 +26,25 @@ El proyecto DEBE estar finalizado, funcional y empaquetado para su presentación
 *   **Data Contracts:** Obligatorio para el Pipeline de Datos. Definiremos contratos de datos explícitos.
 *   **Observabilidad y Resiliencia:** Obligatorio implementar `try/except` robustos y el sistema `logging`. Nada falla silenciosamente.
 
-## 5. UI/UX y Orquestación Interactiva (CLI)
+## 5. Principios Guía de ITIL 4
+Para la gestión de los servicios y las operaciones, nos regiremos por los 7 principios de ITIL:
+1. **Sitúe el foco en el valor:** Todo lo que hace la organización debe estar orientado al valor.
+2. **Comience donde se encuentre:** No empezar de cero; reutilizar lo que ya sirve.
+3. **Progrese de forma iterativa mediante la retroalimentación:** Entregas ágiles y constantes.
+4. **Colabore y promueva la visibilidad:** Comunicación transparente y trabajo en equipo.
+5. **Piense y trabaje holísticamente:** Ningún servicio funciona de forma aislada.
+6. **Manténgalo simple y práctico:** Eliminar procesos y métricas sin valor.
+7. **Optimice y automatice:** Usar la tecnología para minimizar tareas repetitivas.
+
+## 6. UI/UX y Orquestación Interactiva (CLI)
 *   **CLI Hermosa y Amigable:** Implementaremos un menú interactivo en la terminal usando la librería `rich`. Esta será nuestra "Capa 4 de Orquestación". Desde este menú se dispararán las extracciones, entrenamientos ML y el despliegue del Dashboard.
 *   **Estética Premium (BI):** El Dashboard en Streamlit debe usar paletas curadas (Premium), sin espacios muertos, y con gráficas 100% legibles (labels, porcentajes y cero errores de layout). Nada de colores básicos.
 
-## 6. Algoritmos y Consistencia (ACID)
+## 7. Algoritmos y Consistencia (ACID)
 *   Medir la eficiencia (Big-O) de las estructuras de datos usadas.
 *   Cualquier interacción con Base de Datos debe respetar las transacciones ACID.
 
-## 7. Stack Tecnológico
+## 8. Stack Tecnológico
 *   **Entorno:** Micromamba (híbrido R/Python) y Quarto para reportes.
 *   **Dashboard:** Streamlit (Integración con Plotly).
 *   **Exploración:** DuckDB y ydata_profiling.
@@ -42,5 +52,5 @@ El proyecto DEBE estar finalizado, funcional y empaquetado para su presentación
 *   **GenAI / LLMs:** LangChain y LangGraph para flujos conversacionales (RAG).
 *   **Tracking de Modelos:** MLflow.
 
-## 8. IA y Pensamiento Crítico
+## 9. IA y Pensamiento Crítico
 *   Revisar siempre que las sugerencias de la IA tengan sentido lógico y de negocio. Antigravity no debe ejecutar código ciegamente sin evaluar su impacto en la arquitectura.
