@@ -24,7 +24,7 @@
 - [x] **Historia 1.5.7: Adecuación PIMS (ISO 27701) y Consentimiento de PII** (Pts: 3) [David - Cloud Architect]
 - [x] **Historia 1.5.8: Documentación del Modelo de Calidad ISO 25010 y DevSecOps** (Pts: 3) [David - Cloud Architect]
 - [x] **Historia 1.5.9: Integración Normativa OWASP Top 10 2025** (Pts: 3) [David - Cloud Architect]
-- [ ] **Historia 1.5.10: Control de Software Supply Chain Failures** (Pts: 3) [David - DevOps]
+- [x] **Historia 1.5.10: Control de Software Supply Chain Failures** (Pts: 3) [David - DevOps]
 ### Sprint 2: Econometría Básica y Orquestación (Vertical Slice 2)
 - [ ] **Historia 2.1.1: Análisis Exploratorio ydata-profiling** (Pts: 5) [David - Data Analyst]
 - [ ] **Historia 2.2.1: Modelo Logit Riesgo Churn** (Pts: 8) [David - Econometrista]
@@ -46,6 +46,8 @@
 ### Sprint 4: Scraping Universal
 - [ ] **Historia 4.1.1: Scraping Redes Multimedia usando Strategy (TikTok, IG)** (Pts: 8) [David - Data Engineer]
 - [ ] **Historia 4.1.2: Scraping Redes Texto Corto (X, FB, Reddit)** (Pts: 8) [David - Data Engineer]
+- [ ] **Historia 4.1.3: Manejo Avanzado de Valores Faltantes (MICE y KNN)** (Pts: 5) [David - Data Engineer]
+- [ ] **Historia 4.1.4: Resiliencia de Scraping (Proxies) y Legalidad (TOS)** (Pts: 5) [David - Data Engineer]
 - [ ] **Historia 4.3.1: Setup Vector Database (Chroma/FAISS)** (Pts: 5) [David - AI Engineer]
 
 ### Sprint 5: API y Agentes Inteligentes
@@ -54,6 +56,8 @@
 - [ ] **Historia 4.2.3: Pruebas de Estrés y Rendimiento API (Performance Efficiency ISO 25010)** (Pts: 5) [David - DevOps]
 - [ ] **Historia 4.2.4: Prevención de Broken Access Control y SSRF** (Pts: 5) [David - Backend Engineer]
 - [ ] **Historia 4.2.5: Logging Activo y Alerting de Seguridad** (Pts: 5) [David - DevOps]
+- [ ] **Historia 4.2.6: Arquitectura OLTP vs OLAP y Row Level Security (RLS)** (Pts: 8) [David - Cloud Architect]
+- [ ] **Historia 4.2.7: Audit Logs Administrativos (ISO 27001)** (Pts: 3) [David - DevOps]
 - [ ] **Historia 4.3.2: Agente LangChain/LangGraph (Memoria)** (Pts: 8) [David - AI Engineer]
 - [ ] **Historia 4.4.1: Canary Release y Blue-Green Deployment para Modelos** (Pts: 8) [David - DevOps]
 
@@ -66,15 +70,18 @@
 - [ ] **Historia 5.1.2: Infraestructura como Código (IaC) con Terraform** (Pts: 8) [David - Cloud Architect]
 - [ ] **Historia 5.1.3: Migración a Kubernetes Cluster (EKS/GKE)** (Pts: 8) [David - Cloud Architect]
 - [ ] **Historia 5.1.4: Implementación de Rolling Updates en K8s** (Pts: 5) [David - DevOps]
+- [ ] **Historia 5.1.5: Cifrado en Tránsito y Reposo (ISO 27001)** (Pts: 5) [David - Cloud Architect]
 
 ### Sprint 7: Streaming
 - [ ] **Historia 5.2.1: Setup Apache Kafka Cluster** (Pts: 5) [David - Data Engineer]
 - [ ] **Historia 5.2.2: Producers y Consumers Scraping Real-time** (Pts: 8) [David - Data Engineer]
+- [ ] **Historia 5.2.3: Carga Incremental (CDC) y Data Lineage** (Pts: 8) [David - Data Engineer]
 
 ### Sprint 8: Continuidad y Disaster Recovery (ISO 22301)
 - [ ] **Historia 5.3.1: Automatización de Backups y Snapshots Cíclicos** (Pts: 5) [David - Cloud Architect]
 - [ ] **Historia 5.3.2: Simulacros de Recuperación y Resiliencia (DR)** (Pts: 8) [David - DevOps]
 - [ ] **Historia 5.3.3: Ingeniería de Caos y Pruebas de Safety (ISO 25010)** (Pts: 5) [David - DevOps]
+- [ ] **Historia 5.3.4: Alta Disponibilidad y Réplicas (ISO 22301)** (Pts: 5) [David - Cloud Architect]
 
 ---
 
