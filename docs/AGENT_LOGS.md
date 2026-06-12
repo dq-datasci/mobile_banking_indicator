@@ -202,4 +202,12 @@ Este archivo es el registro de actividades de Antigravity.
 *   **Vertical Slice:** 2 (Econometría Básica y Orquestación)
 *   **Archivos Modificados:** `environment.yml`, `src/core/interfaces/automl_interface.py`, `src/use_cases/automl_facade.py`, `tests/test_automl_facade.py`, `docs/SCRUM/KANBAN.md`, `docs/AGENT_LOGS.md`.
 *   **Hecho:** Se implementó `AutoMLFacade` encapsulando `PyCaret` para generar y comparar modelos base. Se configuró el tracking de `MLflow` para registrar automáticamente métricas y matrices de confusión en local. Las dependencias se instalaron exitosamente utilizando `pip` para evitar fallos de conexión de Conda.
-*   **Siguiente paso:** **Pivote estratégico (Acordado con el usuario):** Iniciar un nuevo chat de sesión para realizar una Extracción de Datos Reales (Scraping de App Store/Play Store reales) que sustituya la data *random* de prueba, asegurando la validez del análisis para la presentación final. Posterior a esto, se retomará la Historia 2.2.1 (Modelo Logit Riesgo Churn).
+*   **Siguiente paso:** **Pivote estratégico (Acordado con el usuario):** Iniciar un nuevo chat de sesión para realizar una Extracción de Datos Reales (Scraping de App Store/Play Store reales) que sustituya la data *random* de prueba, asegurando la validez del análisis para la presentación final. Posterior a esto, se verá de reiniciar el sprint 2, ahora con los datos correctos.
+
+---
+
+### [2026-06-12] - Cierre de Sesión y Mantenimiento (Antigravity / Scrum Master)
+*   **Estado:** Completado en la rama `chore/session-wrapup-sprint2`.
+*   **Archivos Modificados:** `docs/SCRUM/KANBAN.md`, `docs/SCRUM/USER_STORY_MAP.md`, `docs/ADRs/ARCHITECTURE_DECISIONS.md`, `docs/BUSINESS_PRODUCT/DEFERRED_FEATURES.md`, `docs/AGENT_LOGS.md`.
+*   **Hecho:** Se cerró formalmente la Historia 2.1.2 marcando los criterios de aceptación como completados. Se agregó el ADR 019 para asentar la decisión de mantener MLflow en local y se actualizó `DEFERRED_FEATURES.md` difiriendo Databricks MLflow al Release 3. Se verificó que todas las ISOs y principios SOLID se mantienen intactos.
+*   **Siguiente paso:** Iniciar un nuevo chat para la Extracción de Datos Reales.

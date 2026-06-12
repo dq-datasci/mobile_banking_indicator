@@ -165,7 +165,7 @@ Yo como Analista de Datos necesito generar reportes automáticos de calidad de f
 **Pts: 8** | **Asignado a: David (MLOps)**
 Yo como MLOps Engineer necesito usar PyCaret de forma que pueda entrenar y comparar rápidamente decenas de algoritmos antes del tuning fino.
 *Criterios de Aceptación:*
-[ ] Pipeline de PyCaret corriendo en MLflow.
+[x] Pipeline de PyCaret corriendo en MLflow.
 
 ### 🟦 2.2 Modelos Econométricos Core (Rol: Econometrista)
 **Historia 2.2.1: Modelo Probit/Logit de Riesgo de Fuga (Churn)**
