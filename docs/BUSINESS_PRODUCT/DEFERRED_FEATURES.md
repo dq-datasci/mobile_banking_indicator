@@ -29,3 +29,7 @@ Este documento rastrea todas las decisiones tecnológicas o features que **hemos
 ## 6. Integración del Reporte EDA en Dashboard de Streamlit
 *   **Decisión:** Diferido Indefinidamente. El reporte HTML generado por `ydata-profiling` se mantendrá como un artefacto estático local para el Data Analyst.
 *   **Justificación:** El reporte contiene marcas de agua y terminología técnica propia de herramientas de calidad de datos. Los clientes B2B (gerentes/ejecutivos) requieren métricas limpias orientadas a valor, por lo que integrar un archivo HTML crudo de este tamaño degradaría la estética y el "Interaction Capability" (ISO 25010) del producto final.
+
+## 7. Tracking MLOps Distribuido (Databricks MLflow)
+*   **Decisión:** Diferido para el **Release 3 (Enterprise Scale)**.
+*   **Justificación:** Según el ADR 019, usar Databricks MLflow rompería la restricción presupuestaria de $0 para el MVP y agregaría latencia innecesaria en la etapa de prototipado. El servidor local de MLflow es suficiente para comparar los modelos base localmente.

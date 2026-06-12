@@ -183,5 +183,7 @@ dependencies:
     - typing_extensions==4.15.0
     - urllib3==1.25.11
     - ydata-profiling
+    - pycaret
+    - mlflow
 
 prefix: "/home/dq-datasci/micromamba/envs/omnivoc_env"

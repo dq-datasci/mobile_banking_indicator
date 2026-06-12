@@ -85,3 +85,7 @@ Este documento registra todas las decisiones tecnológicas y de diseño importan
 ## ADR 018: Escaneo Automático de Seguridad y Prevención OWASP (Bandit & Gitleaks)
 *   **Decisión:** Se integraron `bandit` y `gitleaks` en el pipeline de CI/CD (GitHub Actions) como parte de nuestro DevSecOps y cumplimiento OWASP Top 10 2025.
 *   **Justificación:** Automatizar el escaneo de inyecciones de código y exposición de credenciales cumple con los controles ISO 27001 (A.8.29) y fortifica la característica de "Security" de la ISO 25010, permitiendo *shift-left testing* sin interrumpir el flujo del desarrollador.
+
+## ADR 019: MLflow Local vs Databricks MLflow (MVP Constraint)
+*   **Decisión:** Mantener el tracking de PyCaret con MLflow en modo local para el MVP y diferir el uso de Databricks MLflow al Release 3.
+*   **Justificación:** Conforme al *BUSINESS_MODEL.md*, el costo de desarrollo del MVP debe ser de $0. Configurar un tracking URI apuntando a un workspace local permite la evaluación de métricas de clasificación, matrices de confusión y experimentación ágil sin requerir infraestructura cloud externa ni sacrificar los principios de Trazabilidad MLOps.
