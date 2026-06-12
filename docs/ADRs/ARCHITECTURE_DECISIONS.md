@@ -81,3 +81,7 @@ Este documento registra todas las decisiones tecnológicas y de diseño importan
 *   **Decisión:** Se establecerá formalmente la adopción de un Sistema de Gestión de Continuidad del Negocio (SGCN), incluyendo el cálculo del MTPD (Maximum Tolerable Period of Disruption) a 24 horas para la Capa Silver/Gold.
 *   **Alternativas Rechazadas:** No definir SLAs de disponibilidad, operando como un proyecto de investigación informal.
 *   **Justificación:** Al ser un SaaS B2B Enterprise, la ISO 22301 nos exige proteger y restaurar actividades críticas ante desastres. Al definir el MTPD explícitamente y bloquear la edición directa de la Capa Bronze desde la API (Principle of Least Privilege), reducimos el riesgo de que una caída o corrupción del modelo paralice la toma de decisiones gerenciales de nuestros clientes.
+
+## ADR 018: Escaneo Automático de Seguridad y Prevención OWASP (Bandit & Gitleaks)
+*   **Decisión:** Se integraron `bandit` y `gitleaks` en el pipeline de CI/CD (GitHub Actions) como parte de nuestro DevSecOps y cumplimiento OWASP Top 10 2025.
+*   **Justificación:** Automatizar el escaneo de inyecciones de código y exposición de credenciales cumple con los controles ISO 27001 (A.8.29) y fortifica la característica de "Security" de la ISO 25010, permitiendo *shift-left testing* sin interrumpir el flujo del desarrollador.

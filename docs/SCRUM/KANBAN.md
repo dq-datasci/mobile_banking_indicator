@@ -19,10 +19,12 @@
 - [x] **Historia 1.5.2: Auditoría ISMS y Prevención de Fugas de Datos (ISO 27001)** (Pts: 5) [David - Cloud Architect]
 - [x] **Historia 1.5.3: Procesos de Mesa de Servicios y Gestión de Incidentes** (Pts: 5) [David - DevOps]
 - [x] **Historia 1.5.4: Gestión de Problemas y Habilitación del Cambio en CI/CD** (Pts: 5) [David - DevOps]
-- [ ] **Historia 1.5.5: Secure Development Life Cycle y Pruebas de Seguridad** (Pts: 3) [David - DevOps]
+- [x] **Historia 1.5.5: Secure Development Life Cycle y Pruebas de Seguridad** (Pts: 3) [David - DevOps]
 - [x] **Historia 1.5.6: SGCN y Business Impact Analysis Básico (ISO 22301)** (Pts: 5) [David - Cloud Architect]
 - [x] **Historia 1.5.7: Adecuación PIMS (ISO 27701) y Consentimiento de PII** (Pts: 3) [David - Cloud Architect]
 - [x] **Historia 1.5.8: Documentación del Modelo de Calidad ISO 25010 y DevSecOps** (Pts: 3) [David - Cloud Architect]
+- [x] **Historia 1.5.9: Integración Normativa OWASP Top 10 2025** (Pts: 3) [David - Cloud Architect]
+- [ ] **Historia 1.5.10: Control de Software Supply Chain Failures** (Pts: 3) [David - DevOps]
 ### Sprint 2: Econometría Básica y Orquestación (Vertical Slice 2)
 - [ ] **Historia 2.1.1: Análisis Exploratorio ydata-profiling** (Pts: 5) [David - Data Analyst]
 - [ ] **Historia 2.2.1: Modelo Logit Riesgo Churn** (Pts: 8) [David - Econometrista]
@@ -50,6 +52,8 @@
 - [ ] **Historia 4.2.1: Arquitectura Base FastAPI usando Adapter** (Pts: 8) [David - Backend Engineer]
 - [ ] **Historia 4.2.2: Seguridad y Load Balancing API** (Pts: 5) [David - DevOps]
 - [ ] **Historia 4.2.3: Pruebas de Estrés y Rendimiento API (Performance Efficiency ISO 25010)** (Pts: 5) [David - DevOps]
+- [ ] **Historia 4.2.4: Prevención de Broken Access Control y SSRF** (Pts: 5) [David - Backend Engineer]
+- [ ] **Historia 4.2.5: Logging Activo y Alerting de Seguridad** (Pts: 5) [David - DevOps]
 - [ ] **Historia 4.3.2: Agente LangChain/LangGraph (Memoria)** (Pts: 8) [David - AI Engineer]
 - [ ] **Historia 4.4.1: Canary Release y Blue-Green Deployment para Modelos** (Pts: 8) [David - DevOps]
 

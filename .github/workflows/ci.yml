@@ -26,3 +26,12 @@ jobs:
       - name: Run pytest
         shell: bash -el {0}
         run: pytest
+
+      - name: Run security linter (bandit)
+        shell: bash -el {0}
+        run: pip install bandit && bandit -r src/ -c "pyproject.toml" || bandit -r src/
+
+      - name: Audit for secrets (gitleaks)
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
