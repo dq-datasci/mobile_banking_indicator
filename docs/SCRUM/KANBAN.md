@@ -26,7 +26,7 @@
 - [x] **Historia 1.5.9: Integración Normativa OWASP Top 10 2025** (Pts: 3) [David - Cloud Architect]
 - [x] **Historia 1.5.10: Control de Software Supply Chain Failures** (Pts: 3) [David - DevOps]
 ### Sprint 2: Econometría Básica y Orquestación (Vertical Slice 2)
-- [ ] **Historia 2.1.1: Análisis Exploratorio ydata-profiling** (Pts: 5) [David - Data Analyst]
+- [x] **Historia 2.1.1: Análisis Exploratorio ydata-profiling** (Pts: 5) [David - Data Analyst]
 - [ ] **Historia 2.2.1: Modelo Logit Riesgo Churn** (Pts: 8) [David - Econometrista]
 - [ ] **Historia 2.2.2: Cálculo Econométrico NPS** (Pts: 5) [David - Econometrista]
 - [ ] **Historia 2.1.2: PyCaret Baseline Models** (Pts: 8) [David - MLOps]

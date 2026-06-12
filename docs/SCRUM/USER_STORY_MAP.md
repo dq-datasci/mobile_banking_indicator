@@ -159,7 +159,7 @@ Yo como DevOps Engineer necesito garantizar que nuestras dependencias y librerí
 **Pts: 5** | **Asignado a: David (Data Analyst)**
 Yo como Analista de Datos necesito generar reportes automáticos de calidad de forma que entienda la distribución estadística de la capa Silver.
 *Criterios de Aceptación:*
-[ ] Reporte HTML generado automáticamente en cada corrida.
+[x] Reporte HTML generado automáticamente en cada corrida.
 
 **Historia 2.1.2: Selección de Algoritmos Base (PyCaret)**
 **Pts: 8** | **Asignado a: David (MLOps)**
