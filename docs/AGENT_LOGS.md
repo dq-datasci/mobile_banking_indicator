@@ -83,3 +83,12 @@ Este archivo es el canal de comunicación entre las distintas instancias de Anti
 *   **Archivos Modificados:** `docs/ADRs/ARCHITECTURE_DECISIONS.md`.
 *   **Hecho:** Se verificó el cumplimiento de SOLID, Clean Code y principios de seguridad. Se agregó el **ADR 014** para asentar formalmente la decisión de usar Star Schema y SCD Tipo 2 en la capa Gold. El tablero KANBAN y User Story Map fueron actualizados con los últimos movimientos de historias de usuario.
 *   **Siguiente paso:** Iniciar la Historia 2.1.1 (Análisis Exploratorio ydata-profiling) en la próxima sesión.
+
+---
+
+### [2026-06-12] - Historia 1.4.1 y 1.4.2: ISO 27002 y Pipeline Silver (Agente de Boris / Data Engineer)
+*   **Estado:** Completado en la rama `feature/1.4.1-pipeline-silver`.
+*   **Vertical Slice:** 1 (Ingeniería de Datos Base e Infraestructura)
+*   **Archivos Modificados:** `docs/ENGINEERING_STANDARDS/ISO_27002_COMPLIANCE.md`, `docs/ENGINEERING_STANDARDS/DEVOPS_MLOPS_SECURITY.md`, `docs/SCRUM/KANBAN.md`, `docs/SCRUM/USER_STORY_MAP.md`, `src/core/interfaces/data_quality_interface.py`, `src/core/quality/silver_quality_checker.py`, `src/infrastructure/pipelines/silver_pipeline.py`, `tests/test_silver_pipeline.py`.
+*   **Hecho:** Se reordenaron las historias y se redactó el cumplimiento de la ISO 27002. Se implementó el Pipeline de la capa Silver junto a su interfaz y chequeo de calidad que verifica el correcto Data Masking de PII y la eliminación de valores nulos o fuera de rango. Se realizaron pruebas automatizadas satisfactorias.
+*   **Siguiente paso:** Iniciar la Historia 1.4.3 (Construcción de Capa Gold - Star Schema y SCD Type 2).
