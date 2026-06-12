@@ -150,3 +150,12 @@ Este archivo es el registro de actividades de Antigravity.
 *   **Archivos Modificados:** `README.md`, `docs/SCRUM/USER_STORY_MAP.md`, `docs/AGENT_LOGS.md`.
 *   **Hecho:** Se completaron los criterios de aceptación de la Historia 1.5.7 validando las políticas en el entorno, y se actualizó manualmente el archivo README con el requerimiento de validar la normativa ISO 27701 en cada plan. 
 *   **Siguiente paso:** Iniciar la Historia 1.5.4 (Gestión de Problemas y Habilitación del Cambio en CI/CD) en la próxima sesión.
+
+---
+
+### [2026-06-12] - Historia 1.5.4 e ISO 25010: Gestión de Problemas (David / DevOps)
+*   **Estado:** Completado en la rama `feature/1.5.4-problem-change-management`.
+*   **Vertical Slice:** 1 (Ingeniería de Datos Base e Infraestructura)
+*   **Archivos Modificados:** `docs/ENGINEERING_STANDARDS/ISO_25010_COMPLIANCE.md`, `docs/GUIDES/KNOWN_ERRORS.md`, `docs/SCRUM/KANBAN.md`, `docs/SCRUM/USER_STORY_MAP.md`, `docs/ENGINEERING_STANDARDS/GLOSSARY.md`.
+*   **Hecho:** Se analizó el estándar ISO 25010 y se documentó su cumplimiento en la arquitectura de datos y microservicios. Se crearon historias asociadas a DevOps y despliegue (Canary, Blue-Green, Rolling Updates). Se implementó el archivo `KNOWN_ERRORS.md` oficializando el flujo de Habilitación del Cambio según ITIL 4.
+*   **Siguiente paso:** Iniciar la Historia 1.5.5 (Secure Development Life Cycle y Pruebas de Seguridad).
