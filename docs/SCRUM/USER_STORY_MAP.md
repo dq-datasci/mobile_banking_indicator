@@ -100,8 +100,8 @@ Yo como Cloud Architect necesito implementar el tratamiento de riesgos, control 
 **Pts: 5** | **Asignado a: David (DevOps)**
 Yo como DevOps Engineer necesito integrar una política clara de Mesa de Servicios e Incidentes de forma que podamos restaurar rápidamente cualquier caída de los scrapers o de la base de datos sin afectar el entorno de producción.
 *Criterios de Aceptación:*
-[ ] Proceso de Mesa de Servicios definido.
-[ ] Política de respuesta a incidentes mayores (*swarming*) documentada y en uso.
+[x] Proceso de Mesa de Servicios definido.
+[x] Política de respuesta a incidentes mayores (*swarming*) documentada y en uso.
 
 **Historia 1.5.4: Gestión de Problemas y Habilitación del Cambio en CI/CD**
 **Pts: 5** | **Asignado a: David (DevOps)**
@@ -123,6 +123,13 @@ Yo como Cloud Architect necesito definir el Sistema de Gestión de Continuidad d
 *Criterios de Aceptación:*
 [x] Elaboración de un Business Impact Analysis (BIA) inicial documentado.
 [x] Identificación de los riesgos de interrupción más críticos y estrategias mitigantes base.
+
+**Historia 1.5.7: Adecuación PIMS (ISO 27701) y Consentimiento de PII**
+**Pts: 3** | **Asignado a: David (Cloud Architect)**
+Yo como Cloud Architect necesito documentar e integrar el Sistema de Gestión de Información de Privacidad (PIMS) basado en ISO 27701, definiendo claramente nuestros roles como PII Processor/Controller de forma que cumplamos con los estándares de privacidad internacionales.
+*Criterios de Aceptación:*
+[x] Extracción y análisis de la ISO 27701 en `ISO_27701_COMPLIANCE.md`.
+[x] Políticas de minimización y de-identificación validadas en arquitectura.
 
 ## 🟧 ACTIVIDAD 2: Data Science, Econometría y MLOps
 
