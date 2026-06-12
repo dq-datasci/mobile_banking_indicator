@@ -3,7 +3,7 @@
 > *Nota: Inicialmente concebido como un "Indicador Sintético de Calidad de Banca Móvil", el alcance de este proyecto ha evolucionado a **OmniVoC SaaS**, una plataforma corporativa B2B de Inteligencia Artificial agnóstica a la industria.*
 > **Significado:** **Omni**canal (extrae datos de todas las redes sociales y tiendas) + **V**oice **o**f **C**ustomer (Voz del Cliente).
 
-¡Hola Boris y David! Bienvenidos al repositorio central de **OmniVoC**. Este documento es el manual principal para gestionar nuestro flujo de trabajo colaborativo usando Git y Antigravity. Dado que ambos estarán trabajando en paralelo, aquí definimos las bases para que nuestros entornos y agentes de IA estén perfectamente sincronizados.
+¡Hola David! Bienvenido al repositorio central de **OmniVoC**. Este documento es el manual principal para gestionar el flujo de trabajo usando Git y Antigravity.
 
 ## 1. El Flujo de Trabajo con Git (Gitflow)
 
@@ -88,10 +88,10 @@ Para asegurar que todo el contexto, las decisiones arquitectónicas complejas y 
 
 Hemos creado la carpeta `docs/NOTEBOOKLM_LOGS/` que contiene los archivos maestros de consolidación:
 *   `Antigravity_Logs_David.md`
-*   `Antigravity_Logs_Boris.md`
+*   `Antigravity_Logs_David.md`
 
 **Al EXPORTAR una conversación (Para alimentar a NotebookLM), copia y pega este prompt:**
-> *"He exportado el registro de nuestra última conversación en el archivo `[nombre_del_archivo_exportado.md]`. Por favor, toma TODO el contenido de ese archivo y añádelo al final de `docs/NOTEBOOKLM_LOGS/Antigravity_Logs_[David/Boris].md`. Utiliza ESTE formato exacto como separador antes de pegar el contenido, llenando los datos correspondientes:
+> *"He exportado el registro de nuestra última conversación en el archivo `[nombre_del_archivo_exportado.md]`. Por favor, toma TODO el contenido de ese archivo y añádelo al final de `docs/NOTEBOOKLM_LOGS/Antigravity_Logs_[David/David].md`. Utiliza ESTE formato exacto como separador antes de pegar el contenido, llenando los datos correspondientes:
 >
 > # ====================================================================================================
 > # FECHA: [YYYY-MM-DD] | AUTOR: [Tu Nombre]

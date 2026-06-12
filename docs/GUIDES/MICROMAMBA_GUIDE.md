@@ -1,6 +1,6 @@
 # Guía de Micromamba: Nuestro Entorno de Trabajo
 
-Para que el código de David funcione exactamente igual en la computadora de Boris, necesitamos un entorno virtual. Un entorno virtual es como una "burbuja" donde instalamos versiones específicas de Python, R y librerías sin alterar el resto de la computadora.
+Para que el código de David funcione exactamente igual en cualquier lugar, necesitamos un entorno virtual. Un entorno virtual es como una "burbuja" donde instalamos versiones específicas de Python, R y librerías sin alterar el resto de la computadora.
 
 Nosotros usamos **Micromamba** (una versión ultrarrápida de Conda) porque permite instalar tanto Python (para Machine Learning) como R (para Econometría) en la misma burbuja.
 
@@ -37,15 +37,15 @@ micromamba install -c conda-forge pyspark mlflow quarto
 
 ## 4. Compartir el Entorno (Exportar)
 
-Si Boris necesita instalar exactamente las mismas librerías que David descubrió y usó ayer, David debe exportar la lista y Boris debe leerla.
+Si se necesita instalar exactamente las mismas librerías usadas ayer, se debe exportar la lista.
 
-**Paso 1 (David):** Exporta las librerías a un archivo:
+**Paso 1:** Exporta las librerías a un archivo:
 ```bash
 micromamba env export > environment.yml
 ```
-*(Luego, David debe hacer un commit de ese archivo `environment.yml` a Git y subirlo).*
+*(Luego, se debe hacer un commit de ese archivo `environment.yml` a Git y subirlo).*
 
-**Paso 2 (Boris):** Después de hacer `git pull` y ver que hay un `environment.yml` nuevo, Boris actualiza su burbuja así:
+**Paso 2:** Después de hacer `git pull` y ver que hay un `environment.yml` nuevo, David actualiza su burbuja así:
 ```bash
 micromamba update -n omnivoc_env -f environment.yml
 ```

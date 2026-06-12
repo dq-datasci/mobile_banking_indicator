@@ -1,6 +1,6 @@
 # Guía de Supervivencia: Git para este Proyecto
 
-Git es un sistema que guarda el historial de nuestro código. Piensa en Git como una máquina del tiempo combinada con universos paralelos (ramas o *branches*). Aquí están los comandos esenciales que tú y Boris usarán día a día.
+Git es un sistema que guarda el historial de nuestro código. Piensa en Git como una máquina del tiempo combinada con universos paralelos (ramas o *branches*). Aquí están los comandos esenciales que usarás día a día.
 
 ## 1. Ver cómo estamos (El Mapa)
 
@@ -14,13 +14,13 @@ Git es un sistema que guarda el historial de nuestro código. Piensa en Git como
 *   `git checkout develop`
     **¿Qué hace?** Te mueve a la rama de integración principal (develop).
 *   `git pull origin develop`
-    **¿Qué hace?** Descarga de GitHub todo lo que tu compañero programó anoche y lo junta con lo que tienes en tu computadora. **¡Regla de oro: haz esto antes de empezar a programar!**
+    **¿Qué hace?** Descarga de GitHub todo lo que programaste en otro entorno anoche y lo junta con lo que tienes en tu computadora. **¡Regla de oro: haz esto antes de empezar a programar!**
 
 ## 3. Crear una Nueva Tarea (Crear tu Universo)
 
 *   `git checkout -b feature/nombre-de-tarea`
     *(Ejemplo: `git checkout -b feature/limpieza-datos`)*
-    **¿Qué hace?** Crea una rama nueva idéntica a `develop` y te mueve a ella automáticamente. Aquí es donde debes programar. Tu compañero no verá lo que haces aquí hasta que lo subas.
+    **¿Qué hace?** Crea una rama nueva idéntica a `develop` y te mueve a ella automáticamente. Aquí es donde debes programar. No estará en el remoto lo que haces aquí hasta que lo subas.
 
 ## 4. Guardar tu Progreso (La Foto del Momento)
 
@@ -30,10 +30,10 @@ Git es un sistema que guarda el historial de nuestro código. Piensa en Git como
     *(Ejemplo: `git commit -m "Limpiar emojis de las reseñas de la Play Store"`)*
     **¿Qué hace?** Toma la "foto" oficial de tus archivos y la guarda en tu computadora con el mensaje que escribiste.
 
-## 5. Subir a GitHub (Compartir con tu compañero)
+## 5. Subir a GitHub (Guardar en el remoto)
 
 *   `git push origin feature/nombre-de-tarea`
-    **¿Qué hace?** Envía la "foto" que tomaste (commit) a los servidores de GitHub. A partir de este momento, tu compañero puede ver tu código en internet.
+    **¿Qué hace?** Envía la "foto" que tomaste (commit) a los servidores de GitHub. A partir de este momento, tu equipo o tú en otro lado pueden ver tu código en internet.
 
 ## 6. Conventional Commits y Commits Atómicos (Obligatorio)
 
