@@ -33,3 +33,9 @@ Este documento define la terminología estándar utilizada a lo largo del proyec
 *   **Error Conocido (Known Error):** Un problema que se ha analizado pero aún no se ha resuelto.
 *   **Solución Temporal (Workaround):** Acción que reduce o elimina el impacto de un incidente o problema mientras no está disponible una resolución definitiva.
 *   **Mesa de Servicios (Service Desk):** Punto único de contacto entre el proveedor de servicios y todos sus usuarios.
+
+## F. Términos de DevOps e Infraestructura
+*   **Blue-Green Deployment:** Estrategia de despliegue donde coexisten dos entornos idénticos (Blue y Green). El tráfico se redirige al nuevo entorno solo cuando está listo y testeado, garantizando cero tiempo de inactividad.
+*   **Canary Release:** Liberación progresiva de una nueva versión (ej. a un 10% de los usuarios) para probar su estabilidad antes de un despliegue total.
+*   **Rolling Update:** Estrategia (nativa en Kubernetes) que reemplaza progresivamente las instancias antiguas de una aplicación por las nuevas, asegurando alta disponibilidad.
+*   **Chaos Engineering:** Disciplina de experimentar en un sistema distribuido (ej. apagando servidores aleatoriamente) para construir confianza en su capacidad de soportar condiciones turbulentas (resiliencia y *safety*).
