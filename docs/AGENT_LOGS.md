@@ -118,3 +118,12 @@ Este archivo es el registro de actividades de Antigravity.
 *   **Siguiente paso:** Iniciar la Historia 1.5.2 (Auditoría ISMS y Prevención de Fugas de Datos).
 
 ---
+
+### [2026-06-12] - Historia 1.5.2 y 1.5.6: Auditoría ISMS y BIA Inicial ISO 22301 (David / Cloud Architect)
+*   **Estado:** Completado en la rama `feature/1.5.2-isms-and-iso22301`.
+*   **Vertical Slice:** 1 (Ingeniería de Datos Base e Infraestructura)
+*   **Archivos Modificados:** `src/core/security/audit_logger.py`, `src/infrastructure/extractors/scraper_factory.py`, `src/core/interfaces/scraper_interface.py`, `src/infrastructure/extractors/playstore_scraper.py`, `src/infrastructure/extractors/appstore_scraper.py`, `src/infrastructure/database/duckdb_singleton.py`, `docs/ADRs/ARCHITECTURE_DECISIONS.md`, `docs/SCRUM/USER_STORY_MAP.md`, `docs/SCRUM/KANBAN.md`, `docs/ENGINEERING_STANDARDS/ISO_22301_COMPLIANCE.md`.
+*   **Hecho:** Se implementó el `AuditLogger` centralizado basado en la librería `logging` como Singleton para cumplir con los controles de ISO 27001 (A.8.15 y A.8.16). Se inyectó el logger en los scrapers de PlayStore y AppStore. Se implementó una barrera de seguridad en `duckdb_singleton.py` para bloquear cualquier escritura no autorizada en la capa Bronze. Se redactó el documento base de cumplimiento ISO 22301, extrayendo los lineamientos del PDF original (el cual fue borrado), y se crearon los ADRs 016 y 017 correspondientes a estas decisiones y al BIA.
+*   **Siguiente paso:** Iniciar la Historia 1.5.3 (Procesos de Mesa de Servicios y Gestión de Incidentes).
+
+---

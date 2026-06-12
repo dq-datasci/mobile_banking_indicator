@@ -16,10 +16,11 @@
 - [x] **Historia 1.4.2: Pipeline de Transformación Silver y Calidad de Datos** (Pts: 8) [David - Data Engineer]
 - [x] **Historia 1.4.3: Construcción de Capa Gold (Star Schema y SCD Type 2)** (Pts: 8) [David - Data Engineer]
 - [x] **Historia 1.5.1: Documentación e Implementación del SVS de ITIL 4 y Principios Guía** (Pts: 3) [David - Cloud Architect]
-- [ ] **Historia 1.5.2: Auditoría ISMS y Prevención de Fugas de Datos (ISO 27001)** (Pts: 5) [David - Cloud Architect]
+- [x] **Historia 1.5.2: Auditoría ISMS y Prevención de Fugas de Datos (ISO 27001)** (Pts: 5) [David - Cloud Architect]
 - [ ] **Historia 1.5.3: Procesos de Mesa de Servicios y Gestión de Incidentes** (Pts: 5) [David - DevOps]
 - [ ] **Historia 1.5.4: Gestión de Problemas y Habilitación del Cambio en CI/CD** (Pts: 5) [David - DevOps]
 - [ ] **Historia 1.5.5: Secure Development Life Cycle y Pruebas de Seguridad** (Pts: 3) [David - DevOps]
+- [x] **Historia 1.5.6: SGCN y Business Impact Analysis Básico (ISO 22301)** (Pts: 5) [David - Cloud Architect]
 
 ### Sprint 2: Econometría Básica y Orquestación (Vertical Slice 2)
 - [ ] **Historia 2.1.1: Análisis Exploratorio ydata-profiling** (Pts: 5) [David - Data Analyst]
@@ -60,14 +61,18 @@
 - [ ] **Historia 5.2.1: Setup Apache Kafka Cluster** (Pts: 5) [David - Data Engineer]
 - [ ] **Historia 5.2.2: Producers y Consumers Scraping Real-time** (Pts: 8) [David - Data Engineer]
 
+### Sprint 8: Continuidad y Disaster Recovery (ISO 22301)
+- [ ] **Historia 5.3.1: Automatización de Backups y Snapshots Cíclicos** (Pts: 5) [David - Cloud Architect]
+- [ ] **Historia 5.3.2: Simulacros de Recuperación y Resiliencia (DR)** (Pts: 8) [David - DevOps]
+
 ---
 
 ## 🚀 RELEASE 4: Enterprise Deep Listening & Multimodal AI
 
-### Sprint 8: Deep Web OSINT
+### Sprint 9: Deep Web OSINT
 - [ ] **Historia 6.1.1: Web Crawler de Menciones de Marca** (Pts: 8) [David - Data Engineer]
 - [ ] **Historia 6.1.2: Integración APIs de Búsqueda Profunda (SERP)** (Pts: 5) [David - Data Engineer]
 
-### Sprint 9: Multimodal Data Ingestion
+### Sprint 10: Multimodal Data Ingestion
 - [ ] **Historia 6.2.1: Pipeline de Transcripción Video/Audio (Whisper)** (Pts: 8) [David - AI Engineer]
 - [ ] **Historia 6.2.2: OCR y Análisis de Imágenes (Vision Models)** (Pts: 8) [David - AI Engineer]

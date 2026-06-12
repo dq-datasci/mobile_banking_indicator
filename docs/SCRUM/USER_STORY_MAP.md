@@ -92,9 +92,9 @@ Yo como Cloud Architect necesito documentar la integración del Sistema de Valor
 **Pts: 5** | **Asignado a: David (Cloud Architect)**
 Yo como Cloud Architect necesito implementar el tratamiento de riesgos, control de accesos lógico y logging centralizado de forma que se garantice la prevención de fuga de datos sensibles y el cumplimiento de ISO 27001 (Controles 8.12, 8.15, 6.1.2).
 *Criterios de Aceptación:*
-[ ] Sistema de Logging centralizado configurado para el orquestador y scrapers.
-[ ] Evaluación de riesgos de extracción e ingesta documentada en los ADRs/Logs.
-[ ] Aislamiento de capas de datos (Bronze, Silver, Gold) protegido por diseño.
+[x] Sistema de Logging centralizado configurado para el orquestador y scrapers.
+[x] Evaluación de riesgos de extracción e ingesta documentada en los ADRs/Logs.
+[x] Aislamiento de capas de datos (Bronze, Silver, Gold) protegido por diseño.
 
 **Historia 1.5.3: Procesos de Mesa de Servicios y Gestión de Incidentes**
 **Pts: 5** | **Asignado a: David (DevOps)**
@@ -116,6 +116,13 @@ Yo como DevOps Engineer necesito integrar controles de seguridad y escaneo en el
 *Criterios de Aceptación:*
 [ ] Integración de herramientas de escaneo de seguridad en GitHub Actions.
 [ ] Auditoría de secretos y credenciales en el código fuente.
+
+**Historia 1.5.6: SGCN y Business Impact Analysis Básico (ISO 22301)**
+**Pts: 5** | **Asignado a: David (Cloud Architect)**
+Yo como Cloud Architect necesito definir el Sistema de Gestión de Continuidad de Negocio (SGCN) y el MTPD para establecer la resiliencia del pipeline de datos frente a incidentes.
+*Criterios de Aceptación:*
+[x] Elaboración de un Business Impact Analysis (BIA) inicial documentado.
+[x] Identificación de los riesgos de interrupción más críticos y estrategias mitigantes base.
 
 ## 🟧 ACTIVIDAD 2: Data Science, Econometría y MLOps
 
@@ -259,35 +266,20 @@ Yo como Data Engineer necesito un broker Kafka para los flujos.
 **Pts: 8** | **Asignado a: David (Data Engineer)**
 Yo como Data Engineer necesito ingestar reseñas en Tiempo Real sub-segundo.
 
----
-
-# 🚀 RELEASE 4: Enterprise Deep Listening & Multimodal AI (Visión Comercial)
-
-### 🟦 6.1 Open Source Intelligence (OSINT) & Deep Web Crawling (Rol: Data Engineer)
-**Historia 6.1.1: Web Crawler de Menciones de Marca (News & Blogs)**
-**Pts: 8** | **Asignado a: David (Data Engineer)**
-Yo como Data Engineer necesito implementar un scraper asíncrono para navegar la web abierta y foros buscando menciones directas.
+### 🟦 5.3 Continuidad y Disaster Recovery (Rol: Cloud Architect / DevOps)
+**Historia 5.3.1: Automatización de Backups y Snapshots Cíclicos**
+**Pts: 5** | **Asignado a: David (Cloud Architect)**
+Yo como Cloud Architect necesito implementar respaldos automatizados de la capa Bronze y bases de datos para garantizar la integridad frente a corrupciones accidentales.
 *Criterios de Aceptación:*
-[ ] Búsquedas heurísticas fuera de redes estructuradas implementadas.
+[ ] Scripts de backup a almacenamiento secundario (S3/GCS).
+[ ] Verificación de integridad de los respaldos automatizada.
 
-**Historia 6.1.2: Integración de APIs de Búsqueda Profunda (SERP)**
-**Pts: 5** | **Asignado a: David (Data Engineer)**
-Yo como Data Engineer necesito integrarme a APIs de motores de búsqueda para extraer quejas en páginas de terceros (ej. foros de quejas).
+**Historia 5.3.2: Simulacros de Recuperación y Resiliencia (Disaster Recovery)**
+**Pts: 8** | **Asignado a: David (DevOps)**
+Yo como DevOps necesito programar simulacros de desastres donde las capas superiores son borradas para comprobar si los mecanismos de recuperación restauran la analítica en el MTPD esperado.
 *Criterios de Aceptación:*
-[ ] API de SERP implementada y conectada al orquestador.
-
-### 🟦 6.2 Inteligencia Artificial Multimodal (Rol: AI Engineer)
-**Historia 6.2.1: Pipeline de Transcripción de Video/Audio (OpenAI Whisper)**
-**Pts: 8** | **Asignado a: David (AI Engineer)**
-Yo como AI Engineer necesito descargar audios de reseñas en video (YouTube/TikTok) y usar un modelo como Whisper para transcribir la voz a texto.
-*Criterios de Aceptación:*
-[ ] Pipeline de audio a texto funcional e integrado a la capa de NLP existente.
-
-**Historia 6.2.2: OCR y Análisis de Imágenes (Vision Models)**
-**Pts: 8** | **Asignado a: David (AI Engineer)**
-Yo como AI Engineer necesito usar un modelo de visión computacional para extraer texto de capturas de pantalla compartidas por clientes enojados.
-*Criterios de Aceptación:*
-[ ] Extracción OCR exitosa en imágenes compartidas.
+[ ] Prueba documentada de borrado de capa Silver y Gold, y regeneración.
+[ ] Tiempo de regeneración dentro de los SLAs esperados.
 
 ---
 
