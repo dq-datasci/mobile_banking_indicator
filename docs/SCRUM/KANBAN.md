@@ -18,10 +18,11 @@
 - [x] **Historia 1.5.1: Documentación e Implementación del SVS de ITIL 4 y Principios Guía** (Pts: 3) [David - Cloud Architect]
 - [x] **Historia 1.5.2: Auditoría ISMS y Prevención de Fugas de Datos (ISO 27001)** (Pts: 5) [David - Cloud Architect]
 - [x] **Historia 1.5.3: Procesos de Mesa de Servicios y Gestión de Incidentes** (Pts: 5) [David - DevOps]
-- [ ] **Historia 1.5.4: Gestión de Problemas y Habilitación del Cambio en CI/CD** (Pts: 5) [David - DevOps]
+- [x] **Historia 1.5.4: Gestión de Problemas y Habilitación del Cambio en CI/CD** (Pts: 5) [David - DevOps]
 - [ ] **Historia 1.5.5: Secure Development Life Cycle y Pruebas de Seguridad** (Pts: 3) [David - DevOps]
 - [x] **Historia 1.5.6: SGCN y Business Impact Analysis Básico (ISO 22301)** (Pts: 5) [David - Cloud Architect]
 - [x] **Historia 1.5.7: Adecuación PIMS (ISO 27701) y Consentimiento de PII** (Pts: 3) [David - Cloud Architect]
+- [x] **Historia 1.5.8: Documentación del Modelo de Calidad ISO 25010 y DevSecOps** (Pts: 3) [David - Cloud Architect]
 ### Sprint 2: Econometría Básica y Orquestación (Vertical Slice 2)
 - [ ] **Historia 2.1.1: Análisis Exploratorio ydata-profiling** (Pts: 5) [David - Data Analyst]
 - [ ] **Historia 2.2.1: Modelo Logit Riesgo Churn** (Pts: 8) [David - Econometrista]
@@ -34,6 +35,7 @@
 - [ ] **Historia 2.3.2: Extracción Temática y MLflow Tracking** (Pts: 5) [David - MLOps]
 - [ ] **Historia 2.2.3: Cadenas de Markov de Satisfacción** (Pts: 8) [David - Econometrista]
 - [ ] **Historia 3.2.1: Streamlit Dashboard (NPS, Observer y Patrón F)** (Pts: 8) [David - UI/UX Engineer]
+- [ ] **Historia 3.2.2: Pruebas de Interaction Capability y Usabilidad (ISO 25010)** (Pts: 5) [David - UI/UX Engineer]
 
 ---
 
@@ -47,15 +49,19 @@
 ### Sprint 5: API y Agentes Inteligentes
 - [ ] **Historia 4.2.1: Arquitectura Base FastAPI usando Adapter** (Pts: 8) [David - Backend Engineer]
 - [ ] **Historia 4.2.2: Seguridad y Load Balancing API** (Pts: 5) [David - DevOps]
+- [ ] **Historia 4.2.3: Pruebas de Estrés y Rendimiento API (Performance Efficiency ISO 25010)** (Pts: 5) [David - DevOps]
 - [ ] **Historia 4.3.2: Agente LangChain/LangGraph (Memoria)** (Pts: 8) [David - AI Engineer]
+- [ ] **Historia 4.4.1: Canary Release y Blue-Green Deployment para Modelos** (Pts: 8) [David - DevOps]
 
 ---
 
 ## 🚀 RELEASE 3: Enterprise Scale
 
-### Sprint 6: Distribución
+### Sprint 6: Distribución e Infraestructura
 - [ ] **Historia 5.1.1: Dockerización de Servicios** (Pts: 5) [David - DevOps]
-- [ ] **Historia 5.1.2: Migración a Kubernetes Cluster** (Pts: 8) [David - Cloud Architect]
+- [ ] **Historia 5.1.2: Infraestructura como Código (IaC) con Terraform** (Pts: 8) [David - Cloud Architect]
+- [ ] **Historia 5.1.3: Migración a Kubernetes Cluster (EKS/GKE)** (Pts: 8) [David - Cloud Architect]
+- [ ] **Historia 5.1.4: Implementación de Rolling Updates en K8s** (Pts: 5) [David - DevOps]
 
 ### Sprint 7: Streaming
 - [ ] **Historia 5.2.1: Setup Apache Kafka Cluster** (Pts: 5) [David - Data Engineer]
@@ -64,6 +70,7 @@
 ### Sprint 8: Continuidad y Disaster Recovery (ISO 22301)
 - [ ] **Historia 5.3.1: Automatización de Backups y Snapshots Cíclicos** (Pts: 5) [David - Cloud Architect]
 - [ ] **Historia 5.3.2: Simulacros de Recuperación y Resiliencia (DR)** (Pts: 8) [David - DevOps]
+- [ ] **Historia 5.3.3: Ingeniería de Caos y Pruebas de Safety (ISO 25010)** (Pts: 5) [David - DevOps]
 
 ---
 

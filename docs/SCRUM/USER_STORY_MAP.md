@@ -107,8 +107,8 @@ Yo como DevOps Engineer necesito integrar una política clara de Mesa de Servici
 **Pts: 5** | **Asignado a: David (DevOps)**
 Yo como DevOps Engineer necesito aplicar la Habilitación del Cambio (diferenciando Cambios Normales y Estándar) y documentar Errores Conocidos para minimizar la deuda técnica y riesgos.
 *Criterios de Aceptación:*
-[ ] Pipeline de CI/CD ajustado como mecanismo de habilitación del cambio.
-[ ] Documentación para el seguimiento de Errores Conocidos y Soluciones Temporales (*Workarounds*) integrada en las políticas.
+[x] Pipeline de CI/CD ajustado como mecanismo de habilitación del cambio.
+[x] Documentación para el seguimiento de Errores Conocidos y Soluciones Temporales (*Workarounds*) integrada en las políticas.
 
 **Historia 1.5.5: Secure Development Life Cycle y Pruebas de Seguridad**
 **Pts: 3** | **Asignado a: David (DevOps)**
@@ -130,6 +130,14 @@ Yo como Cloud Architect necesito documentar e integrar el Sistema de Gestión de
 *Criterios de Aceptación:*
 [x] Extracción y análisis de la ISO 27701 en `ISO_27701_COMPLIANCE.md`.
 [x] Políticas de minimización y de-identificación validadas en arquitectura.
+
+**Historia 1.5.8: Documentación del Modelo de Calidad ISO 25010 y DevSecOps**
+**Pts: 3** | **Asignado a: David (Cloud Architect)**
+Yo como Cloud Architect necesito destilar el estándar ISO 25010 y sus 9 características de calidad (incluyendo Safety e Interaction Capability) y alinearlas con nuestras prácticas DevOps.
+*Criterios de Aceptación:*
+[x] Análisis de los PDFs de contexto realizado.
+[x] Archivo `ISO_25010_COMPLIANCE.md` creado.
+[x] Puntos de calidad incorporados al Kanban y Roadmap.
 
 ## 🟧 ACTIVIDAD 2: Data Science, Econometría y MLOps
 
@@ -200,6 +208,13 @@ Yo como UI/UX Engineer necesito diseñar la interfaz siguiendo la jerarquía vis
 [ ] KPIs claros en la parte superior (NPS, Churn Promedio).
 [ ] Storytelling aplicado en la disposición visual.
 
+**Historia 3.2.2: Pruebas de Interaction Capability y Usabilidad (ISO 25010)**
+**Pts: 5** | **Asignado a: David (UI/UX Engineer)**
+Yo como UI/UX Engineer necesito diseñar pruebas para validar la prevención de errores, operabilidad e inclusividad del Dashboard de acuerdo al estándar ISO 25010.
+*Criterios de Aceptación:*
+[ ] Validación de despliegue self-service implementado en Streamlit.
+[ ] Diseño previene errores operacionales del usuario final.
+
 ---
 
 # 🚀 RELEASE 2: B2B SaaS & Omnicanalidad (Comercialización)
@@ -232,7 +247,14 @@ Yo como DevOps necesito asegurar que la API no colapse bajo concurrencia.
 *Criterios de Aceptación:*
 [ ] Rate limiting implementado. Latencia < 200ms.
 
-### 🟦 4.3 Agentes B2B Conversacionales (Rol: AI Engineer)
+**Historia 4.2.3: Pruebas de Estrés y Rendimiento API (Performance Efficiency ISO 25010)**
+**Pts: 5** | **Asignado a: David (DevOps)**
+Yo como DevOps necesito validar el comportamiento de tiempo y utilización de recursos (DuckDB, PySpark) bajo estrés en la API, cumpliendo los criterios de "Performance Efficiency" de la ISO 25010.
+*Criterios de Aceptación:*
+[ ] Pruebas de carga usando Locust/K6 implementadas.
+[ ] Auto-scaling (conceptos teóricos para Release 3) validado en staging.
+
+### 🟦 4.3 Agentes B2B Conversacionales y Model Delivery (Rol: AI / DevOps)
 **Historia 4.3.1: Setup Vector Database local (Chroma/FAISS)**
 **Pts: 5** | **Asignado a: David (AI Engineer)**
 Yo como AI Engineer necesito guardar las reseñas en embeddings.
@@ -245,22 +267,40 @@ Yo como AI Engineer necesito dotar de razonamiento iterativo (ReAct) al chatbot.
 *Criterios de Aceptación:*
 [ ] Memoria de sesión funcional mediante LangGraph.
 
+**Historia 4.4.1: Canary Release y Blue-Green Deployment para Modelos**
+**Pts: 8** | **Asignado a: David (DevOps)**
+Yo como DevOps necesito diseñar una estrategia de despliegue progresivo (Canary) para los modelos NLP de manera que garanticemos fiabilidad y safety en entornos de producción.
+*Criterios de Aceptación:*
+[ ] Estrategia de enrutamiento parcial (10% tráfico a nuevo modelo) documentada e implementada en CI/CD.
+
 ---
 
 # 🚀 RELEASE 3: Enterprise Scale (Visión a Largo Plazo)
 
-### 🟦 5.1 Infraestructura Distribuida (Rol: Cloud Architect)
+### 🟦 5.1 Infraestructura Distribuida e IaC (Rol: Cloud Architect)
 **Historia 5.1.1: Dockerización de Servicios**
 **Pts: 5** | **Asignado a: David (DevOps)**
 Yo como DevOps necesito meter todo el monolito en contenedores Docker.
 *Criterios de Aceptación:*
 [ ] Docker Compose funcionales sin errores de entorno.
 
-**Historia 5.1.2: Migración a Kubernetes (K8s)**
+**Historia 5.1.2: Infraestructura como Código (IaC) con Terraform**
 **Pts: 8** | **Asignado a: David (Cloud Architect)**
-Yo como Cloud Architect necesito levantar un cluster EKS para orquestar los contenedores.
+Yo como Cloud Architect necesito provisionar los recursos de AWS/GCP (VPCs, S3) mediante código Terraform para garantizar portabilidad y evitar "configuration drift".
 *Criterios de Aceptación:*
-[ ] Auto-scaling (HPA) configurado.
+[ ] Módulos Terraform de red, storage y compute generados y funcionales.
+
+**Historia 5.1.3: Migración a Kubernetes (K8s) (EKS/GKE)**
+**Pts: 8** | **Asignado a: David (Cloud Architect)**
+Yo como Cloud Architect necesito levantar un cluster Kubernetes para orquestar los contenedores y manejar la resiliencia en alto estrés.
+*Criterios de Aceptación:*
+[ ] Cluster y Auto-scaling (HPA) configurados.
+
+**Historia 5.1.4: Implementación de Rolling Updates en K8s**
+**Pts: 5** | **Asignado a: David (DevOps)**
+Yo como DevOps necesito configurar Rolling Updates en K8s de modo que las actualizaciones a contenedores ocurran sin pérdida de disponibilidad.
+*Criterios de Aceptación:*
+[ ] Configuración de Rolling Update y `readinessProbe` lista en los manifiestos de Deployment.
 
 ### 🟦 5.2 Streaming en Tiempo Real (Rol: Data Engineer)
 **Historia 5.2.1: Setup Apache Kafka Cluster**
@@ -287,6 +327,12 @@ Yo como DevOps necesito programar simulacros de desastres donde las capas superi
 *Criterios de Aceptación:*
 [ ] Prueba documentada de borrado de capa Silver y Gold, y regeneración.
 [ ] Tiempo de regeneración dentro de los SLAs esperados.
+
+**Historia 5.3.3: Ingeniería de Caos y Pruebas de Safety (ISO 25010)**
+**Pts: 5** | **Asignado a: David (DevOps)**
+Yo como DevOps necesito aplicar principios de Chaos Engineering (apagar instancias aleatoriamente) para validar la característica "Safety" (Mecanismos Fail Safe) del ISO 25010.
+*Criterios de Aceptación:*
+[ ] Entorno sobrevive a la pérdida aleatoria del servicio de NLP (Degradación Elegante).
 
 ---
 
