@@ -194,3 +194,12 @@ Este archivo es el registro de actividades de Antigravity.
 *   **Archivos Modificados:** `src/core/quality/silver_profiler.py`, `tests/test_silver_profiler.py`, `environment.yml`, `docs/SCRUM/KANBAN.md`, `docs/SCRUM/USER_STORY_MAP.md`, `docs/BUSINESS_PRODUCT/DEFERRED_FEATURES.md`, `docs/AGENT_LOGS.md`.
 *   **Hecho:** Se implementó `SilverProfilerFacade` para generar perfiles HTML usando `ydata-profiling`. Se aplicó el principio SRP y un mecanismo de Degradación Elegante (Fallback) con Pandas en caso de fallo de memoria, protegiendo así el Lakehouse (ISO 22301 y MTPD). El reporte se mantuvo local para los analistas, aplazando la integración en Streamlit según se registró en `DEFERRED_FEATURES.md` (preservando ISO 25010 Interaction Capability). Se realizaron pruebas automatizadas que pasaron exitosamente y se documentó todo el seguimiento en el tablero Kanban.
 *   **Siguiente paso:** Iniciar la Historia 2.2.1 (Modelo Logit Riesgo Churn).
+
+---
+
+### [2026-06-12] - Historia 2.1.2: Selección de Algoritmos Base con PyCaret (David / MLOps)
+*   **Estado:** Completado en la rama `feature/2.1.2-pycaret-baseline-models`.
+*   **Vertical Slice:** 2 (Econometría Básica y Orquestación)
+*   **Archivos Modificados:** `environment.yml`, `src/core/interfaces/automl_interface.py`, `src/use_cases/automl_facade.py`, `tests/test_automl_facade.py`, `docs/SCRUM/KANBAN.md`, `docs/AGENT_LOGS.md`.
+*   **Hecho:** Se implementó `AutoMLFacade` encapsulando `PyCaret` para generar y comparar modelos base. Se configuró el tracking de `MLflow` para registrar automáticamente métricas y matrices de confusión en local. Las dependencias se instalaron exitosamente utilizando `pip` para evitar fallos de conexión de Conda.
+*   **Siguiente paso:** **Pivote estratégico (Acordado con el usuario):** Iniciar un nuevo chat de sesión para realizar una Extracción de Datos Reales (Scraping de App Store/Play Store reales) que sustituya la data *random* de prueba, asegurando la validez del análisis para la presentación final. Posterior a esto, se retomará la Historia 2.2.1 (Modelo Logit Riesgo Churn).
