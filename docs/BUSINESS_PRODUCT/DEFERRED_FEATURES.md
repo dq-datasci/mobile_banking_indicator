@@ -21,3 +21,7 @@ Este documento rastrea todas las decisiones tecnológicas o features que **hemos
 ## 4. MCP (Model Context Protocol) para Múltiples LLMs concurrentes
 *   **Decisión:** Diferido. Se usará LangChain/LangGraph con un solo LLM poderoso (ej. OpenAI o Gemini) inicialmente.
 *   **Justificación:** Implementar múltiples agentes que debatan entre sí con distintos LLMs es brillante, pero para la primera iteración del RAG, un solo agente con buena memoria (LangGraph) cumple el objetivo con menos latencia.
+
+## 5. Capa de Búsqueda (Elasticsearch / OpenSearch)
+*   **Decisión:** Diferido para el **Release 4 (Enterprise Deep Listening)**.
+*   **Justificación:** Añadir una capa de búsqueda Full-Text hiper-rápida es vital para que clientes B2B puedan buscar quejas específicas entre millones de registros. Sin embargo, configurar y mantener nodos de Elasticsearch en este momento dispararía los costos de nube e introduciría complejidad innecesaria para las validaciones del MVP y Release 2, donde la analítica columnar (DuckDB/Parquet) es suficientemente veloz para los tableros generales.

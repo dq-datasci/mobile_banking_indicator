@@ -246,6 +246,18 @@ Yo como Data Engineer necesito un scraper para extraer texto puro de foros y Twi
 *Criterios de Aceptación:*
 [ ] Extracción con límites de Rate-Limit manejados.
 
+**Historia 4.1.3: Manejo Avanzado de Valores Faltantes (MICE y KNN)**
+**Pts: 5** | **Asignado a: David (Data Engineer)**
+Yo como Data Engineer necesito aplicar técnicas avanzadas de imputación (MICE y KNN) en la capa Silver para variables secundarias, mejorando la completitud de la data sin distorsionar la distribución.
+*Criterios de Aceptación:*
+[ ] Imputación KNN y MICE implementadas y testeadas.
+
+**Historia 4.1.4: Resiliencia de Scraping (Proxies) y Legalidad (TOS)**
+**Pts: 5** | **Asignado a: David (Data Engineer)**
+Yo como Data Engineer necesito configurar rotación de proxies y aplicar pausas aleatorias para evadir los bloqueos de Meta/Apple (TOS scraping bans), documentando nuestra justificación legal (ISO 27701).
+*Criterios de Aceptación:*
+[ ] Integración de un pool de proxies y backoff validado empíricamente.
+
 ### 🟦 4.2 Banking as a Service y Adapter (Rol: Backend Engineer)
 **Historia 4.2.1: Arquitectura Base FastAPI usando Adapter**
 **Pts: 8** | **Asignado a: David (Backend Engineer)**
@@ -279,6 +291,19 @@ Yo como Backend Engineer necesito implementar middlewares o decoradores en la AP
 Yo como DevOps necesito conectar el `AuditLogger` con notificaciones en tiempo real para anomalías de forma que podamos detectar y alertar ataques en tiempo real (OWASP A09).
 *Criterios de Aceptación:*
 [ ] Notificación proactiva si ocurre un error repetitivo de acceso no autorizado.
+
+**Historia 4.2.6: Arquitectura OLTP vs OLAP y Row Level Security (RLS)**
+**Pts: 8** | **Asignado a: David (Cloud Architect)**
+Yo como Cloud Architect necesito levantar una base PostgreSQL transaccional (OLTP) para gestionar usuarios SaaS y facturación, separada del Lakehouse OLAP, e implementar Row Level Security (RLS) para que un cliente nunca vea datos de otro.
+*Criterios de Aceptación:*
+[ ] PostgreSQL OLTP en funcionamiento.
+[ ] RLS testeado: User A no puede consultar `tenant_id` de User B.
+
+**Historia 4.2.7: Audit Logs Administrativos (ISO 27001)**
+**Pts: 3** | **Asignado a: David (DevOps)**
+Yo como DevOps necesito que el `AuditLogger` registre invariablemente cualquier acción administrativa (creación de tenants, cambio de planes de facturación) para auditorías de seguridad.
+*Criterios de Aceptación:*
+[ ] Trazas de logs de acciones críticas persistidas y seguras.
 
 ### 🟦 4.3 Agentes B2B Conversacionales y Model Delivery (Rol: AI / DevOps)
 **Historia 4.3.1: Setup Vector Database local (Chroma/FAISS)**
@@ -328,6 +353,13 @@ Yo como DevOps necesito configurar Rolling Updates en K8s de modo que las actual
 *Criterios de Aceptación:*
 [ ] Configuración de Rolling Update y `readinessProbe` lista en los manifiestos de Deployment.
 
+**Historia 5.1.5: Cifrado en Tránsito y Reposo (ISO 27001)**
+**Pts: 5** | **Asignado a: David (Cloud Architect)**
+Yo como Cloud Architect necesito configurar cifrado KMS (AES-256) en los buckets S3 de la capa Bronze y forzar TLS en todas las comunicaciones del pipeline para cumplir estrictamente con los controles de ISO 27001.
+*Criterios de Aceptación:*
+[ ] Todos los datos at rest están cifrados automáticamente.
+[ ] Endpoints de ingesta rechazan peticiones sin HTTPS.
+
 ### 🟦 5.2 Streaming en Tiempo Real (Rol: Data Engineer)
 **Historia 5.2.1: Setup Apache Kafka Cluster**
 **Pts: 5** | **Asignado a: David (Data Engineer)**
@@ -338,6 +370,13 @@ Yo como Data Engineer necesito un broker Kafka para los flujos.
 **Historia 5.2.2: Producers y Consumers**
 **Pts: 8** | **Asignado a: David (Data Engineer)**
 Yo como Data Engineer necesito ingestar reseñas en Tiempo Real sub-segundo.
+
+**Historia 5.2.3: Carga Incremental (CDC) y Data Lineage**
+**Pts: 8** | **Asignado a: David (Data Engineer)**
+Yo como Data Engineer necesito implementar Change Data Capture (CDC) para inyectar solo registros nuevos en lugar de procesar por lotes completos, y documentar visualmente el Data Lineage / DAG completo.
+*Criterios de Aceptación:*
+[ ] CDC funcional reduciendo el overhead de I/O en la capa Bronze a Silver.
+[ ] Diagrama de linaje generado en la documentación.
 
 ### 🟦 5.3 Continuidad y Disaster Recovery (Rol: Cloud Architect / DevOps)
 **Historia 5.3.1: Automatización de Backups y Snapshots Cíclicos**
@@ -359,6 +398,12 @@ Yo como DevOps necesito programar simulacros de desastres donde las capas superi
 Yo como DevOps necesito aplicar principios de Chaos Engineering (apagar instancias aleatoriamente) para validar la característica "Safety" (Mecanismos Fail Safe) del ISO 25010.
 *Criterios de Aceptación:*
 [ ] Entorno sobrevive a la pérdida aleatoria del servicio de NLP (Degradación Elegante).
+
+**Historia 5.3.4: Alta Disponibilidad y Réplicas (ISO 22301)**
+**Pts: 5** | **Asignado a: David (Cloud Architect)**
+Yo como Cloud Architect necesito configurar réplicas de lectura transaccionales para la base de datos OLTP de forma que soportemos interrupciones en la zona principal y se respete el RTO.
+*Criterios de Aceptación:*
+[ ] Failover probado exitosamente (apagar nodo master y nodo esclavo asume control).
 
 ---
 
