@@ -169,3 +169,11 @@ Este archivo es el registro de actividades de Antigravity.
 *   **Hecho:** Se destiló el PDF con OWASP Top 10 2025 en un nuevo estándar markdown para prevenir vulnerabilidades A01-A10. Se borró el PDF original. Se añadieron nuevas historias al Scrum para abordar Fallas en la Cadena de Suministro y controles de Acceso/Logging en futuros Sprints. Se completó la Historia 1.5.5 implementando linter de seguridad `bandit` y escáner de secretos `gitleaks` en el pipeline de CI/CD mediante GitHub Actions.
 *   **Siguiente paso:** Iniciar la Historia 1.5.10 (Control de Software Supply Chain Failures).
 
+---
+
+### [2026-06-12] - Cierre de Sesión y Mantenimiento de Prompts (Antigravity)
+*   **Estado:** Completado en la rama `chore/update-readme-owasp`.
+*   **Archivos Modificados:** `README.md`, `docs/AGENT_LOGS.md`.
+*   **Hecho:** El usuario actualizó los prompts operativos en el `README.md` para incluir la validación obligatoria del nuevo documento `OWASP_TOP_10_2025_COMPLIANCE.md` tanto al iniciar como al finalizar futuras sesiones, garantizando así la permanencia de los controles de seguridad en todo el ciclo de vida de desarrollo.
+*   **Siguiente paso:** Iniciar la Historia 1.5.10 (Control de Software Supply Chain Failures) en la próxima sesión.
+
