@@ -79,24 +79,8 @@ Yo como Data Engineer necesito construir un Esquema de Estrella en la capa Gold 
 [x] Dim_App creada con `valid_from`, `valid_to`, `is_current`.
 [x] Modelo optimizado y persistido en DuckDB/Parquet.
 
-### 🟦 1.5 Cumplimiento ISMS e ISO 27001 (Rol: Cloud Architect & DevOps)
-**Historia 1.5.1: Auditoría ISMS y Prevención de Fugas de Datos**
-**Pts: 5** | **Asignado a: David (Cloud Architect)**
-Yo como Cloud Architect necesito implementar el tratamiento de riesgos, control de accesos lógico y logging centralizado de forma que se garantice la prevención de fuga de datos sensibles y el cumplimiento de ISO 27001 (Controles 8.12, 8.15, 6.1.2).
-*Criterios de Aceptación:*
-[ ] Sistema de Logging centralizado configurado para el orquestador y scrapers.
-[ ] Evaluación de riesgos de extracción e ingesta documentada en los ADRs/Logs.
-[ ] Aislamiento de capas de datos (Bronze, Silver, Gold) protegido por diseño.
-
-**Historia 1.5.2: Secure Development Life Cycle y Pruebas de Seguridad**
-**Pts: 3** | **Asignado a: David (DevOps)**
-Yo como DevOps Engineer necesito integrar controles de seguridad y escaneo en el ciclo de desarrollo de forma que las vulnerabilidades se detecten antes del paso a producción (ISO 27001 Controles 8.25, 8.28, 8.29).
-*Criterios de Aceptación:*
-[ ] Integración de herramientas de escaneo de seguridad en GitHub Actions.
-[ ] Auditoría de secretos y credenciales en el código fuente.
-
-### 🟦 1.6 Gestión de Servicios y Operaciones (ITIL 4) (Rol: Cloud Architect & DevOps)
-**Historia 1.6.1: Documentación e Implementación del SVS de ITIL 4 y Principios Guía**
+### 🟦 1.5 Gobierno, Seguridad y Gestión de Servicios (ISO & ITIL 4) (Roles: Cloud Architect & DevOps)
+**Historia 1.5.1: Documentación e Implementación del SVS de ITIL 4 y Principios Guía**
 **Pts: 3** | **Asignado a: David (Cloud Architect)**
 Yo como Cloud Architect necesito documentar la integración del Sistema de Valor del Servicio (SVS) de ITIL 4 y sus Principios Guía para que nuestra arquitectura técnica esté alineada con el valor de negocio.
 *Criterios de Aceptación:*
@@ -104,19 +88,34 @@ Yo como Cloud Architect necesito documentar la integración del Sistema de Valor
 [x] Principios Guía documentados en los manuales de trabajo (`HOW_WE_WORK.md`).
 [x] ADR 015 generado.
 
-**Historia 1.6.2: Definición de Procesos para Mesa de Servicios y Gestión de Incidentes**
+**Historia 1.5.2: Auditoría ISMS y Prevención de Fugas de Datos (ISO 27001)**
+**Pts: 5** | **Asignado a: David (Cloud Architect)**
+Yo como Cloud Architect necesito implementar el tratamiento de riesgos, control de accesos lógico y logging centralizado de forma que se garantice la prevención de fuga de datos sensibles y el cumplimiento de ISO 27001 (Controles 8.12, 8.15, 6.1.2).
+*Criterios de Aceptación:*
+[ ] Sistema de Logging centralizado configurado para el orquestador y scrapers.
+[ ] Evaluación de riesgos de extracción e ingesta documentada en los ADRs/Logs.
+[ ] Aislamiento de capas de datos (Bronze, Silver, Gold) protegido por diseño.
+
+**Historia 1.5.3: Procesos de Mesa de Servicios y Gestión de Incidentes**
 **Pts: 5** | **Asignado a: David (DevOps)**
 Yo como DevOps Engineer necesito integrar una política clara de Mesa de Servicios e Incidentes de forma que podamos restaurar rápidamente cualquier caída de los scrapers o de la base de datos sin afectar el entorno de producción.
 *Criterios de Aceptación:*
 [ ] Proceso de Mesa de Servicios definido.
 [ ] Política de respuesta a incidentes mayores (*swarming*) documentada y en uso.
 
-**Historia 1.6.3: Integración de Gestión de Problemas y Habilitación del Cambio en CI/CD**
+**Historia 1.5.4: Gestión de Problemas y Habilitación del Cambio en CI/CD**
 **Pts: 5** | **Asignado a: David (DevOps)**
 Yo como DevOps Engineer necesito aplicar la Habilitación del Cambio (diferenciando Cambios Normales y Estándar) y documentar Errores Conocidos para minimizar la deuda técnica y riesgos.
 *Criterios de Aceptación:*
 [ ] Pipeline de CI/CD ajustado como mecanismo de habilitación del cambio.
 [ ] Documentación para el seguimiento de Errores Conocidos y Soluciones Temporales (*Workarounds*) integrada en las políticas.
+
+**Historia 1.5.5: Secure Development Life Cycle y Pruebas de Seguridad**
+**Pts: 3** | **Asignado a: David (DevOps)**
+Yo como DevOps Engineer necesito integrar controles de seguridad y escaneo en el ciclo de desarrollo de forma que las vulnerabilidades se detecten antes del paso a producción (ISO 27001 Controles 8.25, 8.28, 8.29).
+*Criterios de Aceptación:*
+[ ] Integración de herramientas de escaneo de seguridad en GitHub Actions.
+[ ] Auditoría de secretos y credenciales en el código fuente.
 
 ## 🟧 ACTIVIDAD 2: Data Science, Econometría y MLOps
 
