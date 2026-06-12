@@ -8,26 +8,28 @@
 
 ### Sprint 1: Ingeniería de Datos Base e Infraestructura (Vertical Slice 1)
 - [x] **Historia 1.1.1: Factory de Scrapers y Extracción AppStore** (Pts: 8) [David - Data Engineer]
-- [x] **Historia 1.2.1: Singleton Database y Data Contracts** (Pts: 8) [Boris - Cloud Architect]
-- [x] **Historia 1.2.2: Anonimización ISO 27001** (Pts: 5) [Boris - Data Engineer]
+- [x] **Historia 1.2.1: Singleton Database y Data Contracts** (Pts: 8) [David - Cloud Architect]
+- [x] **Historia 1.2.2: Anonimización ISO 27001** (Pts: 5) [David - Data Engineer]
 - [x] **Historia 1.3.1: CI/CD GitHub Actions y Pre-commits** (Pts: 5) [David - DevOps]
-- [x] **Historia 1.4.0: Documentación de Arquitectura de Datos y Schemas** (Pts: 3) [Boris - Cloud Architect]
-- [x] **Historia 1.4.1: Implementación Normativa ISO 27002 (Controles y Documentación)** (Pts: 3) [Boris - Cloud Architect]
+- [x] **Historia 1.4.0: Documentación de Arquitectura de Datos y Schemas** (Pts: 3) [David - Cloud Architect]
+- [x] **Historia 1.4.1: Implementación Normativa ISO 27002 (Controles y Documentación)** (Pts: 3) [David - Cloud Architect]
 - [x] **Historia 1.4.2: Pipeline de Transformación Silver y Calidad de Datos** (Pts: 8) [David - Data Engineer]
-- [ ] **Historia 1.4.3: Construcción de Capa Gold (Star Schema y SCD Type 2)** (Pts: 8) [David - Data Engineer]
+- [x] **Historia 1.4.3: Construcción de Capa Gold (Star Schema y SCD Type 2)** (Pts: 8) [David - Data Engineer]
+- [ ] **Historia 1.5.1: Auditoría ISMS y Prevención de Fugas de Datos (ISO 27001)** (Pts: 5) [David - Cloud Architect]
+- [ ] **Historia 1.5.2: Secure Development Life Cycle y Pruebas de Seguridad** (Pts: 3) [David - DevOps]
 
 ### Sprint 2: Econometría Básica y Orquestación (Vertical Slice 2)
-- [ ] **Historia 2.1.1: Análisis Exploratorio ydata-profiling** (Pts: 5) [Boris - Data Analyst]
-- [ ] **Historia 2.2.1: Modelo Logit Riesgo Churn** (Pts: 8) [Boris - Econometrista]
-- [ ] **Historia 2.2.2: Cálculo Econométrico NPS** (Pts: 5) [Boris - Econometrista]
+- [ ] **Historia 2.1.1: Análisis Exploratorio ydata-profiling** (Pts: 5) [David - Data Analyst]
+- [ ] **Historia 2.2.1: Modelo Logit Riesgo Churn** (Pts: 8) [David - Econometrista]
+- [ ] **Historia 2.2.2: Cálculo Econométrico NPS** (Pts: 5) [David - Econometrista]
 - [ ] **Historia 2.1.2: PyCaret Baseline Models** (Pts: 8) [David - MLOps]
 - [ ] **Historia 3.1.1: Menú CLI Orchestrator (Patrón Command)** (Pts: 8) [David - Desarrollador]
 
 ### Sprint 3: Inteligencia Artificial y UX (Vertical Slice 3)
 - [ ] **Historia 2.3.1: Facade NLP y Clasificación de Sentimiento** (Pts: 8) [David - Data Scientist]
 - [ ] **Historia 2.3.2: Extracción Temática y MLflow Tracking** (Pts: 5) [David - MLOps]
-- [ ] **Historia 2.2.3: Cadenas de Markov de Satisfacción** (Pts: 8) [Boris - Econometrista]
-- [ ] **Historia 3.2.1: Streamlit Dashboard (NPS, Observer y Patrón F)** (Pts: 8) [Boris - UI/UX Engineer]
+- [ ] **Historia 2.2.3: Cadenas de Markov de Satisfacción** (Pts: 8) [David - Econometrista]
+- [ ] **Historia 3.2.1: Streamlit Dashboard (NPS, Observer y Patrón F)** (Pts: 8) [David - UI/UX Engineer]
 
 ---
 
@@ -48,8 +50,8 @@
 ## 🚀 RELEASE 3: Enterprise Scale
 
 ### Sprint 6: Distribución
-- [ ] **Historia 5.1.1: Dockerización de Servicios** (Pts: 5) [Boris - DevOps]
-- [ ] **Historia 5.1.2: Migración a Kubernetes Cluster** (Pts: 8) [Boris - Cloud Architect]
+- [ ] **Historia 5.1.1: Dockerización de Servicios** (Pts: 5) [David - DevOps]
+- [ ] **Historia 5.1.2: Migración a Kubernetes Cluster** (Pts: 8) [David - Cloud Architect]
 
 ### Sprint 7: Streaming
 - [ ] **Historia 5.2.1: Setup Apache Kafka Cluster** (Pts: 5) [David - Data Engineer]

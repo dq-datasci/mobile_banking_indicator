@@ -87,7 +87,7 @@ Estoy extrayendo el contenido del documento, enseguida te presento un resumen de
 
 He terminado de leer el documento a detalle. Se trata de un trabajo de investigación titulado **“CONSTRUCCIÓN DE UN INDICADOR SINTÉTICO PARA EVALUAR LA EVOLUCIÓN DE LA CALIDAD PERCIBIDA POR LOS USUARIOS DE LA BANCA MÓVIL EN BOLIVIA DURANTE EL PERIODO 2023-2026”**.
 
-El trabajo pertenece a los estudiantes Juan Andrés Gira Álvarez, José Fernando Marquez Carrion, Boris Igor Miranda Prieto y David Quintela Saavedra, bajo la tutela del Profesor Christian Villanueva, en la carrera de Ingeniería en Ciencia de Datos e Inteligencia de Negocios de la Universidad del Valle (Univalle).
+El trabajo pertenece a los estudiantes Juan Andrés Gira Álvarez, José Fernando Marquez Carrion, David Igor Miranda Prieto y David Quintela Saavedra, bajo la tutela del Profesor Christian Villanueva, en la carrera de Ingeniería en Ciencia de Datos e Inteligencia de Negocios de la Universidad del Valle (Univalle).
 
 A continuación te presento un resumen estructurado y detallado de los puntos clave del documento:
 
@@ -141,8 +141,8 @@ Si tienes un video del cual te gustaría sacar información (como un tutorial, u
 ### User Input
 
 Necesito que iniciemos un proyecto en un entorno aislado dentro de la carpeta Projects/ No he creado esa carpeta todavia porque en si no sabia ni como llamarlo ni si seria mejor crear una solo o más de una.
-Necesito que hagamos esta proyecto. Pero en esta ocasion, no solo yo estaria creando este proyecto, sino que lo estaria haciendo colaborativamente con Boris Miranda. Este es un proyecto grande de final de semestre que se supone que tiene que unir algo de cada una de las materias.
-Por lo cual creo que seria muy bueno que te pegue igual como el contenido que hemos visto de las materias para que lo tengas como contexto y podamos decir que herramientas o cual seria la mejor manera de irlo desarrollando, la cosa es que, este seria un proyecto colaborativo y quisiera que tanto boris podamos desarrollarlo sin pisarnos nuestros talones. por lo cual creo que seria prudente tener un manejo de git con ramas y versiones profesional. Aparte de esto creo que es importante que definamos: Los patrones de diseño, se utilicen los principios SOLID y se defina la arquitectura de sistemas.
+Necesito que hagamos esta proyecto. Pero en esta ocasion, no solo yo estaria creando este proyecto, sino que lo estaria haciendo colaborativamente con David Miranda. Este es un proyecto grande de final de semestre que se supone que tiene que unir algo de cada una de las materias.
+Por lo cual creo que seria muy bueno que te pegue igual como el contenido que hemos visto de las materias para que lo tengas como contexto y podamos decir que herramientas o cual seria la mejor manera de irlo desarrollando, la cosa es que, este seria un proyecto y quisiera que tanto david podamos desarrollarlo sin pisarnos nuestros talones. por lo cual creo que seria prudente tener un manejo de git con ramas y versiones profesional. Aparte de esto creo que es importante que definamos: Los patrones de diseño, se utilicen los principios SOLID y se defina la arquitectura de sistemas.
 Y pues por lo mismo, todo esto:
 INFORME DE DIRECTRICES DE ARQUITECTURA Y DESARROLLO
 1. Fundamentos y Lógica (Estructuras de Datos y Algoritmos)
@@ -201,10 +201,10 @@ Me avisas de cual seria la mejor manera de que puedas tener el contexto de las d
 He preparado un **Plan de Implementación** detallado para nuestro proyecto. Ya puedes verlo en el panel lateral.
 
 En el plan abordo todos tus puntos:
-1. **Flujo colaborativo con Boris:** Proponiendo una estrategia de ramas en Git (Git Flow simplificado: `main`, `develop` y ramas `feature/` con Pull Requests) para que no haya conflictos en el código.
+1. **Flujo colaborativo con David:** Proponiendo una estrategia de ramas en Git (Git Flow simplificado: `main`, `develop` y ramas `feature/` con Pull Requests) para que no haya conflictos en el código.
 2. **Arquitectura:** Definiendo la **Capa 4 (Orquestación)** tal cual me indicaste, e incorporando los Patrones de Diseño (Facade, Adapter, Mediator, Proxy, Coordinator).
 3. **Calidad del código:** Incorporando explícitamente los principios **SOLID**, la Inversión de Dependencias (DIP), y las reglas de Clean Code (evitar *Boolean Traps*, usar *Null Safety* y el principio *Tell, Don't Ask*).
-4. **Contexto:** Te explico allí cuál sería la mejor manera de proveerme los resúmenes de las otras materias. Te adelanto que la opción más robusta y fácil para que Boris y yo tengamos el mismo contexto es **crear una carpeta `docs/context/` dentro del repositorio del proyecto** e ir guardando ahí los `.md` exportados de tu NotebookLM.
+4. **Contexto:** Te explico allí cuál sería la mejor manera de proveerme los resúmenes de las otras materias. Te adelanto que la opción más robusta y fácil para que David y yo tengamos el mismo contexto es **crear una carpeta `docs/context/` dentro del repositorio del proyecto** e ir guardando ahí los `.md` exportados de tu NotebookLM.
 
 Además, he creado un archivo aparte (`context_indicador_banca.md`) donde guardé el resumen que acabamos de sacar del documento de Word. Una vez que me apruebes el plan, lo moveré dentro de la carpeta del proyecto que vamos a crear. Y como solicitaste, ya **he borrado** todos los archivos temporales que generé en la carpeta `Projects/` para no ensuciarte el entorno.
 
@@ -212,8 +212,8 @@ Además, he creado un archivo aparte (`context_indicador_banca.md`) donde guard�
 
 ### User Input
 
-Otra cosa, la idea es que boris pueda igual usar antigravity e interactuar por su lado. Me gustaria que todo cambio, o detalles que se hagan, queden grabados en un informe. O sea muy aparte de los commits atomicos que se deben de hacer. Deberia haber una carpeta en el proyecto (o de que manera sugieres hacerlo) a la cual se le vaya agregando todos los cambios, instrucciones y vision que se vaya haciendo para que tanto tu, como el antigravity de el pueden checarlo. O asi como yo personalmente, o el personalmente podamos irlo consultando. Además no se si hay manera de que podamos seguir una metodologia de Scrum, no se si sea recomendado que el proyecto dentro tenga Mapas de Impacto, mapas de historias de usuario, no se si haya manera que se pueda automatizar la gestion de esto con jira, si sirve miro para algo. Lo que si, debemos usar spark y creo que seria bueno que usemos databricks.
-Sobre lo del contexto para BOris, es porque por ejemplo, ahorita tu me estas mostrando el Implementation Plan, pero Boris no va a ver eso, y luego va a ver un monton de cosas que se van a ir creando y no va a tener ninguna clase de contexto el o yo de lo que el vaya creando. Entonces quiero ver cual seria la mejor manera de solucionar esto.
+Otra cosa, la idea es que david pueda igual usar antigravity e interactuar por su lado. Me gustaria que todo cambio, o detalles que se hagan, queden grabados en un informe. O sea muy aparte de los commits atomicos que se deben de hacer. Deberia haber una carpeta en el proyecto (o de que manera sugieres hacerlo) a la cual se le vaya agregando todos los cambios, instrucciones y vision que se vaya haciendo para que tanto tu, como el antigravity de el pueden checarlo. O asi como yo personalmente, o el personalmente podamos irlo consultando. Además no se si hay manera de que podamos seguir una metodologia de Scrum, no se si sea recomendado que el proyecto dentro tenga Mapas de Impacto, mapas de historias de usuario, no se si haya manera que se pueda automatizar la gestion de esto con jira, si sirve miro para algo. Lo que si, debemos usar spark y creo que seria bueno que usemos databricks.
+Sobre lo del contexto para BOris, es porque por ejemplo, ahorita tu me estas mostrando el Implementation Plan, pero David no va a ver eso, y luego va a ver un monton de cosas que se van a ir creando y no va a tener ninguna clase de contexto el o yo de lo que el vaya creando. Entonces quiero ver cual seria la mejor manera de solucionar esto.
 Tampoco quiero que nos pisemos los talones o no podamos entender nada de lo que hace el otro.
 
 
@@ -221,18 +221,18 @@ Tampoco quiero que nos pisemos los talones o no podamos entender nada de lo que 
 
 ### Planner Response
 
-He actualizado completamente el **Plan de Implementación** para abordar cada una de tus preocupaciones sobre la colaboración con Boris:
+He actualizado completamente el **Plan de Implementación** para abordar cada una de tus preocupaciones sobre la colaboración con David:
 
-1. **"Cerebro Compartido" entre Agentes:** La mejor forma de que ambos agentes (el tuyo y el de Boris) entiendan qué hizo el otro es a través del propio repositorio de Git. Propongo una carpeta `docs/` en el proyecto con un archivo `AGENT_LOGS.md` (o `CHANGELOG.md`). Cada vez que un agente de Antigravity termine una tarea, se le instruirá para que escriba un resumen detallado allí. Así, el próximo agente simplemente leerá ese archivo y sabrá exactamente en qué estado quedó el proyecto.
+1. **"Cerebro Compartido" entre Agentes:** La mejor forma de que ambos agentes (el tuyo y el de David) entiendan qué hizo el otro es a través del propio repositorio de Git. Propongo una carpeta `docs/` en el proyecto con un archivo `AGENT_LOGS.md` (o `CHANGELOG.md`). Cada vez que un agente de Antigravity termine una tarea, se le instruirá para que escriba un resumen detallado allí. Así, el próximo agente simplemente leerá ese archivo y sabrá exactamente en qué estado quedó el proyecto.
 2. **Scrum y Metodologías Ágiles (Miro/Jira):** Automatizar Jira o Miro desde los agentes puede ser complejo por temas de autenticación. Sin embargo, Antigravity es **experto en procesar Markdown y Mermaid.js**. Mi recomendación ("Agile as Code") es tener nuestros Mapas de Impacto, Mapas de Historias de Usuario y tableros Kanban escritos nativamente en archivos Markdown dentro de la carpeta `docs/SCRUM/`. Los agentes los leerán, los actualizarán y harán los commits correspondientes solos.
 3. **Uso de Spark y Databricks:** Lo he incorporado directamente en la arquitectura. Utilizaremos PySpark para el procesamiento de datos (ETL) y NLP, y mantendremos el código de manera que sea 100% compatible para correrlo en un entorno de clústeres de Databricks.
-4. **Contexto:** Te confirmo que el archivo que saqué del Word (`context_indicador_banca.md`) lo moveremos a la carpeta `docs/CONTEXT/` del repositorio una vez lo inicialicemos, y ahí es donde pondremos el resto del material de NotebookLM para que Boris lo tenga.
+4. **Contexto:** Te confirmo que el archivo que saqué del Word (`context_indicador_banca.md`) lo moveremos a la carpeta `docs/CONTEXT/` del repositorio una vez lo inicialicemos, y ahí es donde pondremos el resto del material de NotebookLM para que David lo tenga.
 
 Por favor, **revisa el plan actualizado**. Si estás de acuerdo con manejar Scrum dentro de Git mediante archivos Markdown y con el uso de PySpark, dale al botón de **Aprobar** para que proceda inmediatamente a crear la carpeta, inicializar Git y estructurar todos los directorios y archivos base.
 
 ### User Input
 
-sip, me parece bien, el unico detalle es que quieriera que haya un archivo facilmente fisible para boris o para. O que en su defecto si o si tu o el antigravity de Boris lo lea antes de ejecutar cualquier cosa que haga pull para que se agreguen los cambios del otro y que tambien lea todos los archivos de contexto para que siempre tu y la antigravity de Boris sepan bien donde estamos en el avance del proyecto. Proyecto que por cierto necesito que lo estructuremos por etapas, epics, etc (o sea todo el mambo de la metodologia scrum) y fechas, para que tanto tu (o yo) o Boris (o su antigravity)  sepan (sepamos) que se tiene que lograr ese dia, para que vayamos avanzando sin volvernos locos. Igual pues creo que es muy necesario que esto se vaya actualizando, porque en si ahorita todavia no tienes el contexto completo de todo lo que tenemos que implementar, y pues puede que sobre la marcha igual nos demos cuenta de que hay cosas que tenemos que hacerlas de manera distinta. Tambien creo que seria muy importante que en el proyecto exista siempre un instructivo de uso, no se si para esto seria el clasivo README.md pero en si la idea es que cuando Boris o yo entremos, leamos eso para recordarnos de como debemos operar contigo y en nuestras respectivas tareas, que tenemos que leer, que tenemos que ejecutar, en que rama tenemos que trabajar, y porque.
+sip, me parece bien, el unico detalle es que quieriera que haya un archivo facilmente fisible para david o para. O que en su defecto si o si tu o el antigravity de David lo lea antes de ejecutar cualquier cosa que haga pull para que se agreguen los cambios del otro y que tambien lea todos los archivos de contexto para que siempre tu y la antigravity de David sepan bien donde estamos en el avance del proyecto. Proyecto que por cierto necesito que lo estructuremos por etapas, epics, etc (o sea todo el mambo de la metodologia scrum) y fechas, para que tanto tu (o yo) o David (o su antigravity)  sepan (sepamos) que se tiene que lograr ese dia, para que vayamos avanzando sin volvernos locos. Igual pues creo que es muy necesario que esto se vaya actualizando, porque en si ahorita todavia no tienes el contexto completo de todo lo que tenemos que implementar, y pues puede que sobre la marcha igual nos demos cuenta de que hay cosas que tenemos que hacerlas de manera distinta. Tambien creo que seria muy importante que en el proyecto exista siempre un instructivo de uso, no se si para esto seria el clasivo README.md pero en si la idea es que cuando David o yo entremos, leamos eso para recordarnos de como debemos operar contigo y en nuestras respectivas tareas, que tenemos que leer, que tenemos que ejecutar, en que rama tenemos que trabajar, y porque.
 Que por cierto, evalua si tiene sentido que creemos un entorno virtual con micromamba, o usemos un entorno hibrido que maneje quarto con R y python, no se si los dashboards deberian hacerse con stremlit o con shiny. No se si sea bueno implementar algo de esto:
 1. pygwalker - Beginner-Friendly Drag-and-Drop
 2. Plotly + Dash - Interactive Web Dashboards
@@ -260,7 +260,7 @@ He leído detalladamente ambos PDFs (los planes analíticos de Econometría II y
 
 Aquí tienes un resumen de lo que he definido en base a todas tus indicaciones:
 
-1. **El "Cerebro" y Manual de Agentes:** Hemos definido reglas estrictas. El proyecto tendrá un archivo `README.md` que servirá de instructivo obligatorio. Lo primero que yo (o el agente de Boris) deberemos hacer al iniciar es leer ese README, revisar los cambios en Git, leer el Kanban y el `AGENT_LOGS.md` para entender exactamente dónde estamos y qué toca hacer.
+1. **El "Cerebro" y Manual de Agentes:** Hemos definido reglas estrictas. El proyecto tendrá un archivo `README.md` que servirá de instructivo obligatorio. Lo primero que yo (o el agente de David) deberemos hacer al iniciar es leer ese README, revisar los cambios en Git, leer el Kanban y el `AGENT_LOGS.md` para entender exactamente dónde estamos y qué toca hacer.
 2. **Entorno y Tecnologías:**
    * **Micromamba y Quarto:** Excelente decisión. Micromamba nos dará entornos ultrarrápidos y Quarto nos permitirá tejer R y Python (esencial para econometría y ML).
    * **Dashboard:** **Streamlit** es la mejor opción. Como indicaste ("Fastest Path to a Live App"), nos permitirá integrar modelos complejos de Python y gráficos interactivos sin perder tiempo en HTML/JS.
@@ -277,7 +277,7 @@ Aquí tienes un resumen de lo que he definido en base a todas tus indicaciones:
 Acuerdate del Gitflow que debemos manejar o que seria recomendado que manejemos para no arruinar accidentalmente lo que hizo el otro.
 Igual recuerda ir creando y actualizando un .md de contexto de como nos gusta trabajar, para que cada vez que estemos creando algo no necesitemos ser ultraespecificos en las instrucciones que te damos. Puesto que ya tienes el contexto.
 Y si, me parece bien, solo que se me habia olvidado algo, para el 11 de junio de 2026 debemos acabar todo. Es que no estoy seguro si vamos a exponer y mostrar el trabajo el 12 o el 13, asi que prefiero que lo acabemos todo el 11. Con tu ayuda yo se que es posible, sin tener que estar todo el dia haciendo esto.
-Otra cosa, Boris, no entiende tanto de esto como yo, el es economista (su primera carrera), pero igual esta estudiando la carrera de ciencia de datos conmigo. Pero te aviso eso, porque necesito que los detalles o explicaciones que dejes tienen que ser lo más claro posibles. En el de como manejar las distintas ramas, de como hacerle las peticiones a antigravity, etc.
+Otra cosa, David, no entiende tanto de esto como yo, el es economista (su primera carrera), pero igual esta estudiando la carrera de ciencia de datos conmigo. Pero te aviso eso, porque necesito que los detalles o explicaciones que dejes tienen que ser lo más claro posibles. En el de como manejar las distintas ramas, de como hacerle las peticiones a antigravity, etc.
 
 *Edited relevant file*
 
@@ -314,7 +314,7 @@ Aquí tienes el resumen de lo que acabo de construir y configurar en la carpeta 
 
 1. **Repositorio Git Inicializado:** Creé las ramas `main` y `develop`. Actualmente estamos posicionados en `develop`. Hice el primer commit oficial (`Initial commit: Setup project architecture and rules`).
 2. **Estructura de Carpetas:** Creé `src/` (con sus capas limpias), `notebooks/`, `tests/` y el cerebro del proyecto: `docs/`.
-3. **Manual `README.md` ultra claro para Boris:** He redactado un README especialmente diseñado para él. Le explico de forma sencilla por qué **nunca debe tocar `main` o `develop` directamente**, y le dejé **"plantillas de texto" (prompts)** exactas que solo tiene que copiar y pegar a su Antigravity cuando empiece su día y cuando lo termine. Así su agente sabrá leer el estado en el que lo dejamos nosotros.
+3. **Manual `README.md` ultra claro para David:** He redactado un README especialmente diseñado para él. Le explico de forma sencilla por qué **nunca debe tocar `main` o `develop` directamente**, y le dejé **"plantillas de texto" (prompts)** exactas que solo tiene que copiar y pegar a su Antigravity cuando empiece su día y cuando lo termine. Así su agente sabrá leer el estado en el que lo dejamos nosotros.
 4. **Scrum y Fecha Límite (`KANBAN.md`):** He creado el tablero en `docs/SCRUM/KANBAN.md` comprimiendo todo el trabajo (*Roadmap*) para garantizar que estemos **totalmente listos el 11 de Junio de 2026**. ¡Tenemos 5 días para brillar, y lo vamos a lograr!
 5. **Cerebro Antigravity (`HOW_WE_WORK.md` y `AGENT_LOGS.md`):** Ya dejé plasmado que usaremos Micromamba, Quarto, Streamlit, PySpark y Databricks. También dejé mi primera nota en el `AGENT_LOGS.md` indicando que he configurado el proyecto y que estamos listos para arrancar.
 6. **Matriz de Integración (`CONTEXT/`):** El documento de contexto ya vive dentro del proyecto, incluyendo la justificación técnica de cómo entran las 7 materias (Series de Tiempo, Logit/Probit, Cadenas de Markov, Teoría de Colas, ISO, Spark, etc.).
@@ -347,11 +347,11 @@ Es que no se si seria mejor que aprendas del contexto o tengamos RAG en este pro
 ### 2. ¿Tiene sentido usar Obsidian? (Y qué es)
 **Obsidian es, literalmente, el compañero perfecto para la estructura que acabamos de crear.**
 Te explico: Obsidian es un programa gratuito para tomar notas que funciona leyendo carpetas con archivos Markdown (`.md`). Tiene una función increíble que te muestra un "grafo" visual (como una red neuronal visual) conectando todos tus archivos.
-Como nosotros construimos **todo el cerebro del proyecto y el Scrum** utilizando puros archivos `.md` en la carpeta `docs/`, si tú y Boris abren la carpeta `mobile_banking_indicator` usando Obsidian, verán todo nuestro progreso de una forma súper gráfica y ordenada, sin tener que entrar a la terminal o a GitHub. ¡Les recomiendo muchísimo descargarlo y abrir la carpeta del proyecto ahí!
+Como nosotros construimos **todo el cerebro del proyecto y el Scrum** utilizando puros archivos `.md` en la carpeta `docs/`, si tú y David abren la carpeta `mobile_banking_indicator` usando Obsidian, verán todo nuestro progreso de una forma súper gráfica y ordenada, sin tener que entrar a la terminal o a GitHub. ¡Les recomiendo muchísimo descargarlo y abrir la carpeta del proyecto ahí!
 
 ### 3. ¿Antigravity usa RAG internamente?
 Buena pregunta. Mi arquitectura interna utiliza algo similar a RAG llamado **Sistema de Elementos de Conocimiento (Knowledge Items)**. Cuando abrimos un proyecto, yo busco resúmenes y contexto previo. Sin embargo, mi mayor superpoder no es una base de datos vectorial oculta, sino mi capacidad de usar herramientas (como `view_file` o `grep_search`) para **leer tu sistema de archivos en tiempo real**.
-Por eso diseñé la estrategia de la carpeta `docs/`: no necesito que me entrenes con RAG masivamente porque cada vez que yo (o el agente de Boris) "despierte", usaré mis herramientas para leer el `AGENT_LOGS.md` y sabré instantáneamente todo el contexto.
+Por eso diseñé la estrategia de la carpeta `docs/`: no necesito que me entrenes con RAG masivamente porque cada vez que yo (o el agente de David) "despierte", usaré mis herramientas para leer el `AGENT_LOGS.md` y sabré instantáneamente todo el contexto.
 
 ---
 **El entorno, las reglas y la teoría están 100% listos y en Git.**
@@ -362,15 +362,15 @@ Siguiendo nuestro cronograma (Día 2 del Sprint), nos toca poner manos a la obra
 ok...pero eso en que me ayuda. O que aporta? me refiero a lo de obsidian, porque en si como me lo dijiste, solo entiendo que es algo visual o estético que no hace nada como tal, o tiene alguna utilidad? luego he visto otros videos que hablan de algo como un `segundo cerebro` o algo asi y siempre ponen a obsidian.
 
 Otra cosa, por favor modifica esto:
-## 🌟 Para Boris: Cómo funciona esto y cómo no pisarnos los talones
+## 🌟 Para David: Cómo funciona esto y cómo no pisarnos los talones
 
 Como estamos usando Inteligencia Artificial para acelerar el desarrollo (y tú estás en otra carrera que requiere conceptos distintos a los de software), hemos diseñado reglas a prueba de errores. Por favor sigue esto al pie de la letra:
-No tienes que ser tan explicito, eso puede sonar condescendiente, eso que te mencione era solo contexto para ti, no lo pongas explicitamente. Pero si es importante que todo este explicado detalladamente, lo más detalladamente que puedas tanto para mi como para Boris, porque tenemos otros proyectos y otras cosas, no siempre nos vamos a acordar del flujo de trabajo.
+No tienes que ser tan explicito, eso puede sonar condescendiente, eso que te mencione era solo contexto para ti, no lo pongas explicitamente. Pero si es importante que todo este explicado detalladamente, lo más detalladamente que puedas tanto para mi como para David, porque tenemos otros proyectos y otras cosas, no siempre nos vamos a acordar del flujo de trabajo.
 Aparte de esto, necesito que seas más específico, detallado y extenso en el README.md, que igual se detalle por ejemplo como va a estar el flujo de git, porque por ejemplo dice:  **Nunca trabajes directamente en la rama `main` o `develop`.**
 *   Cada vez que vayas a trabajar en algo (por ejemplo, el pipeline de datos), crea una "rama" nueva (branch). Tu agente Antigravity puede hacer esto por ti. Pídele: *"Crea una rama llamada feature/data-pipeline basada en develop"*.
 Pero no explica que tiene que estar en main y que tiene que estar en develop. Faltan explicaciones de muchas cosas.
-Otra cosa, el Kanban que hiciste, creo que podria ser un poco básico. Fijate en las imagenes como creo que deberia redactarse las cosas. (Por cierto lo que dice Pts son los Story Points en escala de fibonacci). Y es que en el kanban tampoco dice que tengo que hacer yo o que tiene que hacer Boris, no explica como sabemos si esta bien lo que se creo o no. O sea solo me pones una linea simple.
-Y además...no podemos empezar todavia con lo del día 2, porque todavia no hemos terminado de configurar el repositorio y arquitectura, si ni siquiera lo hemos subido a github e invitado a Boris a colaborar.
+Otra cosa, el Kanban que hiciste, creo que podria ser un poco básico. Fijate en las imagenes como creo que deberia redactarse las cosas. (Por cierto lo que dice Pts son los Story Points en escala de fibonacci). Y es que en el kanban tampoco dice que tengo que hacer yo o que tiene que hacer David, no explica como sabemos si esta bien lo que se creo o no. O sea solo me pones una linea simple.
+Y además...no podemos empezar todavia con lo del día 2, porque todavia no hemos terminado de configurar el repositorio y arquitectura, si ni siquiera lo hemos subido a github e invitado a David a colaborar.
 
 
 
@@ -392,7 +392,7 @@ Vamos por partes:
 
 ### 1. ¿Por qué Obsidian? (El "Segundo Cerebro")
 No te preocupes si no lo conocías. Obsidian no es solo algo estético; es una herramienta que implementa la metodología **Zettelkasten** (caja de notas). Funciona leyendo archivos Markdown puros y conectándolos entre sí mediante hipervínculos (creando una red neuronal o un "wiki personal").
-**¿Qué aporta a nuestro proyecto?** Al manejar toda nuestra gestión (Scrum, Logs de agentes, Contexto) mediante archivos Markdown en la carpeta `docs/`, Obsidian nos permite buscar, enlazar y visualizar la información en milisegundos. Cuando el proyecto crezca a decenas de modelos y semanas de reportes de agentes, Obsidian te permite encontrar la decisión técnica que tomamos el día 1 al instante, sin perderte en carpetas. Si bien no es "obligatorio" usarlo, si abres la carpeta del proyecto ahí, tú y Boris verán un grafo interactivo de todo el proyecto, facilitando muchísimo la lectura del contexto.
+**¿Qué aporta a nuestro proyecto?** Al manejar toda nuestra gestión (Scrum, Logs de agentes, Contexto) mediante archivos Markdown en la carpeta `docs/`, Obsidian nos permite buscar, enlazar y visualizar la información en milisegundos. Cuando el proyecto crezca a decenas de modelos y semanas de reportes de agentes, Obsidian te permite encontrar la decisión técnica que tomamos el día 1 al instante, sin perderte en carpetas. Si bien no es "obligatorio" usarlo, si abres la carpeta del proyecto ahí, tú y David verán un grafo interactivo de todo el proyecto, facilitando muchísimo la lectura del contexto.
 
 ### 2. El `README.md` Actualizado
 Tienes toda la razón, ajusté el tono. Reescribí el `README.md` por completo (puedes verificarlo en tus archivos). Ahora es sumamente detallado, didáctico y directo.
@@ -403,18 +403,18 @@ Tienes toda la razón, ajusté el tono. Reescribí el `README.md` por completo (
 ### 3. Tableros Scrum (Mapas de Historias y Kanban)
 Tomando tus imágenes como referencia, he creado dos niveles de organización en la carpeta `docs/SCRUM/`:
 *   **`USER_STORY_MAP.md`**: Aquí armé el mapa visual (Épicas -> Features -> Historias). Redacté las historias de usuario en el formato correcto (*"Yo como [rol] necesito... de forma que..."*), les asigné **Story Points en escala de Fibonacci** (5, 8, 13) y agregué los **[ ] Criterios de Aceptación** claros para saber exactamente cuándo una tarea está terminada.
-*   **`KANBAN.md`**: Este tablero ahora está mucho más estructurado, separando el trabajo en **Releases** e indicando claramente quién tiene asignada cada historia de usuario (por ejemplo, yo te asigné la extracción de datos y a Boris la limpieza).
+*   **`KANBAN.md`**: Este tablero ahora está mucho más estructurado, separando el trabajo en **Releases** e indicando claramente quién tiene asignada cada historia de usuario (por ejemplo, yo te asigné la extracción de datos y a David la limpieza).
 
 ### 4. Subir a GitHub
-Es el paso final antes de escribir código. Para subir nuestro repositorio local a GitHub y que puedas invitar a Boris, sigue estos rápidos pasos en tu navegador:
+Es el paso final antes de escribir código. Para subir nuestro repositorio local a GitHub y que puedas invitar a David, sigue estos rápidos pasos en tu navegador:
 1. Ve a tu cuenta de **GitHub** y crea un nuevo repositorio llamado `mobile_banking_indicator` (sin inicializarlo con README ni nada).
 2. Copia la URL de ese nuevo repositorio.
 3. Abre una terminal dentro de la carpeta de nuestro proyecto y ejecuta:
    `git remote add origin TU_URL_AQUI`
    `git push -u origin --all`
-4. En GitHub, ve a **Settings > Collaborators** y envía la invitación a Boris.
+4. En GitHub, ve a **Settings > Collaborators** y envía la invitación a David.
 
-Avísame cuando hayas hecho el push y Boris tenga acceso, para que procedamos con total tranquilidad al Sprint de Ingeniería de Datos.
+Avísame cuando hayas hecho el push y David tenga acceso, para que procedamos con total tranquilidad al Sprint de Ingeniería de Datos.
 
 ### User Input
 
@@ -518,7 +518,7 @@ Creo que seria bueno que tambien haya un archivo .md a modo de instructivo de lo
 
 ¡Hecho! He creado y guardado en Git dos nuevos archivos dentro de la carpeta `docs/`:
 
-1. **`docs/GIT_CHEATSHEET.md`**: Es una "Guía de Supervivencia" diseñada específicamente para que Boris (y tú) tengan los comandos a mano. Explica de forma súper simple y didáctica qué hace cada comando (`git status`, `git pull origin develop`, `git checkout -b`, etc.) y cómo se aplican exactamente a nuestro ciclo de trabajo diario para no pisarse los talones.
+1. **`docs/GIT_CHEATSHEET.md`**: Es una "Guía de Supervivencia" diseñada específicamente para que David (y tú) tengan los comandos a mano. Explica de forma súper simple y didáctica qué hace cada comando (`git status`, `git pull origin develop`, `git checkout -b`, etc.) y cómo se aplican exactamente a nuestro ciclo de trabajo diario para no pisarse los talones.
 2. **`docs/MICROMAMBA_GUIDE.md`**: Es un instructivo paso a paso sobre cómo funciona nuestra "burbuja" de entorno virtual. Explica cómo crear el entorno híbrido (Python + R) por primera vez, cómo activarlo cada vez que empiecen a trabajar (`micromamba activate banco_env`), cómo instalar librerías nuevas y, lo más importante, cómo exportar e importar las librerías para que ambos tengan exactamente la misma configuración en sus computadoras.
 
 Ambos documentos ya están versionados en tu repositorio local.
@@ -532,7 +532,7 @@ git remote add origin TU_LINK_DE_GITHUB.git
 git push -u origin --all
 ```
 
-Quedo a la espera de que subas el repositorio e invites a Boris para que arranquemos con la programación en PySpark de la Historia de Usuario 1.1.1 (Extracción de Reseñas). ¡Avisa cuando estés listo!
+Quedo a la espera de que subas el repositorio e invites a David para que arranquemos con la programación en PySpark de la Historia de Usuario 1.1.1 (Extracción de Reseñas). ¡Avisa cuando estés listo!
 
 ### User Input
 
@@ -569,12 +569,12 @@ Solo nos falta subir todo a GitHub (con los comandos `git remote add origin...` 
 
 ### User Input
 
-pregunta...al subir, es que nunca he trabajado colaborativamente. Al subir se subirian ambas ramas? o como funciona? y boris tendria acceso a ambas? o solo a develop?
+pregunta...al subir, es que nunca he trabajado colaborativamente. Al subir se subirian ambas ramas? o como funciona? y david tendria acceso a ambas? o solo a develop?
 me puedes ayudar con todo eso por favor? el repositorio ya lo cree como mobile_banking_indicator
 git@github.com:dq-datasci/mobile_banking_indicator.git
 
-Y esta es la direccion del github de boris:
-https://github.com/boris1098581
+Y esta es la direccion del github de david:
+https://github.com/david1098581
 
 *User accepted the command `git remote add origin git@github.com:dq-datasci/mobile_banking_indicator.git
 git push -u origin --all`*
@@ -590,25 +590,25 @@ Respondiendo a tus excelentes preguntas sobre cómo funciona la colaboración:
 **1. ¿Al subir, se suben ambas ramas o cómo funciona?**
 Depende del comando que uses. Normalmente, si haces un `git push` simple, solo se sube la rama en la que estás parado. Sin embargo, para dejar el proyecto impecable, yo ejecuté el comando `git push --all`, lo que significa que **acabo de subir tanto `develop` como `main` a GitHub**. Ya están ambas allá de forma segura.
 
-**2. ¿Boris tendrá acceso a ambas ramas o solo a develop?**
-Boris tendrá acceso **a todo el repositorio completo** (todas las ramas, todos los archivos y todo el historial). En Git, cuando invitas a alguien a un repositorio, le das la llave de todo el edificio.
-Cuando Boris ejecute en su computadora el comando para descargar el proyecto (`git clone git@github.com:dq-datasci/mobile_banking_indicator.git`), se descargará tanto `main` como `develop`.
+**2. ¿David tendrá acceso a ambas ramas o solo a develop?**
+David tendrá acceso **a todo el repositorio completo** (todas las ramas, todos los archivos y todo el historial). En Git, cuando invitas a alguien a un repositorio, le das la llave de todo el edificio.
+Cuando David ejecute en su computadora el comando para descargar el proyecto (`git clone git@github.com:dq-datasci/mobile_banking_indicator.git`), se descargará tanto `main` como `develop`.
 
-### ¿Cómo invitar a Boris?
+### ¿Cómo invitar a David?
 Ya que el código está en la nube, el último paso que debes hacer tú manualmente en la página de GitHub es enviarle la invitación. Hazlo así:
 1. Ve a este link exacto en tu navegador: [https://github.com/dq-datasci/mobile_banking_indicator/settings/access](https://github.com/dq-datasci/mobile_banking_indicator/settings/access)
 2. Haz clic en el botón verde **"Add people"**.
-3. Escribe el usuario de Boris: `boris1098581`.
+3. Escribe el usuario de David: `david1098581`.
 4. (Muy importante) Asegúrate de darle permisos de **Write** (Escritura) o **Maintain** para que pueda subir su código sin problemas.
 
-En cuanto Boris acepte la invitación, ¡el repositorio será oficialmente colaborativo!
-¿Quieres que vayamos empezando nosotros con la primera historia de usuario de Ingeniería de Datos (creación del entorno Micromamba y código PySpark) mientras Boris se une?
+En cuanto David acepte la invitación, ¡el repositorio será oficialmente colaborativo!
+¿Quieres que vayamos empezando nosotros con la primera historia de usuario de Ingeniería de Datos (creación del entorno Micromamba y código PySpark) mientras David se une?
 
 ### User Input
 
 como hago esto:
 (Muy importante) Asegúrate de darle permisos de Write (Escritura) o Maintain para que pueda subir su código sin problemas.
-Porque no me pidio eso en ningun momento, solo tenia el espacio para poner el nombre de boris.
+Porque no me pidio eso en ningun momento, solo tenia el espacio para poner el nombre de david.
 Es porque mi repositorio es publico?
 
 ### Planner Response
@@ -622,25 +622,25 @@ Los permisos detallados que te mencioné (como elegir entre *Read*, *Write*, *Ma
 
 Como tú creaste el proyecto en tu **cuenta personal** (`dq-datasci`), la configuración es mucho más directa:
 *   Si el repositorio es público, cualquiera puede verlo, pero **solo tú** puedes modificar el código.
-*   En el momento en el que añades a alguien como "Colaborador" (como acabas de hacer con Boris), GitHub asume automáticamente que son equipo y **le otorga permisos completos de escritura por defecto**.
+*   En el momento en el que añades a alguien como "Colaborador" (como acabas de hacer con David), GitHub asume automáticamente que son equipo y **le otorga permisos completos de escritura por defecto**.
 
-Por lo tanto, al haberlo invitado exitosamente, ¡Boris ya tiene todo lo que necesita para subir código y crear ramas junto con su Antigravity!
+Por lo tanto, al haberlo invitado exitosamente, ¡David ya tiene todo lo que necesita para subir código y crear ramas junto con su Antigravity!
 
 Ya que el repositorio está en la nube, la colaboración configurada y la estructura lista, estamos oficialmente listos para empezar a programar. **¿Empezamos con la creación de nuestro entorno de Micromamba y el script de extracción de PySpark para la Historia 1.1.1?**
 
 ### User Input
 
-quiero que me des un instructivo exacto de todos los pasos, combrobaciones y comandos que debe hacer Boris. Para que se lo pase por un mensaje de whatsapp
+quiero que me des un instructivo exacto de todos los pasos, combrobaciones y comandos que debe hacer David. Para que se lo pase por un mensaje de whatsapp
 
 *Viewed [README.md](file:///home/dq-datasci/Projects/mobile_banking_indicator/README.md) *
 
 ### Planner Response
 
-¡Por supuesto! Aquí tienes el mensaje redactado de forma clara, amigable y directa, listo para que lo copies y se lo envíes por WhatsApp a Boris:
+¡Por supuesto! Aquí tienes el mensaje redactado de forma clara, amigable y directa, listo para que lo copies y se lo envíes por WhatsApp a David:
 
 ***
 
-**¡Hola Boris! 👋**
+**¡Hola David! 👋**
 Ya dejé configurada toda la arquitectura y la base de nuestro proyecto final (Indicador Sintético de Banca Móvil). Creé repositorios, reglas de Git, tableros de Scrum y configuré todo para que nuestras Inteligencias Artificiales no se pisen los talones.
 
 Para que puedas empezar a colaborar sin problemas, por favor sigue estos pasos exactos en orden:
@@ -662,7 +662,7 @@ cd mobile_banking_indicator
 **4. Sincroniza a tu Agente (Antigravity)**
 Abre el proyecto en tu editor y abre a tu agente Antigravity. Como tu IA no sabe lo que mi IA y yo hicimos hoy, tienes que darle un contexto inicial. **Copia y pégale este mensaje exacto a tu Antigravity:**
 
-> *"Hola Antigravity, este es un proyecto colaborativo. Antes de hacer nada, asegúrate de hacer un `git pull origin develop` para traer los últimos cambios. Luego, lee el archivo `README.md`, los tableros en `docs/SCRUM/` y revisa la última entrada en `docs/AGENT_LOGS.md`. Explícame en qué estado se encuentra el proyecto y qué historia de usuario me toca abordar hoy según el Kanban."*
+> *"Hola Antigravity, este es un proyecto. Antes de hacer nada, asegúrate de hacer un `git pull origin develop` para traer los últimos cambios. Luego, lee el archivo `README.md`, los tableros en `docs/SCRUM/` y revisa la última entrada en `docs/AGENT_LOGS.md`. Explícame en qué estado se encuentra el proyecto y qué historia de usuario me toca abordar hoy según el Kanban."*
 
 **5. ¡Listo!**
 Una vez que le pases ese texto, tu Antigravity te explicará exactamente de qué trata el proyecto, cuáles son las reglas que definimos (están todas guardadas en la carpeta `docs/`) y te guiará paso a paso para hacer tu parte del trabajo sin que tengamos conflictos de código.
@@ -673,7 +673,7 @@ Una vez que le pases ese texto, tu Antigravity te explicará exactamente de qué
 
 ### User Input
 
-no funciono lo de .gitkeep . Fijate que solo se subio el docs y el README.MD al repositorio, eso no puede ser, la idea es que boris pueda descargar toda la infrastructura completa
+no funciono lo de .gitkeep . Fijate que solo se subio el docs y el README.MD al repositorio, eso no puede ser, la idea es que david pueda descargar toda la infrastructura completa
 
 *Viewed [.gitkeep](file:///home/dq-datasci/Projects/mobile_banking_indicator/src/infrastructure/.gitkeep) *
 
@@ -694,7 +694,7 @@ Lo que pasó fue esto: creé los archivos invisibles `.gitkeep` dentro de las ca
 
 Además, noté un detalle clave en tu captura de pantalla: **estás viendo la rama `main` en GitHub**. Como estuvimos trabajando en la rama `develop`, los últimos cambios no se estaban reflejando ahí de todas formas.
 
-Para arreglarlo por completo y que Boris no tenga problemas, acabo de hacer lo siguiente:
+Para arreglarlo por completo y que David no tenga problemas, acabo de hacer lo siguiente:
 1. Agregué los `.gitkeep` y el `.gitignore` a nuestro control de versiones de forma correcta.
 2. Sincronicé la rama `develop` con la rama `main` para que ambas estén exactamente iguales y en cero.
 3. Hice el `push` de todo.
@@ -714,7 +714,7 @@ Es que te abri al nivel de `Projects` porque pues todavia no habia ni decidido e
 
 ¡Esa es una pregunta fantástica! Y la respuesta te va a encantar porque demuestra que **el sistema que acabamos de construir funciona a la perfección**.
 
-**Sí, es mucho mejor que abras Antigravity directamente dentro de la carpeta `mobile_banking_indicator`**. Hacerlo así evita que accidentalmente modifiquemos otros proyectos tuyos y mantiene el entorno aislado, tal como lo hará Boris.
+**Sí, es mucho mejor que abras Antigravity directamente dentro de la carpeta `mobile_banking_indicator`**. Hacerlo así evita que accidentalmente modifiquemos otros proyectos tuyos y mantiene el entorno aislado, tal como lo hará David.
 
 ### ¿Necesitas exportar esta conversación?
 **¡Para nada! No pierdas tiempo haciendo eso.**
@@ -736,7 +736,7 @@ En cuanto me mandes ese prompt en la nueva sesión, yo automáticamente iré a l
 
 ### User Input
 
- *"Hola Antigravity, este es un proyecto colaborativo. Antes de hacer nada, asegúrate de hacer un `git pull origin develop` para traer los últimos cambios. Luego, lee el archivo `README.md`, los tableros en `docs/SCRUM/` y revisa la última entrada en `docs/AGENT_LOGS.md`. Explícame en qué estado se encuentra el proyecto y qué historia de usuario me toca abordar hoy según el Kanban."*
+ *"Hola Antigravity, este es un proyecto. Antes de hacer nada, asegúrate de hacer un `git pull origin develop` para traer los últimos cambios. Luego, lee el archivo `README.md`, los tableros en `docs/SCRUM/` y revisa la última entrada en `docs/AGENT_LOGS.md`. Explícame en qué estado se encuentra el proyecto y qué historia de usuario me toca abordar hoy según el Kanban."*
 
 *User accepted the command `git pull origin develop`*
 
@@ -751,7 +751,7 @@ El comando `git pull origin develop` se ejecutó exitosamente (estamos 100% actu
 *   **Fase:** Nos encontramos en el arranque del **Release 1: Pipeline de Datos e Infraestructura Base**.
 
 ### 🎯 Tus Tareas para Hoy (Según el KANBAN)
-Como tu compañero Boris tiene asignada la Limpieza de Texto, a ti (David) se te han asignado las tareas fundacionales del Día 2. Nos toca abordar lo siguiente:
+Como tu compañero David tiene asignada la Limpieza de Texto, a ti (David) se te han asignado las tareas fundacionales del Día 2. Nos toca abordar lo siguiente:
 
 1.  **Configuración del Entorno:** Crear nuestra "burbuja" de Micromamba híbrida (Python + R).
 2.  **Historia 1.1.1: Scraping Básico (5 Puntos):**
@@ -850,16 +850,16 @@ Te explico el análisis que hice sobre cada uno de tus puntos:
 ### 1. ¿App Web, Escritorio o Celular? (Y Docker)
 **Decisión:** Será una aplicación **Web** y usaremos **Docker**.
 *   **¿Por qué NO celular ni escritorio?:** Nuestro producto final es un "Indicador Sintético" y un Dashboard analítico con tablas de datos y gráficos de Econometría II complejos. Tratar de meter todo eso en la pantalla de 6 pulgadas de un celular arruinaría la experiencia de usuario. Y pedirle a los profesores que instalen un `.exe` de escritorio es molesto.
-*   **La solución ideal:** Construiremos todo para la **Web**. Cuando el proyecto esté terminado, lo encapsularemos en **Docker** (para que funcione en cualquier computadora del mundo sin importar si tiene Windows o Linux) y lo subiremos a la nube (ej. Streamlit Cloud o AWS). Así, el día de tu defensa, tú y Boris solo tendrán que compartir un Link (URL) y el jurado verá el dashboard en su navegador.
+*   **La solución ideal:** Construiremos todo para la **Web**. Cuando el proyecto esté terminado, lo encapsularemos en **Docker** (para que funcione en cualquier computadora del mundo sin importar si tiene Windows o Linux) y lo subiremos a la nube (ej. Streamlit Cloud o AWS). Así, el día de tu defensa, tú y David solo tendrán que compartir un Link (URL) y el jurado verá el dashboard en su navegador.
 
 ### 2. Monolito vs Microservicios (y Kubernetes)
 **Decisión:** Construiremos un **Monolito Modular**.
 *   **¿Por qué NO Microservicios/Kubernetes?:** Para un proyecto de Ciencia de Datos y Business Intelligence, usar Microservicios es una sobreingeniería brutal (*overkill*). Te cobrarían muchísimo en servidores (AWS) y añadirías latencia de red innecesaria. Kubernetes es para orquestar cosas como Netflix o Uber.
-*   **La solución ideal:** Al haber creado nuestras carpetas `src/core`, `src/use_cases`, etc., estamos haciendo un "Monolito Modular". Es decir, todo el código vive en este único repositorio (fácil de manejar para ti y Boris), pero por dentro está tan bien separado que tiene la limpieza y elegancia de los microservicios sin la pesadilla de mantenerlos.
+*   **La solución ideal:** Al haber creado nuestras carpetas `src/core`, `src/use_cases`, etc., estamos haciendo un "Monolito Modular". Es decir, todo el código vive en este único repositorio (fácil de manejar para ti y David), pero por dentro está tan bien separado que tiene la limpieza y elegancia de los microservicios sin la pesadilla de mantenerlos.
 
 ### 3. APIs y Hooks
 *   **APIs:** Por ahora usaremos Streamlit para mostrar los resultados directamente. Sin embargo, gracias a nuestra arquitectura limpia, si el día de mañana un Banco Real quiere usar tu modelo NLP de análisis de sentimiento, podemos envolver la capa `src/use_cases` en una **API (FastAPI)** en un par de horas, sin romper nada.
-*   **Hooks:** ¡Sí! Usaremos *Git Hooks* (específicamente *pre-commits*) más adelante. Esto obligará a que el código tuyo y de Boris se formatee automáticamente para que se vea igual de profesional antes de dejarles hacer un `git push`.
+*   **Hooks:** ¡Sí! Usaremos *Git Hooks* (específicamente *pre-commits*) más adelante. Esto obligará a que el código tuyo y de David se formatee automáticamente para que se vea igual de profesional antes de dejarles hacer un `git push`.
 
 ¿Qué te parece esta visión a largo plazo del proyecto? Si la apruebas, tenemos la pista de despegue completamente libre para empezar con el código real de la Extracción de Datos.
 
@@ -930,7 +930,7 @@ El nivel de las materias es altísimo y encaja **perfectamente** con nuestra vis
 
 He hecho lo siguiente:
 1. **Creé `docs/CONTEXT/subjects_summary.md`:** Aquí extraje las metodologías exactas que nos exigen. Destacan los modelos de elección discreta (**Logit/Probit**) para analizar el riesgo de fuga (*Churn*), y los procesos estocásticos (**Cadenas de Markov**) para predecir cuándo un cliente satisfecho se frustra por fallos de la app.
-2. **Actualicé el `USER_STORY_MAP.md`:** He introducido nuevas "Historias de Usuario" asignadas a ti y a Boris. Ahora incluimos:
+2. **Actualicé el `USER_STORY_MAP.md`:** He introducido nuevas "Historias de Usuario" asignadas a ti y a David. Ahora incluimos:
     - Entrenar los modelos Econométricos Logit y de Cadenas de Markov.
     - Desarrollar la **API B2B** (Banking as a Service) para vender el acceso al modelo.
     - Consolidar el Dashboard Streamlit.
@@ -988,7 +988,7 @@ Que flujos, servicios, depencias, frameworks serian utiles? tienen cabida en est
 Observabilidad y resiliencia tienen cabida en este proyecto?
 logs, monitorign, retrys, fault tolerance (para entender cuando un sistema falle) tiene cabida en este proyecto?
 Como estamos en el tema de la comunicacion de decisiones tecnicas? diagramas, trade-offs, documentación? creo que en esto vamos bien, pero con todas las ideas y terminologias que te puse por favor ayudame a darle forma a todo este proyecto.
-Ten en cuenta que para este proyecto, deberian ser como si varios puestos estuvieran trabajando en este, a pesar de que solo somos boris y yo. En si deberia ser como que un ingeniero de datos, un devops, un analista de datos, un cientifico de datos, machine learning specialist, esten trabajando en conjunto, esto igual debe verse reflejado en los mapas de historias de usuario, kanbas y en si en el SCRUM en general.
+Ten en cuenta que para este proyecto, deberian ser como si varios puestos estuvieran trabajando en este, a pesar de que solo somos david y yo. En si deberia ser como que un ingeniero de datos, un devops, un analista de datos, un cientifico de datos, machine learning specialist, esten trabajando en conjunto, esto igual debe verse reflejado en los mapas de historias de usuario, kanbas y en si en el SCRUM en general.
 Deberiamos poner la base de datos en un private subnet? tendria sentido para este proyecto o para parte del proyecto? aplicaremos Principle of Least Privilege?
 Armaremos un RAG dentro del proyecto de alguna forma?
 Deberiamos usar MCP para que se use más de un LLM de los que tienes disponible para que haga cada uno una tarea?
@@ -1118,7 +1118,7 @@ Construiremos una regla determinística para etiquetar a los usuarios. Por ejemp
 *   El usuario le dio 1 o 2 estrellas a la app.
 *   Y el modelo de Sentimiento NLP (HuggingFace/LangChain) detecta un sentimiento "Extremadamente Negativo".
 *   Y se detectan palabras clave como: *"desinstalo", "cierro mi cuenta", "me voy al banco X", "fraude"*.
-Una vez que el código genere esta columna `Riesgo_de_Fuga (0 o 1)`, **Boris (como Econometrista)** correrá el modelo Logit usando esa variable Proxy para descubrir estadísticamente qué falla de la app (el Login, las Transferencias o el Soporte) *causa* esa fuga inminente.
+Una vez que el código genere esta columna `Riesgo_de_Fuga (0 o 1)`, **David (como Econometrista)** correrá el modelo Logit usando esa variable Proxy para descubrir estadísticamente qué falla de la app (el Login, las Transferencias o el Soporte) *causa* esa fuga inminente.
 
 ### 2. Sobre NPS y otros KPIs de Marketing
 Totalmente de acuerdo. Me había enfocado mucho en el riesgo, pero el crecimiento es igual de importante. En el `USER_STORY_MAP.md` acabo de agregar formalmente que los modelos y el Dashboard (Streamlit) calcularán el **NPS (Net Promoter Score)**. Clasificaremos a los usuarios en Promotores (5 estrellas), Pasivos (3-4) y Detractores (1-2) para darle al Banco un KPI de marketing directo.
@@ -1129,7 +1129,7 @@ Ahí registré formalmente las decisiones que tomamos de *NO* incluir por ahora 
 
 ### 4. Estructura y Roles (Kanban y Story Map)
 El menú CLI interactivo con `rich` ya está de vuelta en el Sprint 4 (Capa de Orquestación).
-Y ahora, cada tarea en el Kanban y el Story Map incluye el Rol de Industria junto al nombre. Ej: `[Asignado a: Boris (Econometrista)]` o `[Asignado a: David (Data Engineer)]`. Y el `README.md` ya muestra el árbol de directorios con todas las nuevas carpetas documentadas.
+Y ahora, cada tarea en el Kanban y el Story Map incluye el Rol de Industria junto al nombre. Ej: `[Asignado a: David (Econometrista)]` o `[Asignado a: David (Data Engineer)]`. Y el `README.md` ya muestra el árbol de directorios con todas las nuevas carpetas documentadas.
 
 ¿Cómo ves el terreno ahora? Si todo te parece perfecto, ¡estamos listos para ir a la terminal y crear el entorno Micromamba híbrido e iniciar el Sprint 1!
 
@@ -1501,8 +1501,8 @@ Una vez actualizado el archivo, ejecuté una nueva sincronización. Hice el comm
 
 ### User Input
 
-Gracias, aunque...porque le pusiste Agnte de Boris en esta parte:
-### [2026-06-07] - Reestructuración Enterprise OmniVoC SaaS (Agente de Boris)
+Gracias, aunque...porque le pusiste Agnte de David en esta parte:
+### [2026-06-07] - Reestructuración Enterprise OmniVoC SaaS 
 Si literalmente lo hiciste tu, y tu eres mi agente.?
 
 
@@ -1521,9 +1521,9 @@ git checkout develop`*
 
 ### Planner Response
 
-¡Jaja, tienes toda la razón! Un lapsus digital. Como había estado leyendo las historias de usuario de Boris en el Kanban, me confundí al firmar la bitácora. Yo soy Antigravity, tu IA asistente de código, trabajando codo a codo contigo (David).
+¡Jaja, tienes toda la razón! Un lapsus digital. Como había estado leyendo las historias de usuario de David en el Kanban, me confundí al firmar la bitácora. Yo soy Antigravity, tu IA asistente de código, trabajando codo a codo contigo (David).
 
-Acabo de corregir el archivo `AGENT_LOGS.md` para que la autoría diga correctamente **"(Agente de David)"**, e hice el commit y la sincronización con la rama `main` para que todo quede inmaculado.
+Acabo de corregir el archivo `AGENT_LOGS.md` para que la autoría diga correctamente **""**, e hice el commit y la sincronización con la rama `main` para que todo quede inmaculado.
 
 ¡El historial está limpio y la arquitectura lista! ¿Qué tal si empezamos con la instalación del entorno `omnivoc_env` para arrancar con el código del Sprint 1?
 
@@ -1537,8 +1537,8 @@ Acabo de corregir el archivo `AGENT_LOGS.md` para que la autoría diga correctam
 * Ahora...sobre el README.md:
 Pones esto:
 **Al INICIAR tu sesión, copia y pégale esto a Antigravity:**
-> *"Hola Antigravity, este es un proyecto colaborativo. Antes de hacer nada, asegúrate de hacer un `git pull origin develop` para traer los últimos cambios. Luego, lee el archivo `README.md`, los tableros en `docs/SCRUM/` y revisa la última entrada en `docs/AGENT_LOGS.md`. Explícame en qué estado se encuentra el proyecto y qué historia de usuario me toca abordar hoy según el Kanban."*
-	- Pero...no deberia consultar más cosas dentro de docs/? cosas como GUIDES/, ENGINEERING_STANDARDS/ porque digo...tanto que le invertimos en crear todo eso, no serviria de mucho si tu o el agente de Boris no los consultan antes de hacer algo, no? No hay alguna manera de automatizar esa consulta? para que en si no tengamos que pegar ningun prompt o quizas olvidarnos de pegar ese prompt? en el sentido de que podamos ejecutar un comando y tu cheques todo eso a detalle? es eso posible? o que entremos a la carpeta y esto se haga automático?
+> *"Hola Antigravity, este es un proyecto. Antes de hacer nada, asegúrate de hacer un `git pull origin develop` para traer los últimos cambios. Luego, lee el archivo `README.md`, los tableros en `docs/SCRUM/` y revisa la última entrada en `docs/AGENT_LOGS.md`. Explícame en qué estado se encuentra el proyecto y qué historia de usuario me toca abordar hoy según el Kanban."*
+	- Pero...no deberia consultar más cosas dentro de docs/? cosas como GUIDES/, ENGINEERING_STANDARDS/ porque digo...tanto que le invertimos en crear todo eso, no serviria de mucho si tu o el agente de David no los consultan antes de hacer algo, no? No hay alguna manera de automatizar esa consulta? para que en si no tengamos que pegar ningun prompt o quizas olvidarnos de pegar ese prompt? en el sentido de que podamos ejecutar un comando y tu cheques todo eso a detalle? es eso posible? o que entremos a la carpeta y esto se haga automático?
 	- Ademas de eso no deberia tambien checar notebooks/, src/, tests/, README.md ?
 
 
@@ -1570,7 +1570,7 @@ git checkout develop`*
 3. **¿Automatización y necesidad del Prompt?**
 Aquí te explico cómo funciona mi "cerebro" (Antigravity) internamente:
 *   Yo tengo un sistema de **KIs (Knowledge Items)** integrado. Cada vez que tú abres el repositorio, yo automáticamente escaneo la estructura de tus carpetas y los archivos que tienes abiertos en tu IDE. Por tanto, *tú* no necesitas pegarme ese bloque gigante de texto. Basta con que me digas: *"Inicia sesión"*, y yo me encargaré de revisar el contexto.
-*   **¿Entonces por qué dejar el texto en el README?** Porque este repositorio es colaborativo. Si Boris decide usar otro sistema de IA, o si en un mes abres un chat completamente nuevo que no tiene el historial de hoy, tener ese bloque de texto explícito en el `README.md` actúa como un **Seguro de Vida**. Es la única forma de garantizar que cualquier inteligencia artificial, tuya o de Boris, se empape de la arquitectura antes de tocar una sola línea de código.
+*   **¿Entonces por qué dejar el texto en el README?** Porque este repositorio es colaborativo. Si David decide usar otro sistema de IA, o si en un mes abres un chat completamente nuevo que no tiene el historial de hoy, tener ese bloque de texto explícito en el `README.md` actúa como un **Seguro de Vida**. Es la única forma de garantizar que cualquier inteligencia artificial, tuya o de David, se empape de la arquitectura antes de tocar una sola línea de código.
 
 La sincronización en GitHub (merge a `main` y `develop`) también acaba de finalizar.
 
@@ -1578,7 +1578,7 @@ La sincronización en GitHub (merge a `main` y `develop`) también acaba de fina
 
 ### User Input
 
-Bueno. Y ahora estan esos prompts para el inicio y para el final, pero luego, como nos aseguremos que cada accion que realices tu o Boris, se haga cumpliendo con todo eso? seria bueno poner un prompt? al que le completemos algo? o como sugieres manejar eso?
+Bueno. Y ahora estan esos prompts para el inicio y para el final, pero luego, como nos aseguremos que cada accion que realices tu o David, se haga cumpliendo con todo eso? seria bueno poner un prompt? al que le completemos algo? o como sugieres manejar eso?
 
 *Viewed [README.md](file:///home/dq-datasci/Projects/mobile_banking_indicator/README.md) *
 
@@ -1598,14 +1598,14 @@ git checkout develop`*
 
 Para solucionar esto de raíz, mi sistema operativo interno (Antigravity) posee algo llamado **"Planning Mode" (Modo de Planificación)**. Cada vez que me pides una tarea compleja, yo *estoy obligado* a escribir un Plan de Implementación (`implementation_plan.md`) y esperar tu aprobación antes de tocar el código fuente.
 
-Para asegurarnos de que el agente de Boris haga exactamente lo mismo y que además justifique sus decisiones basándose en nuestros documentos, **acabo de agregar un tercer prompt al `README.md`**.
+Para asegurarnos de que el agente de David haga exactamente lo mismo y que además justifique sus decisiones basándose en nuestros documentos, **acabo de agregar un tercer prompt al `README.md`**.
 
 Ahora el README tiene 3 prompts (Inicio, Ejecución y Final). El nuevo prompt de Ejecución dice lo siguiente:
 
 > **Al EJECUTAR una nueva tarea (Para forzar la calidad del código), copia y pega:**
 > *"Vamos a trabajar en la Historia de Usuario [AQUÍ EL NÚMERO]. Antes de programar nada, redacta un Implementation Plan. En tu plan, debes justificar explícitamente cómo tu código cumplirá con `SOLID_PRINCIPLES.md` y qué patrón(es) de `DESIGN_PATTERNS.md` vas a implementar. No escribas ni modifiques código fuente hasta que yo revise y apruebe tu plan."*
 
-Con este prompt (que ya está comiteado y sincronizado en `main`), es **imposible** que tú, Boris, yo o cualquier otra IA escriba código espagueti. Primero se diseña, se justifica la arquitectura, tú lo apruebas, y solo entonces se programa.
+Con este prompt (que ya está comiteado y sincronizado en `main`), es **imposible** que tú, David, yo o cualquier otra IA escriba código espagueti. Primero se diseña, se justifica la arquitectura, tú lo apruebas, y solo entonces se programa.
 
 Creo que con esto hemos blindado por completo el ciclo de vida del desarrollo. ¿Empezamos con la creación del entorno Micromamba y el *Implementation Plan* de la Historia 1.1.1?
 
@@ -1722,7 +1722,7 @@ Cuando estés listo para empezar a programar la Tarea 1.1.1, te invito a cerrar 
 
 ### User Input
 
-ok, definitivamente hare, esto.  Muchas gracias por todo, y ya para consultas y demás. Puedo exportar este chat y subirlo a un notebook de notebookLM no? asi igual pues tendria la información completa de cada día de sesion, para que yo consulte aparte cualquier detalle que quizas no recuerdo o que no se guardo, etc etc, verdad? Y si si, como me recomiendas diferencias lo que le suba yo, de lo que le suba boris, y como hacemos para que se diferencien los chats (que bueno estarian dentro de un mismo notebook) de si tenemos 2 chats distintos del mismo dia? y bueno notebookLM tiene un limite de 25 fuentes creo, asi que...seria mejor que si yo exporto digamos este chat, que seria en .md si no me equivoco y luego lo mejor es que lo vaya modificando el .md fusionandolo con cada nuevo chat? para los que son mios, y boris que haga lo mismo para los que son suyos?
+ok, definitivamente hare, esto.  Muchas gracias por todo, y ya para consultas y demás. Puedo exportar este chat y subirlo a un notebook de notebookLM no? asi igual pues tendria la información completa de cada día de sesion, para que yo consulte aparte cualquier detalle que quizas no recuerdo o que no se guardo, etc etc, verdad? Y si si, como me recomiendas diferencias lo que le suba yo, de lo que le suba david, y como hacemos para que se diferencien los chats (que bueno estarian dentro de un mismo notebook) de si tenemos 2 chats distintos del mismo dia? y bueno notebookLM tiene un limite de 25 fuentes creo, asi que...seria mejor que si yo exporto digamos este chat, que seria en .md si no me equivoco y luego lo mejor es que lo vaya modificando el .md fusionandolo con cada nuevo chat? para los que son mios, y david que haga lo mismo para los que son suyos?
 
 ### Planner Response
 
@@ -1733,7 +1733,7 @@ Aquí te dejo la estrategia exacta que te recomiendo para organizar esto, consid
 ### 1. La Estrategia del "Documento Maestro" (Para no chocar con el límite de fuentes)
 Como NotebookLM tiene un límite de fuentes, **no subas cada chat como un archivo separado**. Lo ideal es que creen **solo 2 Documentos Maestros** (pueden ser archivos `.md` o incluso Documentos de Google Docs que se sincronicen con NotebookLM):
 *   `Antigravity_Logs_David.md`
-*   `Antigravity_Logs_Boris.md`
+*   `Antigravity_Logs_David.md`
 
 Cada vez que termines un chat, exportas el contenido y lo pegas al *final* de tu Documento Maestro. Como NotebookLM soporta hasta 500,000 palabras por fuente, un solo documento te aguantará todo el proyecto.
 
@@ -1754,7 +1754,7 @@ Para que NotebookLM no se confunda cuando hay 2 chats el mismo día, debes poner
 [Aquí pegas el chat exportado]
 ```
 
-Al hacerlo así, cuando le preguntes a NotebookLM *"¿Por qué Boris cambió el patrón Singleton?"*, NotebookLM sabrá exactamente buscar en el archivo de Boris, en la fecha exacta y la sesión exacta.
+Al hacerlo así, cuando le preguntes a NotebookLM *"¿Por qué David cambió el patrón Singleton?"*, NotebookLM sabrá exactamente buscar en el archivo de David, en la fecha exacta y la sesión exacta.
 
 ### 💡 Un "Superpoder" Nativo de Antigravity que debes conocer:
 Independientemente de NotebookLM, quiero que sepas que **mi sistema guarda automáticamente todos nuestros historiales** en tu computadora.
@@ -1767,7 +1767,7 @@ Ha sido un placer absoluto diseñar esta arquitectura contigo. ¡Nos vemos en el
 
 ### User Input
 
-Me encanta tu idea. Eso quiero hacer, solamente que podrias agregar eso al README.md? para que Boris y yo no nos olvidemos de hacer eso?
+Me encanta tu idea. Eso quiero hacer, solamente que podrias agregar eso al README.md? para que David y yo no nos olvidemos de hacer eso?
 
 *Viewed [README.md](file:///home/dq-datasci/Projects/mobile_banking_indicator/README.md) *
 
@@ -1789,7 +1789,7 @@ Creé una nueva sección llamada **"Gestión de Memoria y Prevención del 'Lost 
 
 En esa sección he documentado:
 1.  La regla inquebrantable de abrir un **NUEVO CHAT** cada día o por cada nueva historia de usuario.
-2.  La instrucción exacta para mantener 2 Documentos Maestros (`Antigravity_Logs_David.md` y `Antigravity_Logs_Boris.md`).
+2.  La instrucción exacta para mantener 2 Documentos Maestros (`Antigravity_Logs_David.md` y `Antigravity_Logs_David.md`).
 3.  La plantilla de metadatos (Fecha, Autor, Sesión y Tema) que deben usar al pegar los chats para que NotebookLM no se maree al procesarlos.
 
 Todos estos cambios ya han sido registrados con su commit atómico correspondiente y fusionados de vuelta a `main` en GitHub.
@@ -1941,7 +1941,7 @@ Al verificar que las extracciones, el manejo de errores, la idempotencia y la fa
 * **Acción tomada:** Hice un `commit` con la corrección del LSP y la actualización de los documentos, y **ya hice el push** de estos cambios al repositorio remoto en GitHub sobre la rama `feature/1.1.1-scrapers-factory`.
 
 ### 4. ¿Qué historia nos toca hoy?
-Según el Product Roadmap y asumiendo que el Agente de David terminó su parte, el siguiente paso (para el Agente de Boris) es la:
+Según el Product Roadmap y asumiendo que el Antigravity terminó su parte, el siguiente paso (para el Antigravity) es la:
 👉 **Historia 1.2.1: Singleton Database y Data Contracts** (8 Puntos).
 El objetivo será configurar DuckDB usando el patrón Singleton y definir los esquemas estrictos de tablas con Pydantic.
 
@@ -2010,28 +2010,28 @@ Resolving conflicts between feature/1.1.1-scrapers-factory and develop and commi
 docs/AGENT_LOGS.md
 # Registro de Actividad de Agentes (Agent Logs)
 
-Este archivo es el canal de comunicación entre las distintas instancias de Antigravity (el agente de David y el de Boris).
+Este archivo es el registro de actividades de Antigravity.
 **REGLA:** Antes de hacer commit o terminar una sesión, el agente DEBE agregar una entrada aquí con la fecha, quién ejecutó, qué se hizo y qué sigue.
 
 ---
 
-### [2026-06-06] - Inicialización del Proyecto (Agente de David)
+### [2026-06-06] - Inicialización del Proyecto 
 *   **Estado:** Se creó la estructura del repositorio y se inicializó Git en la rama `develop`.
 *   **Hecho:** Se definieron las reglas de arquitectura, el manual `README.md`, el Kanban ajustado a la fecha límite del 11 de Junio, y se importó el resumen base (contexto).
 *   **Siguiente paso:** Crear el entorno Micromamba, e iniciar el Sprint 1 (Extracción de datos con PySpark).
 
 ---
 
-### [2026-06-08] - Sprint 1: Factory de Scrapers y Entorno (Agente de David)
+### [2026-06-08] - Sprint 1: Factory de Scrapers y Entorno 
 *   **Vertical Slice:** 1 (Ingeniería de Datos Base e Infraestructura)
 *   **Archivos Modificados:** `environment.yml`, `src/core/interfaces/scraper_interface.py`, `src/infrastructure/extractors/scraper_factory.py`, `playstore_scraper.py`, `appstore_scraper.py`.
 *   **Hecho:** Se creó el entorno `omnivoc_env` con micromamba. Se implementó el patrón Factory Method asegurando LSP para la extracción. Se comprobó la conexión a Play Store guardando las reseñas puras en formato Parquet en la capa Bronze.
-*   **Siguiente paso:** El Agente de Boris debe abordar la Historia 1.2.1 (Singleton Database y Data Contracts para DuckDB) y la 1.2.2 (Pipeline de Anonimización).
+*   **Siguiente paso:** Debemos abordar la Historia 1.2.1 (Singleton Database y Data Contracts para DuckDB) y la 1.2.2 (Pipeline de Anonimización).
 <<<<<<< feature/1.1.1-scrapers-factory
 
 ---
 
-### [2026-06-10] - Cierre Historia 1.1.1 y Corrección de LSP (Agente de David)
+### [2026-06-10] - Cierre Historia 1.1.1 y Corrección de LSP 
 *   **Estado:** Se revisó el código en la rama `feature/1.1.1-scrapers-factory`.
 *   **Hecho:** Se añadió el método `save_to_bronze` a la interfaz base `BaseScraper` para cumplir con el Principio de Sustitución de Liskov (LSP). Se actualizaron KANBAN y USER_STORY_MAP para marcar la Historia 1.1.1 como finalizada.
 *   **Siguiente paso:** Crear un Pull Request de `feature/1.1.1-scrapers-factory` hacia `develop`, hacer merge y comenzar con la Historia 1.2.1 (Singleton Database y Data Contracts).
@@ -2086,7 +2086,7 @@ Git siempre estructura el conflicto en tres partes:
 <<<<<<< feature/1.1.1-scrapers-factory
 (VERSIÓN A: Current Change / Cambio Actual)
 ---
-### [2026-06-10] - Cierre Historia 1.1.1 y Corrección de LSP (Agente de David)
+### [2026-06-10] - Cierre Historia 1.1.1 y Corrección de LSP 
 *   **Estado:** Se revisó el código en la rama `feature/1.1.1-scrapers-factory`.
 *   **Hecho:** Se añadió el método...
 *   **Siguiente paso:** Crear un Pull Request...
@@ -2113,7 +2113,7 @@ Al final, el archivo debe quedar limpio, así:
 ```markdown
 ---
 
-### [2026-06-10] - Cierre Historia 1.1.1 y Corrección de LSP (Agente de David)
+### [2026-06-10] - Cierre Historia 1.1.1 y Corrección de LSP 
 *   **Estado:** Se revisó el código en la rama `feature/1.1.1-scrapers-factory`.
 *   **Hecho:** Se añadió el método `save_to_bronze` a la interfaz base `BaseScraper` para cumplir con el Principio de Sustitución de Liskov (LSP). Se actualizaron KANBAN y USER_STORY_MAP para marcar la Historia 1.1.1 como finalizada.
 *   **Siguiente paso:** Crear un Pull Request de `feature/1.1.1-scrapers-factory` hacia `develop`, hacer merge y comenzar con la Historia 1.2.1 (Singleton Database y Data Contracts).
@@ -2214,7 +2214,7 @@ Ya he modificado el archivo `README.md` directamente. Así es como quedó el nue
 
 > *"Hemos terminado por hoy. Primero, revisa `docs/SCRUM/USER_STORY_MAP.md` y `docs/SCRUM/KANBAN.md` para marcar con `[x]` las tareas y criterios de aceptación que completamos en esta sesión. Segundo, escribe una nueva entrada en `docs/AGENT_LOGS.md` indicando la fecha, autor, Vertical Slice, archivos modificados y cuál es la siguiente historia a trabajar. Tercero, verifica rápidamente que no hayamos roto ningún principio en `SOLID_PRINCIPLES.md`. Luego, ejecuta **Commits Atómicos** siguiendo la convención de `GIT_CHEATSHEET.md` (feat, fix, docs, refactor). Finalmente, haz un `git push origin feature/[tu-rama]` y guíame sobre si ya debemos abrir un Pull Request hacia `develop`."*
 
-Con este cambio nos aseguramos de que Antigravity (sin importar si soy yo o la instancia de Boris mañana) no deje nada a medias y el tracking del proyecto sea perfecto.
+Con este cambio nos aseguramos de que Antigravity (sin importar si soy yo o la instancia de David mañana) no deje nada a medias y el tracking del proyecto sea perfecto.
 
 ¿Te parece bien cómo quedó? Si te gusta, hago un commit rápido en la rama `develop` para guardar este ajuste en las reglas del repositorio.
 
@@ -2290,12 +2290,12 @@ Podrias redactar eso en el README.md por favor?
 Ya lo dejé perfectamente configurado para que sea automático en el futuro:
 
 1. **Creé una carpeta dedicada:** Ahora tenemos `docs/NOTEBOOKLM_LOGS/`.
-2. **Organicé los archivos:** Moví ahí tu archivo `Antigravity_Logs_David.md` y creé la plantilla base para `Antigravity_Logs_Boris.md`.
-3. **Añadí el Prompt:** He redactado y añadido un prompt muy claro en la nueva **sección 4 del `README.md`** para que cualquiera de nosotros (o Boris) simplemente lo copie, lo pegue y Antigravity haga el trabajo de concatenación con su separador respectivo y limpieze.
+2. **Organicé los archivos:** Moví ahí tu archivo `Antigravity_Logs_David.md` y creé la plantilla base para `Antigravity_Logs_David.md`.
+3. **Añadí el Prompt:** He redactado y añadido un prompt muy claro en la nueva **sección 4 del `README.md`** para que cualquiera de nosotros (o David) simplemente lo copie, lo pegue y Antigravity haga el trabajo de concatenación con su separador respectivo y limpieze.
 
 He hecho el commit atómico y lo he subido todo a `develop`. Aquí está el prompt que quedó en el `README.md` para que lo tengas a la mano:
 
-> *"He exportado el registro de nuestra última conversación en el archivo `[nombre_del_archivo_exportado.md]`. Por favor, toma TODO el contenido de ese archivo y añádelo al final de `docs/NOTEBOOKLM_LOGS/Antigravity_Logs_[David/Boris].md` utilizando un separador visual claro (ej. `---`) y un título con la fecha y tema de la sesión. Una vez lo hayas añadido de forma segura, elimina el archivo temporal exportado original para mantener limpio el directorio de trabajo."*
+> *"He exportado el registro de nuestra última conversación en el archivo `[nombre_del_archivo_exportado.md]`. Por favor, toma TODO el contenido de ese archivo y añádelo al final de `docs/NOTEBOOKLM_LOGS/Antigravity_Logs_[David/David].md` utilizando un separador visual claro (ej. `---`) y un título con la fecha y tema de la sesión. Una vez lo hayas añadido de forma segura, elimina el archivo temporal exportado original para mantener limpio el directorio de trabajo."*
 
 Así mantenemos el entorno limpio de archivos exportados de un solo uso, pero nuestra memoria a largo plazo crece sin problemas. ¿Te parece bien cómo quedó estructurado?
 # ====================================================================================================
@@ -2366,9 +2366,9 @@ Aquí tienes el resumen de mis acciones:
 
 ### Nuestra Historia de Usuario de Hoy 🚀
 
-Según el último registro del **Agente de David** y el Tablero **Kanban**:
+Según el último registro del **Antigravity** y el Tablero **Kanban**:
 
-La historia de usuario que nos toca desarrollar hoy asumiendo el rol de **Cloud Architect (Agente de Boris)** es:
+La historia de usuario que nos toca desarrollar hoy asumiendo el rol de **Cloud Architect ** es:
 
 > **Historia 1.2.1: Singleton Database y Data Contracts** (Pts: 8)
 > *"Yo como Cloud Architect necesito configurar DuckDB/Databricks aplicando el patrón Singleton y contratos de datos estrictos (DIP) de forma que la basura de internet no contamine el análisis."*
@@ -2629,10 +2629,10 @@ Aquí tienes el resumen de mi inicialización:
 
 ### 🎯 Historia de Usuario para Hoy
 
-Según el último registro del Agente de Boris en los logs y el flujo del Sprint 1 (Ingeniería de Datos Base e Infraestructura), la historia que nos toca abordar hoy es:
+Según el último registro del Antigravity en los logs y el flujo del Sprint 1 (Ingeniería de Datos Base e Infraestructura), la historia que nos toca abordar hoy es:
 
 **[Historia 1.2.2: Pipeline de Anonimización (ISO 27001)]**
-*   **Rol Asignado:** Data Engineer (Boris)
+*   **Rol Asignado:** Data Engineer (David)
 *   **Vertical Slice:** 1
 *   **Puntos de Historia:** 5
 *   **Objetivo:** Aplicar hashing (ej. SHA-256) a los datos personales (PII) como nombres de usuarios e IPs extraídos en la capa Bronze, de forma que queden totalmente irreconocibles al pasar a la capa Silver, cumpliendo así con el Principio de Privacidad.
@@ -2841,7 +2841,7 @@ Hola Antigravity, inicia sesión. Haz un `git pull origin develop`. Luego, lee e
 
 He ejecutado el `git pull origin develop` (el repositorio ya estaba actualizado) y he realizado la lectura exhaustiva de toda la documentación corporativa y de metodologías ágiles que me pediste, incluyendo los estándares de ingeniería (SOLID, Patrones de Diseño Gof), los ADRs, el modelo de negocio B2B, las guías de git/micromamba y los registros de los agentes. También le di un vistazo rápido a la estructura actual de `src/`, `tests/` y `notebooks/`.
 
-Basándome en la última entrada de `docs/AGENT_LOGS.md` (donde el agente de Boris completó la Historia 1.2.2 sobre el Pipeline de Anonimización y actualizó el ADR 011) y revisando el `KANBAN.md` en el Sprint 1 (Vertical Slice 1), **la historia de usuario que nos toca hoy es:**
+Basándome en la última entrada de `docs/AGENT_LOGS.md` (donde el agente de David completó la Historia 1.2.2 sobre el Pipeline de Anonimización y actualizó el ADR 011) y revisando el `KANBAN.md` en el Sprint 1 (Vertical Slice 1), **la historia de usuario que nos toca hoy es:**
 
 ### 🚀 Historia 1.3.1: CI/CD GitHub Actions y Pre-commits
 *   **Puntos de Historia:** 5
@@ -3076,7 +3076,7 @@ Hemos terminado por hoy. Primero, revisa `docs/SCRUM/USER_STORY_MAP.md` y `docs/
 ¡Sesión finalizada y documentada con éxito! He completado rigurosamente todos los pasos de tu prompt:
 
 1. **Kanban y User Story Map**: He marcado con `[x]` todos los criterios de la Historia 1.3.1 (CI/CD y Pre-commits).
-2. **Bitácora (Agent Logs)**: Añadí la entrada de hoy detallando el trabajo realizado con GitHub Actions y Ruff, y dejé establecido que el siguiente paso es la **Historia 2.1.1** (Análisis Exploratorio ydata-profiling), que será ejecutada bajo tu rol de **Data Analyst (Boris)**.
+2. **Bitácora (Agent Logs)**: Añadí la entrada de hoy detallando el trabajo realizado con GitHub Actions y Ruff, y dejé establecido que el siguiente paso es la **Historia 2.1.1** (Análisis Exploratorio ydata-profiling), que será ejecutada bajo tu rol de **Data Analyst (David)**.
 3. **Verificación de Principios y Reglas**: Todo en orden. Nuestra configuración de Ruff refuerza explícitamente los principios del proyecto.
 4. **Commits Atómicos y Sincronización**: Creé el commit `docs: finalize session tracking for story 1.3.1 and update readme prompt`.
 5. **Orquestación Automática**: He disparado el pipeline en tu terminal que:
@@ -3106,7 +3106,7 @@ Hemos terminado por hoy. Primero, revisa `docs/SCRUM/USER_STORY_MAP.md` y `docs/
 ¡Misión cumplida! Todo el proceso de finalización ha sido ejecutado a la perfección de manera automatizada:
 
 1. **Kanban y User Story Map**: He marcado con `[x]` todos los criterios de la Historia 1.3.1 (CI/CD y Pre-commits).
-2. **Bitácora (Agent Logs)**: Añadí la entrada de hoy detallando el trabajo realizado con GitHub Actions y Ruff, y dejé establecido que el siguiente paso es la **Historia 2.1.1** (Análisis Exploratorio ydata-profiling), que será ejecutada bajo el rol de **Data Analyst (Boris)**.
+2. **Bitácora (Agent Logs)**: Añadí la entrada de hoy detallando el trabajo realizado con GitHub Actions y Ruff, y dejé establecido que el siguiente paso es la **Historia 2.1.1** (Análisis Exploratorio ydata-profiling), que será ejecutada bajo el rol de **Data Analyst (David)**.
 3. **Verificación de Principios**: Todo en orden. Nuestra configuración de Ruff refuerza explícitamente los principios del proyecto.
 4. **Commits Atómicos y Sincronización**: Creé el commit atómico documentando este cierre (`docs: finalize session tracking for story 1.3.1 and update readme prompt`).
 5. **Orquestación Automática Finalizada**: 
@@ -3141,7 +3141,7 @@ Hacerlo de esta manera tiene enormes ventajas tácticas para nosotros:
 
 ### User Input
 
-Ok ,me parece bien. Por cierto, eso deberia estar anotado en algun lado, no? o sea como registro del proyecto, para que no quede solo entre tu y yo. O verbal, porque esto le habia dicho a Boris hace un rato.
+Ok ,me parece bien. Por cierto, eso deberia estar anotado en algun lado, no? o sea como registro del proyecto, para que no quede solo entre tu y yo. O verbal, porque esto le habia dicho a David hace un rato.
 
 *Edited relevant file*
 
@@ -3153,7 +3153,7 @@ Ok ,me parece bien. Por cierto, eso deberia estar anotado en algun lado, no? o s
 
 He redactado la decisión formalmente como el **ADR 013: Desarrollo Orientado a Datos de Muestra (Sample Data Driven Development)** al final del archivo `docs/ADRs/ARCHITECTURE_DECISIONS.md`. Allí he documentado las razones técnicas (ahorro de latencia, RAM y límites de API) que discutimos, y también dejé por escrito que gracias a nuestra arquitectura esto es seguro y temporal.
 
-Asimismo, ya hice el commit (`docs(adr): register sample data driven development strategy`) directo a la rama `develop` para que Boris o cualquier otro Agente lea esto al inicio de su sesión en su lectura de contexto y tenga completamente claro por qué estamos usando temporalmente un "app_id" de prueba.
+Asimismo, ya hice el commit (`docs(adr): register sample data driven development strategy`) directo a la rama `develop` para que David o cualquier otro Agente lea esto al inicio de su sesión en su lectura de contexto y tenga completamente claro por qué estamos usando temporalmente un "app_id" de prueba.
 
 ### Planner Response
 
@@ -3170,7 +3170,7 @@ Pregunta, sería posible y tendria sentido, añadir una funcionalidad en alguno 
 
 ### Planner Response
 
-¡Me encanta cómo estás proyectando esto! Lo que tu compañero Boris menciona es el "Santo Grial" del análisis de datos de clientes: las empresas pagan fortunas por herramientas de **Brand Reputation Management** y **Social Listening** que sean verdaderamente omnicanales e inteligentes.
+¡Me encanta cómo estás proyectando esto! Lo que tu compañero David menciona es el "Santo Grial" del análisis de datos de clientes: las empresas pagan fortunas por herramientas de **Brand Reputation Management** y **Social Listening** que sean verdaderamente omnicanales e inteligentes.
 
 Nuestro producto ya sentó las bases para lograr eso, porque la arquitectura que armamos está pensada precisamente para no depender de una sola fuente. Agregar rastreo de internet abierto (OSINT) y transcripción de video (ej. YouTube, TikTok, Reels) convertiría a **OmniVoC** en un producto nivel Enterprise o un excelente emprendimiento B2B *post-universidad*.
 
@@ -3250,7 +3250,7 @@ No tienes que hacer ni restaurar absolutamente nada. Todo quedó impecable y con
 
 ### Planner Response
 
-Todo el proceso de sincronización ha finalizado. Quedo en espera de tus próximas instrucciones, o nos vemos en la siguiente sesión con Boris para comenzar la historia de *Data Profiling*. ¡Excelente trabajo hoy!
+Todo el proceso de sincronización ha finalizado. Quedo en espera de tus próximas instrucciones, o nos vemos en la siguiente sesión con David para comenzar la historia de *Data Profiling*. ¡Excelente trabajo hoy!
 
 ### User Input
 
@@ -3265,15 +3265,15 @@ Hemos terminado por hoy. Primero, revisa `docs/SCRUM/USER_STORY_MAP.md` y `docs/
 Como te había comentado, ya nos habíamos adelantado y ejecutado **absolutamente todos** los pasos de tu prompt con éxito en los minutos anteriores:
 
 ✅ **1. Scrum Actualizado:** `USER_STORY_MAP.md` y `KANBAN.md` ya tienen los `[x]` correspondientes a la Historia 1.3.1 y la integración de la estrategia del Release 4.
-✅ **2. Agent Logs:** La entrada en la bitácora indicando el trabajo de CI/CD (Ruff y Github Actions) y apuntando a la Historia 2.1.1 (Data Profiling con Boris) ya está redactada.
+✅ **2. Agent Logs:** La entrada en la bitácora indicando el trabajo de CI/CD (Ruff y Github Actions) y apuntando a la Historia 2.1.1 (Data Profiling con David) ya está redactada.
 ✅ **3 y 4. Principios y Documentos Verificados:** Nuestros ADRs (como el ADR 012 de Ruff y ADR 013 de Sample Data) fueron redactados y se apegan perfectamente a ISO 27001 y SOLID.
 ✅ **5, 6 y 7. Commits Atómicos y Pull Request:** Todos los commits atómicos ya fueron subidos, el Pull Request hacia `develop` fue creado, auto-fusionado (Squash and Merge) y tu entorno local ya se encuentra posicionado en `develop` totalmente limpio.
 
 El repositorio está en un estado inmaculado. Ha sido un excelente cierre de sesión y un tremendo Sprint de DevOps.
 
-¡Nos vemos en la siguiente sesión con Boris para empezar la etapa de Data Science! Que tengas un excelente día.
+¡Nos vemos en la siguiente sesión con David para empezar la etapa de Data Science! Que tengas un excelente día.
 # ====================================================================================================
-# FECHA: 2026-06-11 | AUTOR: Agente de David
+# FECHA: 2026-06-11 | AUTOR: Antigravity
 # SESIÓN: 02 | TEMA: Formalización de Arquitectura de Datos (Medallion, Star Schema, SCD)
 # ====================================================================================================
 
@@ -3342,11 +3342,11 @@ Aquí tienes el reporte de las acciones iniciales y revisión del proyecto:
    * `tests/`: Contiene `test_anonymizer.py` verificado previamente.
    * `notebooks/`: Actualmente solo contiene `.gitkeep`.
 4. **Revisión de Scrum y Logs**:
-   * Según `AGENT_LOGS.md` (la última sesión cerró la Historia 1.3.1 de CI/CD por el Agente de David) y el `KANBAN.md`, el Sprint 1 (Vertical Slice 1) está casi completo.
+   * Según `AGENT_LOGS.md` (la última sesión cerró la Historia 1.3.1 de CI/CD por el Antigravity) y el `KANBAN.md`, el Sprint 1 (Vertical Slice 1) está casi completo.
 
 ### 🎯 La Historia de Usuario de Hoy
 
-Nos toca asumir el rol de **Boris (Data Analyst)** para comenzar con:
+Nos toca asumir el rol de **David (Data Analyst)** para comenzar con:
 > **Historia 2.1.1: Análisis Exploratorio con ydata-profiling** (5 Puntos)
 > *"Yo como Analista de Datos necesito generar reportes automáticos de calidad de forma que entienda la distribución estadística de la capa Silver."*
 > **Criterio de Aceptación:** Reporte HTML generado automáticamente en cada corrida.
@@ -3501,7 +3501,7 @@ Quiero que me corrijas unas cosas si.
 Fijate que en KANBAN.md :
 - [ ] **Historia 1.4.1: Pipeline de Transformación Silver y Calidad de Datos** (Pts: 8) [David - Data Engineer]
 - [ ] **Historia 1.4.2: Construcción de Capa Gold (Star Schema y SCD Type 2)** (Pts: 8) [David - Data Engineer]
-Me pusiste esas en el sprint 2. cuando son del sprint 1. y - [ ] **Historia 2.1.1: Análisis Exploratorio ydata-profiling** (Pts: 5) [Boris - Data Analyst] me la pusiste en el sprint 1, cuando es del sprint 2.
+Me pusiste esas en el sprint 2. cuando son del sprint 1. y - [ ] **Historia 2.1.1: Análisis Exploratorio ydata-profiling** (Pts: 5) [David - Data Analyst] me la pusiste en el sprint 1, cuando es del sprint 2.
 En el USER_STORY_MAP.md esta perfecto.
 Aunque estaba pensando que creo que sería bueno que incluyamos esto que acabamos de hacer en el kanban y en el user story map, o tu que piensas?
 
@@ -3557,14 +3557,14 @@ Hemos terminado por hoy. Primero, revisa `docs/SCRUM/USER_STORY_MAP.md` y `docs/
 ¡Entendido! He ejecutado rigurosamente el protocolo de finalización de sesión que has indicado. Aquí está el detalle del cierre:
 
 1. **Revisión de Scrum:** Confirmé que la Historia 1.4.0 que realizamos hoy esté debidamente marcada con `[x]` tanto en `USER_STORY_MAP.md` como en `KANBAN.md`.
-2. **Registro de Agentes:** Escribí la nueva entrada del 11 de junio en `docs/AGENT_LOGS.md` indicando mi autoría (Agente de Boris), la capa trabajada, los archivos modificados y señalando claramente que el siguiente paso para la próxima sesión es iniciar la **Historia 2.1.1**.
+2. **Registro de Agentes:** Escribí la nueva entrada del 11 de junio en `docs/AGENT_LOGS.md` indicando mi autoría , la capa trabajada, los archivos modificados y señalando claramente que el siguiente paso para la próxima sesión es iniciar la **Historia 2.1.1**.
 3. **Verificación de Estándares:** Confirmé que no rompimos ninguno de los principios SOLID ni reglas de DevOps/Clean Code.
 4. **Actualización de Decisiones (ADRs):** Identifiqué que nuestra nueva capa Gold requería sustentación formal, por lo que agregué el **ADR 014** a `ARCHITECTURE_DECISIONS.md` para justificar el uso de Star Schema y SCD Tipo 2.
 5. **Commits y CI/CD:** Realicé los *Commits Atómicos* pertinentes en la rama `chore/end-of-session-june-11`, hice el *push*, abrí el *Pull Request*, ejecuté el auto-merge y finalmente limpié el entorno volviendo a `develop` y borrando la rama temporal.
 
 Todo ha quedado pulcro, documentado y salvaguardado en el repositorio central de forma impecable. ¡Ha sido una excelente sesión! Estaré listo para cuando decidas retomar y arrancar de lleno con el EDA y PyCaret. ¡Hasta la próxima!
 # ====================================================================================================
-# FECHA: 2026-06-11 | AUTOR: Agente de David
+# FECHA: 2026-06-11 | AUTOR: Antigravity
 # SESIÓN: N/A | TEMA: Corrección de Tableros Scrum y Mantenimiento de Logs
 # ====================================================================================================
 
@@ -3633,11 +3633,11 @@ Aquí tienes el reporte de las acciones iniciales y revisión del proyecto:
    * `tests/`: Contiene `test_anonymizer.py` verificado previamente.
    * `notebooks/`: Actualmente solo contiene `.gitkeep`.
 4. **Revisión de Scrum y Logs**:
-   * Según `AGENT_LOGS.md` (la última sesión cerró la Historia 1.3.1 de CI/CD por el Agente de David) y el `KANBAN.md`, el Sprint 1 (Vertical Slice 1) está casi completo.
+   * Según `AGENT_LOGS.md` (la última sesión cerró la Historia 1.3.1 de CI/CD por el Antigravity) y el `KANBAN.md`, el Sprint 1 (Vertical Slice 1) está casi completo.
 
 ### 🎯 La Historia de Usuario de Hoy
 
-Nos toca asumir el rol de **Boris (Data Analyst)** para comenzar con:
+Nos toca asumir el rol de **David (Data Analyst)** para comenzar con:
 > **Historia 2.1.1: Análisis Exploratorio con ydata-profiling** (5 Puntos)
 > *"Yo como Analista de Datos necesito generar reportes automáticos de calidad de forma que entienda la distribución estadística de la capa Silver."*
 > **Criterio de Aceptación:** Reporte HTML generado automáticamente en cada corrida.
@@ -3792,7 +3792,7 @@ Quiero que me corrijas unas cosas si.
 Fijate que en KANBAN.md :
 - [ ] **Historia 1.4.1: Pipeline de Transformación Silver y Calidad de Datos** (Pts: 8) [David - Data Engineer]
 - [ ] **Historia 1.4.2: Construcción de Capa Gold (Star Schema y SCD Type 2)** (Pts: 8) [David - Data Engineer]
-Me pusiste esas en el sprint 2. cuando son del sprint 1. y - [ ] **Historia 2.1.1: Análisis Exploratorio ydata-profiling** (Pts: 5) [Boris - Data Analyst] me la pusiste en el sprint 1, cuando es del sprint 2.
+Me pusiste esas en el sprint 2. cuando son del sprint 1. y - [ ] **Historia 2.1.1: Análisis Exploratorio ydata-profiling** (Pts: 5) [David - Data Analyst] me la pusiste en el sprint 1, cuando es del sprint 2.
 En el USER_STORY_MAP.md esta perfecto.
 Aunque estaba pensando que creo que sería bueno que incluyamos esto que acabamos de hacer en el kanban y en el user story map, o tu que piensas?
 
@@ -3848,7 +3848,7 @@ Hemos terminado por hoy. Primero, revisa `docs/SCRUM/USER_STORY_MAP.md` y `docs/
 ¡Entendido! He ejecutado rigurosamente el protocolo de finalización de sesión que has indicado. Aquí está el detalle del cierre:
 
 1. **Revisión de Scrum:** Confirmé que la Historia 1.4.0 que realizamos hoy esté debidamente marcada con `[x]` tanto en `USER_STORY_MAP.md` como en `KANBAN.md`.
-2. **Registro de Agentes:** Escribí la nueva entrada del 11 de junio en `docs/AGENT_LOGS.md` indicando mi autoría (Agente de Boris), la capa trabajada, los archivos modificados y señalando claramente que el siguiente paso para la próxima sesión es iniciar la **Historia 2.1.1**.
+2. **Registro de Agentes:** Escribí la nueva entrada del 11 de junio en `docs/AGENT_LOGS.md` indicando mi autoría , la capa trabajada, los archivos modificados y señalando claramente que el siguiente paso para la próxima sesión es iniciar la **Historia 2.1.1**.
 3. **Verificación de Estándares:** Confirmé que no rompimos ninguno de los principios SOLID ni reglas de DevOps/Clean Code.
 4. **Actualización de Decisiones (ADRs):** Identifiqué que nuestra nueva capa Gold requería sustentación formal, por lo que agregué el **ADR 014** a `ARCHITECTURE_DECISIONS.md` para justificar el uso de Star Schema y SCD Tipo 2.
 5. **Commits y CI/CD:** Realicé los *Commits Atómicos* pertinentes en la rama `chore/end-of-session-june-11`, hice el *push*, abrí el *Pull Request*, ejecuté el auto-merge y finalmente limpié el entorno volviendo a `develop` y borrando la rama temporal.
@@ -3857,7 +3857,7 @@ Todo ha quedado pulcro, documentado y salvaguardado en el repositorio central de
 
 ### User Input
 
-He exportado el registro de nuestra última conversación en el archivo `[Resuming Development Sprint Tasks.md]`. Por favor, toma TODO el contenido de ese archivo y añádelo al final de `docs/NOTEBOOKLM_LOGS/Antigravity_Logs_[David/Boris].md`. Utiliza ESTE formato exacto como separador antes de pegar el contenido, llenando los datos correspondientes:
+He exportado el registro de nuestra última conversación en el archivo `[Resuming Development Sprint Tasks.md]`. Por favor, toma TODO el contenido de ese archivo y añádelo al final de `docs/NOTEBOOKLM_LOGS/Antigravity_Logs_[David/David].md`. Utiliza ESTE formato exacto como separador antes de pegar el contenido, llenando los datos correspondientes:
 >
 > # ====================================================================================================
 > # FECHA: [YYYY-MM-DD] | AUTOR: [Tu Nombre]
@@ -3870,7 +3870,7 @@ He exportado el registro de nuestra última conversación en el archivo `[Resumi
 
 ### User Input
 
-He exportado el registro de nuestra última conversación en el archivo `[Resuming Development Sprint Tasks.md]`. Por favor, toma TODO el contenido de ese archivo y añádelo al final de `docs/NOTEBOOKLM_LOGS/Antigravity_Logs_[David/Boris].md`. Utiliza ESTE formato exacto como separador antes de pegar el contenido, llenando los datos correspondientes:
+He exportado el registro de nuestra última conversación en el archivo `[Resuming Development Sprint Tasks.md]`. Por favor, toma TODO el contenido de ese archivo y añádelo al final de `docs/NOTEBOOKLM_LOGS/Antigravity_Logs_[David/David].md`. Utiliza ESTE formato exacto como separador antes de pegar el contenido, llenando los datos correspondientes:
 >
 > # ====================================================================================================
 > # FECHA: [YYYY-MM-DD] | AUTOR: [Tu Nombre]
@@ -3897,8 +3897,8 @@ He exportado el registro de nuestra última conversación en el archivo `[Resumi
 
 ¡Listo! El proceso de exportación para NotebookLM se ha realizado de forma segura y estructurada.
 
-1. Añadí todo el contenido del archivo `Resuming Development Sprint Tasks.md` al final de `docs/NOTEBOOKLM_LOGS/Antigravity_Logs_Boris.md`.
-2. Inserté el separador exacto que solicitaste, documentando la fecha de hoy, el autor (Agente de Boris), y el tema principal de la sesión (Formalización de Arquitectura de Datos, Star Schema, SCD).
+1. Añadí todo el contenido del archivo `Resuming Development Sprint Tasks.md` al final de `docs/NOTEBOOKLM_LOGS/Antigravity_Logs_David.md`.
+2. Inserté el separador exacto que solicitaste, documentando la fecha de hoy, el autor , y el tema principal de la sesión (Formalización de Arquitectura de Datos, Star Schema, SCD).
 3. Eliminé el archivo exportado original para mantener nuestro directorio de trabajo completamente limpio.
 4. Empaqueté los cambios mediante un Pull Request (`chore/export-logs`), lo fusioné a `develop` y borré la rama temporal local.
 
@@ -3906,13 +3906,13 @@ Nuestro historial maestro ahora cuenta con esta nueva sesión, listo para alimen
 
 ### User Input
 
-perdona lo que agregas al log de boris, en realidad era para el log de David, yo me olvide de especificar eso. Podrias arreglarlo?
+perdona lo que agregas al log de david, en realidad era para el log de David, yo me olvide de especificar eso. Podrias arreglarlo?
 
 *User accepted the command `git checkout -b chore/fix-notebooklm-logs`*
 
 *Edited relevant file*
 
-*User accepted the command `python3 fix_logs.py && rm fix_logs.py && git add docs/NOTEBOOKLM_LOGS/ && git commit -m "docs: move exported logs from Boris to David" && git push -u origin chore/fix-notebooklm-logs && gh pr create --base develop --fill && gh pr merge --squash --auto`*
+*User accepted the command `python3 fix_logs.py && rm fix_logs.py && git add docs/NOTEBOOKLM_LOGS/ && git commit -m "docs: move exported logs from David to David" && git push -u origin chore/fix-notebooklm-logs && gh pr create --base develop --fill && gh pr merge --squash --auto`*
 
 *User accepted the command `git checkout develop && git pull origin develop && git branch -D chore/fix-notebooklm-logs`*
 
@@ -3921,22 +3921,22 @@ perdona lo que agregas al log de boris, en realidad era para el log de David, yo
 ¡Arreglado y corregido!
 
 He reparado el error en los registros maestros de NotebookLM:
-1. Extraje la conversación que se había agregado erróneamente en `Antigravity_Logs_Boris.md`.
-2. Actualicé el encabezado interno para reflejar que el autor era **Agente de David**.
+1. Extraje la conversación que se había agregado erróneamente en `Antigravity_Logs_David.md`.
+2. Actualicé el encabezado interno para reflejar que el autor era **Antigravity**.
 3. Añadí ese contenido correctamente al final de `docs/NOTEBOOKLM_LOGS/Antigravity_Logs_David.md`.
 4. Hice todo el proceso a través de una rama nueva (`chore/fix-notebooklm-logs`), con su respectivo Pull Request, para asegurar la trazabilidad.
 
-El historial del Agente de David ya tiene toda la exportación del Sprint anterior lista para usar en NotebookLM, y el del Agente de Boris sigue intacto y libre de esa sesión. ¡Gracias por avisarme!
+El historial del Antigravity ya tiene toda la exportación del Sprint anterior lista para usar en NotebookLM, y el del Antigravity sigue intacto y libre de esa sesión. ¡Gracias por avisarme!
 
 ### User Input
 
-otra cosa, de hecho me fije que el log que esta en Antigravity_Logs_Boris.md en realidad tenia que estar en Antigravity_Logs_David.md podrias mover el contenido de ese log y ver exactamente en que parte tendria que estar dentro de Antigravity_Logs_David.md? por favor?
+otra cosa, de hecho me fije que el log que esta en Antigravity_Logs_David.md en realidad tenia que estar en Antigravity_Logs_David.md podrias mover el contenido de ese log y ver exactamente en que parte tendria que estar dentro de Antigravity_Logs_David.md? por favor?
 
 ### User Input
 
 Continue
 
-*Viewed [Antigravity_Logs_Boris.md](file:///home/dq-datasci/Projects/mobile_banking_indicator/docs/NOTEBOOKLM_LOGS/Antigravity_Logs_Boris.md) *
+*Viewed [Antigravity_Logs_David.md](file:///home/dq-datasci/Projects/mobile_banking_indicator/docs/NOTEBOOKLM_LOGS/Antigravity_Logs_David.md) *
 
 *Viewed [Antigravity_Logs_David.md](file:///home/dq-datasci/Projects/mobile_banking_indicator/docs/NOTEBOOKLM_LOGS/Antigravity_Logs_David.md) *
 
@@ -3960,8 +3960,8 @@ Continue
 
 Aquí tienes el detalle de lo que hice y dónde quedó ubicado:
 
-1. **Movimiento:** Ya extraje todo ese contenido de `Antigravity_Logs_Boris.md` (dejándolo limpio solo con su sesión 3 del Pipeline de Anonimización).
-2. **Corrección de Autor:** Cambié el encabezado de ese bloque para que diga explícitamente `AUTOR: Agente de David`.
+1. **Movimiento:** Ya extraje todo ese contenido de `Antigravity_Logs_David.md` (dejándolo limpio solo con su sesión 3 del Pipeline de Anonimización).
+2. **Corrección de Autor:** Cambié el encabezado de ese bloque para que diga explícitamente `AUTOR: Antigravity`.
 3. **Ubicación Exacta:** Lo coloqué **al final** del archivo `Antigravity_Logs_David.md` (a partir de la línea 3055). 
    * ¿Por qué ahí? Porque si revisamos la cronología, la sesión anterior documentada en ese archivo termina el **10 de Junio** (con el cierre de la Historia 1.3.1 de CI/CD, terminando en la línea 3054). Por lo tanto, esta nueva sesión del **11 de Junio** (sobre la Formalización de la Arquitectura de Datos) encaja perfectamente al final del documento, manteniendo el orden temporal intacto.
 
@@ -3971,9 +3971,9 @@ Todo esto ya fue subido a la rama `develop` mediante un Pull Request que se auto
 
 ### User Input
 
-No, es que no me estas entendiendo. Quiero que Antigravity_Logs_Boris.md quede vacio. Porque el log de 1.2.2 que esta ahi, lo hice yo, David, no Boris, por eso te decia que busques en donde ponerlo en los logs de David, fijandote en la fecha y demás
+No, es que no me estas entendiendo. Quiero que Antigravity_Logs_David.md quede vacio. Porque el log de 1.2.2 que esta ahi, lo hice yo, David, no David, por eso te decia que busques en donde ponerlo en los logs de David, fijandote en la fecha y demás
 
-*Viewed [Antigravity_Logs_Boris.md](file:///home/dq-datasci/Projects/mobile_banking_indicator/docs/NOTEBOOKLM_LOGS/Antigravity_Logs_Boris.md) *
+*Viewed [Antigravity_Logs_David.md](file:///home/dq-datasci/Projects/mobile_banking_indicator/docs/NOTEBOOKLM_LOGS/Antigravity_Logs_David.md) *
 
 *Viewed [Antigravity_Logs_David.md](file:///home/dq-datasci/Projects/mobile_banking_indicator/docs/NOTEBOOKLM_LOGS/Antigravity_Logs_David.md) *
 
@@ -3981,7 +3981,7 @@ No, es que no me estas entendiendo. Quiero que Antigravity_Logs_Boris.md quede v
 
 *Edited relevant file*
 
-*User accepted the command `python3 move_logs.py && rm move_logs.py && git add docs/NOTEBOOKLM_LOGS/ && git commit -m "docs: correct log file attribution from Boris to David" && git push -u origin chore/move-logs-to-david && gh pr create --base develop --fill && gh pr merge --squash --auto`*
+*User accepted the command `python3 move_logs.py && rm move_logs.py && git add docs/NOTEBOOKLM_LOGS/ && git commit -m "docs: correct log file attribution from David to David" && git push -u origin chore/move-logs-to-david && gh pr create --base develop --fill && gh pr merge --squash --auto`*
 
 *User accepted the command `git checkout develop && git pull origin develop && git branch -D chore/move-logs-to-david`*
 
@@ -3989,11 +3989,11 @@ No, es que no me estas entendiendo. Quiero que Antigravity_Logs_Boris.md quede v
 
 ¡Ah, una gran disculpa por el malentendido! ¡Ahora sí te comprendí perfectamente!
 
-Efectivamente, la **Historia 1.2.2 (Pipeline de Anonimización)** la habías realizado tú (David), por lo que no tenía nada que hacer en los registros de Boris. 
+Efectivamente, la **Historia 1.2.2 (Pipeline de Anonimización)** la habías realizado tú (David), por lo que no tenía nada que hacer en los registros de David. 
 
 Acabo de realizar el movimiento exacto que pediste:
-1. Extraje todo ese bloque de historial y **dejé el archivo `Antigravity_Logs_Boris.md` totalmente limpio/vacío** (conservando únicamente su cabecera introductoria).
-2. Le cambié la etiqueta de autor a **Agente de David**.
+1. Extraje todo ese bloque de historial y **dejé el archivo `Antigravity_Logs_David.md` totalmente limpio/vacío** (conservando únicamente su cabecera introductoria).
+2. Le cambié la etiqueta de autor a **Antigravity**.
 3. Inserte este registro en **`Antigravity_Logs_David.md` exactamente en su lugar cronológico correcto**: Lo puse justo después de donde finaliza la Historia 1.2.1 (Singleton) y justo antes de donde inicia tu sesión de la Historia 1.3.1 (CI/CD GitHub Actions).
 
 Todo este movimiento se hizo de forma atómica bajo la rama `chore/move-logs-to-david`, envié el Pull Request, se auto-fusionó, e hice limpieza de la rama local. ¡Ambos historiales maestros están ahora correctos e impecables!
@@ -4089,16 +4089,16 @@ Hola Antigravity, inicia sesión. Haz un `git pull origin develop`. Luego, lee e
 
 ### 🚀 Historia de Usuario de Hoy
 
-De acuerdo con el último apunte del *Agente de Boris* en el archivo `AGENT_LOGS.md` y nuestro `USER_STORY_MAP.md`, la historia que nos toca abordar hoy es:
+De acuerdo con el último apunte del *Antigravity* en el archivo `AGENT_LOGS.md` y nuestro `USER_STORY_MAP.md`, la historia que nos toca abordar hoy es:
 
 **Historia 2.1.1: Análisis Exploratorio con ydata-profiling**
 *   **Puntos:** 5 Pts
-*   **Rol Asignado:** Boris (Data Analyst)
+*   **Rol Asignado:** David (Data Analyst)
 *   **Vertical Slice:** 2 (Econometría Básica y Orquestación)
 *   **Objetivo:** *"Yo como Analista de Datos necesito generar reportes automáticos de calidad de forma que entienda la distribución estadística de la capa Silver."*
 *   **Criterio de Aceptación:** Generar un reporte HTML de calidad de datos automáticamente en cada corrida.
 
-¿Quieres que asumamos nuestro rol de Data Analyst (Boris), creemos la nueva rama `feature/2.1.1-analisis-exploratorio` y comencemos con el desarrollo? ¡Estoy listo cuando tú lo estés!
+¿Quieres que asumamos nuestro rol de Data Analyst (David), creemos la nueva rama `feature/2.1.1-analisis-exploratorio` y comencemos con el desarrollo? ¡Estoy listo cuando tú lo estés!
 
 ### User Input
 
@@ -4229,7 +4229,7 @@ Hemos terminado por hoy. Primero, revisa `docs/SCRUM/USER_STORY_MAP.md` y `docs/
 
 ---
 
-### [2026-06-12] - Historia 1.4.1 y 1.4.2: ISO 27002 y Pipeline Silver (Agente de Boris / Data Engineer)
+### [2026-06-12] - Historia 1.4.1 y 1.4.2: ISO 27002 y Pipeline Silver (Antigravity / Data Engineer)
 *   **Estado:** Completado en la rama `feature/1.4.1-pipeline-silver`.
 *   **Vertical Slice:** 1 (Ingeniería de Datos Base e Infraestructura)
 *   **Archivos Modificados:** `docs/ENGINEERING_STANDARDS/ISO_27002_COMPLIANCE.md`, `docs/ENGINEERING_STANDARDS/DEVOPS_MLOPS_SECURITY.md`, `docs/SCRUM/KANBAN.md`, `docs/SCRUM/USER_STORY_MAP.md`, `src/core/interfaces/data_quality_interface.py`, `src/core/quality/silver_quality_checker.py`, `src/infrastructure/pipelines/silver_pipeline.py`, `tests/test_silver_pipeline.py`.

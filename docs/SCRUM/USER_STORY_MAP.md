@@ -25,7 +25,7 @@ Yo como Data Engineer necesito crear un patrón `Factory Method` para instanciar
 
 ### 🟦 1.2 Seguridad, Gobernanza y Lakehouse (Rol: Cloud Architect)
 **Historia 1.2.1: Singleton Database y Data Contracts**
-**Pts: 8** | **Asignado a: Boris (Cloud Architect)**
+**Pts: 8** | **Asignado a: David (Cloud Architect)**
 Yo como Cloud Architect necesito configurar DuckDB/Databricks aplicando el patrón `Singleton` y contratos de datos estrictos (DIP) de forma que la basura de internet no contamine el análisis.
 *Criterios de Aceptación:*
 [x] Esquemas estrictos de tablas definidos con Pydantic.
@@ -33,7 +33,7 @@ Yo como Cloud Architect necesito configurar DuckDB/Databricks aplicando el patr�
 [x] Almacenamiento particionado en formato Parquet.
 
 **Historia 1.2.2: Pipeline de Anonimización (ISO 27001)**
-**Pts: 5** | **Asignado a: Boris (Data Engineer)**
+**Pts: 5** | **Asignado a: David (Data Engineer)**
 Yo como Data Engineer necesito aplicar hashing SHA-256 a los nombres de usuarios e IPs de forma que cumplamos con las políticas de privacidad.
 *Criterios de Aceptación:*
 [x] Nombres de usuario totalmente irreconocibles en la capa Silver.
@@ -48,14 +48,14 @@ Yo como DevOps Engineer necesito pipelines de CI/CD de forma que el código se p
 
 ### 🟦 1.4 Data Architecture y Transformación ELT (Rol: Data Engineer)
 **Historia 1.4.0: Documentación de Arquitectura de Datos y Schemas**
-**Pts: 3** | **Asignado a: Boris (Cloud Architect)**
+**Pts: 3** | **Asignado a: David (Cloud Architect)**
 Yo como Cloud Architect necesito documentar visualmente el viaje del dato (Medallón) y el diseño de la base de datos (Star Schema) de forma que los desarrolladores tengan un plano claro para construir la solución.
 *Criterios de Aceptación:*
 [x] Diagramas Mermaid Conceptual, Lógico y Físico creados.
 [x] SCD Tipo 2 e integración del esquema de estrella justificados.
 
 **Historia 1.4.1: Implementación Normativa ISO 27002 (Controles y Documentación)**
-**Pts: 3** | **Asignado a: Boris (Cloud Architect)**
+**Pts: 3** | **Asignado a: David (Cloud Architect)**
 Yo como Cloud Architect necesito extraer y adecuar los lineamientos de la norma ISO/IEC 27002:2022 al contexto del proyecto SaaS de forma que cumplamos con los estándares de privacidad, seguridad y ciclo de vida de desarrollo seguro.
 *Criterios de Aceptación:*
 [x] Revisión del PDF y extracción de controles aplicables.
@@ -75,15 +75,31 @@ Yo como Data Engineer necesito limpiar las reseñas y aplicar reglas de calidad 
 **Pts: 8** | **Asignado a: David (Data Engineer)**
 Yo como Data Engineer necesito construir un Esquema de Estrella en la capa Gold implementando Dimensiones Lentamente Cambiantes (SCD Tipo 2) de forma que el Dashboard consulte rápido sin perder historial.
 *Criterios de Aceptación:*
-[ ] Tabla Fact_Reviews creada con claves subrogadas.
-[ ] Dim_App creada con `valid_from`, `valid_to`, `is_current`.
-[ ] Modelo optimizado y persistido en DuckDB/Parquet.
+[x] Tabla Fact_Reviews creada con claves subrogadas.
+[x] Dim_App creada con `valid_from`, `valid_to`, `is_current`.
+[x] Modelo optimizado y persistido en DuckDB/Parquet.
+
+### 🟦 1.5 Cumplimiento ISMS e ISO 27001 (Rol: Cloud Architect & DevOps)
+**Historia 1.5.1: Auditoría ISMS y Prevención de Fugas de Datos**
+**Pts: 5** | **Asignado a: David (Cloud Architect)**
+Yo como Cloud Architect necesito implementar el tratamiento de riesgos, control de accesos lógico y logging centralizado de forma que se garantice la prevención de fuga de datos sensibles y el cumplimiento de ISO 27001 (Controles 8.12, 8.15, 6.1.2).
+*Criterios de Aceptación:*
+[ ] Sistema de Logging centralizado configurado para el orquestador y scrapers.
+[ ] Evaluación de riesgos de extracción e ingesta documentada en los ADRs/Logs.
+[ ] Aislamiento de capas de datos (Bronze, Silver, Gold) protegido por diseño.
+
+**Historia 1.5.2: Secure Development Life Cycle y Pruebas de Seguridad**
+**Pts: 3** | **Asignado a: David (DevOps)**
+Yo como DevOps Engineer necesito integrar controles de seguridad y escaneo en el ciclo de desarrollo de forma que las vulnerabilidades se detecten antes del paso a producción (ISO 27001 Controles 8.25, 8.28, 8.29).
+*Criterios de Aceptación:*
+[ ] Integración de herramientas de escaneo de seguridad en GitHub Actions.
+[ ] Auditoría de secretos y credenciales en el código fuente.
 
 ## 🟧 ACTIVIDAD 2: Data Science, Econometría y MLOps
 
 ### 🟦 2.1 EDA y Auto-ML (Rol: Data Analyst)
 **Historia 2.1.1: Análisis Exploratorio con ydata-profiling**
-**Pts: 5** | **Asignado a: Boris (Data Analyst)**
+**Pts: 5** | **Asignado a: David (Data Analyst)**
 Yo como Analista de Datos necesito generar reportes automáticos de calidad de forma que entienda la distribución estadística de la capa Silver.
 *Criterios de Aceptación:*
 [ ] Reporte HTML generado automáticamente en cada corrida.
@@ -96,7 +112,7 @@ Yo como MLOps Engineer necesito usar PyCaret de forma que pueda entrenar y compa
 
 ### 🟦 2.2 Modelos Econométricos Core (Rol: Econometrista)
 **Historia 2.2.1: Modelo Probit/Logit de Riesgo de Fuga (Churn)**
-**Pts: 8** | **Asignado a: Boris (Econometrista)**
+**Pts: 8** | **Asignado a: David (Econometrista)**
 Yo como Econometrista necesito modelar la probabilidad de *Churn* usando `statsmodels` de forma que podamos alertar al banco sobre fallos críticos.
 *Criterios de Aceptación:*
 [ ] Variable Proxy de Churn creada y documentada.
@@ -104,13 +120,13 @@ Yo como Econometrista necesito modelar la probabilidad de *Churn* usando `statsm
 [ ] Pruebas de heterocedasticidad superadas.
 
 **Historia 2.2.2: Cálculo Econométrico del NPS**
-**Pts: 5** | **Asignado a: Boris (Econometrista)**
+**Pts: 5** | **Asignado a: David (Econometrista)**
 Yo como Econometrista necesito calcular el Net Promoter Score en base a las estrellas.
 *Criterios de Aceptación:*
 [ ] Evolución temporal del NPS calculada (Promotores vs Detractores).
 
 **Historia 2.2.3: Cadenas de Markov de Satisfacción**
-**Pts: 8** | **Asignado a: Boris (Econometrista)**
+**Pts: 8** | **Asignado a: David (Econometrista)**
 Yo como Econometrista necesito modelar la matriz de transición de los usuarios (Satisfecho -> Frustrado -> Fuga) usando secuencias temporales.
 *Criterios de Aceptación:*
 [ ] Matriz de probabilidad de transición matemática validada.
@@ -141,7 +157,7 @@ Yo como Desarrollador necesito un menú CLI (`rich`) aplicando el patrón `Comma
 
 ### 🟦 3.2 Visualización Final y Observer (Rol: UI/UX Engineer)
 **Historia 3.2.1: Streamlit Dashboard (Patrón F)**
-**Pts: 8** | **Asignado a: Boris (UI/UX Engineer)**
+**Pts: 8** | **Asignado a: David (UI/UX Engineer)**
 Yo como UI/UX Engineer necesito diseñar la interfaz siguiendo la jerarquía visual del Patrón F, apoyándome en el patrón `Observer` para las métricas reactivas.
 *Criterios de Aceptación:*
 [ ] Gráficas Plotly avanzadas (sin espacios muertos).
@@ -199,13 +215,13 @@ Yo como AI Engineer necesito dotar de razonamiento iterativo (ReAct) al chatbot.
 
 ### 🟦 5.1 Infraestructura Distribuida (Rol: Cloud Architect)
 **Historia 5.1.1: Dockerización de Servicios**
-**Pts: 5** | **Asignado a: Boris (DevOps)**
+**Pts: 5** | **Asignado a: David (DevOps)**
 Yo como DevOps necesito meter todo el monolito en contenedores Docker.
 *Criterios de Aceptación:*
 [ ] Docker Compose funcionales sin errores de entorno.
 
 **Historia 5.1.2: Migración a Kubernetes (K8s)**
-**Pts: 8** | **Asignado a: Boris (Cloud Architect)**
+**Pts: 8** | **Asignado a: David (Cloud Architect)**
 Yo como Cloud Architect necesito levantar un cluster EKS para orquestar los contenedores.
 *Criterios de Aceptación:*
 [ ] Auto-scaling (HPA) configurado.
