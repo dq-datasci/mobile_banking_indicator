@@ -1,12 +1,9 @@
 import time
-import logging
 from typing import List, Dict, Any
 from google_play_scraper import reviews, Sort
 from src.core.interfaces.scraper_interface import BaseScraper
 import os
 import pandas as pd
-
-logger = logging.getLogger(__name__)
 
 
 class PlayStoreScraper(BaseScraper):
@@ -22,7 +19,7 @@ class PlayStoreScraper(BaseScraper):
         retries = 3
         backoff_factor = 2
 
-        logger.info(f"Iniciando extracción Play Store para {app_id}")
+        self.logger.info(self.__class__.__name__, f"Iniciando extracción Play Store para {app_id}")
 
         while len(all_reviews) < max_reviews:
             try:
@@ -44,14 +41,14 @@ class PlayStoreScraper(BaseScraper):
                 time.sleep(1)  # delay básico para evitar ban
 
             except Exception as e:
-                logger.error(f"Error extrayendo de Play Store: {e}")
+                self.logger.error(self.__class__.__name__, f"Error extrayendo de Play Store: {e}")
                 if retries > 0:
                     wait_time = backoff_factor ** (4 - retries)
-                    logger.info(f"Reintentando en {wait_time} segundos...")
+                    self.logger.info(self.__class__.__name__, f"Reintentando en {wait_time} segundos...")
                     time.sleep(wait_time)
                     retries -= 1
                 else:
-                    logger.error("Se acabaron los reintentos para Play Store.")
+                    self.logger.error(self.__class__.__name__, "Se acabaron los reintentos para Play Store.")
                     break
 
         # Garantizar Idempotencia
@@ -68,7 +65,7 @@ class PlayStoreScraper(BaseScraper):
         os.makedirs(bronze_dir, exist_ok=True)
 
         if not data:
-            logger.warning("No hay datos para guardar.")
+            self.logger.warning(self.__class__.__name__, "No hay datos para guardar.")
             return
 
         df = pd.DataFrame(data)
@@ -80,4 +77,4 @@ class PlayStoreScraper(BaseScraper):
 
         filename = os.path.join(bronze_dir, f"{app_id}_raw.parquet")
         df.to_parquet(filename, index=False)
-        logger.info(f"Datos guardados en {filename}")
+        self.logger.info(self.__class__.__name__, f"Datos guardados en {filename}")

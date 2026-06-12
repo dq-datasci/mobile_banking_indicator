@@ -1,5 +1,6 @@
 import abc
 from typing import List, Dict, Any
+from src.core.security.audit_logger import AuditLogger
 
 
 class BaseScraper(abc.ABC):
@@ -7,6 +8,13 @@ class BaseScraper(abc.ABC):
     Clase abstracta base para todos los scrapers de tiendas de aplicaciones y redes sociales.
     Cumple con el Liskov Substitution Principle (LSP).
     """
+
+    def __init__(self):
+        self.logger = AuditLogger()
+        self.logger.info(
+            self.__class__.__name__, 
+            f"Inicializando scraper: {self.__class__.__name__}"
+        )
 
     @abc.abstractmethod
     def extract_reviews(

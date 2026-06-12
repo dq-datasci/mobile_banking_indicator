@@ -1,12 +1,9 @@
 import time
-import logging
 import os
 import pandas as pd
 from typing import List, Dict, Any
 from app_store_scraper import AppStore
 from src.core.interfaces.scraper_interface import BaseScraper
-
-logger = logging.getLogger(__name__)
 
 
 class AppStoreScraper(BaseScraper):
@@ -15,6 +12,7 @@ class AppStoreScraper(BaseScraper):
     """
 
     def __init__(self, country: str = "co"):
+        super().__init__()
         self.country = country
 
     def extract_reviews(
@@ -35,16 +33,16 @@ class AppStoreScraper(BaseScraper):
         retries = 3
         backoff_factor = 2
 
-        logger.info(f"Iniciando extracción App Store para {name}")
+        self.logger.info(self.__class__.__name__, f"Iniciando extracción App Store para {name}")
 
         while retries > 0:
             try:
                 app.review(how_many=max_reviews)
                 break
             except Exception as e:
-                logger.error(f"Error extrayendo de App Store: {e}")
+                self.logger.error(self.__class__.__name__, f"Error extrayendo de App Store: {e}")
                 wait_time = backoff_factor ** (4 - retries)
-                logger.info(f"Reintentando en {wait_time} segundos...")
+                self.logger.info(self.__class__.__name__, f"Reintentando en {wait_time} segundos...")
                 time.sleep(wait_time)
                 retries -= 1
 
@@ -68,7 +66,7 @@ class AppStoreScraper(BaseScraper):
         os.makedirs(bronze_dir, exist_ok=True)
 
         if not data:
-            logger.warning("No hay datos para guardar.")
+            self.logger.warning(self.__class__.__name__, "No hay datos para guardar.")
             return
 
         df = pd.DataFrame(data)
@@ -80,4 +78,4 @@ class AppStoreScraper(BaseScraper):
         name = app_id.split(",")[0]
         filename = os.path.join(bronze_dir, f"{name}_raw.parquet")
         df.to_parquet(filename, index=False)
-        logger.info(f"Datos guardados en {filename}")
+        self.logger.info(self.__class__.__name__, f"Datos guardados en {filename}")
