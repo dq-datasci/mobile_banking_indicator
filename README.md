@@ -90,14 +90,7 @@ Hemos creado la carpeta `docs/NOTEBOOKLM_LOGS/` que contiene los archivos maestr
 *   `Antigravity_Logs_David.md`
 
 **Al EXPORTAR una conversación (Para alimentar a NotebookLM), copia y pega este prompt:**
-> *"He exportado el registro de nuestra última conversación en el archivo `[nombre_del_archivo_exportado.md]`. Por favor, toma TODO el contenido de ese archivo y añádelo al final de `docs/NOTEBOOKLM_LOGS/Antigravity_Logs_David.md`. Utiliza ESTE formato exacto como separador antes de pegar el contenido, llenando los datos correspondientes:
->
-> # ====================================================================================================
-> # FECHA: [YYYY-MM-DD] | AUTOR: [Tu Nombre]
-> # SESIÓN: [Número] | TEMA: [Tema principal de la conversación]
-> # ====================================================================================================
->
-> Una vez lo hayas añadido de forma segura, elimina el archivo temporal exportado original para mantener limpio el directorio de trabajo."*
+> *"Hemos terminado por hoy. Ejecuta `micromamba run -n omnivoc_env python scripts/save_session_log.py --session-id [tu-session-id] --topic '[Tema de Hoy]'` para guardar el registro automático de esta sesión en `docs/NOTEBOOKLM_LOGS/Antigravity_Logs_David.md`."*
 
 1. **Exportar Conversaciones:** Usa el prompt de arriba siempre que descargues o agregues una sesión importante.
 2. **Compilación Automática:** Antigravity se encargará de leer, formatear y concatenar el historial en el documento maestro correspondiente a tu usuario.
