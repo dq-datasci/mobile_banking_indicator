@@ -1,4 +1,3 @@
-import pytest
 import json
 import os
 from src.core.security.audit_logger import AuditLogger

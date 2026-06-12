@@ -1,8 +1,6 @@
 import pandas as pd
 import logging
-from datetime import date
 from src.infrastructure.database.duckdb_singleton import DuckDBConnection
-from src.core.contracts.gold_contracts import DimAppContract, FactReviewsContract
 
 # Configurar logging para cumplir con A.8.15 Logging (ISO 27001)
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
