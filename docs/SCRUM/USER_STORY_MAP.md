@@ -54,15 +54,24 @@ Yo como Cloud Architect necesito documentar visualmente el viaje del dato (Medal
 [x] Diagramas Mermaid Conceptual, Lógico y Físico creados.
 [x] SCD Tipo 2 e integración del esquema de estrella justificados.
 
-**Historia 1.4.1: Pipeline de Transformación Silver y Calidad de Datos**
+**Historia 1.4.1: Implementación Normativa ISO 27002 (Controles y Documentación)**
+**Pts: 3** | **Asignado a: Boris (Cloud Architect)**
+Yo como Cloud Architect necesito extraer y adecuar los lineamientos de la norma ISO/IEC 27002:2022 al contexto del proyecto SaaS de forma que cumplamos con los estándares de privacidad, seguridad y ciclo de vida de desarrollo seguro.
+*Criterios de Aceptación:*
+[x] Revisión del PDF y extracción de controles aplicables.
+[x] Creación del documento base `ISO_27002_COMPLIANCE.md`.
+[x] Actualización del mapa de usuario y políticas de DevOps/Seguridad.
+
+**Historia 1.4.2: Pipeline de Transformación Silver y Calidad de Datos**
 **Pts: 8** | **Asignado a: David (Data Engineer)**
 Yo como Data Engineer necesito limpiar las reseñas y aplicar reglas de calidad (Data Observability) de forma que la capa Silver contenga datos confiables y tabulares listos para ML.
 *Criterios de Aceptación:*
-[ ] Limpieza de nulos y duplicados implementada.
-[ ] Data Quality Checks (aserciones/expectativas) definidos.
-[ ] Archivos guardados particionados por año/mes.
+[x] Limpieza de nulos y duplicados implementada.
+[x] Data Quality Checks (aserciones/expectativas) definidos.
+[x] Cumplimiento de Data Masking (Control 8.11 ISO 27002) verificado.
+[x] Archivos guardados particionados por año/mes.
 
-**Historia 1.4.2: Construcción de Capa Gold (Star Schema y SCD Type 2)**
+**Historia 1.4.3: Construcción de Capa Gold (Star Schema y SCD Type 2)**
 **Pts: 8** | **Asignado a: David (Data Engineer)**
 Yo como Data Engineer necesito construir un Esquema de Estrella en la capa Gold implementando Dimensiones Lentamente Cambiantes (SCD Tipo 2) de forma que el Dashboard consulte rápido sin perder historial.
 *Criterios de Aceptación:*

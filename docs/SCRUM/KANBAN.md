@@ -12,8 +12,9 @@
 - [x] **Historia 1.2.2: Anonimización ISO 27001** (Pts: 5) [Boris - Data Engineer]
 - [x] **Historia 1.3.1: CI/CD GitHub Actions y Pre-commits** (Pts: 5) [David - DevOps]
 - [x] **Historia 1.4.0: Documentación de Arquitectura de Datos y Schemas** (Pts: 3) [Boris - Cloud Architect]
-- [ ] **Historia 1.4.1: Pipeline de Transformación Silver y Calidad de Datos** (Pts: 8) [David - Data Engineer]
-- [ ] **Historia 1.4.2: Construcción de Capa Gold (Star Schema y SCD Type 2)** (Pts: 8) [David - Data Engineer]
+- [x] **Historia 1.4.1: Implementación Normativa ISO 27002 (Controles y Documentación)** (Pts: 3) [Boris - Cloud Architect]
+- [x] **Historia 1.4.2: Pipeline de Transformación Silver y Calidad de Datos** (Pts: 8) [David - Data Engineer]
+- [ ] **Historia 1.4.3: Construcción de Capa Gold (Star Schema y SCD Type 2)** (Pts: 8) [David - Data Engineer]
 
 ### Sprint 2: Econometría Básica y Orquestación (Vertical Slice 2)
 - [ ] **Historia 2.1.1: Análisis Exploratorio ydata-profiling** (Pts: 5) [Boris - Data Analyst]
