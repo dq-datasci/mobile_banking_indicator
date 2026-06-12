@@ -18,7 +18,7 @@ class AutoMLFacade(IAutoML):
         try:
             # Configurar PyCaret con tracking automático en MLflow
             # log_experiment=True hace el autolog híbrido (métricas, hiperparámetros, artifacts)
-            clf_setup = setup(
+            setup(
                 data=data,
                 target=target,
                 session_id=42, # Para reproducibilidad
