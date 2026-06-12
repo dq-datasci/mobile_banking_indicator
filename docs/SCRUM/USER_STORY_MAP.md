@@ -95,6 +95,29 @@ Yo como DevOps Engineer necesito integrar controles de seguridad y escaneo en el
 [ ] Integración de herramientas de escaneo de seguridad en GitHub Actions.
 [ ] Auditoría de secretos y credenciales en el código fuente.
 
+### 🟦 1.6 Gestión de Servicios y Operaciones (ITIL 4) (Rol: Cloud Architect & DevOps)
+**Historia 1.6.1: Documentación e Implementación del SVS de ITIL 4 y Principios Guía**
+**Pts: 3** | **Asignado a: David (Cloud Architect)**
+Yo como Cloud Architect necesito documentar la integración del Sistema de Valor del Servicio (SVS) de ITIL 4 y sus Principios Guía para que nuestra arquitectura técnica esté alineada con el valor de negocio.
+*Criterios de Aceptación:*
+[x] Archivo `ITIL_4_COMPLIANCE.md` creado.
+[x] Principios Guía documentados en los manuales de trabajo (`HOW_WE_WORK.md`).
+[x] ADR 015 generado.
+
+**Historia 1.6.2: Definición de Procesos para Mesa de Servicios y Gestión de Incidentes**
+**Pts: 5** | **Asignado a: David (DevOps)**
+Yo como DevOps Engineer necesito integrar una política clara de Mesa de Servicios e Incidentes de forma que podamos restaurar rápidamente cualquier caída de los scrapers o de la base de datos sin afectar el entorno de producción.
+*Criterios de Aceptación:*
+[ ] Proceso de Mesa de Servicios definido.
+[ ] Política de respuesta a incidentes mayores (*swarming*) documentada y en uso.
+
+**Historia 1.6.3: Integración de Gestión de Problemas y Habilitación del Cambio en CI/CD**
+**Pts: 5** | **Asignado a: David (DevOps)**
+Yo como DevOps Engineer necesito aplicar la Habilitación del Cambio (diferenciando Cambios Normales y Estándar) y documentar Errores Conocidos para minimizar la deuda técnica y riesgos.
+*Criterios de Aceptación:*
+[ ] Pipeline de CI/CD ajustado como mecanismo de habilitación del cambio.
+[ ] Documentación para el seguimiento de Errores Conocidos y Soluciones Temporales (*Workarounds*) integrada en las políticas.
+
 ## 🟧 ACTIVIDAD 2: Data Science, Econometría y MLOps
 
 ### 🟦 2.1 EDA y Auto-ML (Rol: Data Analyst)
