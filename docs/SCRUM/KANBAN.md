@@ -24,7 +24,7 @@
 - [x] **Historia 1.5.7: Adecuación PIMS (ISO 27701) y Consentimiento de PII** (Pts: 3) [David - Cloud Architect]
 - [x] **Historia 1.5.8: Documentación del Modelo de Calidad ISO 25010 y DevSecOps** (Pts: 3) [David - Cloud Architect]
 - [x] **Historia 1.5.9: Integración Normativa OWASP Top 10 2025** (Pts: 3) [David - Cloud Architect]
-- [ ] **Historia 1.5.10: Control de Software Supply Chain Failures** (Pts: 3) [David - DevOps]
+- [x] **Historia 1.5.10: Control de Software Supply Chain Failures** (Pts: 3) [David - DevOps]
 ### Sprint 2: Econometría Básica y Orquestación (Vertical Slice 2)
 - [ ] **Historia 2.1.1: Análisis Exploratorio ydata-profiling** (Pts: 5) [David - Data Analyst]
 - [ ] **Historia 2.2.1: Modelo Logit Riesgo Churn** (Pts: 8) [David - Econometrista]

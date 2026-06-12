@@ -176,6 +176,7 @@ dependencies:
     - pytest==9.0.3
     - pre-commit
     - ruff
+    - pip-audit
     - requests==2.23.0
     - tomli==2.4.1
     - typing-inspection==0.4.2
