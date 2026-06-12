@@ -62,7 +62,7 @@ Note: _This is an auto-generated export of the chat conversation._
                     tool_texts.append(f"*{action}*")
                 
                 if content or tool_texts:
-                    markdown_lines.append(f"### Planner Response\n")
+                    markdown_lines.append("### Planner Response\n")
                     if content:
                         markdown_lines.append(f"{content}\n")
                     if tool_texts:

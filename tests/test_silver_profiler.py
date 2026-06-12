@@ -1,4 +1,3 @@
-import pytest
 import pandas as pd
 from pathlib import Path
 from src.core.quality.silver_profiler import SilverProfilerFacade

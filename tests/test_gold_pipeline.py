@@ -1,6 +1,5 @@
 import pytest
 import pandas as pd
-from datetime import date
 from src.infrastructure.pipelines.gold_pipeline import GoldPipeline
 from src.infrastructure.database.duckdb_singleton import DuckDBConnection
 

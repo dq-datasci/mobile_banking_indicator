@@ -1,4 +1,3 @@
-import pytest
 from src.core.security.audit_logger import AuditLogger
 from src.core.security.incident_manager import IncidentManager
 
