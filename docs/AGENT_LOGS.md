@@ -127,3 +127,11 @@ Este archivo es el registro de actividades de Antigravity.
 *   **Siguiente paso:** Iniciar la Historia 1.5.3 (Procesos de Mesa de Servicios y Gestión de Incidentes).
 
 ---
+
+### [2026-06-12] - Actualización de Prompts de Sesión (Antigravity)
+*   **Estado:** Completado en la rama `chore/readme-prompt-update`.
+*   **Archivos Modificados:** `README.md`, `docs/AGENT_LOGS.md`.
+*   **Hecho:** Se actualizó el archivo `README.md` incorporando la exigencia estricta de verificar el documento `BUSINESS_IMPACT_ANALYSIS.md` tanto al inicio como al final de cada sesión. Esto endurece y formaliza las políticas de Continuidad del Negocio (ISO 22301).
+*   **Siguiente paso:** Iniciar la Historia 1.5.3 (Procesos de Mesa de Servicios y Gestión de Incidentes) en la próxima sesión.
+
+---
