@@ -71,3 +71,13 @@ Este documento registra todas las decisiones tecnológicas y de diseño importan
 ## ADR 015: Adopción del marco ITIL 4 para la Gestión de Servicios (ITSM)
 *   **Decisión:** Se adoptará el Sistema de Valor del Servicio (SVS) y los Principios Guía de ITIL 4 para la gestión operativa y de mejora continua.
 *   **Justificación:** A medida que los servicios de OmniVoC crecen en complejidad, la agilidad DevOps requiere de prácticas formales como la Gestión de Incidentes, Problemas y Habilitación del Cambio para minimizar riesgos y deuda técnica sin sacrificar la velocidad de entrega al mercado. ITIL 4 provee este enfoque holístico centrado en el valor, evitando el trabajo en silos y protegiendo los entornos de producción.
+
+## ADR 016: Sistema de Logging Centralizado e Inyección de Dependencias
+*   **Decisión:** Se implementará un `AuditLogger` centralizado basado en la librería `logging` de Python, inyectado en las clases base (como `BaseScraper`).
+*   **Alternativas Rechazadas:** Loggers globales regados por cada archivo, o imprimir a consola con `print`.
+*   **Justificación:** Cumplimiento de ISO 27001 (Control A.8.15 y A.8.16). Un logger inyectado en las interfaces abstractas asegura que el código mantenga el Single Responsibility Principle (SRP) de SOLID, a la vez que se audita cada extracción o manipulación de PII en formato estructurado JSON. Esto permite en el futuro conectar un recolector de logs (ej. ELK Stack) para monitorización y soporte de la Mesa de Servicios (ITIL).
+
+## ADR 017: Business Impact Analysis (BIA) e ISO 22301 (SGCN)
+*   **Decisión:** Se establecerá formalmente la adopción de un Sistema de Gestión de Continuidad del Negocio (SGCN), incluyendo el cálculo del MTPD (Maximum Tolerable Period of Disruption) a 24 horas para la Capa Silver/Gold.
+*   **Alternativas Rechazadas:** No definir SLAs de disponibilidad, operando como un proyecto de investigación informal.
+*   **Justificación:** Al ser un SaaS B2B Enterprise, la ISO 22301 nos exige proteger y restaurar actividades críticas ante desastres. Al definir el MTPD explícitamente y bloquear la edición directa de la Capa Bronze desde la API (Principle of Least Privilege), reducimos el riesgo de que una caída o corrupción del modelo paralice la toma de decisiones gerenciales de nuestros clientes.

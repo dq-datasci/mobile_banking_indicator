@@ -30,11 +30,17 @@ class DuckDBConnection(IDatabase):
             Path(self._db_path).parent.mkdir(parents=True, exist_ok=True)
             self._conn = duckdb.connect(self._db_path)
 
-    def save_dataframe(self, df: pd.DataFrame, table_name: str) -> None:
+    def save_dataframe(self, df: pd.DataFrame, table_name: str, force_bronze_write: bool = False) -> None:
         """
         Saves a pandas DataFrame to the specified table in DuckDB.
         Appends the data to the existing table or creates it if it doesn't exist.
         """
+        if "bronze" in table_name.lower() and not force_bronze_write:
+            raise PermissionError(
+                f"Violación de Seguridad (ISO 27001 - Control de Accesos): "
+                f"Intento de modificar la tabla '{table_name}' en la Capa Bronze sin permisos explícitos."
+            )
+
         if self._conn is None:
             self.connect()
         # Register dataframe as a virtual table in DuckDB
