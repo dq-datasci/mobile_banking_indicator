@@ -20,6 +20,7 @@ class AuditLogger:
             if cls._instance is None:
                 cls._instance = super(AuditLogger, cls).__new__(cls)
                 cls._instance._setup_logger(log_file)
+                cls._instance._observers = []
         return cls._instance
 
     def _setup_logger(self, log_file: str):
@@ -36,6 +37,18 @@ class AuditLogger:
             formatter = logging.Formatter("%(message)s")
             handler.setFormatter(formatter)
             self.logger.addHandler(handler)
+
+    def attach(self, observer) -> None:
+        if observer not in self._observers:
+            self._observers.append(observer)
+            
+    def detach(self, observer) -> None:
+        if observer in self._observers:
+            self._observers.remove(observer)
+            
+    def _notify_observers(self, level: str, module: str, message: str, **kwargs) -> None:
+        for observer in self._observers:
+            observer.update(level, module, message, **kwargs)
 
     def log(
         self,
@@ -61,6 +74,8 @@ class AuditLogger:
             self.logger.warning(log_json)
         else:
             self.logger.info(log_json)
+
+        self._notify_observers(level, module, message, contains_pii=contains_pii, is_security_event=is_security_event)
 
     def info(self, module: str, message: str, **kwargs):
         self.log("INFO", module, message, **kwargs)
