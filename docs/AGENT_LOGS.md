@@ -177,3 +177,11 @@ Este archivo es el registro de actividades de Antigravity.
 *   **Hecho:** El usuario actualizó los prompts operativos en el `README.md` para incluir la validación obligatoria del nuevo documento `OWASP_TOP_10_2025_COMPLIANCE.md` tanto al iniciar como al finalizar futuras sesiones, garantizando así la permanencia de los controles de seguridad en todo el ciclo de vida de desarrollo.
 *   **Siguiente paso:** Iniciar la Historia 1.5.10 (Control de Software Supply Chain Failures) en la próxima sesión.
 
+---
+
+### [2026-06-12] - Historia 1.5.10 y Actualización de Roadmap B2B (Antigravity / DevOps & Cloud Architect)
+*   **Estado:** Completado en la rama `feature/1.5.10-supply-chain-failures`.
+*   **Vertical Slice:** 1 (Ingeniería de Datos Base e Infraestructura)
+*   **Archivos Modificados:** `docs/BUSINESS_PRODUCT/DEFERRED_FEATURES.md`, `docs/SCRUM/KANBAN.md`, `docs/SCRUM/USER_STORY_MAP.md`, `docs/ENGINEERING_STANDARDS/DATA_ARCHITECTURE.md`, `.pre-commit-config.yaml`, `.github/workflows/ci.yml`, `environment.yml`, `docs/AGENT_LOGS.md`.
+*   **Hecho:** Se distribuyeron y ordenaron correctamente las propuestas arquitectónicas para los Sprints 4 al 8: Imputación KNN/MICE, Resiliencia Scraping, OLTP PostgreSQL, RLS para SaaS Multi-tenant, Cifrado at-rest/in-transit (ISO 27001), Data Lineage, Alta Disponibilidad e Integración CDC. Además, se documentó el diferimiento de Elasticsearch para la V4. Se completó la Historia 1.5.10 implementando `pip-audit` en el `environment.yml`, `pre-commit` y CI/CD para bloquear dependencias vulnerables en PRs (OWASP A03). Finalmente, se cerró formalmente el Sprint 1.
+*   **Siguiente paso:** Iniciar el Sprint 2 con la Historia 2.1.1 (Análisis Exploratorio ydata-profiling).

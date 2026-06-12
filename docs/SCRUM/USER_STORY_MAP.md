@@ -150,7 +150,7 @@ Yo como Cloud Architect necesito destilar el estándar OWASP Top 10 2025 para pr
 **Pts: 3** | **Asignado a: David (DevOps)**
 Yo como DevOps Engineer necesito garantizar que nuestras dependencias y librerías no introduzcan vulnerabilidades o "Supply Chain Failures" (OWASP A03) mediante análisis de dependencias.
 *Criterios de Aceptación:*
-[ ] Escáneres de dependencias añadidos en la validación local / CI.
+[x] Escáneres de dependencias añadidos en la validación local / CI.
 
 ## 🟧 ACTIVIDAD 2: Data Science, Econometría y MLOps
 
