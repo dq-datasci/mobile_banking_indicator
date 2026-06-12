@@ -100,3 +100,12 @@ Este archivo es el registro de actividades de Antigravity.
 *   **Siguiente paso:** Iniciar la Historia 1.5.1 (Auditoría ISMS y Prevención de Fugas de Datos) según el orden del Kanban.
 
 ---
+
+### [2026-06-12] - Historia 1.6.1: Documentación e Implementación del SVS de ITIL 4 (David / Cloud Architect)
+*   **Estado:** Completado en la rama `feature/1.4.4-itil-integration`.
+*   **Vertical Slice:** 1 (Ingeniería de Datos Base e Infraestructura)
+*   **Archivos Modificados:** `docs/ENGINEERING_STANDARDS/ITIL_4_COMPLIANCE.md`, `docs/SCRUM/KANBAN.md`, `docs/SCRUM/USER_STORY_MAP.md`, `docs/ENGINEERING_STANDARDS/GLOSSARY.md`, `docs/GUIDES/HOW_WE_WORK.md`, `docs/ADRs/ARCHITECTURE_DECISIONS.md`.
+*   **Hecho:** Se analizó el documento ITIL 4 Foundation y se extrajeron las mejores prácticas aplicables a la arquitectura SaaS. Se documentó el Sistema de Valor del Servicio (SVS), las 4 Dimensiones, los 7 Principios Guía y prácticas como la Mesa de Servicios, Gestión de Incidentes, Problemas y Mejora Continua. Se incluyó el ADR 015 y se agregaron historias al Kanban. Se eliminó el PDF original de ITIL.
+*   **Siguiente paso:** Iniciar la Historia 1.6.2 (Definición de Procesos para Mesa de Servicios y Gestión de Incidentes).
+
+---

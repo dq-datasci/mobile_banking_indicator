@@ -67,3 +67,7 @@ Este documento registra todas las decisiones tecnológicas y de diseño importan
 *   **Decisión:** Se modelará la capa Gold de datos utilizando un Esquema de Estrella (Fact y Dimensiones) implementando Slowly Changing Dimensions (SCD Tipo 2) para dimensiones históricas críticas.
 *   **Alternativas Rechazadas:** Tablones anchos (One-Big-Table) o esquemas puramente normalizados (3NF) para analítica.
 *   **Justificación:** Optimiza dramáticamente el rendimiento de consultas agregadas para herramientas de BI (Streamlit) al evitar JOINs en cascada. El uso de SCD Tipo 2 (con claves subrogadas, `valid_from`, `valid_to`, `is_current`) garantiza que las alteraciones en las dimensiones (ej. una app cambiando de categoría) no corrompan ni reescriban la historia analítica del comportamiento de Churn/NPS.
+
+## ADR 015: Adopción del marco ITIL 4 para la Gestión de Servicios (ITSM)
+*   **Decisión:** Se adoptará el Sistema de Valor del Servicio (SVS) y los Principios Guía de ITIL 4 para la gestión operativa y de mejora continua.
+*   **Justificación:** A medida que los servicios de OmniVoC crecen en complejidad, la agilidad DevOps requiere de prácticas formales como la Gestión de Incidentes, Problemas y Habilitación del Cambio para minimizar riesgos y deuda técnica sin sacrificar la velocidad de entrega al mercado. ITIL 4 provee este enfoque holístico centrado en el valor, evitando el trabajo en silos y protegiendo los entornos de producción.
