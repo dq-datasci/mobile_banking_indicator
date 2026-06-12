@@ -185,3 +185,12 @@ Este archivo es el registro de actividades de Antigravity.
 *   **Archivos Modificados:** `docs/BUSINESS_PRODUCT/DEFERRED_FEATURES.md`, `docs/SCRUM/KANBAN.md`, `docs/SCRUM/USER_STORY_MAP.md`, `docs/ENGINEERING_STANDARDS/DATA_ARCHITECTURE.md`, `.pre-commit-config.yaml`, `.github/workflows/ci.yml`, `environment.yml`, `docs/AGENT_LOGS.md`.
 *   **Hecho:** Se distribuyeron y ordenaron correctamente las propuestas arquitectónicas para los Sprints 4 al 8: Imputación KNN/MICE, Resiliencia Scraping, OLTP PostgreSQL, RLS para SaaS Multi-tenant, Cifrado at-rest/in-transit (ISO 27001), Data Lineage, Alta Disponibilidad e Integración CDC. Además, se documentó el diferimiento de Elasticsearch para la V4. Se completó la Historia 1.5.10 implementando `pip-audit` en el `environment.yml`, `pre-commit` y CI/CD para bloquear dependencias vulnerables en PRs (OWASP A03). Finalmente, se cerró formalmente el Sprint 1.
 *   **Siguiente paso:** Iniciar el Sprint 2 con la Historia 2.1.1 (Análisis Exploratorio ydata-profiling).
+
+---
+
+### [2026-06-12] - Historia 2.1.1: Análisis Exploratorio con ydata-profiling (David / Data Analyst)
+*   **Estado:** Completado en la rama `feature/2.1.1-ydata-profiling`.
+*   **Vertical Slice:** 2 (Econometría Básica y Orquestación)
+*   **Archivos Modificados:** `src/core/quality/silver_profiler.py`, `tests/test_silver_profiler.py`, `environment.yml`, `docs/SCRUM/KANBAN.md`, `docs/SCRUM/USER_STORY_MAP.md`, `docs/BUSINESS_PRODUCT/DEFERRED_FEATURES.md`, `docs/AGENT_LOGS.md`.
+*   **Hecho:** Se implementó `SilverProfilerFacade` para generar perfiles HTML usando `ydata-profiling`. Se aplicó el principio SRP y un mecanismo de Degradación Elegante (Fallback) con Pandas en caso de fallo de memoria, protegiendo así el Lakehouse (ISO 22301 y MTPD). El reporte se mantuvo local para los analistas, aplazando la integración en Streamlit según se registró en `DEFERRED_FEATURES.md` (preservando ISO 25010 Interaction Capability). Se realizaron pruebas automatizadas que pasaron exitosamente y se documentó todo el seguimiento en el tablero Kanban.
+*   **Siguiente paso:** Iniciar la Historia 2.2.1 (Modelo Logit Riesgo Churn).

@@ -25,3 +25,7 @@ Este documento rastrea todas las decisiones tecnológicas o features que **hemos
 ## 5. Capa de Búsqueda (Elasticsearch / OpenSearch)
 *   **Decisión:** Diferido para el **Release 4 (Enterprise Deep Listening)**.
 *   **Justificación:** Añadir una capa de búsqueda Full-Text hiper-rápida es vital para que clientes B2B puedan buscar quejas específicas entre millones de registros. Sin embargo, configurar y mantener nodos de Elasticsearch en este momento dispararía los costos de nube e introduciría complejidad innecesaria para las validaciones del MVP y Release 2, donde la analítica columnar (DuckDB/Parquet) es suficientemente veloz para los tableros generales.
+
+## 6. Integración del Reporte EDA en Dashboard de Streamlit
+*   **Decisión:** Diferido Indefinidamente. El reporte HTML generado por `ydata-profiling` se mantendrá como un artefacto estático local para el Data Analyst.
+*   **Justificación:** El reporte contiene marcas de agua y terminología técnica propia de herramientas de calidad de datos. Los clientes B2B (gerentes/ejecutivos) requieren métricas limpias orientadas a valor, por lo que integrar un archivo HTML crudo de este tamaño degradaría la estética y el "Interaction Capability" (ISO 25010) del producto final.
