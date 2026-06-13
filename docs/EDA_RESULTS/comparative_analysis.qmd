@@ -1,0 +1,65 @@
+---
+title: "Reporte Comparativo - OmniVoC Lakehouse"
+author: "Antigravity - Historia 2.1.1"
+format:
+  pdf:
+    toc: true
+    number-sections: true
+    colorlinks: true
+---
+
+# Introducción al Análisis Híbrido
+
+Este documento consolida los análisis exploratorios distribuidos (vía PySpark) y locales para determinar el riesgo de abandono (Churn) en el entorno bancario móvil boliviano. Utilizamos un motor híbrido de código Python y R.
+
+## 1. Visualización de la Volumetría Global (Python)
+
+A continuación leemos los artefactos generados por el orquestador PySpark usando Pandas:
+
+```{python}
+#| label: python-stats
+#| warning: false
+
+import pandas as pd
+
+try:
+    df_stats = pd.read_csv("GLOBAL/categorical_bank_name.csv")
+    print("Top 5 Instituciones Financieras por Volumen de Reseñas:")
+    print(df_stats.head())
+except Exception as e:
+    print(f"Archivo no encontrado. Asegúrate de ejecutar el EDA primero: {e}")
+```
+
+## 2. Modelado Visual del Comportamiento (R)
+
+Ahora transicionamos al motor R para graficar las proporciones de las principales entidades usando `ggplot2`. 
+Como extrajimos los CSV ligeros desde la capa Silver (previniendo OOM), R solo necesita renderizar:
+
+```{r}
+#| label: r-viz
+#| warning: false
+#| message: false
+#| fig-cap: "Distribución de Reseñas Bancarias (Capa Silver)"
+
+if (!requireNamespace("ggplot2", quietly = TRUE)) {
+  install.packages("ggplot2", repos = "http://cran.us.r-project.org")
+}
+library(ggplot2)
+
+df <- read.csv("GLOBAL/categorical_bank_name.csv")
+# Tomamos el top 5 para el gráfico
+df_top <- head(df, 5)
+
+ggplot(df_top, aes(x = reorder(bank_name, count), y = count, fill = bank_name)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  theme_minimal() +
+  labs(x = "Institución Bancaria", y = "Cantidad de Reseñas", title = "Top Bancos Bolivia") +
+  theme(legend.position = "none")
+```
+
+## 3. Conclusiones y Próximos Pasos
+
+El umbral dinámico validó que nuestra volumetría actual ($\approx$ 60k registros) soporta la ejecución de perfilado visual masivo. Los documentos generados paralelamente (`global_ydata_report.html` y `bcp_ydata_report.html`) se encuentran disponibles en sus respectivos subdirectorios.
+
+*El siguiente hito (Historia 2.2.1) involucrará feature engineering en R y Python para estimar los modelos probabilísticos de Churn.*

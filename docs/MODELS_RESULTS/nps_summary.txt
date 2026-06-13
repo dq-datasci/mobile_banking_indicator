@@ -1,0 +1,13 @@
+============================================================
+               REPORTE ECONOMÉTRICO DE NPS                
+============================================================
+
+                      bank_name  total_reviews  promoters  passives  detractors  nps_score
+                Banco_Económico           1675       1222       163         290  55.641791
+                 Banco_Ganadero           8593       5697       739        2157  41.196323
+           Banco_de_Crédito_BCP          17463       8263      2387        6813   8.303270
+  Banco_Nacional_de_Bolivia_BNB           6983       2982       946        3055  -1.045396
+                       BancoSol           3946       1271       450        2225 -24.176381
+                    Banco_Unión          14376       4635      1554        8187 -24.707846
+                     Banco_BISA           3210       1015       365        1830 -25.389408
+Banco_Mercantil_Santa_Cruz_BMSC           3549        786       409        2354 -44.181460

@@ -31,12 +31,12 @@
 - [x] **Historia 1.5.12: Refactorización a PySpark (Silver y Gold Layer)** (Pts: 8) [Antigravity - Data Engineer]
 
 ### Sprint 2: Econometría Básica y Orquestación (Vertical Slice 2)
-- [/] **Historia 2.1.1: Análisis Exploratorio Avanzado (PySpark)** (Pts: 5) [David - Data Analyst]
+- [x] **Historia 2.1.1: Análisis Exploratorio Avanzado (PySpark)** (Pts: 5) [David - Data Analyst]
 - [x] **Historia 2.1.2: PyCaret Baseline Models** (Pts: 8) [David - MLOps]
 - [x] **Historia 2.2.0: Fundamentación Teórica Econométrica** (Pts: 3) [David - Econometrista]
-- [ ] **Historia 2.2.1: Modelo Logit Riesgo Churn** (Pts: 8) [David - Econometrista]
-- [ ] **Historia 2.2.2: Cálculo Econométrico NPS** (Pts: 5) [David - Econometrista]
-- [ ] **Historia 3.1.1: Menú CLI Orchestrator (Patrón Command)** (Pts: 8) [David - Desarrollador]
+- [x] **Historia 2.2.1: Modelo Logit Riesgo Churn** (Pts: 8) [David - Econometrista]
+- [x] **Historia 2.2.2: Cálculo Econométrico NPS** (Pts: 5) [David - Econometrista]
+- [x] **Historia 3.1.1: Menú CLI Orchestrator (Patrón Command)** (Pts: 8) [David - Desarrollador]
 
 ### Sprint 3: Inteligencia Artificial Avanzada y UX (Vertical Slice 3)
 - [ ] **Historia 2.3.1: Facade NLP y Clasificación de Sentimiento Básica** (Pts: 8) [David - Data Scientist]
@@ -47,7 +47,7 @@
 - [ ] **Historia 2.3.6: Ruteo Multi-Agente (Legal, UI/UX, Backend) y Simulador Jira** (Pts: 8) [David - AI Engineer]
 - [ ] **Historia 2.3.7: Generación de Datos Sintéticos para Stress-Test del RAG** (Pts: 5) [David - MLOps]
 - [ ] **Historia 2.2.3: Cadenas de Markov de Satisfacción** (Pts: 8) [David - Econometrista]
-- [ ] **Historia 3.2.1: Streamlit Dashboard (NPS, Observer y Patrón F)** (Pts: 8) [David - UI/UX Engineer]
+- [x] **Historia 3.2.1: Streamlit Dashboard (NPS, Observer y Patrón F)** (Pts: 8) [David - UI/UX Engineer]
 - [ ] **Historia 3.2.2: Pruebas de Interaction Capability y Usabilidad (ISO 25010)** (Pts: 5) [David - UI/UX Engineer]
 
 ---
