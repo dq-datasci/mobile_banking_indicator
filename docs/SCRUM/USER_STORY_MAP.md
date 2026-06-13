@@ -170,11 +170,13 @@ Yo como Data Engineer necesito reemplazar el procesamiento in-memory de DuckDB p
 ## 🟧 ACTIVIDAD 2: Data Science, Econometría y MLOps
 
 ### 🟦 2.1 EDA y Auto-ML (Rol: Data Analyst)
-**Historia 2.1.1: Análisis Exploratorio con ydata-profiling**
+**Historia 2.1.1: Análisis Exploratorio Avanzado (PySpark)**
 **Pts: 5** | **Asignado a: David (Data Analyst)**
 Yo como Analista de Datos necesito generar reportes automáticos de calidad de forma que entienda la distribución estadística de la capa Silver.
 *Criterios de Aceptación:*
 [x] Reporte HTML generado automáticamente en cada corrida.
+[ ] Migración a PySpark/Polars para soportar análisis masivo de datos sin OOM.
+[ ] Generación y análisis del EDA para extraer conclusiones y siguientes pasos.
 
 **Historia 2.1.2: Selección de Algoritmos Base (PyCaret)**
 **Pts: 8** | **Asignado a: David (MLOps)**

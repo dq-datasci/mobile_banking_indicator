@@ -1,37 +1,52 @@
 import pandas as pd
 from pathlib import Path
 from src.core.quality.silver_profiler import SilverProfilerFacade
+from pyspark.sql import SparkSession
 
 def test_silver_profiler_generate_report(tmp_path):
     """
-    Prueba que el reporte de perfilamiento se genere correctamente
-    cuando ydata-profiling está instalado.
+    Prueba que el EDA global y el reporte cliente se generen correctamente usando PySpark.
     """
-    data = {"col1": [1, 2, 3], "col2": ["A", "B", "C"]}
-    df = pd.DataFrame(data)
+    spark = SparkSession.builder.master("local[1]").appName("Test-SilverProfiler").getOrCreate()
+    data = [
+        ("1", "user1", "A", 5, "Banco de Crédito (BCP)"),
+        ("2", "user2", "B", 4, "Banco de Crédito (BCP)"),
+        ("3", "user3", "C", 1, "Otro Banco")
+    ]
+    df = spark.createDataFrame(data, ["review_id", "user_name", "content", "rating", "bank_name"])
     
-    profiler = SilverProfilerFacade(output_dir=str(tmp_path))
+    profiler = SilverProfilerFacade(spark=spark, output_dir=str(tmp_path))
     
-    output_file = profiler.generate_report(df, report_name="test_profile.html")
+    # Mockear plt.savefig para no generar imagenes en los unit tests en CI
+    import matplotlib.pyplot as plt
+    original_savefig = plt.savefig
+    plt.savefig = lambda *args, **kwargs: None
     
-    assert Path(output_file).exists()
-    assert output_file.endswith(".html")
+    paths = profiler.generate_report(df)
+    
+    plt.savefig = original_savefig
+    
+    assert Path(paths["global_dir"]).exists()
+    assert Path(paths["client_dir"]).exists()
+    assert (Path(paths["global_dir"]) / "missing_values.csv").exists()
+    assert (Path(paths["global_dir"]) / "numeric_stats.csv").exists()
 
 def test_silver_profiler_fallback(tmp_path, monkeypatch):
     """
-    Prueba el mecanismo de degradación elegante (Fallback).
-    Simula que ydata-profiling falla o no está instalado, 
-    y verifica que se genere un reporte '_fallback.html' mediante pandas.
+    Prueba el manejo de errores si ydata-profiling falla o no está instalado, 
+    asegurando que el proceso Global siga funcionando sin caerse.
     """
-    data = {"col1": [1, 2, 3], "col2": ["A", "B", "C"]}
-    df = pd.DataFrame(data)
+    spark = SparkSession.builder.master("local[1]").appName("Test-SilverProfiler").getOrCreate()
+    data = [("1", "user1", "A", 5, "Banco de Crédito (BCP)")]
+    df = spark.createDataFrame(data, ["review_id", "user_name", "content", "rating", "bank_name"])
     
-    profiler = SilverProfilerFacade(output_dir=str(tmp_path))
+    profiler = SilverProfilerFacade(spark=spark, output_dir=str(tmp_path))
     
+    # Forzar que ydata-profiling no exista
     import src.core.quality.silver_profiler as sp
     monkeypatch.setattr(sp, "ProfileReport", None)
     
-    output_file = profiler.generate_report(df, report_name="test_profile.html")
+    profiler.generate_report(df)
     
-    assert Path(output_file).exists()
-    assert "fallback" in output_file
+    # El archivo del cliente no debe existir, pero el proceso PySpark Global sí
+    assert Path(profiler.global_dir / "missing_values.csv").exists()

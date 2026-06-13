@@ -31,7 +31,7 @@
 - [x] **Historia 1.5.12: Refactorización a PySpark (Silver y Gold Layer)** (Pts: 8) [Antigravity - Data Engineer]
 
 ### Sprint 2: Econometría Básica y Orquestación (Vertical Slice 2)
-- [x] **Historia 2.1.1: Análisis Exploratorio ydata-profiling** (Pts: 5) [David - Data Analyst]
+- [/] **Historia 2.1.1: Análisis Exploratorio Avanzado (PySpark)** (Pts: 5) [David - Data Analyst]
 - [x] **Historia 2.1.2: PyCaret Baseline Models** (Pts: 8) [David - MLOps]
 - [x] **Historia 2.2.0: Fundamentación Teórica Econométrica** (Pts: 3) [David - Econometrista]
 - [ ] **Historia 2.2.1: Modelo Logit Riesgo Churn** (Pts: 8) [David - Econometrista]
