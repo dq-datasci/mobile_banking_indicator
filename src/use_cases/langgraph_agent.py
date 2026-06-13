@@ -66,10 +66,10 @@ class OmniVocMultiAgent:
         urgency = "Baja"
         department = "Atención al Cliente"
         
-        critical_keywords = ["robo", "hack", "fraude", "estafa", "vaciaron", "bloqueada", "error", "no sirve"]
+        critical_keywords = ["robo", "robaron", "robado", "robar", "hack", "fraude", "estafa", "vaciaron", "bloqueada", "error", "no sirve", "desaparecio", "desapareció"]
         if any(word in issue.lower() for word in critical_keywords):
             urgency = "Crítica"
-            if "robo" in issue.lower() or "fraude" in issue.lower() or "hack" in issue.lower():
+            if any(word in issue.lower() for word in ["robo", "robar", "robado", "robaron", "fraude", "hack", "estafa", "vaciaron"]):
                 department = "Seguridad / Legal"
             else:
                 department = "Soporte Técnico Nivel 2"

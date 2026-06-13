@@ -276,6 +276,45 @@ with tab2:
         st.info("No se encontraron resultados de AutoML PyCaret. Ejecuta `python main.py run-automl`.")
         
     st.markdown("---")
+    st.markdown("🔮 **Simulador de Predicción de Churn (PyCaret)**")
+    
+    if os.path.exists("docs/MODELS_RESULTS/best_churn_model.pkl"):
+        from pycaret.classification import load_model, predict_model
+        
+        # Load the model directly (cache to avoid reloading on every interaction)
+        @st.cache_resource
+        def get_churn_model():
+            return load_model("docs/MODELS_RESULTS/best_churn_model")
+            
+        model = get_churn_model()
+        
+        st.markdown("Ajusta los parámetros para simular la probabilidad de que un cliente abandone el banco:")
+        col_s1, col_s2, col_s3 = st.columns(3)
+        with col_s1:
+            sim_length = st.slider("Longitud del mensaje (caracteres)", 0, 500, 150)
+        with col_s2:
+            sim_hour = st.slider("Hora del día (0-23)", 0, 23, 14)
+        with col_s3:
+            sim_reply = st.selectbox("¿Tiene respuesta del banco?", [1, 0])
+            
+        if st.button("Predecir Riesgo de Churn", type="primary"):
+            input_df = pd.DataFrame({
+                'content_length': [sim_length],
+                'hour_of_day': [sim_hour],
+                'has_bank_reply': [sim_reply]
+            })
+            pred = predict_model(model, data=input_df)
+            churn_risk = pred['prediction_label'].iloc[0]
+            score = pred['prediction_score'].iloc[0]
+            
+            if churn_risk == 1:
+                st.error(f"⚠️ **¡ALTO RIESGO DE CHURN!** (Confianza: {score*100:.1f}%) - Se requiere retargeting inmediato.")
+            else:
+                st.success(f"✅ **Riesgo Bajo.** El usuario probablemente se quedará. (Confianza: {score*100:.1f}%)")
+    else:
+        st.info("⏳ El modelo predictivo se está entrenando y guardando. Esto puede tardar ~5 minutos. Cuando termine, actualiza la página para usar el simulador.")
+
+    st.markdown("---")
     st.markdown("Resumen del **Modelo Econométrico Logit**:")
     try:
         with open("docs/MODELS_RESULTS/logit_summary.txt", "r") as f:

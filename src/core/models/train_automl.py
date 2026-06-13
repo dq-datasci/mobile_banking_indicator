@@ -3,6 +3,7 @@ import pandas as pd
 from pathlib import Path
 from src.use_cases.automl_facade import AutoMLFacade
 from pyspark.sql import SparkSession
+from pycaret.classification import save_model
 
 def main():
     print("Iniciando Entrenamiento AutoML con PyCaret...")
@@ -45,7 +46,8 @@ def main():
     results_dir.mkdir(parents=True, exist_ok=True)
     
     metrics.to_csv(results_dir / "pycaret_metrics.csv", index=False)
-    print("Métricas de AutoML guardadas exitosamente en docs/MODELS_RESULTS/pycaret_metrics.csv")
+    save_model(best_model, str(results_dir / 'best_churn_model'))
+    print("Métricas de AutoML y modelo guardados exitosamente en docs/MODELS_RESULTS")
 
 if __name__ == "__main__":
     main()
