@@ -95,3 +95,8 @@ Este documento registra todas las decisiones tecnológicas y de diseño importan
 *   **Contexto:** Hubo problemas de compatibilidad (`java.lang.NoClassDefFoundError: scala/collection/IterableOnce` y `TimeAdd`) al usar PySpark 3.5.1 de conda-forge (Scala 2.13) con Delta Lake 3.x.
 *   **Decisión:** Downgradear PySpark a 3.5.0 en `environment.yml` y alinear la versión de Delta Lake a `delta-spark_2.12:3.1.0`.
 *   **Consecuencias:** Se resolvieron los problemas de compatibilidad y los fallos de Scala, permitiendo hidratar las capas Silver y Gold sin cuellos de botella de memoria.
+
+## ADR 020: Extracción Teórica a Markdown y Eliminación de PDFs (DevOps/MLOps)
+*   **Contexto:** Los libros de texto de Econometría originales (Gujarati y Stock-Watson) estaban almacenados en el repositorio como PDFs que sumaban más de 14MB, ralentizando los clones y el pipeline CI/CD.
+*   **Decisión:** Extraer exclusivamente la base teórica (Logit/Probit y Datos de Panel) requerida para la predicción de Churn y cálculo de NPS a archivos Markdown (`GUJARATI_SUMMARY.md` y `STOCK_WATSON_SUMMARY.md`) y borrar los PDFs.
+*   **Consecuencias:** El repositorio se optimiza masivamente, los principios matemáticos quedan como código versionable fácil de consultar, y se reducen los riesgos de la cadena de suministro (OWASP A08).
