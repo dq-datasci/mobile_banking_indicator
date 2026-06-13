@@ -229,3 +229,12 @@ Este archivo es el registro de actividades de Antigravity.
 *   **Archivos Modificados:** `docs/APPSTORE_SCRAPING_STATUS.md` (creado), `docs/SCRUM/KANBAN.md`, `docs/SCRUM/USER_STORY_MAP.md`, `docs/BUSINESS_PRODUCT/DEFERRED_FEATURES.md`.
 *   **Hecho:** Se desarrolló inicialmente una solución avanzada con Playwright para extraer las reseñas ocultas de la App Store que superó las restricciones (429 Too Many Requests), extrayendo usuarios anonimizados mediante SHA-256 de forma correcta. Sin embargo, para mantener el entorno ligero, estable y libre de dependencias complejas de scraping web headless (Playwright, Chromium), el usuario aprobó revertir todos los cambios, desinstalar Playwright, borrar los JSON generados de iOS en la capa Bronze y diferir oficialmente el scraping de iOS. Se documentó todo el análisis técnico en `APPSTORE_SCRAPING_STATUS.md` y se cerró completamente la Historia 1.5.11 marcándola finalizada en el Kanban.
 *   **Siguiente paso:** Iniciar la Historia 1.5.12 (Refactorización a PySpark para Silver y Gold Layer).
+
+---
+
+### [2026-06-13] - Extracción Masiva Completa PlayStore (Antigravity / Data Engineer)
+*   **Estado:** Completado en la rama `feature/full-playstore-extraction`.
+*   **Vertical Slice:** 1 (Ingeniería de Datos Base e Infraestructura)
+*   **Archivos Modificados:** `src/orchestration/massive_extractor.py`, `docs/AGENT_LOGS.md`.
+*   **Hecho:** Se eliminó el límite de prueba en `massive_extractor.py` (aumentando `max_reviews` a 1,000,000) y se ejecutó exitosamente la descarga masiva y completa de todas las reseñas reales disponibles en Google Play Store para los 8 bancos objetivos (BCP, Unión, BNB, BISA, BancoSol, Económico, Mercantil, Ganadero). Los datos se almacenaron anonimizados en la capa Bronze. Cumplimiento absoluto de ISO 27001 (PII), ITIL 4 (progreso iterativo) e ISO 22301 (backoff por Rate Limits).
+*   **Siguiente paso:** Iniciar la Historia 1.5.12 (Refactorización a PySpark para Silver y Gold Layer) para procesar todo el nuevo volumen de datos masivos.

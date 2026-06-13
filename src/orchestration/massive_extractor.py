@@ -40,7 +40,7 @@ class MassiveExtractor:
                 if play_id and play_id != "":
                     try:
                         logger.info(f"Scraping PlayStore for {banco_name} - {app_name} ({play_id})")
-                        reviews = playstore.extract_reviews(app_id=play_id, max_reviews=100) # Prueba: 100 comentarios
+                        reviews = playstore.extract_reviews(app_id=play_id, max_reviews=1000000) # Extracción masiva completa
                         if reviews:
                             out_file = banco_dir / f"{app_name}_playstore.json"
                             valid_reviews = []
