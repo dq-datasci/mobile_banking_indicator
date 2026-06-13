@@ -87,6 +87,20 @@ st.markdown("""
         background-color: rgba(0, 255, 204, 0.15) !important;
         border-bottom: 3px solid #00ffcc !important;
     }
+    
+    /* Fix for Chat messages and Alerts */
+    .stChatMessage p, .stChatMessage div {
+        color: #ffffff !important;
+    }
+    .stAlert p {
+        color: #ffffff !important;
+    }
+    div[data-testid="stChatMessageContent"] {
+        background-color: rgba(255, 255, 255, 0.05) !important;
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 10px;
+        padding: 10px;
+    }
 </style>
 """, unsafe_allow_html=True)
 
@@ -276,8 +290,8 @@ with tab3:
     # Lazy loading of LangGraph agent to avoid blocking startup
     @st.cache_resource
     def get_agent():
-        from src.use_cases.langgraph_agent import CommunityManagerAgent
-        return CommunityManagerAgent()
+        from src.use_cases.langgraph_agent import OmniVocMultiAgent
+        return OmniVocMultiAgent()
         
     agent = get_agent()
     
