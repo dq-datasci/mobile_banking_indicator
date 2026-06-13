@@ -1,6 +1,8 @@
 from pyspark.sql import SparkSession
 from src.core.quality.silver_profiler import SilverProfilerFacade
 
+import subprocess
+
 def main():
     print("Iniciando Spark Session...")
     spark = SparkSession.builder \
@@ -20,6 +22,13 @@ def main():
         profiler.generate_report(df_silver)
         
         print("EDA finalizado exitosamente.")
+        
+        print("Compilando reporte comparativo (Quarto a PDF)...")
+        import os
+        env = os.environ.copy()
+        env["RETICULATE_PYTHON"] = "/home/dq-datasci/micromamba/envs/omnivoc_env/bin/python"
+        subprocess.run(["quarto", "render", "docs/EDA_RESULTS/comparative_analysis.qmd", "--to", "pdf"], check=True, env=env)
+        print("Reporte Quarto PDF generado exitosamente.")
     except Exception as e:
         print(f"Error al ejecutar EDA: {e}")
 

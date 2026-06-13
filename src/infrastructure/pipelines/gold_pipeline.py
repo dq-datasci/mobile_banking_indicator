@@ -110,6 +110,8 @@ class GoldPipeline:
         # Join con la dimensión para obtener app_sk
         fact_df = df.join(dim_app, on="app_id", how="left")
         
+        import pyspark.sql.functions as F
+
         # Seleccionar y renombrar columnas para la tabla de hechos
         # Asumimos que sentiment_score fue calculado, si no, lo dejamos null temporalmente
         if "sentiment_score" not in fact_df.columns:
@@ -118,17 +120,45 @@ class GoldPipeline:
         if "rating" not in fact_df.columns:
             fact_df = fact_df.withColumn("rating", lit(None).cast("int"))
 
+        # Feature Engineering: Churn Risk, Reply, Content Length, Hour
+        fact_df = fact_df.withColumn("is_churn_risk", F.when(col("rating") <= 2, True).otherwise(False))
+        
+        if "replyContent" in fact_df.columns:
+            fact_df = fact_df.withColumn("has_bank_reply", F.when(col("replyContent").isNotNull() & (col("replyContent") != ""), True).otherwise(False))
+        else:
+            fact_df = fact_df.withColumn("has_bank_reply", F.lit(False))
+            
+        if "content" in fact_df.columns:
+            fact_df = fact_df.withColumn("content_length", F.length(col("content")))
+        else:
+            fact_df = fact_df.withColumn("content_length", F.lit(0))
+            
+        if "date_parsed" in fact_df.columns:
+            fact_df = fact_df.withColumn("hour_of_day", F.hour(col("date_parsed")))
+        else:
+            fact_df = fact_df.withColumn("hour_of_day", F.lit(None).cast("int"))
+            
+        if "appVersion" in fact_df.columns:
+            fact_df = fact_df.withColumn("appVersion", F.when(col("appVersion").isNull() | (col("appVersion") == ""), "UNKNOWN").otherwise(col("appVersion")))
+        else:
+            fact_df = fact_df.withColumn("appVersion", F.lit("UNKNOWN"))
+
         fact_df = fact_df.select(
             col("review_id"),
             col("app_sk"),
             col("date_parsed").alias("review_date"),
             col("rating"),
             col("sentiment_score"),
-            col("user_name").alias("user_hash") # asumiendo que el Anonymizer ya lo procesó
+            col("user_name").alias("user_hash"), # asumiendo que el Anonymizer ya lo procesó
+            col("is_churn_risk"),
+            col("has_bank_reply"),
+            col("content_length"),
+            col("hour_of_day"),
+            col("appVersion")
         )
         
         logger.info(f"Guardando Fact_Reviews en {fact_path} (Delta)")
-        fact_df.write.format("delta").mode("overwrite").save(fact_path)
+        fact_df.write.format("delta").option("overwriteSchema", "true").mode("overwrite").save(fact_path)
         return fact_df
 
     def run(self):

@@ -3,6 +3,8 @@ import pandas as pd
 from pathlib import Path
 from pyspark.sql import SparkSession
 import pyspark.sql.functions as F
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import seaborn as sns
 from src.core.security.audit_logger import AuditLogger
@@ -111,21 +113,39 @@ class SilverProfilerFacade:
             
         report_path = self.client_dir / "bcp_ydata_report.html"
         
-        try:
+        if ProfileReport is None:
+            raise ImportError("ydata-profiling no está instalado.")
+            
+        profile = ProfileReport(client_pd, title=f"EDA Report - {client_name}", minimal=True, pool_size=1)
+        profile.to_file(str(report_path))
+        self.logger.info("SilverProfilerFacade", f"Reporte cliente generado en {report_path}")
+
+    def run_global_eda_ydata_dynamic(self, df_silver):
+        """
+        Genera reporte interactivo para todo el dataset si su tamaño no excede MAX_YDATA_ROWS.
+        """
+        MAX_YDATA_ROWS = 100000
+        count = df_silver.count()
+        if count <= MAX_YDATA_ROWS:
+            self.logger.info("SilverProfilerFacade", f"Volumen {count} <= {MAX_YDATA_ROWS}. Generando YData Profiling GLOBAL...")
+            report_path = self.global_dir / "global_ydata_report.html"
+            
             if ProfileReport is None:
                 raise ImportError("ydata-profiling no está instalado.")
                 
-            profile = ProfileReport(client_pd, title=f"EDA Report - {client_name}", minimal=True)
+            global_pd = df_silver.toPandas()
+            profile = ProfileReport(global_pd, title="EDA Report - GLOBAL (All Banks)", minimal=True, pool_size=1)
             profile.to_file(str(report_path))
-            self.logger.info("SilverProfilerFacade", f"Reporte cliente generado en {report_path}")
-        except Exception as e:
-            self.logger.error("SilverProfilerFacade", f"Fallo en ydata-profiling: {e}")
+            self.logger.info("SilverProfilerFacade", f"Reporte global generado en {report_path}")
+        else:
+            self.logger.info("SilverProfilerFacade", f"Volumen {count} > {MAX_YDATA_ROWS}. Se omite YData Profiling GLOBAL interactivo para evitar OOM.")
 
     def generate_report(self, df_silver) -> dict:
         """
         Método principal que coordina ambos enfoques (Distributed + Sampled).
         """
         self.run_global_eda_pyspark(df_silver)
+        self.run_global_eda_ydata_dynamic(df_silver)
         self.run_client_eda_ydata(df_silver)
         return {
             "global_dir": str(self.global_dir),
