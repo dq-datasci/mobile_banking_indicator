@@ -203,19 +203,54 @@ Yo como Econometrista necesito modelar la matriz de transición de los usuarios 
 *Criterios de Aceptación:*
 [ ] Matriz de probabilidad de transición matemática validada.
 
-### 🟦 2.3 Procesamiento de Lenguaje Natural (Rol: Data Scientist)
-**Historia 2.3.1: Facade NLP y Clasificación de Sentimiento**
+### 🟦 2.3 Inteligencia Artificial Avanzada y LLMs (Rol: AI Engineer / Data Scientist)
+**Historia 2.3.1: Facade NLP y Clasificación de Sentimiento Básica**
 **Pts: 8** | **Asignado a: David (Data Scientist)**
-Yo como Científico de Datos necesito aplicar el patrón `Facade` para ocultar la complejidad de HuggingFace y clasificar sentimientos.
+Yo como Científico de Datos necesito aplicar el patrón `Facade` para ocultar la complejidad de HuggingFace y clasificar sentimientos base (Positivo, Negativo, Neutral).
 *Criterios de Aceptación:*
 [ ] Clase `NLPFacade` exponiendo un método simple `analyze()`.
 [ ] Precisión > 85% en clasificación.
 
 **Historia 2.3.2: Extracción Temática y Tracking (MLflow)**
 **Pts: 5** | **Asignado a: David (MLOps)**
-Yo como MLOps necesito trackear el modelo en MLflow.
+Yo como MLOps necesito trackear los modelos y experimentos locales en MLflow.
 *Criterios de Aceptación:*
 [ ] Experimentos registrados sistemáticamente en MLflow local.
+
+**Historia 2.3.3: LLM Inference Pipeline (PySpark UDFs & Asyncio)**
+**Pts: 8** | **Asignado a: David (Data Engineer)**
+Yo como Data Engineer necesito un mecanismo escalable para llamar a LLMs desde PySpark utilizando `mapInPartitions` y `aiohttp`, de forma que podamos paralelizar las llamadas HTTP evitando cuellos de botella de memoria (OutOfMemory en Pandas) y respetando los límites de la API.
+*Criterios de Aceptación:*
+[ ] Función asíncrona inyectada en PySpark.
+[ ] Límite de concurrencia y backoff exponencial (Resiliencia).
+
+**Historia 2.3.4: Detección de Riesgos de Seguridad y Urgencia Triage (LangGraph)**
+**Pts: 8** | **Asignado a: David (AI Engineer)**
+Yo como AI Engineer necesito un flujo LangGraph que analice las quejas y dictamine si contienen un riesgo de seguridad (hackeos, robos de cuenta) y categorice la urgencia (Crítica, Alta, Baja), previniendo daños graves al usuario final (Safety).
+*Criterios de Aceptación:*
+[ ] Grafo de estados para clasificación implementado.
+[ ] Filtro binario: 1 (Seguridad), 0 (No Seguridad) operando exitosamente.
+
+**Historia 2.3.5: Extracción de Causa Raíz (Root Cause) y Auto-Respuesta**
+**Pts: 8** | **Asignado a: David (AI Engineer)**
+Yo como AI Engineer necesito que el agente identifique qué módulo del banco falla (ej. Biometría, Transferencias, QR) y genere una respuesta empática automática como "Community Manager" para acelerar la contención de usuarios frustrados.
+*Criterios de Aceptación:*
+[ ] Extracción de entidades clave mediante prompts estructurados.
+[ ] Campo `draft_response` añadido a la capa Gold.
+
+**Historia 2.3.6: Ruteo Multi-Agente (Legal, UI/UX, Backend) y Simulador Jira**
+**Pts: 8** | **Asignado a: David (AI Engineer)**
+Yo como AI Engineer necesito un agente supervisor en LangGraph que lea la queja y la enrute automáticamente al "departamento" correcto, generando la simulación de un ticket de Jira de forma que la organización asigne la tarea de resolución a la cuadrilla correcta de DevOps/Desarrollo.
+*Criterios de Aceptación:*
+[ ] Grafo jerárquico (Supervisor -> Agentes Departamentales).
+[ ] Asignación de "Ticket Jira Mock" en la base de datos.
+
+**Historia 2.3.7: Generación de Datos Sintéticos para Stress-Test del RAG**
+**Pts: 5** | **Asignado a: David (MLOps)**
+Yo como MLOps necesito utilizar LLMs para inyectar reseñas falsas (ataques de prompt injection o quejas críticas caóticas) en un entorno de staging de forma que probemos que nuestros agentes son resistentes (Security & Reliability - ISO 25010) ante comportamientos atípicos en producción.
+*Criterios de Aceptación:*
+[ ] Generador de reseñas sintéticas (Edge Cases).
+[ ] Pruebas unitarias de resistencia de los agentes.
 
 ## 🟧 ACTIVIDAD 3: UI/UX y Orquestación
 

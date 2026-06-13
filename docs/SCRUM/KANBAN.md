@@ -37,9 +37,14 @@
 - [ ] **Historia 2.2.2: Cálculo Econométrico NPS** (Pts: 5) [David - Econometrista]
 - [ ] **Historia 3.1.1: Menú CLI Orchestrator (Patrón Command)** (Pts: 8) [David - Desarrollador]
 
-### Sprint 3: Inteligencia Artificial y UX (Vertical Slice 3)
-- [ ] **Historia 2.3.1: Facade NLP y Clasificación de Sentimiento** (Pts: 8) [David - Data Scientist]
+### Sprint 3: Inteligencia Artificial Avanzada y UX (Vertical Slice 3)
+- [ ] **Historia 2.3.1: Facade NLP y Clasificación de Sentimiento Básica** (Pts: 8) [David - Data Scientist]
 - [ ] **Historia 2.3.2: Extracción Temática y MLflow Tracking** (Pts: 5) [David - MLOps]
+- [ ] **Historia 2.3.3: LLM Inference Pipeline (PySpark UDFs & Asyncio)** (Pts: 8) [David - Data Engineer]
+- [ ] **Historia 2.3.4: Detección de Seguridad y Urgencia Triage (LangGraph)** (Pts: 8) [David - AI Engineer]
+- [ ] **Historia 2.3.5: Extracción de Causa Raíz y Auto-Respuesta (Community Manager Agent)** (Pts: 8) [David - AI Engineer]
+- [ ] **Historia 2.3.6: Ruteo Multi-Agente (Legal, UI/UX, Backend) y Simulador Jira** (Pts: 8) [David - AI Engineer]
+- [ ] **Historia 2.3.7: Generación de Datos Sintéticos para Stress-Test del RAG** (Pts: 5) [David - MLOps]
 - [ ] **Historia 2.2.3: Cadenas de Markov de Satisfacción** (Pts: 8) [David - Econometrista]
 - [ ] **Historia 3.2.1: Streamlit Dashboard (NPS, Observer y Patrón F)** (Pts: 8) [David - UI/UX Engineer]
 - [ ] **Historia 3.2.2: Pruebas de Interaction Capability y Usabilidad (ISO 25010)** (Pts: 5) [David - UI/UX Engineer]

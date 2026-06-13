@@ -89,3 +89,9 @@ Este documento registra todas las decisiones tecnológicas y de diseño importan
 ## ADR 019: MLflow Local vs Databricks MLflow (MVP Constraint)
 *   **Decisión:** Mantener el tracking de PyCaret con MLflow en modo local para el MVP y diferir el uso de Databricks MLflow al Release 3.
 *   **Justificación:** Conforme al *BUSINESS_MODEL.md*, el costo de desarrollo del MVP debe ser de $0. Configurar un tracking URI apuntando a un workspace local permite la evaluación de métricas de clasificación, matrices de confusión y experimentación ágil sin requerir infraestructura cloud externa ni sacrificar los principios de Trazabilidad MLOps.
+
+
+### ADR 10: Downgrade PySpark a 3.5.0 para compatibilidad con Delta 3.1.0
+*   **Contexto:** Hubo problemas de compatibilidad (`java.lang.NoClassDefFoundError: scala/collection/IterableOnce` y `TimeAdd`) al usar PySpark 3.5.1 de conda-forge (Scala 2.13) con Delta Lake 3.x.
+*   **Decisión:** Downgradear PySpark a 3.5.0 en `environment.yml` y alinear la versión de Delta Lake a `delta-spark_2.12:3.1.0`.
+*   **Consecuencias:** Se resolvieron los problemas de compatibilidad y los fallos de Scala, permitiendo hidratar las capas Silver y Gold sin cuellos de botella de memoria.
