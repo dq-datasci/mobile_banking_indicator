@@ -3,6 +3,10 @@ import pandas as pd
 import plotly.express as px
 from pyspark.sql import SparkSession
 import os
+import sys
+
+# Ensure the root of the project is in the python path to find 'src'
+sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 
 # --- PAGE CONFIG ---
 st.set_page_config(
@@ -67,6 +71,22 @@ st.markdown("""
     }
     .delta-positive { color: #00ffcc; }
     .delta-negative { color: #ff4757; }
+    
+    /* Fix for Streamlit Tabs visibility */
+    .stTabs [data-baseweb="tab-list"] button [data-testid="stMarkdownContainer"] p {
+        font-size: 1.1rem !important;
+        font-weight: 600 !important;
+        color: #ffffff !important;
+    }
+    .stTabs [data-baseweb="tab-list"] button {
+        background-color: rgba(255, 255, 255, 0.05) !important;
+        border-radius: 8px 8px 0 0 !important;
+        margin-right: 5px !important;
+    }
+    .stTabs [data-baseweb="tab-list"] button[aria-selected="true"] {
+        background-color: rgba(0, 255, 204, 0.15) !important;
+        border-bottom: 3px solid #00ffcc !important;
+    }
 </style>
 """, unsafe_allow_html=True)
 
