@@ -1,7 +1,8 @@
 import logging
 from pathlib import Path
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import col, lit, to_timestamp, input_file_name, regexp_extract
+from pyspark.sql.functions import col, lit, to_timestamp, input_file_name, regexp_extract, concat_ws
+from pyspark.sql.types import StructType, StructField, StringType, IntegerType
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger("SilverPipeline")
@@ -27,32 +28,46 @@ class SilverPipeline:
             logger.warning("No hay datos en Bronze para procesar.")
             return
             
-        # Leer todos los JSONs particionados
-        df = self.spark.read.option("multiline", "true").json(f"{self.bronze_dir}/*/*.json")
+        # Definir esquema estricto (StructType)
+        schema = StructType([
+            StructField("reviewId", StringType(), True),
+            StructField("userName", StringType(), True),
+            StructField("userImage", StringType(), True),
+            StructField("content", StringType(), True),
+            StructField("score", IntegerType(), True),
+            StructField("thumbsUpCount", IntegerType(), True),
+            StructField("reviewCreatedVersion", StringType(), True),
+            StructField("at", StringType(), True),
+            StructField("replyContent", StringType(), True),
+            StructField("repliedAt", StringType(), True),
+            StructField("appVersion", StringType(), True)
+        ])
         
-        # Extraer el nombre del banco desde la ruta del archivo usando regexp_extract
-        # Ruta ejemplo: .../data/bronze/Banco_Nacional_de_Bolivia_BNB/Bille_playstore.json
-        # Extraeremos el nombre del banco de la carpeta padre
+        # Leer JSONs particionados con el esquema estricto
+        df = self.spark.read.option("multiline", "true").schema(schema).json(f"{self.bronze_dir}/*/*.json")
+        
+        # Extraer el nombre del banco y app desde la ruta del archivo
         file_name_col = input_file_name()
         
-        # Este regex captura la penúltima parte del path (el nombre de la carpeta del banco)
         df = df.withColumn("bank_name", regexp_extract(file_name_col, r'.*/bronze/([^/]+)/[^/]+\.json$', 1))
+        df = df.withColumn("app_name", regexp_extract(file_name_col, r'.*/bronze/[^/]+/(.*?)_(playstore|appstore)\.json$', 1))
+        df = df.withColumn("app_id", concat_ws("_", col("bank_name"), col("app_name")))
         
         # Limpieza básica
-        # 1. Eliminar duplicados absolutos
-        df_clean = df.dropDuplicates(["review_id"])
-        
-        # 2. Filtrar sin texto
+        df_clean = df.dropDuplicates(["reviewId"])
         df_clean = df_clean.filter(col("content").isNotNull() & (col("content") != ""))
         
-        # 3. Castear fechas (Pydantic las sacó como string ISO)
-        if "date" in df_clean.columns:
-            df_clean = df_clean.withColumn("date_parsed", to_timestamp(col("date")))
+        # Castear fechas y renombrar
+        if "at" in df_clean.columns:
+            df_clean = df_clean.withColumn("date_parsed", to_timestamp(col("at")))
             
-        # 4. Verificar schema estricto (ya lo garantizaba Pydantic, pero validamos nulls en llaves foráneas)
-        df_clean = df_clean.filter(col("app_id").isNotNull())
+        # Renombrar score a rating para compatibilidad con Gold
+        df_clean = df_clean.withColumnRenamed("score", "rating")
+        df_clean = df_clean.withColumnRenamed("reviewId", "review_id")
+        df_clean = df_clean.withColumnRenamed("userName", "user_name")
+            
+        df_clean = df_clean.filter(col("app_id").isNotNull() & (col("app_id") != ""))
         
-        # Guardar en Silver como Delta Table particionado por banco
         output_path = str(self.silver_dir / "reviews")
         logger.info(f"Guardando resultados en {output_path} particionado por banco (formato Delta)...")
         
