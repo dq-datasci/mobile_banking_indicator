@@ -185,5 +185,10 @@ dependencies:
     - ydata-profiling
     - pycaret
     - mlflow
+    - transformers
+    - langchain
+    - langchain-community
+    - langgraph
+    - torch
 
 prefix: "/home/dq-datasci/micromamba/envs/omnivoc_env"

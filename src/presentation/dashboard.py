@@ -156,144 +156,139 @@ with col4:
 
 st.markdown("<br><br>", unsafe_allow_html=True)
 
-# --- VISUALIZATIONS ---
-st.subheader("📊 Análisis Competitivo: NPS por Institución Financiera")
+# --- TABS FOR DIFFERENT MODULES ---
+tab1, tab2, tab3 = st.tabs(["📊 Métricas Generales", "🧠 Modelos Predictivos (Churn)", "🤖 Agente IA (LangGraph)"])
 
-# Bar Chart de NPS usando Plotly
-fig_nps = px.bar(
-    df_nps, 
-    x='bank_name', 
-    y='nps_score', 
-    color='nps_score',
-    color_continuous_scale=px.colors.diverging.RdYlGn,
-    text_auto='.1f',
-    labels={'bank_name': 'Banco', 'nps_score': 'Net Promoter Score'},
-    template="plotly_dark"
-)
+with tab1:
+    st.subheader("Análisis Competitivo: NPS por Institución Financiera")
 
-fig_nps.update_layout(
-    plot_bgcolor='rgba(0,0,0,0)',
-    paper_bgcolor='rgba(0,0,0,0)',
-    title_font_color="#00ffcc",
-    font_color="#ffffff",
-    xaxis=dict(showgrid=False),
-    yaxis=dict(showgrid=True, gridcolor='rgba(255,255,255,0.1)')
-)
-
-if banco_seleccionado != "Todos los Bancos":
-    # Highlight selected bank by adding an annotation or making it clear
-    fig_nps.add_annotation(
-        x=banco_seleccionado, y=global_nps,
-        text="👉 Seleccionado", showarrow=True, arrowhead=1, yshift=10,
-        font=dict(color="#00ffcc", size=14)
+    # Bar Chart de NPS usando Plotly
+    fig_nps = px.bar(
+        df_nps, 
+        x='bank_name', 
+        y='nps_score', 
+        color='nps_score',
+        color_continuous_scale=px.colors.diverging.RdYlGn,
+        text_auto='.1f',
+        labels={'bank_name': 'Banco', 'nps_score': 'Net Promoter Score'},
+        template="plotly_dark"
     )
 
-st.plotly_chart(fig_nps, use_container_width=True)
+    fig_nps.update_layout(
+        plot_bgcolor='rgba(0,0,0,0)',
+        paper_bgcolor='rgba(0,0,0,0)',
+        title_font_color="#00ffcc",
+        font_color="#ffffff",
+        xaxis=dict(showgrid=False),
+        yaxis=dict(showgrid=True, gridcolor='rgba(255,255,255,0.1)')
+    )
+
+    if banco_seleccionado != "Todos los Bancos":
+        fig_nps.add_annotation(
+            x=banco_seleccionado, y=global_nps,
+            text="👉 Seleccionado", showarrow=True, arrowhead=1, yshift=10,
+            font=dict(color="#00ffcc", size=14)
+        )
+
+    st.plotly_chart(fig_nps, use_container_width=True)
+
+    st.markdown("---")
+
+    # Composición de Usuarios
+    st.subheader("👥 Composición de Base de Usuarios")
+
+    # Melt dataset for stacked bar
+    df_melted = df_nps.melt(
+        id_vars=['bank_name'], 
+        value_vars=['promoters', 'passives', 'detractors'],
+        var_name='Segmento', 
+        value_name='Volumen'
+    )
+
+    color_discrete_map = {
+        'promoters': '#00b894',
+        'passives': '#fdcb6e',
+        'detractors': '#d63031'
+    }
+
+    fig_comp = px.bar(
+        df_melted, 
+        x='bank_name', 
+        y='Volumen', 
+        color='Segmento',
+        color_discrete_map=color_discrete_map,
+        barmode='stack',
+        template="plotly_dark"
+    )
+
+    fig_comp.update_layout(
+        plot_bgcolor='rgba(0,0,0,0)',
+        paper_bgcolor='rgba(0,0,0,0)',
+        font_color="#ffffff",
+        xaxis=dict(showgrid=False),
+        yaxis=dict(showgrid=True, gridcolor='rgba(255,255,255,0.1)')
+    )
+
+    st.plotly_chart(fig_comp, use_container_width=True)
+
+with tab2:
+    st.subheader("Modelos de Machine Learning: Churn")
+    
+    st.markdown("Resultados del **Entrenamiento AutoML PyCaret**:")
+    try:
+        metrics_df = pd.read_csv("docs/MODELS_RESULTS/pycaret_metrics.csv")
+        st.dataframe(metrics_df.style.highlight_max(axis=0, subset=['Accuracy', 'AUC', 'F1']), use_container_width=True)
+    except Exception as e:
+        st.info("No se encontraron resultados de AutoML PyCaret. Ejecuta `python main.py run-automl`.")
+        
+    st.markdown("---")
+    st.markdown("Resumen del **Modelo Econométrico Logit**:")
+    try:
+        with open("docs/MODELS_RESULTS/logit_summary.txt", "r") as f:
+            st.code(f.read(), language="text")
+    except Exception:
+        st.info("No se encontraron resultados de Logit. Ejecuta `python main.py run-models`.")
+
+with tab3:
+    st.subheader("Agente LangGraph: Triage y Community Manager")
+    st.markdown("Escribe un reporte de falla, queja o reseña para probar el enrutamiento inteligente.")
+    
+    # Lazy loading of LangGraph agent to avoid blocking startup
+    @st.cache_resource
+    def get_agent():
+        from src.use_cases.langgraph_agent import CommunityManagerAgent
+        return CommunityManagerAgent()
+        
+    agent = get_agent()
+    
+    # Initialize chat history
+    if "messages" not in st.session_state:
+        st.session_state.messages = []
+
+    # Display chat history
+    for message in st.session_state.messages:
+        with st.chat_message(message["role"]):
+            st.markdown(message["content"])
+
+    # React to user input
+    if prompt := st.chat_input("Escribe tu queja (ej: Me robaron mi dinero...)"):
+        # Display user message
+        st.chat_message("user").markdown(prompt)
+        st.session_state.messages.append({"role": "user", "content": prompt})
+        
+        # Process with LangGraph
+        with st.spinner("Analizando urgencia y ruteando..."):
+            result = agent.process_issue(prompt)
+            urgency = result.get("urgency")
+            dept = result.get("department")
+            response = result.get("response")
+            
+        # Display agent response
+        with st.chat_message("assistant"):
+            st.markdown(f"**Análisis LangGraph:**\n- *Urgencia:* {urgency}\n- *Ruteo:* {dept}")
+            st.markdown(response)
+            
+        st.session_state.messages.append({"role": "assistant", "content": f"**Ruteo:** {dept} ({urgency})\n\n{response}"})
 
 st.markdown("---")
-
-# Composición de Usuarios
-st.subheader("👥 Composición de Base de Usuarios")
-
-# Melt dataset for stacked bar
-df_melted = df_nps.melt(
-    id_vars=['bank_name'], 
-    value_vars=['promoters', 'passives', 'detractors'],
-    var_name='Segmento', 
-    value_name='Volumen'
-)
-
-# Custom Colors
-color_discrete_map = {
-    'promoters': '#00b894',
-    'passives': '#fdcb6e',
-    'detractors': '#d63031'
-}
-
-fig_comp = px.bar(
-    df_melted, 
-    x='bank_name', 
-    y='Volumen', 
-    color='Segmento',
-    color_discrete_map=color_discrete_map,
-    barmode='stack',
-    template="plotly_dark"
-)
-
-fig_comp.update_layout(
-    plot_bgcolor='rgba(0,0,0,0)',
-    paper_bgcolor='rgba(0,0,0,0)',
-    font_color="#ffffff",
-    xaxis=dict(showgrid=False),
-    yaxis=dict(showgrid=True, gridcolor='rgba(255,255,255,0.1)')
-)
-
-st.plotly_chart(fig_comp, use_container_width=True)
-
-st.markdown("---")
-st.caption("🚀 OmniVoC Engine v1.0 | Sprint 3 MVP Finalizado")
-
-# --- VISUALIZATIONS ---
-st.subheader("📊 Análisis Competitivo: NPS por Institución Financiera")
-
-# Bar Chart de NPS usando Plotly
-fig_nps = px.bar(
-    df_nps, 
-    x='bank_name', 
-    y='nps_score', 
-    color='nps_score',
-    color_continuous_scale=px.colors.diverging.RdYlGn,
-    text_auto='.1f',
-    labels={'bank_name': 'Banco', 'nps_score': 'Net Promoter Score'},
-    template="plotly_dark"
-)
-
-fig_nps.update_layout(
-    plot_bgcolor='rgba(0,0,0,0)',
-    paper_bgcolor='rgba(0,0,0,0)',
-    title_font_color="#00ffcc",
-    font_color="#b2bec3"
-)
-
-st.plotly_chart(fig_nps, use_container_width=True)
-
-st.markdown("---")
-
-# Composición de Usuarios
-st.subheader("👥 Composición de Base de Usuarios")
-
-# Melt dataset for stacked bar
-df_melted = df_nps.melt(
-    id_vars=['bank_name'], 
-    value_vars=['promoters', 'passives', 'detractors'],
-    var_name='Segmento', 
-    value_name='Volumen'
-)
-
-# Custom Colors
-color_discrete_map = {
-    'promoters': '#00b894',
-    'passives': '#fdcb6e',
-    'detractors': '#d63031'
-}
-
-fig_comp = px.bar(
-    df_melted, 
-    x='bank_name', 
-    y='Volumen', 
-    color='Segmento',
-    color_discrete_map=color_discrete_map,
-    barmode='stack',
-    template="plotly_dark"
-)
-
-fig_comp.update_layout(
-    plot_bgcolor='rgba(0,0,0,0)',
-    paper_bgcolor='rgba(0,0,0,0)',
-    font_color="#b2bec3"
-)
-
-st.plotly_chart(fig_comp, use_container_width=True)
-
-st.markdown("---")
-st.caption("🚀 OmniVoC Engine v1.0 | Sprint 3 MVP Finalizado")
+st.caption("🚀 OmniVoC Engine v2.0 | Release 1 Completado | IA & DevOps")
