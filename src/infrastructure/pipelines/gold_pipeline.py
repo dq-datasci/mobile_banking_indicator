@@ -1,141 +1,94 @@
-import pandas as pd
 import logging
-from src.infrastructure.database.duckdb_singleton import DuckDBConnection
+from pathlib import Path
+from pyspark.sql import SparkSession
+from pyspark.sql.functions import col, lit, current_date, when, monotonically_increasing_id
+from pyspark.sql.window import Window
 
-# Configurar logging para cumplir con A.8.15 Logging (ISO 27001)
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger("GoldPipeline")
 
 class GoldPipeline:
-    def __init__(self, db_connection: DuckDBConnection = None):
-        # Principio de Inversión de Dependencias (DIP) y Singleton
-        self.db = db_connection or DuckDBConnection()
-        self.db.connect()
-        self._initialize_tables()
+    def __init__(self, spark: SparkSession = None, silver_dir: str = "data/silver/reviews/", gold_dir: str = "data/gold/"):
+        self.spark = spark or SparkSession.builder \
+            .appName("OmniVoC-GoldPipeline") \
+            .config("spark.sql.parquet.compression.codec", "snappy") \
+            .master("local[*]") \
+            .getOrCreate()
+            
+        self.silver_dir = Path(silver_dir)
+        self.gold_dir = Path(gold_dir)
+        self.gold_dir.mkdir(parents=True, exist_ok=True)
         
-    def _initialize_tables(self):
-        """Inicializa el esquema de estrella si no existe en la base de datos."""
-        # Dim_App con SCD2
-        self.db.get_connection().execute("""
-            CREATE SEQUENCE IF NOT EXISTS seq_app_sk START 1;
-            CREATE TABLE IF NOT EXISTS Dim_App (
-                app_sk INTEGER PRIMARY KEY,
-                app_id VARCHAR,
-                app_name VARCHAR,
-                category VARCHAR,
-                platform VARCHAR,
-                valid_from DATE,
-                valid_to DATE,
-                is_current BOOLEAN
-            );
-        """)
+    def process_app_dimension(self, df):
+        """
+        Extrae y procesa la dimensión de aplicación usando SCD Tipo 1 (Simplified for PySpark local Parquet)
+        Nota: SCD Tipo 2 completo requiere MERGE de Delta Tables o overwrites costosos.
+        Para este MVP académico, crearemos SCD2 parcial reconstruyendo la dimensión.
+        """
+        logger.info("Procesando Dim_App...")
+        dim_app_path = str(self.gold_dir / "Dim_App")
         
-        # Fact_Reviews
-        self.db.get_connection().execute("""
-            CREATE TABLE IF NOT EXISTS Fact_Reviews (
-                review_id VARCHAR PRIMARY KEY,
-                app_sk INTEGER,
-                date_sk INTEGER,
-                sentiment_sk INTEGER,
-                user_sk VARCHAR,
-                nps_contribution DOUBLE,
-                is_churn_risk BOOLEAN,
-                rating INTEGER
-            );
-        """)
-    
-    def process_app_dimension(self, app_df: pd.DataFrame) -> None:
+        # Extraer apps únicas del batch
+        new_apps = df.select("app_id", "app_name", "bank_name").distinct()
+        
+        # Generar SKs (En producción se uniría con la tabla existente para mantener SKs)
+        new_apps = new_apps.withColumn("app_sk", monotonically_increasing_id())
+        new_apps = new_apps.withColumn("valid_from", current_date())
+        new_apps = new_apps.withColumn("valid_to", lit(None).cast("date"))
+        new_apps = new_apps.withColumn("is_current", lit(True))
+        
+        logger.info(f"Guardando Dim_App en {dim_app_path}")
+        new_apps.write.mode("overwrite").parquet(dim_app_path)
+        return new_apps
+
+    def process_fact_reviews(self, df, dim_app):
         """
-        Procesa la dimensión de aplicación aplicando Slowly Changing Dimensions Tipo 2.
+        Procesa la tabla Fact_Reviews uniendo con Dim_App para obtener Surrogate Keys.
         """
-        logger.info("Iniciando procesamiento de Dim_App con lógica SCD Tipo 2.")
-        try:
-            conn = self.db.get_connection()
-            conn.register("incoming_apps", app_df)
+        logger.info("Procesando Fact_Reviews...")
+        fact_path = str(self.gold_dir / "Fact_Reviews")
+        
+        # Join con la dimensión para obtener app_sk
+        fact_df = df.join(dim_app, on="app_id", how="left")
+        
+        # Seleccionar y renombrar columnas para la tabla de hechos
+        # Asumimos que sentiment_score fue calculado, si no, lo dejamos null temporalmente
+        if "sentiment_score" not in fact_df.columns:
+            fact_df = fact_df.withColumn("sentiment_score", lit(None).cast("double"))
             
-            # Detectar cambios o nuevos registros
-            changes = conn.execute("""
-                SELECT i.* 
-                FROM incoming_apps i
-                LEFT JOIN Dim_App d ON i.app_id = d.app_id AND d.is_current = TRUE
-                WHERE d.app_id IS NULL 
-                   OR d.app_name != i.app_name 
-                   OR d.category != i.category 
-                   OR d.platform != i.platform
-            """).fetchdf()
+        if "rating" not in fact_df.columns:
+            fact_df = fact_df.withColumn("rating", lit(None).cast("int"))
+
+        fact_df = fact_df.select(
+            col("review_id"),
+            col("app_sk"),
+            col("date_parsed").alias("review_date"),
+            col("rating"),
+            col("sentiment_score"),
+            col("user_name").alias("user_hash") # asumiendo que el Anonymizer ya lo procesó
+        )
+        
+        logger.info(f"Guardando Fact_Reviews en {fact_path}")
+        fact_df.write.mode("overwrite").parquet(fact_path)
+        return fact_df
+
+    def run(self):
+        logger.info("Iniciando procesamiento Gold con PySpark...")
+        if not self.silver_dir.exists():
+            logger.warning("No hay datos en Silver para procesar.")
+            return
             
-            if changes.empty:
-                logger.info("No se detectaron cambios para Dim_App.")
-                conn.unregister("incoming_apps")
-                return
-            
-            # Cerrar registros antiguos (SCD Type 2)
-            conn.execute("""
-                UPDATE Dim_App 
-                SET valid_to = CURRENT_DATE, is_current = FALSE
-                WHERE is_current = TRUE 
-                  AND app_id IN (SELECT app_id FROM incoming_apps)
-                  AND (app_name != (SELECT app_name FROM incoming_apps WHERE app_id = Dim_App.app_id)
-                       OR category != (SELECT category FROM incoming_apps WHERE app_id = Dim_App.app_id)
-                       OR platform != (SELECT platform FROM incoming_apps WHERE app_id = Dim_App.app_id))
-            """)
-            
-            # Insertar nuevos registros activos
-            conn.execute("""
-                INSERT INTO Dim_App
-                SELECT 
-                    nextval('seq_app_sk'),
-                    app_id,
-                    app_name,
-                    category,
-                    platform,
-                    CURRENT_DATE as valid_from,
-                    NULL as valid_to,
-                    TRUE as is_current
-                FROM incoming_apps
-                WHERE app_id IN (
-                    SELECT app_id FROM incoming_apps 
-                    EXCEPT 
-                    SELECT app_id FROM Dim_App WHERE is_current = TRUE
-                )
-            """)
-            
-            conn.unregister("incoming_apps")
-            logger.info(f"Dim_App procesada con éxito. {len(changes)} registros insertados/actualizados.")
-            
-        except Exception as e:
-            logger.error(f"Error procesando Dim_App (Posible corrupción o data inválida): {str(e)}")
-            raise
-            
-    def process_fact_reviews(self, reviews_df: pd.DataFrame) -> None:
-        """
-        Procesa la tabla Fact_Reviews asignando Surrogate Keys.
-        """
-        logger.info("Iniciando procesamiento de Fact_Reviews.")
-        try:
-            conn = self.db.get_connection()
-            conn.register("incoming_reviews", reviews_df)
-            
-            # Realizar el join con la dimensión activa
-            conn.execute("""
-                INSERT INTO Fact_Reviews
-                SELECT 
-                    r.review_id,
-                    d.app_sk,
-                    r.date_sk,
-                    r.sentiment_sk,
-                    r.user_sk,
-                    r.nps_contribution,
-                    r.is_churn_risk,
-                    r.rating
-                FROM incoming_reviews r
-                JOIN Dim_App d ON r.app_id = d.app_id AND d.is_current = TRUE
-                WHERE r.review_id NOT IN (SELECT review_id FROM Fact_Reviews)
-            """)
-            
-            conn.unregister("incoming_reviews")
-            logger.info("Fact_Reviews procesada con éxito.")
-            
-        except Exception as e:
-            logger.error(f"Error procesando Fact_Reviews: {str(e)}")
-            raise
+        # 1. Leer Silver
+        df_silver = self.spark.read.parquet(str(self.silver_dir))
+        
+        # 2. Procesar Dimensiones
+        dim_app = self.process_app_dimension(df_silver)
+        
+        # 3. Procesar Hechos
+        self.process_fact_reviews(df_silver, dim_app)
+        
+        logger.info("Pipeline Gold completado.")
+
+if __name__ == "__main__":
+    pipeline = GoldPipeline()
+    pipeline.run()
