@@ -164,8 +164,8 @@ Yo como Data Engineer necesito extraer datos reales de las apps y billeteras ban
 **Pts: 8** | **Asignado a: Antigravity (Data Engineer)**
 Yo como Data Engineer necesito reemplazar el procesamiento in-memory de DuckDB por PySpark (DataFrames) en las capas Silver y Gold, de forma que el sistema pueda manejar eficientemente millones de reseñas sin colapsar por memoria RAM (Performance Efficiency).
 *Criterios de Aceptación:*
-[ ] `silver_pipeline.py` y `gold_pipeline.py` usan PySpark para transformación.
-[ ] La tabla de Hechos y Dimensiones (SCD Tipo 2) se genera y almacena en formato Parquet/Delta.
+[x] `silver_pipeline.py` y `gold_pipeline.py` usan PySpark para transformación.
+[x] La tabla de Hechos y Dimensiones (SCD Tipo 2) se genera y almacena en formato Parquet/Delta.
 
 ## 🟧 ACTIVIDAD 2: Data Science, Econometría y MLOps
 
