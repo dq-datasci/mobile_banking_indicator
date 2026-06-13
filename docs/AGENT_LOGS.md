@@ -247,3 +247,20 @@ Este archivo es el registro de actividades de Antigravity.
 *   **Archivos Modificados:** `src/infrastructure/pipelines/silver_pipeline.py`, `src/infrastructure/pipelines/gold_pipeline.py`, `tests/test_silver_pipeline.py`, `tests/test_gold_pipeline.py`, `environment.yml`, `docs/SCRUM/KANBAN.md`, `docs/SCRUM/USER_STORY_MAP.md`.
 *   **Hecho:** Se implementó `StructType` estricto en la capa Silver para validación robusta y optimización. Se desarrolló el mecanismo de Slowly Changing Dimensions (SCD Tipo 2) mediante `DeltaTable.merge()` en la capa Gold. Se refactorizaron y corrigieron los tests con una `SparkSession` local usando la extensión Delta. Finalmente se ajustó el archivo `environment.yml` anclando `pyspark=3.5.1` y `pandas=2.2.2` para resolver incompatibilidades de versiones con `delta-spark` en entornos de staging.
 *   **Siguiente paso:** Iniciar el Sprint 2 con la Historia 2.2.1 (Modelo Logit Riesgo Churn).
+
+---
+
+### [2026-06-13] - Ampliación de Arquitectura de IA con LangGraph (Antigravity / Cloud Architect & AI Engineer)
+*   **Estado:** Completado en la rama `feature/langgraph-ai-roadmap`.
+*   **Vertical Slice:** 3 (Inteligencia Artificial Avanzada y UX)
+*   **Archivos Modificados:** `docs/SCRUM/KANBAN.md`, `docs/SCRUM/USER_STORY_MAP.md`.
+*   **Hecho:** Se analizó el enfoque del clasificador LangGraph inicial y se decidió **descartar Pandas a favor de PySpark con UDFs asíncronos** para evitar OutOfMemory en la inferencia masiva del LLM y habilitar el Rate-Limiting distribuido. Se integraron múltiples "Level-up features" al roadmap del Sprint 3: Detección de urgencia de seguridad, Extracción de causa raíz, Agente Community Manager de Auto-Respuesta, Ruteo Multi-Agente (simulador de tickets Jira), y Generación de Datos Sintéticos para Stress-Test del modelo RAG. Todas las decisiones y User Stories fueron agregadas a la planificación ágil.
+*   **Siguiente paso:** Ejecutar los pipelines Silver y Gold para hidratar el Lakehouse con la data masiva real recolectada, y posteriormente iniciar la Historia 2.2.1 (Modelo Logit Riesgo Churn).
+
+
+### [2026-06-13] - Cierre de Sesión: Hidratación del Lakehouse y PySpark Bugfix (Antigravity / Data Engineer)
+*   **Estado:** Completado y fusionado a `develop`.
+*   **Vertical Slice:** 1.5 (Re-hidratación con Datos Reales)
+*   **Archivos Modificados:** `environment.yml`, `src/infrastructure/pipelines/silver_pipeline.py`, `src/infrastructure/pipelines/gold_pipeline.py`, `docs/ADRs/ARCHITECTURE_DECISIONS.md`.
+*   **Hecho:** Se resolvieron errores críticos de compatibilidad de Scala entre PySpark 3.5.1 y Delta Lake 3.x realizando un downgrade a PySpark 3.5.0 y utilizando `delta-spark_2.12:3.1.0`. Se ejecutaron exitosamente los pipelines sobre los datos masivos, hidratando completamente el Data Lake (Silver y Gold) con soporte SCD Tipo 2. Se documentó la decisión arquitectónica (ADR 10).
+*   **Siguiente paso:** Iniciar formalmente el Sprint 2 con la Historia 2.2.1 (Modelo Logit Riesgo Churn).
