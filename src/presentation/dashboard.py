@@ -191,7 +191,7 @@ with col4:
 st.markdown("<br><br>", unsafe_allow_html=True)
 
 # --- TABS FOR DIFFERENT MODULES ---
-tab1, tab2, tab3 = st.tabs(["📊 Métricas Generales", "🧠 Modelos Predictivos (Churn)", "🤖 Agente IA (LangGraph)"])
+tab1, tab2, tab3, tab4 = st.tabs(["📊 Métricas Generales", "🧠 Modelos Predictivos (Churn)", "🤖 Agente IA (LangGraph)", "📈 Estocásticos (Markov y Colas)"])
 
 with tab1:
     st.subheader("Análisis Competitivo: NPS por Institución Financiera")
@@ -362,6 +362,66 @@ with tab3:
             st.markdown(response)
             
         st.session_state.messages.append({"role": "assistant", "content": f"**Ruteo:** {dept} ({urgency})\n\n{response}"})
+
+with tab4:
+    st.subheader("Modelamiento Estocástico (Nivel Matemático)")
+    st.markdown("Basado en Cadenas de Markov de Satisfacción y Teoría de Colas (M/M/1) para Atención al Cliente.")
+    
+    try:
+        import json
+        with open("docs/MODELS_RESULTS/stochastic_results.json", "r") as f:
+            stoch_data = json.load(f)
+            
+        markov_data = stoch_data.get("markov_chains", {})
+        queuing_data = stoch_data.get("queuing_theory", {})
+        
+        col_m1, col_m2 = st.columns(2)
+        
+        with col_m1:
+            st.markdown("### 🎲 Cadenas de Markov")
+            st.markdown("Probabilidades de Transición de Estados de Satisfacción:")
+            if "transition_matrix" in markov_data:
+                matrix_df = pd.DataFrame(markov_data["transition_matrix"]).T
+                fig_hm = px.imshow(
+                    matrix_df, 
+                    text_auto=True, 
+                    color_continuous_scale="Viridis",
+                    title="Matriz de Transición"
+                )
+                fig_hm.update_layout(paper_bgcolor='rgba(0,0,0,0)', font_color="#ffffff")
+                st.plotly_chart(fig_hm, use_container_width=True)
+            
+            if "stationary_probabilities" in markov_data:
+                st.markdown("Probabilidad Estacionaria (Riesgo a Largo Plazo):")
+                stat_df = pd.DataFrame([markov_data["stationary_probabilities"]])
+                st.dataframe(stat_df.style.format("{:.2%}"), use_container_width=True)
+                
+        with col_m2:
+            st.markdown("### ⏱️ Teoría de Colas (Customer Service)")
+            st.markdown("Estimación del embudo de retención M/M/1:")
+            if queuing_data:
+                l = queuing_data.get("lambda_arrivals_per_hour", 0)
+                m = queuing_data.get("mu_service_per_hour", 0)
+                rho = queuing_data.get("rho_saturation_prob", 0)
+                w = queuing_data.get("w_expected_wait_hours", 0)
+                
+                st.metric("Tasa de Llegada (Quejas/hora)", f"λ = {l:.2f}")
+                st.metric("Tasa de Servicio (Respuestas/hora)", f"μ = {m:.2f}")
+                st.metric("Probabilidad de Saturación (Utilización)", f"ρ = {rho:.0%}", delta=f"{rho:.0%}", delta_color="inverse")
+                
+                if w == float('inf'):
+                    st.metric("Tiempo Estimado de Espera Promedio", "W = Infinito")
+                else:
+                    st.metric("Tiempo Estimado de Espera Promedio", f"W = {w:.2f} hrs")
+                
+                if rho >= 0.95:
+                    st.error("🚨 ALERTA: Sistema SATURADO. El tiempo de espera de los clientes quejosos crecerá infinitamente sin intervención.")
+                elif rho >= 0.7:
+                    st.warning("⚠️ PRECAUCIÓN: El sistema está cerca de su límite operativo.")
+                else:
+                    st.success("✅ Sistema Estable: Capacidad de respuesta adecuada.")
+    except Exception as e:
+        st.info("No se encontraron resultados estocásticos. Ejecuta `python main.py run-stochastic` en la terminal.")
 
 st.markdown("---")
 st.caption("🚀 OmniVoC Engine v2.0 | Release 1 Completado | IA & DevOps")
