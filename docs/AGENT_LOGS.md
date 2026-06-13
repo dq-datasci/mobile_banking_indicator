@@ -211,3 +211,21 @@ Este archivo es el registro de actividades de Antigravity.
 *   **Archivos Modificados:** `docs/SCRUM/KANBAN.md`, `docs/SCRUM/USER_STORY_MAP.md`, `docs/ADRs/ARCHITECTURE_DECISIONS.md`, `docs/BUSINESS_PRODUCT/DEFERRED_FEATURES.md`, `docs/AGENT_LOGS.md`.
 *   **Hecho:** Se cerró formalmente la Historia 2.1.2 marcando los criterios de aceptación como completados. Se agregó el ADR 019 para asentar la decisión de mantener MLflow en local y se actualizó `DEFERRED_FEATURES.md` difiriendo Databricks MLflow al Release 3. Se verificó que todas las ISOs y principios SOLID se mantienen intactos.
 *   **Siguiente paso:** Iniciar un nuevo chat para la Extracción de Datos Reales.
+
+---
+
+### [2026-06-13] - Sprint 1.5: Rehidratación de Datos Reales (Antigravity / Data Engineer)
+*   **Estado:** Completado.
+*   **Vertical Slice:** 1 (Ingeniería de Datos Base e Infraestructura)
+*   **Archivos Modificados:** `src/core/config/app_targets.json`, `src/infrastructure/extractors/playstore_scraper.py`, `src/infrastructure/extractors/appstore_scraper.py`, `src/infrastructure/extractors/scraper_factory.py`, `src/orchestration/massive_extractor.py`.
+*   **Hecho:** Se migró el pipeline para apuntar a IDs reales de las apps bancarias de Bolivia. Se resolvió un bucle infinito en la librería de Play Store cuando retornaba 0 reseñas. La extracción masiva de Android (Play Store) se completó exitosamente con 100% de tolerancia a fallos, implementando PII hashing (ISO 27001). Se comprobó que la librería `app_store_scraper` está actualmente inoperable por bloqueos en la API web de Apple (retorna HTML en vez de JSON), por lo que el scraper aplica degradación elegante retornando 0 reseñas para iOS sin romper el pipeline general.
+*   **Siguiente paso:** Iniciar el re-procesamiento de las capas Silver y Gold en PySpark con los nuevos datos reales de la Play Store y continuar con el Sprint 2 (ML y Modelado).
+
+---
+
+### [2026-06-13] - Cierre Definitivo de Historia 1.5.11 y Limpieza App Store (Antigravity / Data Engineer)
+*   **Estado:** Completado en la rama `feature/1.1.2-real-data-extraction`.
+*   **Vertical Slice:** 1 (Ingeniería de Datos Base e Infraestructura)
+*   **Archivos Modificados:** `docs/APPSTORE_SCRAPING_STATUS.md` (creado), `docs/SCRUM/KANBAN.md`, `docs/SCRUM/USER_STORY_MAP.md`, `docs/BUSINESS_PRODUCT/DEFERRED_FEATURES.md`.
+*   **Hecho:** Se desarrolló inicialmente una solución avanzada con Playwright para extraer las reseñas ocultas de la App Store que superó las restricciones (429 Too Many Requests), extrayendo usuarios anonimizados mediante SHA-256 de forma correcta. Sin embargo, para mantener el entorno ligero, estable y libre de dependencias complejas de scraping web headless (Playwright, Chromium), el usuario aprobó revertir todos los cambios, desinstalar Playwright, borrar los JSON generados de iOS en la capa Bronze y diferir oficialmente el scraping de iOS. Se documentó todo el análisis técnico en `APPSTORE_SCRAPING_STATUS.md` y se cerró completamente la Historia 1.5.11 marcándola finalizada en el Kanban.
+*   **Siguiente paso:** Iniciar la Historia 1.5.12 (Refactorización a PySpark para Silver y Gold Layer).

@@ -27,7 +27,7 @@
 - [x] **Historia 1.5.10: Control de Software Supply Chain Failures** (Pts: 3) [David - DevOps]
 
 ### Sprint 1.5: Re-hidratación con Datos Reales Masivos y PySpark
-- [/] **Historia 1.5.11: Búsqueda de IDs y Configuración de Extracción Masiva** (Pts: 5) [Antigravity - Data Engineer]
+- [x] **Historia 1.5.11: Búsqueda de IDs y Configuración de Extracción Masiva** (Pts: 5) [Antigravity - Data Engineer]
 - [ ] **Historia 1.5.12: Refactorización a PySpark (Silver y Gold Layer)** (Pts: 8) [Antigravity - Data Engineer]
 
 ### Sprint 2: Econometría Básica y Orquestación (Vertical Slice 2)

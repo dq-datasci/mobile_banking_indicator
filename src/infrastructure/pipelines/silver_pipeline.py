@@ -10,7 +10,9 @@ class SilverPipeline:
     def __init__(self, spark: SparkSession = None, bronze_dir: str = "data/bronze/", silver_dir: str = "data/silver/"):
         self.spark = spark or SparkSession.builder \
             .appName("OmniVoC-SilverPipeline") \
-            .config("spark.sql.parquet.compression.codec", "snappy") \
+            .config("spark.jars.packages", "io.delta:delta-spark_2.12:3.0.0") \
+            .config("spark.sql.extensions", "io.delta.sql.DeltaSparkSessionExtension") \
+            .config("spark.sql.catalog.spark_catalog", "org.apache.spark.sql.delta.catalog.DeltaCatalog") \
             .master("local[*]") \
             .getOrCreate()
             
@@ -50,14 +52,15 @@ class SilverPipeline:
         # 4. Verificar schema estricto (ya lo garantizaba Pydantic, pero validamos nulls en llaves foráneas)
         df_clean = df_clean.filter(col("app_id").isNotNull())
         
-        # Guardar en Silver como Parquet particionado por banco
+        # Guardar en Silver como Delta Table particionado por banco
         output_path = str(self.silver_dir / "reviews")
-        logger.info(f"Guardando resultados en {output_path} particionado por banco...")
+        logger.info(f"Guardando resultados en {output_path} particionado por banco (formato Delta)...")
         
         df_clean.write \
+            .format("delta") \
             .mode("overwrite") \
             .partitionBy("bank_name") \
-            .parquet(output_path)
+            .save(output_path)
             
         logger.info(f"Pipeline Silver completado. {df_clean.count()} registros procesados.")
 

@@ -1,4 +1,5 @@
 import time
+import hashlib
 from typing import List, Dict, Any
 from google_play_scraper import reviews, Sort
 from src.core.interfaces.scraper_interface import BaseScraper
@@ -10,6 +11,11 @@ class PlayStoreScraper(BaseScraper):
     """
     Implementación del scraper para Google Play Store usando google_play_scraper.
     """
+
+    def _hash_username(self, username: str) -> str:
+        if not username:
+            return "Anonymous"
+        return hashlib.sha256(username.encode('utf-8')).hexdigest()
 
     def extract_reviews(
         self, app_id: str, max_reviews: int = 100
@@ -28,11 +34,16 @@ class PlayStoreScraper(BaseScraper):
                 result, continuation_token = reviews(
                     app_id,
                     lang="es",
-                    country="co",
+                    country="bo",
                     sort=Sort.NEWEST,
                     count=count,
                     continuation_token=continuation_token,
                 )
+                
+                if not result:
+                    self.logger.info(self.__class__.__name__, f"No se encontraron más reseñas para {app_id}.")
+                    break
+                    
                 all_reviews.extend(result)
 
                 if not continuation_token:
@@ -51,9 +62,13 @@ class PlayStoreScraper(BaseScraper):
                     self.logger.error(self.__class__.__name__, "Se acabaron los reintentos para Play Store.")
                     break
 
-        # Garantizar Idempotencia
+        # Garantizar Idempotencia y Hashear Usernames por Privacidad
         unique_reviews = {r["reviewId"]: r for r in all_reviews}.values()
         unique_list = list(unique_reviews)[:max_reviews]
+        
+        for rev in unique_list:
+            if "userName" in rev and rev["userName"]:
+                rev["userName"] = self._hash_username(rev["userName"])
 
         return unique_list
 

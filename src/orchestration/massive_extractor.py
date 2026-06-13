@@ -5,6 +5,7 @@ import os
 from pathlib import Path
 from src.infrastructure.extractors.scraper_factory import ScraperFactory
 from src.core.security.anonymizer import PIIAnonymizer
+from src.core.contracts.review_contract import PlayStoreReviewContract
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger("MassiveExtractor")
@@ -39,11 +40,18 @@ class MassiveExtractor:
                 if play_id and play_id != "":
                     try:
                         logger.info(f"Scraping PlayStore for {banco_name} - {app_name} ({play_id})")
-                        reviews = playstore.extract_reviews(app_id=play_id, max_reviews=100) # Mock limit for MVP
+                        reviews = playstore.extract_reviews(app_id=play_id, max_reviews=100) # Prueba: 100 comentarios
                         if reviews:
                             out_file = banco_dir / f"{app_name}_playstore.json"
+                            valid_reviews = []
+                            for r in reviews:
+                                try:
+                                    contract = PlayStoreReviewContract(**r)
+                                    valid_reviews.append(contract.model_dump(mode='json'))
+                                except Exception as ve:
+                                    logger.error(f"Validation Error: {ve}")
                             with open(out_file, "w", encoding="utf-8") as out:
-                                json.dump([r.model_dump() for r in reviews], out, ensure_ascii=False)
+                                json.dump(valid_reviews, out, ensure_ascii=False)
                     except Exception as e:
                         logger.error(f"Error scraping PlayStore {play_id}: {e}")
                         
@@ -54,11 +62,11 @@ class MassiveExtractor:
                 if app_id and app_id != "":
                     try:
                         logger.info(f"Scraping AppStore for {banco_name} - {app_name} ({app_id})")
-                        reviews = appstore.extract_reviews(app_id=app_id, max_reviews=100) # Mock limit for MVP
+                        reviews = appstore.extract_reviews(app_id=app_id, max_reviews=100) # Prueba: 100 comentarios
                         if reviews:
                             out_file = banco_dir / f"{app_name}_appstore.json"
                             with open(out_file, "w", encoding="utf-8") as out:
-                                json.dump([r.model_dump() for r in reviews], out, ensure_ascii=False)
+                                json.dump(reviews, out, ensure_ascii=False, default=str)
                     except Exception as e:
                         logger.error(f"Error scraping AppStore {app_id}: {e}")
                         

@@ -11,7 +11,9 @@ class GoldPipeline:
     def __init__(self, spark: SparkSession = None, silver_dir: str = "data/silver/reviews/", gold_dir: str = "data/gold/"):
         self.spark = spark or SparkSession.builder \
             .appName("OmniVoC-GoldPipeline") \
-            .config("spark.sql.parquet.compression.codec", "snappy") \
+            .config("spark.jars.packages", "io.delta:delta-spark_2.12:3.0.0") \
+            .config("spark.sql.extensions", "io.delta.sql.DeltaSparkSessionExtension") \
+            .config("spark.sql.catalog.spark_catalog", "org.apache.spark.sql.delta.catalog.DeltaCatalog") \
             .master("local[*]") \
             .getOrCreate()
             
@@ -37,8 +39,8 @@ class GoldPipeline:
         new_apps = new_apps.withColumn("valid_to", lit(None).cast("date"))
         new_apps = new_apps.withColumn("is_current", lit(True))
         
-        logger.info(f"Guardando Dim_App en {dim_app_path}")
-        new_apps.write.mode("overwrite").parquet(dim_app_path)
+        logger.info(f"Guardando Dim_App en {dim_app_path} (Delta)")
+        new_apps.write.format("delta").mode("overwrite").save(dim_app_path)
         return new_apps
 
     def process_fact_reviews(self, df, dim_app):
@@ -68,8 +70,8 @@ class GoldPipeline:
             col("user_name").alias("user_hash") # asumiendo que el Anonymizer ya lo procesó
         )
         
-        logger.info(f"Guardando Fact_Reviews en {fact_path}")
-        fact_df.write.mode("overwrite").parquet(fact_path)
+        logger.info(f"Guardando Fact_Reviews en {fact_path} (Delta)")
+        fact_df.write.format("delta").mode("overwrite").save(fact_path)
         return fact_df
 
     def run(self):
@@ -78,8 +80,8 @@ class GoldPipeline:
             logger.warning("No hay datos en Silver para procesar.")
             return
             
-        # 1. Leer Silver
-        df_silver = self.spark.read.parquet(str(self.silver_dir))
+        # 1. Leer Silver (formato Delta)
+        df_silver = self.spark.read.format("delta").load(str(self.silver_dir))
         
         # 2. Procesar Dimensiones
         dim_app = self.process_app_dimension(df_silver)

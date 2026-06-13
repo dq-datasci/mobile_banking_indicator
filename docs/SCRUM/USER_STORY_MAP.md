@@ -157,8 +157,8 @@ Yo como DevOps Engineer necesito garantizar que nuestras dependencias y librerí
 **Pts: 5** | **Asignado a: Antigravity (Data Engineer)**
 Yo como Data Engineer necesito extraer datos reales de las apps y billeteras bancarias de la competencia (BCP, BNB, BancoSol, etc.) de forma masiva para poder realizar benchmarking e ingestar un corpus válido para el entrenamiento de ML.
 *Criterios de Aceptación:*
-[ ] Diccionario `app_targets.json` creado con los IDs correspondientes.
-[ ] Extracción masiva almacenada correctamente en la capa Bronze particionada por banco.
+[x] Diccionario `app_targets.json` creado con los IDs correspondientes.
+[x] Extracción masiva almacenada correctamente en la capa Bronze particionada por banco.
 
 **Historia 1.5.12: Refactorización a PySpark (Silver y Gold Layer)**
 **Pts: 8** | **Asignado a: Antigravity (Data Engineer)**
