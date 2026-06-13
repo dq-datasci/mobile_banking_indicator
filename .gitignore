@@ -41,3 +41,6 @@ Thumbs.db
 
 # Large files
 *.pdf
+
+# Datos Lakehouse (ISO 27001 / Buenas Prácticas)
+data/
