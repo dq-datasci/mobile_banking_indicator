@@ -33,3 +33,9 @@ Este documento rastrea todas las decisiones tecnológicas o features que **hemos
 ## 7. Tracking MLOps Distribuido (Databricks MLflow)
 *   **Decisión:** Diferido para el **Release 3 (Enterprise Scale)**.
 *   **Justificación:** Según el ADR 019, usar Databricks MLflow rompería la restricción presupuestaria de $0 para el MVP y agregaría latencia innecesaria en la etapa de prototipado. El servidor local de MLflow es suficiente para comparar los modelos base localmente.
+
+### [Sprint 1.5] Scraping de Apple App Store
+*   **Fecha de decisión:** 2026-06-13
+*   **Decisión:** Diferir indefinidamente la extracción de reseñas de la App Store de Apple.
+*   **Razón (Arquitectura y Seguridad):** Apple deshabilitó su API pública RSS e implementó bloqueos estrictos (HTTP 429) a scrapers tradicionales. Aunque se desarrolló una prueba de concepto exitosa interceptando su API interna con Playwright, se decidió no integrarla al pipeline para evitar sobrecargar la infraestructura con dependencias pesadas (Node, Chromium, navegadores headless) y priorizar la estabilidad, basándonos exclusivamente en el gran volumen de datos de Google Play Store.
+*   **Hito Futuro Asignado:** N/A (Descartado hasta que exista una API oficial accesible).

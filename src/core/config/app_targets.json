@@ -1,0 +1,57 @@
+{
+  "bancos": [
+    {
+      "nombre": "Banco de Crédito (BCP)",
+      "apps": [
+        {"tipo": "billetera", "nombre": "Yape", "playstore_id": "com.bcp.bo.wallet", "appstore_id": "yape-bolivia,1135987447"},
+        {"tipo": "banca", "nombre": "Banca Móvil BCP", "playstore_id": "com.mooveit.bcpb", "appstore_id": "banca-móvil-bcp-bolivia,587062221"}
+      ]
+    },
+    {
+      "nombre": "Banco Ganadero",
+      "apps": [
+        {"tipo": "billetera", "nombre": "YOLO pago", "playstore_id": "bo.com.yolopago", "appstore_id": "yolo-pago,1582673945"},
+        {"tipo": "banca", "nombre": "GanaMóvil", "playstore_id": "com.bg.ganamovil", "appstore_id": "ganamóvil,1035434110"}
+      ]
+    },
+    {
+      "nombre": "Banco Unión",
+      "apps": [
+        {"tipo": "billetera", "nombre": "Yasta", "playstore_id": "com.busa.wallet", "appstore_id": "billetera-yasta,6502862752"},
+        {"tipo": "banca", "nombre": "UNImóvil Plus", "playstore_id": "com.bancounion.unimovilplus", "appstore_id": "unimóvil-plus,1434471437"}
+      ]
+    },
+    {
+      "nombre": "Banco Nacional de Bolivia (BNB)",
+      "apps": [
+        {"tipo": "billetera", "nombre": "Bille", "playstore_id": "com.walletapp.mobile", "appstore_id": "bille,6468484909"},
+        {"tipo": "banca", "nombre": "BNB Móvil", "playstore_id": "bnb.com.bo.bnbmovil", "appstore_id": "bnb-móvil,677291229"}
+      ]
+    },
+    {
+      "nombre": "Banco BISA",
+      "apps": [
+        {"tipo": "banca", "nombre": "BISA Móvil", "playstore_id": "com.bisa.ebisaplus", "appstore_id": "banco-bisa-s-a,1522502441"}
+      ]
+    },
+    {
+      "nombre": "BancoSol",
+      "apps": [
+        {"tipo": "billetera", "nombre": "Altoke", "playstore_id": "com.bancosol.altoke", "appstore_id": "altoke-bancosol,6479173387"},
+        {"tipo": "banca", "nombre": "BancoSol App", "playstore_id": "tsmbo.bancosolapk.presentacion", "appstore_id": "bancosol,1077578902"}
+      ]
+    },
+    {
+      "nombre": "Banco Económico",
+      "apps": [
+        {"tipo": "banca", "nombre": "Banco Económico App", "playstore_id": "com.baneco.application", "appstore_id": "banco-económico,1468290151"}
+      ]
+    },
+    {
+      "nombre": "Banco Mercantil Santa Cruz (BMSC)",
+      "apps": [
+        {"tipo": "banca", "nombre": "BMSC Móvil", "playstore_id": "bo.com.bmsc.bancamovil", "appstore_id": "bmsc-móvil,1037062092"}
+      ]
+    }
+  ]
+}

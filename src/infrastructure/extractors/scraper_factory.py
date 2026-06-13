@@ -14,6 +14,6 @@ class ScraperFactory:
         if source_lower == "playstore":
             return PlayStoreScraper()
         elif source_lower == "appstore":
-            return AppStoreScraper(country="co")
+            return AppStoreScraper(country="bo")
         else:
             raise ValueError(f"Fuente de extracción no soportada: {source}")
