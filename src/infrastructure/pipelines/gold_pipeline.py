@@ -23,25 +23,82 @@ class GoldPipeline:
         
     def process_app_dimension(self, df):
         """
-        Extrae y procesa la dimensión de aplicación usando SCD Tipo 1 (Simplified for PySpark local Parquet)
-        Nota: SCD Tipo 2 completo requiere MERGE de Delta Tables o overwrites costosos.
-        Para este MVP académico, crearemos SCD2 parcial reconstruyendo la dimensión.
+        Extrae y procesa la dimensión de aplicación usando SCD Tipo 2 real con DeltaTable.merge()
         """
-        logger.info("Procesando Dim_App...")
+        logger.info("Procesando Dim_App con SCD Tipo 2...")
         dim_app_path = str(self.gold_dir / "Dim_App")
         
         # Extraer apps únicas del batch
         new_apps = df.select("app_id", "app_name", "bank_name").distinct()
         
-        # Generar SKs (En producción se uniría con la tabla existente para mantener SKs)
-        new_apps = new_apps.withColumn("app_sk", monotonically_increasing_id())
-        new_apps = new_apps.withColumn("valid_from", current_date())
-        new_apps = new_apps.withColumn("valid_to", lit(None).cast("date"))
-        new_apps = new_apps.withColumn("is_current", lit(True))
+        from delta.tables import DeltaTable
         
-        logger.info(f"Guardando Dim_App en {dim_app_path} (Delta)")
-        new_apps.write.format("delta").mode("overwrite").save(dim_app_path)
-        return new_apps
+        if DeltaTable.isDeltaTable(self.spark, dim_app_path):
+            target_table = DeltaTable.forPath(self.spark, dim_app_path)
+            target_df = target_table.toDF()
+            
+            # Identificar filas que existen y han cambiado en algo (SCD2)
+            changed_df = new_apps.join(target_df, "app_id") \
+                .filter(col("is_current") == True) \
+                .filter((new_apps.app_name != target_df.app_name) | (new_apps.bank_name != target_df.bank_name)) \
+                .select(new_apps.app_id, new_apps.app_name, new_apps.bank_name)
+                
+            # Identificar filas totalmente nuevas
+            new_only_df = new_apps.join(target_df, "app_id", "leftanti")
+            
+            # Filas a insertar (is_current=True)
+            inserts_df = changed_df.unionByName(new_only_df)
+            
+            if inserts_df.count() > 0:
+                inserts_df = inserts_df.withColumn("app_sk", monotonically_increasing_id())
+                inserts_df = inserts_df.withColumn("valid_from", current_date())
+                inserts_df = inserts_df.withColumn("valid_to", lit(None).cast("date"))
+                inserts_df = inserts_df.withColumn("is_current", lit(True))
+                
+                # Crear dataframe para el merge (SCD2 standard con Delta)
+                update_rows = changed_df.withColumn("mergeKey", col("app_id"))
+                insert_rows = inserts_df.withColumn("mergeKey", lit(None).cast("string"))
+                
+                # Unir updates (que cerrarán los registros antiguos) e inserts (que crearán los nuevos)
+                staged_updates = update_rows.select("mergeKey", "app_id", "app_name", "bank_name") \
+                    .withColumn("app_sk", lit(None).cast("long")) \
+                    .withColumn("valid_from", lit(None).cast("date")) \
+                    .withColumn("valid_to", lit(None).cast("date")) \
+                    .withColumn("is_current", lit(None).cast("boolean")) \
+                    .unionByName(insert_rows)
+                    
+                logger.info("Ejecutando MERGE para SCD Tipo 2...")
+                target_table.alias("target").merge(
+                    staged_updates.alias("source"),
+                    "target.app_id = source.mergeKey AND target.is_current = true"
+                ).whenMatchedUpdate(
+                    set = {
+                        "is_current": lit(False),
+                        "valid_to": current_date()
+                    }
+                ).whenNotMatchedInsert(
+                    values = {
+                        "app_sk": "source.app_sk",
+                        "app_id": "source.app_id",
+                        "app_name": "source.app_name",
+                        "bank_name": "source.bank_name",
+                        "valid_from": "source.valid_from",
+                        "valid_to": "source.valid_to",
+                        "is_current": "source.is_current"
+                    }
+                ).execute()
+        else:
+            # Carga inicial
+            new_apps = new_apps.withColumn("app_sk", monotonically_increasing_id())
+            new_apps = new_apps.withColumn("valid_from", current_date())
+            new_apps = new_apps.withColumn("valid_to", lit(None).cast("date"))
+            new_apps = new_apps.withColumn("is_current", lit(True))
+            
+            logger.info(f"Carga inicial de Dim_App en {dim_app_path} (Delta)")
+            new_apps.write.format("delta").mode("overwrite").save(dim_app_path)
+            
+        # Retornar las dimensiones actuales activas
+        return self.spark.read.format("delta").load(dim_app_path).filter(col("is_current") == True)
 
     def process_fact_reviews(self, df, dim_app):
         """
