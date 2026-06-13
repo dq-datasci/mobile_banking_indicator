@@ -150,7 +150,22 @@ Yo como Cloud Architect necesito destilar el estándar OWASP Top 10 2025 para pr
 **Pts: 3** | **Asignado a: David (DevOps)**
 Yo como DevOps Engineer necesito garantizar que nuestras dependencias y librerías no introduzcan vulnerabilidades o "Supply Chain Failures" (OWASP A03) mediante análisis de dependencias.
 *Criterios de Aceptación:*
-[x] Escáneres de dependencias añadidos en la validación local / CI.
+- [x] Escáneres de dependencias añadidos en la validación local / CI.
+
+### 🟦 1.6 Sprint 1.5: Re-hidratación con Datos Reales Masivos y PySpark
+**Historia 1.5.11: Búsqueda de IDs y Configuración de Extracción Masiva**
+**Pts: 5** | **Asignado a: Antigravity (Data Engineer)**
+Yo como Data Engineer necesito extraer datos reales de las apps y billeteras bancarias de la competencia (BCP, BNB, BancoSol, etc.) de forma masiva para poder realizar benchmarking e ingestar un corpus válido para el entrenamiento de ML.
+*Criterios de Aceptación:*
+[ ] Diccionario `app_targets.json` creado con los IDs correspondientes.
+[ ] Extracción masiva almacenada correctamente en la capa Bronze particionada por banco.
+
+**Historia 1.5.12: Refactorización a PySpark (Silver y Gold Layer)**
+**Pts: 8** | **Asignado a: Antigravity (Data Engineer)**
+Yo como Data Engineer necesito reemplazar el procesamiento in-memory de DuckDB por PySpark (DataFrames) en las capas Silver y Gold, de forma que el sistema pueda manejar eficientemente millones de reseñas sin colapsar por memoria RAM (Performance Efficiency).
+*Criterios de Aceptación:*
+[ ] `silver_pipeline.py` y `gold_pipeline.py` usan PySpark para transformación.
+[ ] La tabla de Hechos y Dimensiones (SCD Tipo 2) se genera y almacena en formato Parquet/Delta.
 
 ## 🟧 ACTIVIDAD 2: Data Science, Econometría y MLOps
 
