@@ -264,3 +264,12 @@ Este archivo es el registro de actividades de Antigravity.
 *   **Archivos Modificados:** `environment.yml`, `src/infrastructure/pipelines/silver_pipeline.py`, `src/infrastructure/pipelines/gold_pipeline.py`, `docs/ADRs/ARCHITECTURE_DECISIONS.md`.
 *   **Hecho:** Se resolvieron errores críticos de compatibilidad de Scala entre PySpark 3.5.1 y Delta Lake 3.x realizando un downgrade a PySpark 3.5.0 y utilizando `delta-spark_2.12:3.1.0`. Se ejecutaron exitosamente los pipelines sobre los datos masivos, hidratando completamente el Data Lake (Silver y Gold) con soporte SCD Tipo 2. Se documentó la decisión arquitectónica (ADR 10).
 *   **Siguiente paso:** Iniciar formalmente el Sprint 2 con la Historia 2.2.1 (Modelo Logit Riesgo Churn).
+
+---
+
+### [2026-06-13] - Historia 2.2.0: Fundamentación Teórica Econométrica y Cierre de Sesión (Antigravity / Econometrista)
+*   **Estado:** Completado en la rama `feature/2.2.0-econometrics-foundation`.
+*   **Vertical Slice:** 2 (Econometría Básica y Orquestación)
+*   **Archivos Modificados:** `docs/CONTEXT/GUJARATI_SUMMARY.md`, `docs/CONTEXT/STOCK_WATSON_SUMMARY.md`, `docs/SCRUM/KANBAN.md`, `docs/SCRUM/USER_STORY_MAP.md`, `docs/ADRs/ARCHITECTURE_DECISIONS.md`, `docs/AGENT_LOGS.md`.
+*   **Hecho:** Se extrajo la fundamentación teórica de los modelos Logit/Probit y Datos de Panel de los libros de Gujarati y Stock-Watson para aplicarlos a la predicción de Churn y cálculo longitudinal de NPS. Se eliminaron los pesados archivos PDF originales para optimizar el repositorio. Se actualizó el Kanban y Story Map marcando la Historia 2.2.0 como completada. Se agregó el ADR 020 validando esta decisión y se verificó el cumplimiento absoluto de todas las normativas (ISO, ITIL, SOLID).
+*   **Siguiente paso:** Iniciar la Historia 2.2.1 (Modelo Logit Riesgo Churn).

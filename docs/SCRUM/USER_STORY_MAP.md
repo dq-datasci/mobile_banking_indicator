@@ -183,6 +183,13 @@ Yo como MLOps Engineer necesito usar PyCaret de forma que pueda entrenar y compa
 [x] Pipeline de PyCaret corriendo en MLflow.
 
 ### 🟦 2.2 Modelos Econométricos Core (Rol: Econometrista)
+**Historia 2.2.0: Fundamentación Teórica Econométrica**
+**Pts: 3** | **Asignado a: David (Econometrista)**
+Yo como Econometrista necesito extraer y documentar la teoría aplicable de los libros de Gujarati y Stock-Watson de forma que los futuros modelos matemáticos tengan un respaldo académico riguroso y cumplan con las normativas del proyecto.
+*Criterios de Aceptación:*
+[x] Resúmenes Markdown de Gujarati (Modelos Cualitativos) y Stock-Watson (Datos de Panel) creados.
+[x] PDFs pesados de bibliografía eliminados para optimizar el repositorio (DEVOPS_MLOPS_SECURITY).
+
 **Historia 2.2.1: Modelo Probit/Logit de Riesgo de Fuga (Churn)**
 **Pts: 8** | **Asignado a: David (Econometrista)**
 Yo como Econometrista necesito modelar la probabilidad de *Churn* usando `statsmodels` de forma que podamos alertar al banco sobre fallos críticos.
