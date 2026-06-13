@@ -1,0 +1,53 @@
+---
+title: "Análisis Exploratorio de Datos: El Pulso de la Banca Móvil"
+subtitle: "Un recorrido por la experiencia de usuario y fricciones en las apps financieras bolivianas"
+author: "Equipo de Inteligencia de Datos"
+date: today
+format:
+  pdf:
+    toc: true
+    number-sections: true
+    colorlinks: true
+---
+
+# Introducción: Escuchando la Voz del Cliente
+
+En la era digital, la tienda de aplicaciones es la nueva sucursal bancaria. Con el objetivo de comprender profundamente las dolencias y satisfacciones de los usuarios financieros en Bolivia, nuestro motor de datos (OmniVoC) ha procesado y analizado meticulosamente **59,795 reseñas verificadas** provenientes de 8 bancos líderes. 
+
+Este reporte explora las narrativas ocultas detrás de los números, revelando no solo cómo califican los usuarios a sus bancos, sino *por qué* lo hacen.
+
+# El Panorama Competitivo: ¿Quién domina la conversación?
+
+Al analizar el volumen de retroalimentación digital, observamos que el mercado tiene actores sumamente vocales. El **Banco de Crédito (BCP)**, con su ecosistema que incluye la billetera *Yape*, lidera abrumadoramente la cantidad de reseñas (29.2% del total de la muestra, con 17,463 interacciones). Le siguen de cerca el **Banco Unión** (24.0%) y el **Banco Ganadero** (14.3%).
+
+Este volumen masivo de datos del BCP nos brinda una ventana excepcional hacia los desafíos que enfrentan las instituciones al masificar la inclusión financiera.
+
+# La Gran Polarización: Amor u Odio, sin términos medios
+
+Cuando observamos las calificaciones promedio, un incauto podría decir: *"Con un promedio global de 3.08 estrellas sobre 5, estamos en un terreno aceptable"*. Sin embargo, los datos nos cuentan una historia mucho más dramática.
+
+La **desviación estándar de 1.85** nos grita una realidad ineludible: los usuarios están **extremadamente polarizados**. Prácticamente no existen clientes "tibios". Los usuarios ingresan a la tienda de aplicaciones motivados por dos extremos emocionales:
+- **Amor absoluto** (5 estrellas): Usualmente motivado por una transacción exitosa y fluida.
+- **Odio o Frustración profunda** (1 estrella): Usualmente motivado por bloqueos de cuentas, fallos en transferencias o caídas del sistema.
+
+Esta polarización nos advierte sobre un **riesgo latente de abandono (Churn)** en la base de usuarios de calificación baja.
+
+# El Silencio Institucional: Una Oportunidad Perdida
+
+Una de las revelaciones más impactantes de nuestro análisis fue el descubrimiento del "silencio institucional".
+
+De las casi 60,000 quejas y sugerencias dejadas por los usuarios, **el 68.5% jamás recibió una respuesta del banco**. Solo un 31.5% de los clientes se sintió escuchado.
+
+En el mundo digital, el silencio frente a una queja pública no solo frustra al usuario afectado, sino que envía una señal negativa a todos los clientes potenciales que leen las reseñas antes de instalar la aplicación. Atender este vacío comunicacional es una oportunidad dorada para amortiguar la insatisfacción antes de que el cliente decida cambiar de banco.
+
+# El Caso BCP: Lecciones del Líder
+
+Haciendo un *zoom-in* a los datos específicos del Banco de Crédito (BCP), logramos aislar patrones fascinantes:
+1. **El Efecto Versión**: Existen correlaciones directas entre actualizaciones específicas de la app (Yape o Banca Móvil) y picos abruptos de quejas. Esto demuestra que la estabilidad de los pases a producción es el principal determinante de la experiencia del cliente.
+2. **El Ciclo de Fin de Mes**: Los reclamos relacionados a transferencias "pendientes" muestran un comportamiento cíclico, coincidiendo fuertemente con las fechas de pago de salarios, donde los sistemas transaccionales se ven bajo mayor estrés.
+
+# Conclusión: Del Dato a la Acción
+
+El análisis exploratorio nos ha dejado un mapa claro de las fricciones. Sabemos que el riesgo de fuga (Churn) es alto en los extremos inferiores de calificación, y sabemos que los comentarios de estos usuarios esconden patrones accionables.
+
+Como siguiente paso estratégico, nuestra arquitectura de datos ha inyectado estas señales (longitud de quejas, presencia de respuesta bancaria, y hora del fallo) en un **Modelo Econométrico de Machine Learning**, diseñado no solo para predecir *quién* nos abandonará, sino para decirnos exactamente *por qué* y *qué peso matemático* tiene cada uno de estos fallos en su decisión final.

@@ -273,3 +273,12 @@ Este archivo es el registro de actividades de Antigravity.
 *   **Archivos Modificados:** `docs/CONTEXT/GUJARATI_SUMMARY.md`, `docs/CONTEXT/STOCK_WATSON_SUMMARY.md`, `docs/SCRUM/KANBAN.md`, `docs/SCRUM/USER_STORY_MAP.md`, `docs/ADRs/ARCHITECTURE_DECISIONS.md`, `docs/AGENT_LOGS.md`.
 *   **Hecho:** Se extrajo la fundamentación teórica de los modelos Logit/Probit y Datos de Panel de los libros de Gujarati y Stock-Watson para aplicarlos a la predicción de Churn y cálculo longitudinal de NPS. Se eliminaron los pesados archivos PDF originales para optimizar el repositorio. Se actualizó el Kanban y Story Map marcando la Historia 2.2.0 como completada. Se agregó el ADR 020 validando esta decisión y se verificó el cumplimiento absoluto de todas las normativas (ISO, ITIL, SOLID).
 *   **Siguiente paso:** Iniciar la Historia 2.2.1 (Modelo Logit Riesgo Churn).
+
+---
+
+### [2026-06-13] - Cierre del Release 1 (MVP) y Dashboard Streamlit (Antigravity / Scrum Master & Full Stack)
+*   **Estado:** Completado en la rama `feature/2.1.1-eda-pyspark`.
+*   **Vertical Slice:** 2 y 3 (Econometría, Inteligencia Artificial Avanzada y UX)
+*   **Archivos Modificados:** `main.py`, `src/core/models/churn_logit.py`, `src/core/models/nps_calculator.py`, `src/presentation/dashboard.py`, `docs/SCRUM/KANBAN.md`, `docs/SCRUM/USER_STORY_MAP.md`, `docs/AGENT_LOGS.md`.
+*   **Hecho:** Se implementó el modelo econométrico Logit para Riesgo de Churn usando `statsmodels`, calculando probabilidades y el Pseudo R-squared (Historia 2.2.1). Se desarrolló la calculadora de NPS temporal usando PySpark (Historia 2.2.2). Se construyó un CLI interactivo `main.py` con el Patrón Command para orquestar todo el pipeline (Historia 3.1.1). Se diseñó e implementó un Dashboard Premium en Streamlit con visualizaciones Plotly (Glassmorphism, Dark Mode) con filtros reactivos por institución financiera (Historia 3.2.1). Con esto cerramos el "Release 1 MVP". Se marcó todo el progreso en KANBAN y USER_STORY_MAP.
+*   **Siguiente paso:** Iniciar el Release 2 comenzando por la Historia 2.3.1 (Facade NLP y Clasificación de Sentimiento Básica).

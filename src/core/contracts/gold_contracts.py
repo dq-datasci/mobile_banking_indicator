@@ -65,4 +65,8 @@ class FactReviewsContract(BaseModel):
     user_sk: str = Field(..., description="Surrogate Key a Dim_User")
     nps_contribution: Optional[float] = Field(None, description="Contribución al NPS (Promotor=100, Detractor=-100)")
     is_churn_risk: Optional[bool] = Field(None, description="Riesgo de fuga (Churn) calculado")
+    has_bank_reply: Optional[bool] = Field(None, description="Indicador binario si el banco contestó la reseña")
+    content_length: Optional[int] = Field(None, description="Longitud en caracteres del comentario del usuario")
+    hour_of_day: Optional[int] = Field(None, description="Hora en la que se emitió la reseña (0-23)")
+    appVersion: Optional[str] = Field(None, description="Versión de la app al momento de la reseña")
     rating: int = Field(..., ge=1, le=5, description="Puntuación en estrellas (1 a 5)")

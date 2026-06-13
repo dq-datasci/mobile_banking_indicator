@@ -1,0 +1,48 @@
+---
+title: "La Lealtad en Números: Net Promoter Score (NPS)"
+subtitle: "Análisis Comparativo de Retención y Recomendación de la Banca Boliviana"
+author: "Equipo de Inteligencia de Datos"
+date: today
+format:
+  pdf:
+    toc: true
+    number-sections: true
+    colorlinks: true
+---
+
+# Introducción: El Verdadero Costo de la Experiencia
+
+El Net Promoter Score (NPS) es la métrica reina para medir la lealtad de los clientes. Responde a una única pregunta crucial: *¿Recomendarías este banco a un amigo o familiar?* 
+
+Basándonos en las metodologías globales, hemos clasificado nuestras casi 60,000 calificaciones de la siguiente forma:
+- **Promotores (5 estrellas):** Clientes leales que seguirán comprando y refiriendo a otros.
+- **Pasivos (3-4 estrellas):** Clientes satisfechos pero vulnerables a ofertas de la competencia.
+- **Detractores (1-2 estrellas):** Clientes insatisfechos atrapados en la relación, que pueden dañar nuestra marca e impedir el crecimiento.
+
+El **NPS** se calcula restando el porcentaje de Detractores del porcentaje de Promotores. El resultado oscila entre -100 (todos son detractores) y +100 (todos son promotores).
+
+# Panorama del Mercado: Un Sector en Números Rojos
+
+El procesamiento de nuestra capa *Gold* sobre toda la banca móvil analizada revela un mercado que enfrenta graves crisis de confianza. Debido a la extrema polarización descubierta en nuestro Análisis Exploratorio previo, los *Detractores* sobrepasan a los *Promotores* en gran parte de las instituciones.
+
+## Resultados Clave por Institución
+
+1. **La Crisis Transaccional**: La banca móvil en general está sufriendo para mantener valores de NPS positivos. Los picos de quejas por caídas del sistema (especialmente a fin de mes) están multiplicando el ejército de Detractores.
+2. **El Costo del Silencio**: Como comprobamos en nuestro Modelo de Riesgo Logit, las instituciones que no invierten en responder estas quejas en la tienda de aplicaciones consolidan a sus detractores. Su NPS se desploma matemáticamente frente a los competidores que sí intervienen y rescatan a los clientes de la zona de peligro.
+
+# Impacto Directo al Negocio (ROI)
+
+Tener un NPS profundamente negativo no es solo un problema de Relaciones Públicas; es un agujero financiero. 
+- **Costo de Adquisición (CAC):** Los detractores elevan nuestro CAC porque difunden malas referencias boca a boca (y reviews públicas de 1 estrella), obligándonos a gastar más en marketing para convencer a nuevos usuarios.
+- **Costo de Soporte:** Los detractores llenan las líneas telefónicas y colapsan la mesa de ayuda con reclamos y fricciones sistémicas.
+
+# El Camino a la Recuperación Estratégica
+
+La reversión del NPS exige dos acciones quirúrgicas basadas en los hallazgos de todo el Sprint Analítico:
+
+1. **Frenar la Sangría (Detractores):** Utilizar nuestro Modelo Logit para interceptar a los clientes en riesgo máximo (comentarios largos). Una respuesta institucional rápida convierte al detractor en, al menos, un pasivo.
+2. **Cultivar la Cima (Promotores):** Aquellos bancos que logren estabilizar la capa transaccional de su app, especialmente los días críticos de fin de mes, capturarán a los *Pasivos* de la competencia que buscan fiabilidad.
+
+---
+
+*Los cálculos econométricos exactos y el cruce de dimensiones se encuentran almacenados y estructurados en la capa Gold (`Aggr_NPS`) de nuestro Data Lakehouse para el monitoreo continuo en el Dashboard Ejecutivo.*

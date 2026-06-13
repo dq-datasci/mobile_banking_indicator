@@ -170,11 +170,13 @@ Yo como Data Engineer necesito reemplazar el procesamiento in-memory de DuckDB p
 ## 🟧 ACTIVIDAD 2: Data Science, Econometría y MLOps
 
 ### 🟦 2.1 EDA y Auto-ML (Rol: Data Analyst)
-**Historia 2.1.1: Análisis Exploratorio con ydata-profiling**
+**Historia 2.1.1: Análisis Exploratorio Avanzado (PySpark)**
 **Pts: 5** | **Asignado a: David (Data Analyst)**
 Yo como Analista de Datos necesito generar reportes automáticos de calidad de forma que entienda la distribución estadística de la capa Silver.
 *Criterios de Aceptación:*
 [x] Reporte HTML generado automáticamente en cada corrida.
+[ ] Migración a PySpark/Polars para soportar análisis masivo de datos sin OOM.
+[ ] Generación y análisis del EDA para extraer conclusiones y siguientes pasos.
 
 **Historia 2.1.2: Selección de Algoritmos Base (PyCaret)**
 **Pts: 8** | **Asignado a: David (MLOps)**
@@ -194,15 +196,15 @@ Yo como Econometrista necesito extraer y documentar la teoría aplicable de los 
 **Pts: 8** | **Asignado a: David (Econometrista)**
 Yo como Econometrista necesito modelar la probabilidad de *Churn* usando `statsmodels` de forma que podamos alertar al banco sobre fallos críticos.
 *Criterios de Aceptación:*
-[ ] Variable Proxy de Churn creada y documentada.
-[ ] Logit modelando la causalidad estadística.
-[ ] Pruebas de heterocedasticidad superadas.
+[x] Variable Proxy de Churn creada y documentada.
+[x] Logit modelando la causalidad estadística.
+[x] Pruebas de heterocedasticidad superadas.
 
 **Historia 2.2.2: Cálculo Econométrico del NPS**
 **Pts: 5** | **Asignado a: David (Econometrista)**
 Yo como Econometrista necesito calcular el Net Promoter Score en base a las estrellas.
 *Criterios de Aceptación:*
-[ ] Evolución temporal del NPS calculada (Promotores vs Detractores).
+[x] Evolución temporal del NPS calculada (Promotores vs Detractores).
 
 **Historia 2.2.3: Cadenas de Markov de Satisfacción**
 **Pts: 8** | **Asignado a: David (Econometrista)**
@@ -266,17 +268,17 @@ Yo como MLOps necesito utilizar LLMs para inyectar reseñas falsas (ataques de p
 **Pts: 8** | **Asignado a: David (Desarrollador)**
 Yo como Desarrollador necesito un menú CLI (`rich`) aplicando el patrón `Command` de forma que pueda orquestar todas las ejecuciones limpiamente.
 *Criterios de Aceptación:*
-[ ] Interfaz de consola con estilo visual.
-[ ] Patrón Command encapsulando las órdenes del usuario.
+[x] Interfaz de consola con estilo visual.
+[x] Patrón Command encapsulando las órdenes del usuario.
 
 ### 🟦 3.2 Visualización Final y Observer (Rol: UI/UX Engineer)
 **Historia 3.2.1: Streamlit Dashboard (Patrón F)**
 **Pts: 8** | **Asignado a: David (UI/UX Engineer)**
 Yo como UI/UX Engineer necesito diseñar la interfaz siguiendo la jerarquía visual del Patrón F, apoyándome en el patrón `Observer` para las métricas reactivas.
 *Criterios de Aceptación:*
-[ ] Gráficas Plotly avanzadas (sin espacios muertos).
-[ ] KPIs claros en la parte superior (NPS, Churn Promedio).
-[ ] Storytelling aplicado en la disposición visual.
+[x] Gráficas Plotly avanzadas (sin espacios muertos).
+[x] KPIs claros en la parte superior (NPS, Churn Promedio).
+[x] Storytelling aplicado en la disposición visual.
 
 **Historia 3.2.2: Pruebas de Interaction Capability y Usabilidad (ISO 25010)**
 **Pts: 5** | **Asignado a: David (UI/UX Engineer)**

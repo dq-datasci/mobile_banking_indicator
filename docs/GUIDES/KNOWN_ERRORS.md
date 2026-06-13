@@ -29,3 +29,10 @@ A continuación, se listan los problemas detectados que aún no tienen solución
 * **Impacto:** Los datos no pasan a la capa Silver, paralizando el dashboard. (Severidad: Media).
 * **Workaround (Solución Temporal):** Uso del método `.astype()` de pandas justo antes de llamar a `conn.execute()` en la base de datos Singleton.
 * **Solución Permanente Planeada:** Definir `Strict=True` en todos los modelos Pydantic del `review_contract.py` para forzar validación estricta desde la instanciación.
+
+### KE-003: Out Of Memory (OOM) en ydata-profiling con Big Data
+* **Fecha de Registro:** 2026-06-13
+* **Descripción:** La librería `ydata-profiling` usa Pandas en memoria. Al inyectar la carga masiva de reseñas reales, el proceso colapsa por falta de RAM al intentar calcular matrices de correlación e interacciones exhaustivas.
+* **Impacto:** El pipeline se cae y falla la generación del Análisis Exploratorio de Datos (EDA). (Severidad: Crítica).
+* **Workaround (Solución Temporal):** Reemplazar el motor del EDA Global por PySpark (cálculos estadísticos distribuidos *out-of-core*) y usar `ydata-profiling` únicamente sobre una muestra (sample) reducida del banco cliente objetivo (ej. BCP).
+* **Solución Permanente Planeada:** Mantener PySpark para todo análisis exploratorio sobre capas Silver/Gold e implementar Data Observability nativo en el Lakehouse.
