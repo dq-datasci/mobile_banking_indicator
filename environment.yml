@@ -120,7 +120,7 @@ dependencies:
   - openssl=3.6.2=h35e630c_0
   - orc=2.3.0=h21090e2_0
   - packaging=26.2=pyhc364b38_0
-  - pandas=2.3.3=py310h0158d43_2
+  - pandas=2.2.2
   - pango=1.56.4=hda50119_1
   - pcre2=10.47=haa7fec5_0
   - pip=26.1.2=pyh8b19718_0
@@ -130,7 +130,7 @@ dependencies:
   - py4j=0.10.9.9=pyhd8ed1ab_0
   - pyarrow=24.0.0=py310hff52083_0
   - pyarrow-core=24.0.0=py310h382fff3_0_cpu
-  - pyspark=4.1.2=pyhd8ed1ab_0
+  - pyspark=3.5.1
   - python=3.10.20=h3c07f61_0_cpython
   - python-dateutil=2.9.0.post0=pyhe01879c_2
   - python-tzdata=2026.2=pyhd8ed1ab_0

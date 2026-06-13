@@ -238,3 +238,12 @@ Este archivo es el registro de actividades de Antigravity.
 *   **Archivos Modificados:** `src/orchestration/massive_extractor.py`, `docs/AGENT_LOGS.md`.
 *   **Hecho:** Se eliminó el límite de prueba en `massive_extractor.py` (aumentando `max_reviews` a 1,000,000) y se ejecutó exitosamente la descarga masiva y completa de todas las reseñas reales disponibles en Google Play Store para los 8 bancos objetivos (BCP, Unión, BNB, BISA, BancoSol, Económico, Mercantil, Ganadero). Los datos se almacenaron anonimizados en la capa Bronze. Cumplimiento absoluto de ISO 27001 (PII), ITIL 4 (progreso iterativo) e ISO 22301 (backoff por Rate Limits).
 *   **Siguiente paso:** Iniciar la Historia 1.5.12 (Refactorización a PySpark para Silver y Gold Layer) para procesar todo el nuevo volumen de datos masivos.
+
+---
+
+### [2026-06-13] - Historia 1.5.12: Refactorización a PySpark (Silver y Gold Layer) (Antigravity / Data Engineer)
+*   **Estado:** Completado en la rama `feature/1.5.12-refactor-pyspark`.
+*   **Vertical Slice:** 1 (Ingeniería de Datos Base e Infraestructura)
+*   **Archivos Modificados:** `src/infrastructure/pipelines/silver_pipeline.py`, `src/infrastructure/pipelines/gold_pipeline.py`, `tests/test_silver_pipeline.py`, `tests/test_gold_pipeline.py`, `environment.yml`, `docs/SCRUM/KANBAN.md`, `docs/SCRUM/USER_STORY_MAP.md`.
+*   **Hecho:** Se implementó `StructType` estricto en la capa Silver para validación robusta y optimización. Se desarrolló el mecanismo de Slowly Changing Dimensions (SCD Tipo 2) mediante `DeltaTable.merge()` en la capa Gold. Se refactorizaron y corrigieron los tests con una `SparkSession` local usando la extensión Delta. Finalmente se ajustó el archivo `environment.yml` anclando `pyspark=3.5.1` y `pandas=2.2.2` para resolver incompatibilidades de versiones con `delta-spark` en entornos de staging.
+*   **Siguiente paso:** Iniciar el Sprint 2 con la Historia 2.2.1 (Modelo Logit Riesgo Churn).

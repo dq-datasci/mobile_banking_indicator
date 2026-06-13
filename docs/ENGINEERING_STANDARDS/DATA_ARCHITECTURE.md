@@ -7,7 +7,7 @@ Este documento define la estructura y el viaje de los datos a lo largo de nuestr
 El viaje del dato sigue el paradigma ELT (Extract, Load, Transform), estructurado en tres grandes capas de madurez y orquestado mediante un DAG para garantizar la secuencialidad de las dependencias.
 
 > [!NOTE]
-> **OLAP vs OLTP:** Esta arquitectura Medallón (con DuckDB/Parquet) es un motor **OLAP (Online Analytical Processing)** diseñado exclusivamente para lecturas masivas. Las operaciones transaccionales de usuarios SaaS y facturación (OLTP) se separarán en una base PostgreSQL dedicada con RLS (Row Level Security).
+> **OLAP vs OLTP:** Esta arquitectura Medallón (con PySpark/Delta Lake) es un motor **OLAP (Online Analytical Processing)** diseñado exclusivamente para lecturas masivas. Las operaciones transaccionales de usuarios SaaS y facturación (OLTP) se separarán en una base PostgreSQL dedicada con RLS (Row Level Security).
 
 ```mermaid
 graph LR
@@ -92,7 +92,7 @@ erDiagram
 
 ---
 
-## 3. Diseño Físico: Star Schema en Capa Gold (DuckDB / Parquet)
+## 3. Diseño Físico: Star Schema en Capa Gold (PySpark / Delta Lake)
 
 Para maximizar el rendimiento del Dashboard, la capa Gold se estructura usando un **Esquema de Estrella (Star Schema)**. Además, implementamos **Slowly Changing Dimensions (SCD) Tipo 2** en dimensiones críticas (como `Dim_App`) para preservar la historia de los cambios (ej. si una app cambia de categoría, no queremos reescribir el pasado).
 
@@ -151,7 +151,7 @@ erDiagram
 ### Especificaciones de Ingeniería Adicionales
 
 1. **Estrategia de Particionamiento (Partitioning):**
-   Los archivos Parquet de las tablas de hechos (`Fact_Reviews`) y la capa Silver estarán particionados físicamente por `year/month/`. Esto permite que DuckDB aplique *Partition Pruning*, leyendo solo los archivos del mes consultado, lo que reduce drásticamente el consumo de RAM y el tiempo de I/O.
+   Los archivos de las tablas de hechos (`Fact_Reviews`) y la capa Silver estarán particionados físicamente por `year/month/` en formato Delta/Parquet. Esto permite que PySpark aplique *Partition Pruning*, leyendo solo los archivos del mes consultado, lo que reduce drásticamente el consumo de RAM y el tiempo de I/O.
 
 2. **SCD Tipo 2 (Slowly Changing Dimensions):**
    Como se observa en `Dim_App`, utilizamos claves subrogadas (Surrogate Keys, `app_sk`). Si la aplicación cambia de nombre o categoría, se inserta una nueva fila en `Dim_App` con un nuevo `app_sk`, se cierra la fecha `valid_to` del registro anterior y se marca `is_current = false`.
