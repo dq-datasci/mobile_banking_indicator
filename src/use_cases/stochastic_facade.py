@@ -26,13 +26,22 @@ class StochasticFacade:
                 
             df = spark.read.format("delta").load(gold_path).toPandas()
             
-            markov_results = self.markov.calculate(df)
-            queue_results = self.queuing.calculate(df)
+            final_results = {}
             
-            final_results = {
-                "markov_chains": markov_results,
-                "queuing_theory": queue_results
+            # Global
+            final_results["Todos los Bancos"] = {
+                "markov_chains": self.markov.calculate(df),
+                "queuing_theory": self.queuing.calculate(df)
             }
+            
+            # Por Banco
+            if "bank_name" in df.columns:
+                for bank in df["bank_name"].unique():
+                    df_bank = df[df["bank_name"] == bank]
+                    final_results[bank] = {
+                        "markov_chains": self.markov.calculate(df_bank),
+                        "queuing_theory": self.queuing.calculate(df_bank)
+                    }
             
             self.results_dir.mkdir(parents=True, exist_ok=True)
             with open(self.results_dir / "stochastic_results.json", "w") as f:

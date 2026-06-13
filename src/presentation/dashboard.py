@@ -370,8 +370,10 @@ with tab4:
     try:
         import json
         with open("docs/MODELS_RESULTS/stochastic_results.json", "r") as f:
-            stoch_data = json.load(f)
+            stoch_data_all = json.load(f)
             
+        stoch_data = stoch_data_all.get(banco_seleccionado, {})
+        
         markov_data = stoch_data.get("markov_chains", {})
         queuing_data = stoch_data.get("queuing_theory", {})
         
