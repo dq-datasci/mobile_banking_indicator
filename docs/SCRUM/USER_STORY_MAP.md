@@ -200,28 +200,33 @@ Yo como Econometrista necesito modelar la probabilidad de *Churn* usando `statsm
 [x] Logit modelando la causalidad estadística.
 [x] Pruebas de heterocedasticidad superadas.
 
+**Historia 2.2.3: Cadenas de Markov de Satisfacción**
+**Pts: 8** | **Asignado a: David (Econometrista)**
+Yo como Analista necesito calcular la probabilidad de transición entre estados (Satisfecho -> Queja -> Fuga).
+*Criterios de Aceptación:*
+[x] Matriz de transición generada.
+[x] Riesgo calculado matemáticamente.
+
+**Historia 2.2.4: Teoría de Colas para Servicio al Cliente**
+**Pts: 8** | **Asignado a: David (Econometrista)**
+Yo como Analista necesito modelar los tiempos de espera y la capacidad de atención del banco (respuestas a reseñas) usando la Teoría de Colas (M/M/1 o M/M/c) para determinar cuellos de botella y frustración del usuario.
+*Criterios de Aceptación:*
+[x] Tasa de llegada (lambda) y tasa de servicio (mu) calculadas.
+[x] Probabilidad de saturación del sistema calculada y expuesta en el dashboard.
+
 **Historia 2.2.2: Cálculo Econométrico del NPS**
 **Pts: 5** | **Asignado a: David (Econometrista)**
 Yo como Econometrista necesito calcular el Net Promoter Score en base a las estrellas.
 *Criterios de Aceptación:*
 [x] Evolución temporal del NPS calculada (Promotores vs Detractores).
 
-**Historia 2.2.3: Cadenas de Markov de Satisfacción**
-**Pts: 8** | **Asignado a: David (Econometrista)**
-Yo como Econometrista necesito modelar la matriz de transición de los usuarios (Satisfecho -> Frustrado -> Fuga) usando secuencias temporales.
-*Criterios de Aceptación:*
-[ ] Matriz de probabilidad de transición matemática validada.
+### 1.3. Inteligencia Artificial Avanzada y UX (Vertical Slice 3)
+*Enfoque:* Llevar la analítica al siguiente nivel usando LLMs, IA Generativa (RAG) y Agentes conversacionales.
 
-### 🟦 2.3 Inteligencia Artificial Avanzada y LLMs (Rol: AI Engineer / Data Scientist)
 **Historia 2.3.1: Facade NLP y Clasificación de Sentimiento Básica**
-**Pts: 8** | **Asignado a: David (Data Scientist)**
+**Pts: 8** | **Estado: Completado** | **Asignado a: David (Data Scientist)**
 Yo como Científico de Datos necesito aplicar el patrón `Facade` para ocultar la complejidad de HuggingFace y clasificar sentimientos base (Positivo, Negativo, Neutral).
 *Criterios de Aceptación:*
-[ ] Clase `NLPFacade` exponiendo un método simple `analyze()`.
-[ ] Precisión > 85% en clasificación.
-
-**Historia 2.3.2: Extracción Temática y Tracking (MLflow)**
-**Pts: 5** | **Asignado a: David (MLOps)**
 Yo como MLOps necesito trackear los modelos y experimentos locales en MLflow.
 *Criterios de Aceptación:*
 [ ] Experimentos registrados sistemáticamente en MLflow local.
