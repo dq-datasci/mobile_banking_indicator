@@ -47,6 +47,7 @@
 - [x] **Historia 2.3.6: Ruteo Multi-Agente (Legal, UI/UX, Backend) y Simulador Jira** (Pts: 8) [David - AI Engineer]
 - [x] **Historia 2.3.7: Generación de Datos Sintéticos para Stress-Test del RAG** (Pts: 5) [David - MLOps]
 - [x] **Historia 2.2.3: Cadenas de Markov de Satisfacción** (Pts: 8) [David - Econometrista]
+- [x] **Historia 2.2.4: Teoría de Colas para Servicio al Cliente** (Pts: 8) [David - Econometrista]
 - [x] **Historia 3.2.1: Streamlit Dashboard (NPS, Observer y Patrón F)** (Pts: 8) [David - UI/UX Engineer]
 - [x] **Historia 3.2.2: Pruebas de Interaction Capability y Usabilidad (ISO 25010)** (Pts: 5) [David - UI/UX Engineer]
 

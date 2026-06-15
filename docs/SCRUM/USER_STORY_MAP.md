@@ -200,6 +200,20 @@ Yo como Econometrista necesito modelar la probabilidad de *Churn* usando `statsm
 [x] Logit modelando la causalidad estadística.
 [x] Pruebas de heterocedasticidad superadas.
 
+**Historia 2.2.3: Cadenas de Markov de Satisfacción**
+**Pts: 8** | **Asignado a: David (Econometrista)**
+Yo como Analista necesito calcular la probabilidad de transición entre estados (Satisfecho -> Queja -> Fuga).
+*Criterios de Aceptación:*
+[x] Matriz de transición generada.
+[x] Riesgo calculado matemáticamente.
+
+**Historia 2.2.4: Teoría de Colas para Servicio al Cliente**
+**Pts: 8** | **Asignado a: David (Econometrista)**
+Yo como Analista necesito modelar los tiempos de espera y la capacidad de atención del banco (respuestas a reseñas) usando la Teoría de Colas (M/M/1 o M/M/c) para determinar cuellos de botella y frustración del usuario.
+*Criterios de Aceptación:*
+[x] Tasa de llegada (lambda) y tasa de servicio (mu) calculadas.
+[x] Probabilidad de saturación del sistema calculada y expuesta en el dashboard.
+
 **Historia 2.2.2: Cálculo Econométrico del NPS**
 **Pts: 5** | **Asignado a: David (Econometrista)**
 Yo como Econometrista necesito calcular el Net Promoter Score en base a las estrellas.

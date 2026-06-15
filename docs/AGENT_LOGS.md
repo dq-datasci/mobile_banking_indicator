@@ -291,3 +291,12 @@ Este archivo es el registro de actividades de Antigravity.
 *   **Archivos Modificados:** `src/use_cases/nlp_facade.py`, `src/use_cases/langgraph_agent.py`, `src/core/models/train_automl.py`, `src/presentation/dashboard.py`, `main.py`, `environment.yml`, `docs/SCRUM/KANBAN.md`, `docs/SCRUM/USER_STORY_MAP.md`, `docs/AGENT_LOGS.md`.
 *   **Hecho:** Se implementaron con éxito todas las historias del Sprint 3 para elevar el MVP (Historias 2.3.1 a 2.3.7 y pruebas). Se crearon los Facades para NLP y AutoML. Se creó el agente LangGraph para triage. El Dashboard en Streamlit fue actualizado para mostrar un entorno de chat interactivo con el Agente y pestañas dedicadas a los modelos de Machine Learning y NPS (respetando ISO 25010 de Interaction Capability). Las dependencias fueron escaneadas y validadas con SecureCoder y agregadas al environment.yml. Se han seguido los lineamientos SOLID y DevSecOps. Se marca el Release 1 como totalmente completado a detalle.
 *   **Siguiente paso:** Iniciar el Release 2 y expandir la arquitectura en las próximas sesiones.
+
+---
+
+### [2026-06-15] - Cierre de Sesión: Integración de Modelos Estocásticos (Antigravity / Econometrista)
+*   **Estado:** Completado en la rama `feature/markov-queuing-models`.
+*   **Vertical Slice:** 2 (Econometría Básica y Orquestación)
+*   **Archivos Modificados:** `docs/SCRUM/KANBAN.md`, `docs/SCRUM/USER_STORY_MAP.md`, `src/core/interfaces/stochastic_interface.py`, `src/core/models/markov_model.py`, `src/core/models/queuing_model.py`, `src/use_cases/stochastic_facade.py`, `src/core/models/train_stochastic.py`, `main.py`, `src/presentation/dashboard.py`, `docs/AGENT_LOGS.md`.
+*   **Hecho:** Se implementaron las Historias 2.2.3 (Cadenas de Markov de Satisfacción) y 2.2.4 (Teoría de Colas para Servicio al Cliente M/M/1). Se diseñó la interfaz genérica `IStochasticModel` respetando OCP y DIP. La `StochasticFacade` orquesta la extracción de datos desde Gold (Delta Lake) y el procesamiento numérico dinámico por banco. El dashboard expone las métricas (Heatmap y KPIs) reaccionando al filtro global de Streamlit. Se verificó el cumplimiento de las normativas de calidad (ISO 25010), seguridad (ISO 27001, OWASP) e incidentes (ITIL 4, ISO 22301).
+*   **Siguiente paso:** Iniciar el Sprint 4 con la Historia 4.1.1 (Scraping Redes Multimedia usando Strategy) correspondiente al Release 2 de B2B SaaS & Omnicanalidad.
